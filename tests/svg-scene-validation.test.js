@@ -228,4 +228,197 @@ describe('SVG Scene Validation', () => {
       expect(summaryComponent).toBeUndefined();
     });
   });
+
+  // Sky Text Tests
+  describe('Sky Text Implementation', () => {
+    describe('Scene 1 Sky Text', () => {
+      test('should have bold headline and supporting text', () => {
+        const scene1 = canvasData.components.find(c => c.id === 'rx-node-73eke9');
+        expect(scene1).toBeDefined();
+        
+        const svgContent = scene1.content.svgMarkup;
+        
+        // Check for sky text group
+        expect(svgContent).toMatch(/<g id="sky-text"/);
+        
+        // Check for bold headline (with tspan for "publish")
+        expect(svgContent).toMatch(/Every journey starts with a.*publish.*\./i);
+        expect(svgContent).toMatch(/font-weight="bold"/);
+        expect(svgContent).toMatch(/font-size="40"/);
+
+        // Check for supporting text
+        expect(svgContent).toMatch(/The depot launches the event onto the route\./i);
+        expect(svgContent).toMatch(/font-size="24"/);
+      });
+      
+      test('should position sky text at top-center', () => {
+        const scene1 = canvasData.components.find(c => c.id === 'rx-node-73eke9');
+        const svgContent = scene1.content.svgMarkup;
+
+        // Check positioning - should be at top-center (400, 40)
+        expect(svgContent).toMatch(/transform="translate\(400, 40\)"/);
+      });
+    });
+
+    describe('Scene 2 Sky Text', () => {
+      test('should have manifest and debounce messaging', () => {
+        const scene2 = canvasData.components.find(c => c.id === 'rx-node-s1wplc');
+        expect(scene2).toBeDefined();
+
+        const svgContent = scene2.content.svgMarkup;
+
+        // Check for sky text content
+        expect(svgContent).toMatch(/Data drives the route\./i);
+        expect(svgContent).toMatch(/The.*manifest.*maps the path, while.*debounce.*slows bursts at the light\./i);
+      });
+
+      test('should position sky text at top-center', () => {
+        const scene2 = canvasData.components.find(c => c.id === 'rx-node-s1wplc');
+        const svgContent = scene2.content.svgMarkup;
+
+        // Check top-center positioning
+        expect(svgContent).toMatch(/transform="translate\(400, 40\)"/);
+      });
+    });
+
+    describe('Scene 3 Sky Text', () => {
+      test('should have subscriber and replay cache messaging', () => {
+        const scene3 = canvasData.components.find(c => c.id === 'rx-node-scene3');
+        expect(scene3).toBeDefined();
+
+        const svgContent = scene3.content.svgMarkup;
+
+        // Check for sky text content
+        expect(svgContent).toMatch(/No one misses the bus\./i);
+        expect(svgContent).toMatch(/Live and late subscribers both get the message, thanks to the Replay Cache\./i);
+      });
+
+      test('should position sky text at top-center', () => {
+        const scene3 = canvasData.components.find(c => c.id === 'rx-node-scene3');
+        const svgContent = scene3.content.svgMarkup;
+
+        // Check top-center positioning
+        expect(svgContent).toMatch(/transform="translate\(400, 40\)"/);
+      });
+    });
+
+    describe('Scene 4 Sky Text', () => {
+      test('should have conductor orchestration messaging', () => {
+        const scene4 = canvasData.components.find(c => c.id === 'rx-node-scene4');
+        expect(scene4).toBeDefined();
+
+        const svgContent = scene4.content.svgMarkup;
+
+        // Check for sky text content (with tspan for "Conductor")
+        expect(svgContent).toMatch(/The.*Conductor.*orchestrates the flow\./i);
+        expect(svgContent).toMatch(/At the hub, events branch into sequences and plugins\./i);
+      });
+
+      test('should position sky text at top-center', () => {
+        const scene4 = canvasData.components.find(c => c.id === 'rx-node-scene4');
+        const svgContent = scene4.content.svgMarkup;
+
+        // Check top-center positioning
+        expect(svgContent).toMatch(/transform="translate\(400, 40\)"/);
+      });
+    });
+
+    describe('Scene 5 Sky Text', () => {
+      test('should have rules and boundaries messaging', () => {
+        const scene5 = canvasData.components.find(c => c.id === 'rx-node-scene5');
+        expect(scene5).toBeDefined();
+
+        const svgContent = scene5.content.svgMarkup;
+
+        // Check for sky text content (with tspan for "throttle" and "debounce")
+        expect(svgContent).toMatch(/Rules keep the ride safe\./i);
+        expect(svgContent).toMatch(/Guardrails, flags,.*throttle.*, and.*debounce.*enforce stability\./i);
+      });
+
+      test('should position sky text at top-center', () => {
+        const scene5 = canvasData.components.find(c => c.id === 'rx-node-scene5');
+        const svgContent = scene5.content.svgMarkup;
+
+        // Check top-center positioning
+        expect(svgContent).toMatch(/transform="translate\(400, 40\)"/);
+      });
+    });
+
+    describe('Scene 6 Sky Text', () => {
+      test('should have destination reached messaging', () => {
+        const scene6 = canvasData.components.find(c => c.id === 'rx-node-scene6');
+        expect(scene6).toBeDefined();
+
+        const svgContent = scene6.content.svgMarkup;
+
+        // Check for sky text content
+        expect(svgContent).toMatch(/Destination reached\./i);
+        expect(svgContent).toMatch(/Events arrive at the school — the application state is updated\./i);
+      });
+
+      test('should position sky text at top-center', () => {
+        const scene6 = canvasData.components.find(c => c.id === 'rx-node-scene6');
+        const svgContent = scene6.content.svgMarkup;
+
+        // Check top-center positioning
+        expect(svgContent).toMatch(/transform="translate\(400, 40\)"/);
+      });
+    });
+
+    describe('Sky Text Consistency', () => {
+      test('all scenes should have consistent sky text styling', () => {
+        const allScenes = canvasData.components.filter(c => c.type === 'svg');
+
+        allScenes.forEach(scene => {
+          const svgContent = scene.content.svgMarkup;
+
+          if (svgContent.includes('sky-text')) {
+            // Check for consistent bold headline styling
+            expect(svgContent).toMatch(/font-size="40".*font-weight="bold"/);
+            expect(svgContent).toMatch(/fill="#1E3A56"/);
+            expect(svgContent).toMatch(/stroke="#FFFFFF"/);
+
+            // Check for consistent supporting text styling
+            expect(svgContent).toMatch(/font-size="24"/);
+            expect(svgContent).toMatch(/fill="#3C556E"/);
+          }
+        });
+      });
+
+      test('sky text should be positioned in sky area (y < 250)', () => {
+        const allScenes = canvasData.components.filter(c => c.type === 'svg');
+
+        allScenes.forEach(scene => {
+          const svgContent = scene.content.svgMarkup;
+
+          if (svgContent.includes('sky-text')) {
+            // Extract y coordinate from transform
+            const transformMatch = svgContent.match(/sky-text"[^>]*transform="translate\([^,]+,\s*(\d+)\)"/);
+            if (transformMatch) {
+              const yPosition = parseInt(transformMatch[1]);
+              expect(yPosition).toBeLessThan(250); // Should be in sky area
+              expect(yPosition).toBe(40); // Should be at top-center position
+            }
+          }
+        });
+      });
+
+      test('sky text should not interfere with existing animations', () => {
+        const allScenes = canvasData.components.filter(c => c.type === 'svg');
+
+        allScenes.forEach(scene => {
+          const svgContent = scene.content.svgMarkup;
+
+          // Ensure sky text doesn't break existing animation elements
+          if (svgContent.includes('animateTransform')) {
+            expect(svgContent).toMatch(/<animateTransform[^>]*>/); // Should still have valid animation tags
+          }
+
+          if (svgContent.includes('animate')) {
+            expect(svgContent).toMatch(/<animate[^>]*>/); // Should still have valid animate tags
+          }
+        });
+      });
+    });
+  });
 });
