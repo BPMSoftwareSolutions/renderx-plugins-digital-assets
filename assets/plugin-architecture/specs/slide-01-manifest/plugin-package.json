@@ -1,0 +1,10 @@
+{
+  "sub_elements": [
+    { "id": "package-box", "svg": "slide-01-manifest/plugin-package/package-box.svg", "compose": { "x": 0, "y": 0 } },
+    { "id": "shadow",      "svg": "slide-01-manifest/plugin-package/shadow.svg",      "compose": { "x": 0, "y": 0 } },
+    { "id": "label",       "svg": "slide-01-manifest/plugin-package/label.svg",       "compose": { "x": 0, "y": 0 } },
+    { "id": "glyphs",      "svg": "slide-01-manifest/plugin-package/glyphs.svg",      "compose": { "x": 0, "y": 0 } },
+    { "id": "npm-badge",   "svg": "slide-01-manifest/plugin-package/npm-badge.svg",   "compose": { "x": 0, "y": 0 } }
+  ]
+}
+

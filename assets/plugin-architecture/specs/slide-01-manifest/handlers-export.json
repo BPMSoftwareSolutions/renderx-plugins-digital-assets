@@ -1,0 +1,9 @@
+{
+  "sub_elements": [
+    { "id": "connectors",    "svg": "slide-01-manifest/handlers-export/connectors.svg",    "compose": { "x": 0, "y": 0 } },
+    { "id": "ports",         "svg": "slide-01-manifest/handlers-export/ports.svg",         "compose": { "x": 0, "y": 0 } },
+    { "id": "gradient",      "svg": "slide-01-manifest/handlers-export/gradient.svg",      "compose": { "x": 0, "y": 0 } },
+    { "id": "circuit-traces", "svg": "slide-01-manifest/handlers-export/circuit-traces.svg", "compose": { "x": 0, "y": 0 } }
+  ]
+}
+

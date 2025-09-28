@@ -1,0 +1,10 @@
+{
+  "sub_elements": [
+    { "id": "document-card",  "svg": "slide-01-manifest/plugin-manifest/document-card.svg",  "compose": { "x": 0, "y": 0 } },
+    { "id": "json-braces",    "svg": "slide-01-manifest/plugin-manifest/json-braces.svg",    "compose": { "x": 0, "y": 0 } },
+    { "id": "key-value-rows", "svg": "slide-01-manifest/plugin-manifest/key-value-rows.svg", "compose": { "x": 0, "y": 0 } },
+    { "id": "generated-stamp","svg": "slide-01-manifest/plugin-manifest/generated-stamp.svg","compose": { "x": 0, "y": 0 } },
+    { "id": "tabs",           "svg": "slide-01-manifest/plugin-manifest/tabs.svg",           "compose": { "x": 0, "y": 0 } }
+  ]
+}
+
