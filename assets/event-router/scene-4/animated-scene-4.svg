@@ -193,6 +193,12 @@
   <!-- Other buses at hub -->
   <!-- Upper branch bus -->
   <g id="upper-bus" transform="translate(520, 180) rotate(-25)">
+    <!-- Green bus animation: drives off ramp and off the page -->
+    <animateTransform attributeName="transform" type="translate"
+                      values="520,180; 600,160; 700,140; 850,120; 950,100"
+                      dur="20s"
+                      repeatCount="indefinite"/>
+
     <rect x="0" y="0" width="60" height="25" rx="3" ry="3" fill="#32CD32" stroke="#228B22" stroke-width="1"/>
     <rect x="55" y="2" width="8" height="21" rx="4" ry="4" fill="#32CD32" stroke="#228B22" stroke-width="1"/>
     <rect x="52" y="4" width="5" height="8" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>

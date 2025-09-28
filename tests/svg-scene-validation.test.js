@@ -99,9 +99,9 @@ describe('SVG Scene Validation', () => {
     test('Scene 3 - Bus should pickup live subscribers and leave late ones', () => {
       const scene3 = canvasData.components.find(comp => comp.id === 'rx-node-scene3');
       expect(scene3).toBeTruthy();
-      
+
       const svgContent = scene3.content.svgMarkup;
-      
+
       // FAILING TEST: Should have bus stopping and subscriber pickup animation
       expect(svgContent).toMatch(/live.*subscriber/i);
       expect(svgContent).toMatch(/late.*subscriber/i);
@@ -110,17 +110,47 @@ describe('SVG Scene Validation', () => {
       expect(svgContent).toMatch(/subscriber[\s\S]*?animate/i);
     });
 
+    test('Scene 3 - Live subscriber should board bus and disappear when bus leaves', () => {
+      const scene3 = canvasData.components.find(comp => comp.id === 'rx-node-scene3');
+      expect(scene3).toBeTruthy();
+
+      const svgContent = scene3.content.svgMarkup;
+
+      // FAILING TEST: Live subscriber should move toward bus and disappear
+      expect(svgContent).toMatch(/live-subscriber[\s\S]*?animateTransform[\s\S]*?translate/i);
+
+      // Animation should show subscriber moving down toward bus (y changes from 25 to 50)
+      expect(svgContent).toMatch(/values.*25,25.*-\d+,50/i);
+
+      // Subscriber should disappear when bus leaves (opacity animation to 0)
+      expect(svgContent).toMatch(/live-subscriber[\s\S]*?animate[\s\S]*?opacity[\s\S]*?values.*0/i);
+    });
+
     test('Scene 4 - Bus should drive up ramp and fly off', () => {
       const scene4 = canvasData.components.find(comp => comp.id === 'rx-node-scene4');
       expect(scene4).toBeTruthy();
-      
+
       const svgContent = scene4.content.svgMarkup;
-      
+
       // FAILING TEST: Should have ramp and flying animation
       expect(svgContent).toMatch(/conductor/i);
       expect(svgContent).toMatch(/transfer.*hub/i);
       expect(svgContent).toMatch(/bus[\s\S]*?animateTransform[\s\S]*?translate/i);
       expect(svgContent).toMatch(/ramp/i);
+    });
+
+    test('Scene 4 - Green bus (Plugin A) should animate driving off ramp and off page', () => {
+      const scene4 = canvasData.components.find(comp => comp.id === 'rx-node-scene4');
+      expect(scene4).toBeTruthy();
+
+      const svgContent = scene4.content.svgMarkup;
+
+      // FAILING TEST: Green bus should have animation that goes off the page
+      expect(svgContent).toMatch(/Plugin A/i);
+      expect(svgContent).toMatch(/green.*bus[\s\S]*?animateTransform/i);
+
+      // Animation should show bus moving off the page (x values > 800)
+      expect(svgContent).toMatch(/values.*\d+,\d+.*[89]\d{2,},\d+/i);
     });
 
     test('Scene 5 - Bus should stop at red light and proceed on green', () => {
@@ -150,25 +180,52 @@ describe('SVG Scene Validation', () => {
     });
   });
 
-  describe('Scene Transition Continuity', () => {
-    test('should have seamless horizontal positioning for scene transitions', () => {
-      const sceneComponents = canvasData.components.filter(comp =>
-        comp.type === 'svg' && comp.content && comp.content.viewBox &&
-        comp.id !== 'rx-node-wju9sv' && comp.id !== 'rx-node-summary'
+  describe('Layout and Structure', () => {
+    test('should have 3-row layout: Row 1 (Scenes 1-2), Row 2 (Scenes 3-4), Row 3 (Scenes 5-6)', () => {
+      const scenes = canvasData.components.filter(comp =>
+        comp.id.includes('scene') || comp.id.includes('73eke9') || comp.id.includes('s1wplc')
       );
-      
-      // Sort scenes by x position
-      sceneComponents.sort((a, b) => a.layout.x - b.layout.x);
 
-      for (let i = 1; i < sceneComponents.length; i++) {
-        const prevScene = sceneComponents[i - 1];
-        const currentScene = sceneComponents[i];
+      expect(scenes.length).toBe(6);
 
-        const expectedX = prevScene.layout.x + prevScene.layout.width;
+      // Find scenes by their actual IDs
+      const scene1 = scenes.find(s => s.id.includes('73eke9'));
+      const scene2 = scenes.find(s => s.id.includes('s1wplc'));
+      const scene3 = scenes.find(s => s.id.includes('scene3'));
+      const scene4 = scenes.find(s => s.id.includes('scene4'));
+      const scene5 = scenes.find(s => s.id.includes('scene5'));
+      const scene6 = scenes.find(s => s.id.includes('scene6'));
 
-        // Next scene should start exactly where previous scene ends
-        expect(currentScene.layout.x).toBe(expectedX);
-      }
+      // Row 1: Scenes 1-2 (y=50)
+      expect(scene1.layout.y).toBe(50);
+      expect(scene2.layout.y).toBe(50);
+      expect(scene1.layout.x).toBe(0);
+      expect(scene2.layout.x).toBe(800);
+
+      // Row 2: Scenes 3-4 (y=500)
+      expect(scene3.layout.y).toBe(500);
+      expect(scene4.layout.y).toBe(500);
+      expect(scene3.layout.x).toBe(0);
+      expect(scene4.layout.x).toBe(800);
+
+      // Row 3: Scenes 5-6 (y=950)
+      expect(scene5.layout.y).toBe(950);
+      expect(scene6.layout.y).toBe(950);
+      expect(scene5.layout.x).toBe(0);
+      expect(scene6.layout.x).toBe(800);
+    });
+
+    test('should not have header or summary components', () => {
+      const headerComponent = canvasData.components.find(comp =>
+        comp.id === 'rx-node-wju9sv' || comp.content?.svgMarkup?.includes('Tiny Pub/Sub Bus')
+      );
+      const summaryComponent = canvasData.components.find(comp =>
+        comp.id === 'rx-node-summary'
+      );
+
+      // FAILING TEST: Header and summary should be removed
+      expect(headerComponent).toBeUndefined();
+      expect(summaryComponent).toBeUndefined();
     });
   });
 });
