@@ -1,0 +1,95 @@
+<svg viewBox="0 0 150 60" xmlns="http://www.w3.org/2000/svg">
+  <!-- School bus leaving depot for Scene 1 -->
+  
+  <g id="school-bus-leaving">
+    <!-- Bus body -->
+    <rect x="10" y="10" width="120" height="35" rx="4" ry="4" fill="#FFD700" stroke="#E6C200" stroke-width="2"/>
+    
+    <!-- Bus front -->
+    <rect x="125" y="13" width="12" height="29" rx="6" ry="6" fill="#FFD700" stroke="#E6C200" stroke-width="2"/>
+    
+    <!-- Bus roof -->
+    <rect x="8" y="7" width="124" height="6" rx="3" ry="3" fill="#FFA500"/>
+    
+    <!-- Front bumper -->
+    <rect x="135" y="38" width="8" height="4" rx="2" ry="2" fill="#C0C0C0"/>
+    
+    <!-- Windows (tinted dark) -->
+    <rect x="120" y="16" width="8" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+    <rect x="110" y="16" width="8" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+    <rect x="100" y="16" width="8" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+    <rect x="90" y="16" width="8" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+    <rect x="80" y="16" width="8" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+    <rect x="70" y="16" width="8" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+    <rect x="60" y="16" width="8" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+    <rect x="50" y="16" width="8" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+    <rect x="40" y="16" width="8" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+    <rect x="30" y="16" width="8" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+    <rect x="20" y="16" width="8" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+    
+    <!-- Emergency exit window -->
+    <rect x="15" y="18" width="6" height="6" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+    
+    <!-- Door -->
+    <rect x="105" y="28" width="12" height="15" rx="1" ry="1" fill="#E6C200" stroke="#D4AF37" stroke-width="1"/>
+    <rect x="107" y="30" width="8" height="6" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+    <circle cx="109" cy="38" r="1" fill="#000"/>
+    
+    <!-- School Bus text -->
+    <text x="70" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" font-weight="bold" fill="#000">SCHOOL BUS</text>
+    
+    <!-- Orange stripe -->
+    <rect x="10" y="27" width="120" height="3" fill="#FFA500"/>
+    
+    <!-- Front headlight (glowing) -->
+    <circle cx="133" cy="20" r="3" fill="#FFFF00">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="3;3.5;3" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Headlight beam -->
+    <polygon points="136,20 150,15 150,25" fill="#FFFF00" opacity="0.3">
+      <animate attributeName="opacity" values="0.2;0.4;0.2" dur="2s" repeatCount="indefinite"/>
+    </polygon>
+    
+    <!-- Rear lights -->
+    <rect x="12" y="18" width="3" height="3" rx="1.5" ry="1.5" fill="#FF0000"/>
+    <rect x="12" y="32" width="3" height="3" rx="1.5" ry="1.5" fill="#FF0000"/>
+    
+    <!-- Wheels with rotation animation -->
+    <g id="front-wheel">
+      <circle cx="35" cy="47" r="7" fill="#333" stroke="#222" stroke-width="2"/>
+      <circle cx="35" cy="47" r="4" fill="#666"/>
+      <circle cx="35" cy="47" r="2" fill="#999"/>
+      <g transform-origin="35 47">
+        <line x1="35" y1="42" x2="35" y2="52" stroke="#AAA" stroke-width="1"/>
+        <line x1="30" y1="47" x2="40" y2="47" stroke="#AAA" stroke-width="1"/>
+        <animateTransform attributeName="transform" type="rotate" values="0;360" dur="1s" repeatCount="indefinite"/>
+      </g>
+    </g>
+    
+    <g id="rear-wheel">
+      <circle cx="105" cy="47" r="7" fill="#333" stroke="#222" stroke-width="2"/>
+      <circle cx="105" cy="47" r="4" fill="#666"/>
+      <circle cx="105" cy="47" r="2" fill="#999"/>
+      <g transform-origin="105 47">
+        <line x1="105" y1="42" x2="105" y2="52" stroke="#AAA" stroke-width="1"/>
+        <line x1="100" y1="47" x2="110" y2="47" stroke="#AAA" stroke-width="1"/>
+        <animateTransform attributeName="transform" type="rotate" values="0;360" dur="1s" repeatCount="indefinite"/>
+      </g>
+    </g>
+    
+    <!-- Motion lines behind bus -->
+    <g stroke="#999" stroke-width="1" opacity="0.5">
+      <line x1="0" y1="20" x2="8" y2="20">
+        <animate attributeName="opacity" values="0;0.5;0" dur="0.5s" repeatCount="indefinite"/>
+      </line>
+      <line x1="0" y1="25" x2="6" y2="25">
+        <animate attributeName="opacity" values="0;0.5;0" dur="0.7s" repeatCount="indefinite"/>
+      </line>
+      <line x1="0" y1="30" x2="8" y2="30">
+        <animate attributeName="opacity" values="0;0.5;0" dur="0.6s" repeatCount="indefinite"/>
+      </line>
+    </g>
+  </g>
+</svg>

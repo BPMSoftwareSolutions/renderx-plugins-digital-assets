@@ -1,0 +1,11 @@
+{
+  "scene": { "name": "scene7_route_map", "viewBox": [0, 0, 1200, 400] },
+  "routeMap": { "id": "route-map-layer", "label": "ROUTE MAP" },
+  "bus": {
+    "id": "bus-layer",
+    "placement": { "scale": 1, "computed": { "translateY": 125 } },
+    "horizontalPath": { "startX": -400, "endX": 1400, "duration": "20s" }
+  },
+  "output": { "file": "integrated_scene_7.svg" }
+}
+

@@ -1,0 +1,134 @@
+<svg viewBox="0 0 1400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Scene 1: Depot + Bus leaving (left side) -->
+  <g id="scene-1" transform="translate(0,0)">
+    <g id="depot-layer">
+      <rect x="0" y="0" width="800" height="250" fill="#87CEEB"/>
+      <rect x="0" y="250" width="800" height="150" fill="#4A6B3A"/>
+      <!-- Depot building and sign -->
+      <rect x="100" y="120" width="300" height="130" fill="#8B7355" stroke="#6B5535" stroke-width="2"/>
+      <polygon points="80,120 220,80 420,80 420,120" fill="#654321" stroke="#543210" stroke-width="2"/>
+      <rect x="200" y="95" width="120" height="20" fill="#FFFFFF" stroke="#333" stroke-width="1" rx="3"/>
+      <text x="260" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">EVENT BUS DEPOT</text>
+    </g>
+    <g id="bus-layer" transform="translate(0, 125)">
+      <g>
+        <animateTransform attributeName="transform" type="translate" values="-365,0;1000,0" dur="20s" repeatCount="indefinite"/>
+        <rect x="70" y="60" width="280" height="80" rx="8" ry="8" fill="#FFD700" stroke="#E6C200" stroke-width="2"/>
+        <rect x="340" y="70" width="20" height="60" rx="10" ry="10" fill="#FFD700" stroke="#E6C200" stroke-width="2"/>
+        <rect x="65" y="55" width="290" height="10" rx="5" ry="5" fill="#FFA500"/>
+        <rect x="350" y="125" width="15" height="8" rx="4" ry="4" fill="#C0C0C0"/>
+        <rect x="342" y="75" width="16" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+        <rect x="305" y="70" width="25" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+        <rect x="275" y="70" width="25" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+        <rect x="245" y="70" width="25" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+        <rect x="215" y="70" width="25" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+        <rect x="185" y="70" width="25" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+        <rect x="155" y="70" width="25" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+        <rect x="125" y="70" width="25" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+        <rect x="95" y="70" width="25" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+        <rect x="75" y="75" width="15" height="15" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+        <rect x="315" y="95" width="20" height="35" rx="2" ry="2" fill="#E6C200" stroke="#D4AF37" stroke-width="1"/>
+        <rect x="317" y="97" width="16" height="15" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+        <circle cx="319" cy="112" r="1.5" fill="#000"/>
+        <text x="200" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#000">EVENT BUS</text>
+        <circle cx="353" cy="80" r="3" fill="#FFFF00"/>
+        <circle cx="353" cy="120" r="3" fill="#FF4500"/>
+        <rect x="69" y="77" width="6" height="8" rx="3" ry="3" fill="#FF0000"/>
+        <rect x="69" y="110" width="6" height="8" rx="3" ry="3" fill="#FF0000"/>
+        <g>
+          <circle cx="310" cy="155" r="20" fill="#2F2F2F" stroke="#000" stroke-width="2"/>
+          <circle cx="310" cy="155" r="15" fill="#4F4F4F"/>
+          <circle cx="310" cy="155" r="8" fill="#696969"/>
+          <circle cx="310" cy="155" r="3" fill="#2F2F2F"/>
+          <circle cx="110" cy="155" r="20" fill="#2F2F2F" stroke="#000" stroke-width="2"/>
+          <circle cx="110" cy="155" r="15" fill="#4F4F4F"/>
+          <circle cx="110" cy="155" r="8" fill="#696969"/>
+          <circle cx="110" cy="155" r="3" fill="#2F2F2F"/>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- Scene 2: Roadside elements + bus (right side) -->
+  <g id="scene-2" transform="translate(820, 100)">
+    <g id="road-layer">
+      <rect x="0" y="0" width="600" height="100" fill="#87CEEB"/>
+      <rect x="0" y="100" width="600" height="100" fill="#4A6B3A"/>
+      <polygon points="0,120 600,150 600,170 0,140" fill="#404040"/>
+      <polygon points="0,122 600,152 600,152.5 0,122.5" fill="#FFFFFF"/>
+      <polygon points="0,138 600,168 600,168.5 0,138.5" fill="#FFFFFF"/>
+    </g>
+
+    <g id="guard-rails" transform="translate(0, 40)">
+      <rect x="0" y="120" width="600" height="80" fill="#4A6B3A"/>
+      <rect x="0" y="105" width="600" height="12" fill="#E0E0E0" stroke="#C0C0C0" stroke-width="1"/>
+    </g>
+
+    <g id="traffic-light" transform="translate(520, 0) scale(0.5)">
+      <rect x="90" y="280" width="20" height="120" fill="#666" stroke="#444" stroke-width="2"/>
+      <rect x="50" y="50" width="100" height="240" rx="15" ry="15" fill="#333" stroke="#222" stroke-width="3"/>
+      <circle cx="100" cy="100" r="25" fill="#800000"/>
+      <circle cx="100" cy="170" r="25" fill="#806000"/>
+      <circle cx="100" cy="240" r="25" fill="#004000"/>
+    </g>
+
+    <!-- Updated street signs set -->
+    <g id="street-sign-debug" transform="translate(0, 40) scale(0.7)">
+      <rect x="145" y="90" width="10" height="60" fill="#666" stroke="#444" stroke-width="1"/>
+      <rect x="10" y="10" width="280" height="80" rx="8" ry="8" fill="#006747" stroke="#FFFFFF" stroke-width="3"/>
+      <rect x="18" y="18" width="264" height="64" rx="4" ry="4" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+      <text x="150" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#FFFFFF">DEBUG LOGS AHEAD</text>
+    </g>
+    <g id="street-sign-replay" transform="translate(180, 45) scale(0.7)">
+      <rect x="145" y="90" width="10" height="60" fill="#666" stroke="#444" stroke-width="1"/>
+      <rect x="10" y="10" width="280" height="80" rx="8" ry="8" fill="#006747" stroke="#FFFFFF" stroke-width="3"/>
+      <rect x="18" y="18" width="264" height="64" rx="4" ry="4" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+      <text x="150" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#FFFFFF">REPLAY CACHE STOP</text>
+    </g>
+    <g id="street-sign-feature-flags" transform="translate(360, 50) scale(0.7)">
+      <rect x="145" y="90" width="10" height="60" fill="#666" stroke="#444" stroke-width="1"/>
+      <rect x="10" y="10" width="280" height="80" rx="8" ry="8" fill="#006747" stroke="#FFFFFF" stroke-width="3"/>
+      <rect x="18" y="18" width="264" height="64" rx="4" ry="4" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+      <text x="150" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#FFFFFF">FEATURE FLAGS ON/OFF</text>
+    </g>
+
+    <g id="bus-layer" transform="translate(0, 25) scale(0.8)">
+      <g>
+        <animateTransform attributeName="transform" type="translate" values="-400,0;1000,0" dur="18s" repeatCount="indefinite"/>
+        <rect x="70" y="60" width="280" height="80" rx="8" ry="8" fill="#FFD700" stroke="#E6C200" stroke-width="2"/>
+        <rect x="340" y="70" width="20" height="60" rx="10" ry="10" fill="#FFD700" stroke="#E6C200" stroke-width="2"/>
+        <rect x="65" y="55" width="290" height="10" rx="5" ry="5" fill="#FFA500"/>
+        <rect x="350" y="125" width="15" height="8" rx="4" ry="4" fill="#C0C0C0"/>
+        <rect x="342" y="75" width="16" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+        <rect x="305" y="70" width="25" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+        <rect x="275" y="70" width="25" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+        <rect x="245" y="70" width="25" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+        <rect x="215" y="70" width="25" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+        <rect x="185" y="70" width="25" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+        <rect x="155" y="70" width="25" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+        <rect x="125" y="70" width="25" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+        <rect x="95" y="70" width="25" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+        <rect x="75" y="75" width="15" height="15" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+        <rect x="315" y="95" width="20" height="35" rx="2" ry="2" fill="#E6C200" stroke="#D4AF37" stroke-width="1"/>
+        <rect x="317" y="97" width="16" height="15" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+        <circle cx="319" cy="112" r="1.5" fill="#000"/>
+        <text x="200" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#000">SCHOOL BUS</text>
+        <circle cx="353" cy="80" r="3" fill="#FFFF00"/>
+        <circle cx="353" cy="120" r="3" fill="#FF4500"/>
+        <rect x="69" y="77" width="6" height="8" rx="3" ry="3" fill="#FF0000"/>
+        <rect x="69" y="110" width="6" height="8" rx="3" ry="3" fill="#FF0000"/>
+        <g>
+          <circle cx="310" cy="155" r="20" fill="#2F2F2F" stroke="#000" stroke-width="2"/>
+          <circle cx="310" cy="155" r="15" fill="#4F4F4F"/>
+          <circle cx="310" cy="155" r="8" fill="#696969"/>
+          <circle cx="310" cy="155" r="3" fill="#2F2F2F"/>
+          <circle cx="110" cy="155" r="20" fill="#2F2F2F" stroke="#000" stroke-width="2"/>
+          <circle cx="110" cy="155" r="15" fill="#4F4F4F"/>
+          <circle cx="110" cy="155" r="8" fill="#696969"/>
+          <circle cx="110" cy="155" r="3" fill="#2F2F2F"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
+

@@ -1,0 +1,94 @@
+<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Transfer hub with conductor orchestration -->
+  
+  <g id="transfer-hub-conductor">
+    <!-- Hub outer ring -->
+    <circle cx="60" cy="60" r="55" fill="#B0C4DE" stroke="#708090" stroke-width="3"/>
+    <circle cx="60" cy="60" r="52" fill="#D3D3D3" stroke="#A9A9A9" stroke-width="1"/>
+    
+    <!-- Hub platform markings -->
+    <g stroke="#A9A9A9" stroke-width="1" fill="none" opacity="0.5">
+      <circle cx="60" cy="60" r="45"/>
+      <circle cx="60" cy="60" r="35"/>
+      <circle cx="60" cy="60" r="25"/>
+    </g>
+    
+    <!-- Hub center platform -->
+    <circle cx="60" cy="60" r="30" fill="#4682B4" stroke="#2F4F4F" stroke-width="3"/>
+    <circle cx="60" cy="60" r="27" fill="#5F9EA0" stroke="#4682B4" stroke-width="1"/>
+    
+    <!-- Center conductor area -->
+    <circle cx="60" cy="60" r="20" fill="#87CEEB" stroke="#4682B4" stroke-width="2"/>
+    
+    <!-- Conductor's baton and musical elements -->
+    <g id="conductor-icon" transform="translate(60, 60)">
+      <!-- Conductor's baton -->
+      <line x1="-12" y1="12" x2="12" y2="-12" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="12" cy="-12" r="3" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+      <circle cx="-12" cy="12" r="2" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+      
+      <!-- Baton handle detail -->
+      <rect x="-14" y="10" width="4" height="4" fill="#8B4513" stroke="#654321" stroke-width="0.5" rx="2"/>
+      
+      <!-- Musical note -->
+      <circle cx="8" cy="8" r="4" fill="#FFD700" stroke="#FFA500" stroke-width="1"/>
+      <rect x="11" y="-5" width="2" height="13" fill="#FFD700"/>
+      <path d="M 13,-2 Q 17,-5 17,0" stroke="#FFD700" stroke-width="2" fill="none"/>
+      
+      <!-- Additional musical symbols -->
+      <path d="M -8,-8 Q -5,-10 -2,-8" stroke="#FFD700" stroke-width="1.5" fill="none"/>
+      <circle cx="-5" cy="-6" r="1.5" fill="#FFD700"/>
+      
+      <!-- Conductor motion lines -->
+      <g stroke="#FFFFFF" stroke-width="1" opacity="0.6">
+        <path d="M -15,15 Q -8,8 0,0" fill="none">
+          <animate attributeName="opacity" values="0;0.8;0" dur="2s" repeatCount="indefinite"/>
+        </path>
+        <path d="M 15,-15 Q 8,-8 0,0" fill="none">
+          <animate attributeName="opacity" values="0;0.8;0" dur="2s" repeatCount="indefinite" begin="1s"/>
+        </path>
+      </g>
+    </g>
+    
+    <!-- Hub directional indicators -->
+    <g fill="#1E3A8A" font-family="Arial, sans-serif" font-size="8" font-weight="bold">
+      <!-- North -->
+      <text x="60" y="20" text-anchor="middle">PLUGIN A</text>
+      <polygon points="60,25 65,35 55,35" fill="#32CD32"/>
+      
+      <!-- South -->
+      <text x="60" y="110" text-anchor="middle">PLUGIN B</text>
+      <polygon points="60,95 65,85 55,85" fill="#FF6347"/>
+      
+      <!-- East -->
+      <text x="105" y="65" text-anchor="middle">CONTINUE</text>
+      <polygon points="95,60 85,65 85,55" fill="#FFD700"/>
+    </g>
+    
+    <!-- Hub activity indicators -->
+    <g>
+      <!-- Pulsing activity rings -->
+      <circle cx="60" cy="60" r="40" fill="none" stroke="#4682B4" stroke-width="2" opacity="0.3">
+        <animate attributeName="r" values="20;45;20" dur="3s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.6;0;0.6" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      
+      <circle cx="60" cy="60" r="35" fill="none" stroke="#5F9EA0" stroke-width="1" opacity="0.4">
+        <animate attributeName="r" values="15;40;15" dur="2.5s" repeatCount="indefinite" begin="0.5s"/>
+        <animate attributeName="opacity" values="0.7;0;0.7" dur="2.5s" repeatCount="indefinite" begin="0.5s"/>
+      </circle>
+    </g>
+    
+    <!-- Hub label -->
+    <rect x="20" y="75" width="80" height="15" fill="#FFFFFF" fill-opacity="0.9" stroke="#333" stroke-width="1" rx="3"/>
+    <text x="60" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1E3A8A">Conductor: play()</text>
+    
+    <!-- Status indicators -->
+    <g transform="translate(95, 25)">
+      <circle cx="0" cy="0" r="4" fill="#10B981">
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="1s" repeatCount="indefinite"/>
+      </circle>
+      <text x="0" y="12" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" fill="#059669">ACTIVE</text>
+    </g>
+  </g>
+</svg>

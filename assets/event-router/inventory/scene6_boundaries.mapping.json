@@ -1,0 +1,11 @@
+{
+  "scene": { "name": "scene6_boundaries", "viewBox": [0, 0, 1200, 400] },
+  "boundaries": { "id": "guard-rails-layer", "label": "BOUNDARIES ENFORCED" },
+  "bus": {
+    "id": "bus-layer",
+    "placement": { "scale": 1, "computed": { "translateY": 125 } },
+    "horizontalPath": { "startX": -400, "endX": 1400, "duration": "20s" }
+  },
+  "output": { "file": "integrated_scene_6.svg" }
+}
+

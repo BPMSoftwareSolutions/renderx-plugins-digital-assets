@@ -1,0 +1,156 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sky background -->
+  <rect x="0" y="0" width="800" height="250" fill="#87CEEB"/>
+  
+  <!-- Clouds -->
+  <g fill="#FFFFFF" opacity="0.8">
+    <circle cx="150" cy="60" r="20"/>
+    <circle cx="170" cy="60" r="15"/>
+    <circle cx="130" cy="65" r="12"/>
+    
+    <circle cx="600" cy="80" r="25"/>
+    <circle cx="625" cy="80" r="18"/>
+    <circle cx="580" cy="85" r="15"/>
+  </g>
+  
+  <!-- Ground -->
+  <rect x="0" y="250" width="800" height="150" fill="#4A6B3A"/>
+  
+  <!-- Depot building main structure -->
+  <rect x="100" y="120" width="300" height="130" fill="#8B7355" stroke="#6B5535" stroke-width="2"/>
+  
+  <!-- Depot roof -->
+  <polygon points="80,120 220,80 420,80 420,120" fill="#654321" stroke="#543210" stroke-width="2"/>
+  
+  <!-- Depot front overhang -->
+  <polygon points="90,120 90,110 410,110 410,120" fill="#765432" stroke="#654321" stroke-width="1"/>
+  
+  <!-- Large garage doors -->
+  <rect x="120" y="150" width="80" height="100" fill="#666" stroke="#444" stroke-width="2" rx="5"/>
+  <rect x="220" y="150" width="80" height="100" fill="#666" stroke="#444" stroke-width="2" rx="5"/>
+  <rect x="320" y="150" width="60" height="100" fill="#666" stroke="#444" stroke-width="2" rx="5"/>
+  
+  <!-- Garage door details (panels) -->
+  <g stroke="#555" stroke-width="1" fill="none">
+    <!-- Door 1 panels -->
+    <line x1="120" y1="170" x2="200" y2="170"/>
+    <line x1="120" y1="190" x2="200" y2="190"/>
+    <line x1="120" y1="210" x2="200" y2="210"/>
+    <line x1="120" y1="230" x2="200" y2="230"/>
+    
+    <!-- Door 2 panels -->
+    <line x1="220" y1="170" x2="300" y2="170"/>
+    <line x1="220" y1="190" x2="300" y2="190"/>
+    <line x1="220" y1="210" x2="300" y2="210"/>
+    <line x1="220" y1="230" x2="300" y2="230"/>
+    
+    <!-- Door 3 panels -->
+    <line x1="320" y1="170" x2="380" y2="170"/>
+    <line x1="320" y1="190" x2="380" y2="190"/>
+    <line x1="320" y1="210" x2="380" y2="210"/>
+    <line x1="320" y1="230" x2="380" y2="230"/>
+  </g>
+  
+  <!-- Garage door handles -->
+  <rect x="155" y="198" width="6" height="4" fill="#333" rx="2"/>
+  <rect x="255" y="198" width="6" height="4" fill="#333" rx="2"/>
+  <rect x="345" y="198" width="6" height="4" fill="#333" rx="2"/>
+  
+  <!-- Office entrance -->
+  <rect x="430" y="180" width="40" height="70" fill="#8B4513" stroke="#654321" stroke-width="2" rx="3"/>
+  <rect x="435" y="185" width="30" height="35" fill="#4A90E2" opacity="0.7" stroke="#2E5A8A" stroke-width="1"/>
+  <circle cx="465" cy="215" r="2" fill="#FFD700"/>
+  
+  <!-- Office windows -->
+  <rect x="480" y="140" width="40" height="30" fill="#4A90E2" opacity="0.7" stroke="#2E5A8A" stroke-width="2"/>
+  <rect x="530" y="140" width="40" height="30" fill="#4A90E2" opacity="0.7" stroke="#2E5A8A" stroke-width="2"/>
+  <line x1="500" y1="140" x2="500" y2="170" stroke="#2E5A8A" stroke-width="1"/>
+  <line x1="480" y1="155" x2="520" y2="155" stroke="#2E5A8A" stroke-width="1"/>
+  <line x1="550" y1="140" x2="550" y2="170" stroke="#2E5A8A" stroke-width="1"/>
+  <line x1="530" y1="155" x2="570" y2="155" stroke="#2E5A8A" stroke-width="1"/>
+  
+  <!-- Sign on building -->
+  <rect x="200" y="95" width="120" height="20" fill="#FFFFFF" stroke="#333" stroke-width="1" rx="3"/>
+  <text x="260" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">SCHOOL BUS DEPOT</text>
+  
+  <!-- Paved area/parking lot -->
+  <rect x="0" y="250" width="800" height="50" fill="#555"/>
+  
+  <!-- Parking lot lines -->
+  <g stroke="#FFFF00" stroke-width="2" fill="none">
+    <line x1="50" y1="250" x2="50" y2="300"/>
+    <line x1="150" y1="250" x2="150" y2="300"/>
+    <line x1="250" y1="250" x2="250" y2="300"/>
+    <line x1="350" y1="250" x2="350" y2="300"/>
+    <line x1="450" y1="250" x2="450" y2="300"/>
+    <line x1="550" y1="250" x2="550" y2="300"/>
+    <line x1="650" y1="250" x2="650" y2="300"/>
+    <line x1="750" y1="250" x2="750" y2="300"/>
+  </g>
+  
+  <!-- Fuel station -->
+  <rect x="600" y="180" width="80" height="70" fill="#C0C0C0" stroke="#A0A0A0" stroke-width="2"/>
+  <rect x="610" y="160" width="60" height="20" fill="#FF0000" stroke="#CC0000" stroke-width="1"/>
+  <text x="640" y="173" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#FFF">FUEL</text>
+  
+  <!-- Fuel pump -->
+  <rect x="630" y="190" width="20" height="40" fill="#333" stroke="#222" stroke-width="1" rx="3"/>
+  <circle cx="640" cy="200" r="3" fill="#00FF00"/>
+  <circle cx="640" cy="210" r="3" fill="#FF0000"/>
+  <rect x="635" y="220" width="10" height="8" fill="#666" rx="2"/>
+  
+  <!-- Fuel hose -->
+  <path d="M645,225 Q655,230 660,240 Q665,245 670,250" stroke="#000" stroke-width="3" fill="none"/>
+  
+  <!-- Trees around the depot -->
+  <g fill="#228B22">
+    <!-- Tree 1 -->
+    <rect x="25" y="220" width="8" height="30" fill="#8B4513"/>
+    <circle cx="29" cy="215" r="15" fill="#228B22"/>
+    
+    <!-- Tree 2 -->
+    <rect x="720" y="210" width="10" height="40" fill="#8B4513"/>
+    <circle cx="725" cy="205" r="18" fill="#228B22"/>
+    
+    <!-- Tree 3 -->
+    <rect x="650" y="230" width="6" height="20" fill="#8B4513"/>
+    <circle cx="653" cy="225" r="12" fill="#228B22"/>
+  </g>
+  
+  <!-- Fence along property -->
+  <g stroke="#666" stroke-width="2" fill="none">
+    <line x1="0" y1="300" x2="100" y2="300"/>
+    <line x1="700" y1="300" x2="800" y2="300"/>
+    <!-- Fence posts -->
+    <line x1="20" y1="295" x2="20" y2="305"/>
+    <line x1="40" y1="295" x2="40" y2="305"/>
+    <line x1="60" y1="295" x2="60" y2="305"/>
+    <line x1="80" y1="295" x2="80" y2="305"/>
+    <line x1="720" y1="295" x2="720" y2="305"/>
+    <line x1="740" y1="295" x2="740" y2="305"/>
+    <line x1="760" y1="295" x2="760" y2="305"/>
+    <line x1="780" y1="295" x2="780" y2="305"/>
+  </g>
+  
+  <!-- Bus washing bay -->
+  <rect x="500" y="200" width="60" height="50" fill="#E6E6FA" stroke="#D3D3D3" stroke-width="2" opacity="0.8"/>
+  <text x="530" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666">WASH BAY</text>
+  
+  <!-- Water sprays -->
+  <g stroke="#4A90E2" stroke-width="1" opacity="0.5">
+    <line x1="510" y1="205" x2="515" y2="210"/>
+    <line x1="520" y1="205" x2="525" y2="210"/>
+    <line x1="540" y1="205" x2="535" y2="210"/>
+    <line x1="550" y1="205" x2="545" y2="210"/>
+  </g>
+  
+  <!-- Maintenance worker -->
+  <g fill="#FF6600">
+    <circle cx="320" cy="240" r="4" fill="#FFDBAC"/> <!-- head -->
+    <rect x="318" y="244" width="4" height="8" fill="#FF6600"/> <!-- body -->
+    <rect x="316" y="248" width="2" height="6" fill="#0066CC"/> <!-- legs -->
+    <rect x="322" y="248" width="2" height="6" fill="#0066CC"/>
+    <rect x="314" y="246" width="3" height="1" fill="#FFDBAC"/> <!-- arm -->
+    <rect x="323" y="246" width="3" height="1" fill="#FFDBAC"/>
+  </g>
+</svg>

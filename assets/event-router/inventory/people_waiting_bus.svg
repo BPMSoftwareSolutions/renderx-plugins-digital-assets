@@ -1,0 +1,173 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Ground -->
+  <rect x="0" y="250" width="400" height="50" fill="#666"/>
+  <rect x="0" y="240" width="400" height="10" fill="#4A6B3A"/>
+  
+  <!-- Bus stop sign -->
+  <rect x="320" y="150" width="6" height="90" fill="#666"/>
+  <rect x="310" y="150" width="26" height="20" fill="#0066CC" stroke="#004499" stroke-width="1" rx="3"/>
+  <text x="323" y="163" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#FFF" font-weight="bold">BUS</text>
+  
+  <!-- Person 1: Business woman with briefcase -->
+  <g>
+    <!-- Subtle swaying animation -->
+    <animateTransform attributeName="transform" type="rotate" values="-1 80 180;1 80 180;-1 80 180" dur="4s" repeatCount="indefinite"/>
+    
+    <!-- Head -->
+    <circle cx="80" cy="180" r="12" fill="#FFDBAC"/>
+    <!-- Hair -->
+    <path d="M68 175 Q80 165 92 175 Q92 180 80 185 Q68 180 68 175" fill="#8B4513"/>
+    <!-- Eyes -->
+    <circle cx="76" cy="178" r="1.5" fill="#000"/>
+    <circle cx="84" cy="178" r="1.5" fill="#000"/>
+    <!-- Mouth -->
+    <path d="M78 184 Q80 186 82 184" stroke="#000" stroke-width="0.5" fill="none"/>
+    
+    <!-- Body -->
+    <rect x="75" y="192" width="10" height="25" fill="#333" rx="2"/>
+    <!-- Arms -->
+    <rect x="70" y="195" width="4" height="18" fill="#FFDBAC" rx="2">
+      <animateTransform attributeName="transform" type="rotate" values="0 72 195;5 72 195;0 72 195" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="86" y="195" width="4" height="18" fill="#FFDBAC" rx="2">
+      <animateTransform attributeName="transform" type="rotate" values="0 88 195;-3 88 195;0 88 195" dur="3.5s" repeatCount="indefinite"/>
+    </rect>
+    
+    <!-- Briefcase -->
+    <rect x="90" y="205" width="8" height="6" fill="#654321" stroke="#543210" stroke-width="0.5" rx="1">
+      <animateTransform attributeName="transform" type="rotate" values="0 94 208;-2 94 208;0 94 208" dur="3.5s" repeatCount="indefinite"/>
+    </rect>
+    
+    <!-- Legs -->
+    <rect x="77" y="217" width="3" height="20" fill="#000" rx="1"/>
+    <rect x="81" y="217" width="3" height="20" fill="#000" rx="1"/>
+    <!-- Shoes -->
+    <ellipse cx="78.5" cy="240" rx="3" ry="2" fill="#000"/>
+    <ellipse cx="82.5" cy="240" rx="3" ry="2" fill="#000"/>
+  </g>
+  
+  <!-- Person 2: Student with backpack -->
+  <g>
+    <!-- Bouncing animation -->
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,-2;0,0" dur="2.5s" repeatCount="indefinite"/>
+    
+    <!-- Head -->
+    <circle cx="150" cy="185" r="10" fill="#F4C2A1"/>
+    <!-- Hair (messy) -->
+    <path d="M140 180 Q150 170 160 180 Q160 185 150 190 Q140 185 140 180" fill="#FFD700"/>
+    <!-- Eyes -->
+    <circle cx="147" cy="183" r="1" fill="#000"/>
+    <circle cx="153" cy="183" r="1" fill="#000"/>
+    <!-- Smile -->
+    <path d="M147 188 Q150 190 153 188" stroke="#000" stroke-width="0.5" fill="none"/>
+    
+    <!-- Body -->
+    <rect x="146" y="195" width="8" height="20" fill="#FF6600" rx="2"/>
+    <!-- Arms -->
+    <rect x="142" y="198" width="3" height="15" fill="#F4C2A1" rx="1">
+      <animateTransform attributeName="transform" type="rotate" values="10 143.5 198;-5 143.5 198;10 143.5 198" dur="2s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="155" y="198" width="3" height="15" fill="#F4C2A1" rx="1">
+      <animateTransform attributeName="transform" type="rotate" values="-10 156.5 198;5 156.5 198;-10 156.5 198" dur="2.2s" repeatCount="indefinite"/>
+    </rect>
+    
+    <!-- Backpack -->
+    <rect x="158" y="190" width="6" height="12" fill="#CC0000" stroke="#AA0000" stroke-width="0.5" rx="2"/>
+    <rect x="159" y="192" width="4" height="2" fill="#FF0000" rx="1"/>
+    
+    <!-- Legs -->
+    <rect x="147" y="215" width="3" height="18" fill="#0066CC" rx="1"/>
+    <rect x="150" y="215" width="3" height="18" fill="#0066CC" rx="1"/>
+    <!-- Sneakers -->
+    <ellipse cx="148.5" cy="236" rx="4" ry="2.5" fill="#FFF" stroke="#000" stroke-width="0.5"/>
+    <ellipse cx="151.5" cy="236" rx="4" ry="2.5" fill="#FFF" stroke="#000" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Person 3: Elderly person with cane -->
+  <g>
+    <!-- Gentle rocking animation -->
+    <animateTransform attributeName="transform" type="rotate" values="0 220 190;1.5 220 190;0 220 190;-1 220 190;0 220 190" dur="6s" repeatCount="indefinite"/>
+    
+    <!-- Head -->
+    <circle cx="220" cy="190" r="11" fill="#F0D0A0"/>
+    <!-- Gray hair -->
+    <path d="M210 185 Q220 175 230 185 Q230 190 220 195 Q210 190 210 185" fill="#D3D3D3"/>
+    <!-- Eyes -->
+    <circle cx="217" cy="188" r="1" fill="#000"/>
+    <circle cx="223" cy="188" r="1" fill="#000"/>
+    <!-- Glasses -->
+    <circle cx="217" cy="188" r="3" fill="none" stroke="#000" stroke-width="0.5"/>
+    <circle cx="223" cy="188" r="3" fill="none" stroke="#000" stroke-width="0.5"/>
+    <line x1="220" y1="188" x2="220" y2="188" stroke="#000" stroke-width="0.5"/>
+    
+    <!-- Body -->
+    <rect x="215" y="201" width="10" height="25" fill="#8B4513" rx="2"/>
+    <!-- Arms -->
+    <rect x="210" y="204" width="4" height="18" fill="#F0D0A0" rx="2"/>
+    <rect x="226" y="204" width="4" height="18" fill="#F0D0A0" rx="2"/>
+    
+    <!-- Cane -->
+    <line x1="232" y1="220" x2="232" y2="245" stroke="#8B4513" stroke-width="2"/>
+    <circle cx="232" cy="218" r="2" fill="#8B4513"/>
+    
+    <!-- Legs -->
+    <rect x="217" y="226" width="3" height="16" fill="#333" rx="1"/>
+    <rect x="221" y="226" width="3" height="16" fill="#333" rx="1"/>
+    <!-- Shoes -->
+    <ellipse cx="218.5" cy="245" rx="3.5" ry="2" fill="#000"/>
+    <ellipse cx="222.5" cy="245" rx="3.5" ry="2" fill="#000"/>
+  </g>
+  
+  <!-- Person 4: Child -->
+  <g>
+    <!-- Excited jumping animation -->
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,-5;0,0;0,-3;0,0" dur="3s" repeatCount="indefinite"/>
+    
+    <!-- Head -->
+    <circle cx="280" cy="200" r="8" fill="#FFDBAC"/>
+    <!-- Hair -->
+    <path d="M272 195 Q280 185 288 195 Q288 200 280 205 Q272 200 272 195" fill="#8B4513"/>
+    <!-- Eyes -->
+    <circle cx="277" cy="198" r="1" fill="#000"/>
+    <circle cx="283" cy="198" r="1" fill="#000"/>
+    <!-- Big smile -->
+    <path d="M276 202 Q280 206 284 202" stroke="#000" stroke-width="0.5" fill="none"/>
+    
+    <!-- Body -->
+    <rect x="276" y="208" width="8" height="15" fill="#FF69B4" rx="2"/>
+    <!-- Arms -->
+    <rect x="272" y="210" width="3" height="12" fill="#FFDBAC" rx="1">
+      <animateTransform attributeName="transform" type="rotate" values="20 273.5 210;-10 273.5 210;20 273.5 210" dur="1.5s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="285" y="210" width="3" height="12" fill="#FFDBAC" rx="1">
+      <animateTransform attributeName="transform" type="rotate" values="-20 286.5 210;10 286.5 210;-20 286.5 210" dur="1.8s" repeatCount="indefinite"/>
+    </rect>
+    
+    <!-- Legs -->
+    <rect x="277" y="223" width="3" height="14" fill="#0066CC" rx="1"/>
+    <rect x="281" y="223" width="3" height="14" fill="#0066CC" rx="1"/>
+    <!-- Shoes -->
+    <ellipse cx="278.5" cy="240" rx="3" ry="2" fill="#FF0000"/>
+    <ellipse cx="282.5" cy="240" rx="3" ry="2" fill="#FF0000"/>
+  </g>
+  
+  <!-- Waiting area bench -->
+  <rect x="50" y="235" width="80" height="8" fill="#8B4513" stroke="#654321" stroke-width="1" rx="2"/>
+  <rect x="55" y="225" width="4" height="18" fill="#666"/>
+  <rect x="121" y="225" width="4" height="18" fill="#666"/>
+  
+  <!-- Some ambient elements -->
+  <!-- Trash can -->
+  <rect x="340" y="220" width="12" height="20" fill="#333" stroke="#222" stroke-width="1" rx="2"/>
+  <rect x="338" y="218" width="16" height="4" fill="#555" rx="2"/>
+  
+  <!-- Small plants/bushes -->
+  <circle cx="30" cy="245" r="8" fill="#228B22"/>
+  <circle cx="370" cy="248" r="6" fill="#228B22"/>
+  
+  <!-- Subtle shadows -->
+  <ellipse cx="80" cy="250" rx="8" ry="3" fill="#000" opacity="0.2"/>
+  <ellipse cx="150" cy="250" rx="6" ry="2" fill="#000" opacity="0.2"/>
+  <ellipse cx="220" cy="250" rx="9" ry="3" fill="#000" opacity="0.2"/>
+  <ellipse cx="280" cy="250" rx="5" ry="2" fill="#000" opacity="0.2"/>
+</svg>

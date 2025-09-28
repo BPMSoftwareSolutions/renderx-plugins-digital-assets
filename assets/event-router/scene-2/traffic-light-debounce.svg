@@ -1,0 +1,58 @@
+<svg viewBox="0 0 50 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Traffic light with yellow light active (debounce) -->
+  
+  <g id="traffic-light-debounce">
+    <!-- Pole -->
+    <rect x="23" y="80" width="4" height="40" fill="#666" stroke="#444" stroke-width="1"/>
+    
+    <!-- Ground base -->
+    <ellipse cx="25" cy="118" rx="8" ry="3" fill="#555"/>
+    
+    <!-- Traffic light housing -->
+    <rect x="10" y="10" width="30" height="75" rx="6" ry="6" fill="#333" stroke="#222" stroke-width="2"/>
+    <rect x="12" y="12" width="26" height="71" rx="4" ry="4" fill="#444"/>
+    
+    <!-- Housing details -->
+    <rect x="14" y="14" width="22" height="67" rx="2" ry="2" fill="#555"/>
+    
+    <!-- Light housings (recessed) -->
+    <circle cx="25" cy="28" r="9" fill="#222" stroke="#111" stroke-width="1"/>
+    <circle cx="25" cy="48" r="9" fill="#222" stroke="#111" stroke-width="1"/>
+    <circle cx="25" cy="68" r="9" fill="#222" stroke="#111" stroke-width="1"/>
+    
+    <!-- Red light (off/dim) -->
+    <circle cx="25" cy="28" r="7" fill="#800000" opacity="0.3" stroke="#600000" stroke-width="1"/>
+    
+    <!-- Yellow light (active - debounce signal) -->
+    <circle cx="25" cy="48" r="7" fill="#FFFF00" stroke="#E6E600" stroke-width="1">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="1s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Yellow light shine effect -->
+    <ellipse cx="22" cy="45" rx="2.5" ry="3.5" fill="#FFFFFF" opacity="0.6">
+      <animate attributeName="opacity" values="0.3;0.7;0.3" dur="1s" repeatCount="indefinite"/>
+    </ellipse>
+    
+    <!-- Yellow light glow -->
+    <circle cx="25" cy="48" r="10" fill="#FFFF00" opacity="0.2">
+      <animate attributeName="opacity" values="0.1;0.3;0.1" dur="1s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Green light (off/dim) -->
+    <circle cx="25" cy="68" r="7" fill="#004000" opacity="0.3" stroke="#003000" stroke-width="1"/>
+    
+    <!-- Housing ventilation grilles -->
+    <g stroke="#333" stroke-width="0.5" opacity="0.7">
+      <line x1="15" y1="85" x2="35" y2="85"/>
+      <line x1="15" y1="87" x2="35" y2="87"/>
+      <line x1="15" y1="89" x2="35" y2="89"/>
+    </g>
+    
+    <!-- Debounce indicator label -->
+    <rect x="40" y="45" width="35" height="12" fill="#FFFFFF" fill-opacity="0.9" stroke="#333" stroke-width="1" rx="2"/>
+    <text x="57.5" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" font-weight="bold" fill="#333">DEBOUNCE</text>
+    
+    <!-- Arrow pointing to yellow light -->
+    <path d="M 40,51 L 35,51 L 37,49 M 35,51 L 37,53" stroke="#333" stroke-width="1" fill="none"/>
+  </g>
+</svg>

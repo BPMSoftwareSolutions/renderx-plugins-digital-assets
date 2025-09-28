@@ -1,0 +1,15 @@
+{
+  "scene": { "name": "scene4_transfer_hub", "viewBox": [0, 0, 1200, 400] },
+  "bus": {
+    "id": "bus-layer",
+    "placement": { "scale": 1, "computed": { "translateY": 125 } },
+    "horizontalPath": { "startX": -400, "endX": 1400, "duration": "20s" }
+  },
+  "hub": { "id": "hub-layer", "translate": [600, 230], "label": "CONDUCTOR (HUB)" },
+  "branches": [
+    { "id": "route-a", "translate": [820, 180], "label": "SEQUENCE A" },
+    { "id": "route-b", "translate": [900, 260], "label": "SEQUENCE B" }
+  ],
+  "output": { "file": "integrated_scene_4.svg" }
+}
+

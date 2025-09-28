@@ -1,0 +1,34 @@
+{
+  "scene": {
+    "name": "middle_journey",
+    "viewBox": [0, 0, 600, 200],
+    "background": { "file": "road_600px.svg", "viewBox": [0, 0, 600, 200] }
+  },
+  "bus": {
+    "file": "yellow_school_bus-driving-thru.svg",
+    "viewBox": [0, 0, 400, 200],
+    "wheel": { "front": { "cx": 310, "cy": 155, "r": 20 }, "rear": { "cx": 110, "cy": 155, "r": 20 } },
+    "horizontalPath": { "type": "translate", "startX": -400, "endX": 1000, "duration": "18s" },
+    "placement": { "scale": 0.8, "alignToRoadBottomY": 165, "computed": { "wheelBottomUnscaledY": 175, "wheelBottomScaledY": 140, "translateY": 25 } }
+  },
+  "elements": {
+    "trafficLight": {
+      "file": "animated_traffic_light.svg",
+      "viewBox": [0, 0, 200, 400],
+      "placement": { "id": "traffic-light", "scale": 0.5, "translate": [520, 0] }
+    },
+    "streetSign": {
+      "file": "street_sign.svg",
+      "viewBox": [0, 0, 300, 100],
+      "placement": { "id": "street-sign", "scale": 0.7, "translate": [40, 40] },
+      "text": { "name": "MAPLE STREET", "block": "100 BLOCK" }
+    },
+    "guardRails": {
+      "file": "guard_rails.svg",
+      "viewBox": [0, 0, 600, 200],
+      "placement": { "id": "guard-rails", "scale": 1, "translate": [0, 40] }
+    }
+  },
+  "output": { "file": "integrated_middle_journey.svg", "viewBox": [0, 0, 600, 200] }
+}
+

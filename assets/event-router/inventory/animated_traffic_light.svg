@@ -1,0 +1,72 @@
+<svg viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Traffic light pole -->
+  <rect x="90" y="280" width="20" height="120" fill="#666" stroke="#444" stroke-width="2"/>
+  
+  <!-- Traffic light housing -->
+  <rect x="50" y="50" width="100" height="240" rx="15" ry="15" fill="#333" stroke="#222" stroke-width="3"/>
+  
+  <!-- Housing details -->
+  <rect x="55" y="55" width="90" height="230" rx="10" ry="10" fill="#444"/>
+  
+  <!-- Light housings -->
+  <circle cx="100" cy="100" r="30" fill="#222" stroke="#111" stroke-width="2"/>
+  <circle cx="100" cy="170" r="30" fill="#222" stroke="#111" stroke-width="2"/>
+  <circle cx="100" cy="240" r="30" fill="#222" stroke="#111" stroke-width="2"/>
+  
+  <!-- Red Light -->
+  <circle cx="100" cy="100" r="25" fill="#800000" stroke="#600000" stroke-width="2">
+    <!-- Red light animation: on for 3s, off for 6s -->
+    <animate attributeName="fill" values="#FF0000;#FF0000;#800000;#800000;#800000;#800000" dur="9s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;1;0.3;0.3;0.3;0.3" dur="9s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Yellow Light -->
+  <circle cx="100" cy="170" r="25" fill="#806000" stroke="#604000" stroke-width="2">
+    <!-- Yellow light animation: off for 3s, on for 3s, off for 3s -->
+    <animate attributeName="fill" values="#806000;#806000;#FFFF00;#FFFF00;#806000;#806000" dur="9s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0.3;1;1;0.3;0.3" dur="9s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Green Light -->
+  <circle cx="100" cy="240" r="25" fill="#004000" stroke="#003000" stroke-width="2">
+    <!-- Green light animation: off for 6s, on for 3s -->
+    <animate attributeName="fill" values="#004000;#004000;#004000;#004000;#00FF00;#00FF00" dur="9s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0.3;0.3;0.3;1;1" dur="9s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Light reflections/shine effects -->
+  <g opacity="0.6">
+    <!-- Red light shine -->
+    <ellipse cx="95" cy="95" rx="8" ry="12" fill="#FFFFFF">
+      <animate attributeName="opacity" values="0;0;0.6;0.6;0;0" dur="9s" repeatCount="indefinite"/>
+    </ellipse>
+    
+    <!-- Yellow light shine -->
+    <ellipse cx="95" cy="165" rx="8" ry="12" fill="#FFFFFF">
+      <animate attributeName="opacity" values="0;0;0.6;0.6;0;0" dur="9s" repeatCount="indefinite" begin="3s"/>
+    </ellipse>
+    
+    <!-- Green light shine -->
+    <ellipse cx="95" cy="235" rx="8" ry="12" fill="#FFFFFF">
+      <animate attributeName="opacity" values="0;0;0.6;0.6;0;0" dur="9s" repeatCount="indefinite" begin="6s"/>
+    </ellipse>
+  </g>
+  
+  <!-- Housing bolts/screws -->
+  <circle cx="65" cy="70" r="3" fill="#555"/>
+  <circle cx="135" cy="70" r="3" fill="#555"/>
+  <circle cx="65" cy="270" r="3" fill="#555"/>
+  <circle cx="135" cy="270" r="3" fill="#555"/>
+  
+  <!-- Visor/hood for each light -->
+  <path d="M70 85 Q100 75 130 85 L130 90 Q100 80 70 90 Z" fill="#222" opacity="0.8"/>
+  <path d="M70 155 Q100 145 130 155 L130 160 Q100 150 70 160 Z" fill="#222" opacity="0.8"/>
+  <path d="M70 225 Q100 215 130 225 L130 230 Q100 220 70 230 Z" fill="#222" opacity="0.8"/>
+  
+  <!-- Label at bottom -->
+  <rect x="60" y="295" width="80" height="20" rx="5" ry="5" fill="#222"/>
+  <text x="100" y="308" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#FFF" font-weight="bold">TRAFFIC</text>
+  
+  <!-- Ground/base -->
+  <ellipse cx="100" cy="395" rx="40" ry="8" fill="#333" opacity="0.5"/>
+</svg>

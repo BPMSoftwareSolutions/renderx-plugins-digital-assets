@@ -1,0 +1,121 @@
+<svg viewBox="0 0 250 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- School building representing application state -->
+  
+  <g id="school-building">
+    <!-- Main building structure -->
+    <rect x="25" y="80" width="200" height="120" fill="#CD853F" stroke="#8B4513" stroke-width="2"/>
+    
+    <!-- Building foundation -->
+    <rect x="20" y="195" width="210" height="5" fill="#8B4513"/>
+    
+    <!-- Roof -->
+    <polygon points="15,80 125,20 235,80" fill="#8B0000" stroke="#654321" stroke-width="2"/>
+    
+    <!-- Roof ridge -->
+    <line x1="125" y1="20" x2="125" y2="80" stroke="#654321" stroke-width="1"/>
+    
+    <!-- Roof shingles detail -->
+    <g stroke="#654321" stroke-width="0.5" opacity="0.5">
+      <line x1="40" y1="70" x2="210" y2="70"/>
+      <line x1="50" y1="60" x2="200" y2="60"/>
+      <line x1="60" y1="50" x2="190" y2="50"/>
+      <line x1="70" y1="40" x2="180" y2="40"/>
+      <line x1="80" y1="30" x2="170" y2="30"/>
+    </g>
+    
+    <!-- School entrance (arched) -->
+    <rect x="110" y="150" width="30" height="50" fill="#4682B4" stroke="#2F4F4F" stroke-width="2" rx="15" ry="0"/>
+    <rect x="112" y="152" width="26" height="25" fill="#87CEEB" stroke="#4682B4" stroke-width="1" rx="13" ry="0"/>
+    
+    <!-- Door panels -->
+    <rect x="115" y="155" width="10" height="40" fill="#5F9EA0" stroke="#4682B4" stroke-width="0.5"/>
+    <rect x="127" y="155" width="10" height="40" fill="#5F9EA0" stroke="#4682B4" stroke-width="0.5"/>
+    
+    <!-- Door handles -->
+    <circle cx="123" cy="175" r="1.5" fill="#FFD700"/>
+    <circle cx="129" cy="175" r="1.5" fill="#FFD700"/>
+    
+    <!-- Door steps -->
+    <rect x="105" y="195" width="40" height="5" fill="#A9A9A9" stroke="#808080" stroke-width="1"/>
+    <rect x="108" y="190" width="34" height="5" fill="#C0C0C0" stroke="#A9A9A9" stroke-width="1"/>
+    
+    <!-- Windows (first floor) -->
+    <rect x="45" y="100" width="20" height="20" fill="#87CEEB" stroke="#4682B4" stroke-width="1"/>
+    <rect x="75" y="100" width="20" height="20" fill="#87CEEB" stroke="#4682B4" stroke-width="1"/>
+    <rect x="155" y="100" width="20" height="20" fill="#87CEEB" stroke="#4682B4" stroke-width="1"/>
+    <rect x="185" y="100" width="20" height="20" fill="#87CEEB" stroke="#4682B4" stroke-width="1"/>
+    
+    <!-- Windows (second floor) -->
+    <rect x="45" y="130" width="20" height="20" fill="#87CEEB" stroke="#4682B4" stroke-width="1"/>
+    <rect x="75" y="130" width="20" height="20" fill="#87CEEB" stroke="#4682B4" stroke-width="1"/>
+    <rect x="155" y="130" width="20" height="20" fill="#87CEEB" stroke="#4682B4" stroke-width="1"/>
+    <rect x="185" y="130" width="20" height="20" fill="#87CEEB" stroke="#4682B4" stroke-width="1"/>
+    
+    <!-- Window frames and crosses -->
+    <g stroke="#2F4F4F" stroke-width="0.5">
+      <!-- First floor windows -->
+      <line x1="55" y1="100" x2="55" y2="120"/>
+      <line x1="45" y1="110" x2="65" y2="110"/>
+      <line x1="85" y1="100" x2="85" y2="120"/>
+      <line x1="75" y1="110" x2="95" y2="110"/>
+      <line x1="165" y1="100" x2="165" y2="120"/>
+      <line x1="155" y1="110" x2="175" y2="110"/>
+      <line x1="195" y1="100" x2="195" y2="120"/>
+      <line x1="185" y1="110" x2="205" y2="110"/>
+      
+      <!-- Second floor windows -->
+      <line x1="55" y1="130" x2="55" y2="150"/>
+      <line x1="45" y1="140" x2="65" y2="140"/>
+      <line x1="85" y1="130" x2="85" y2="150"/>
+      <line x1="75" y1="140" x2="95" y2="140"/>
+      <line x1="165" y1="130" x2="165" y2="150"/>
+      <line x1="155" y1="140" x2="175" y2="140"/>
+      <line x1="195" y1="130" x2="195" y2="150"/>
+      <line x1="185" y1="140" x2="205" y2="140"/>
+    </g>
+    
+    <!-- Flagpole -->
+    <rect x="123" y="10" width="4" height="80" fill="#8B4513" stroke="#654321" stroke-width="1"/>
+    
+    <!-- Flag (waving) -->
+    <g id="waving-flag">
+      <path d="M127,15 Q140,12 150,15 Q140,18 127,20 Z" fill="#FF0000">
+        <animate attributeName="d" values="M127,15 Q140,12 150,15 Q140,18 127,20 Z;M127,15 Q145,10 155,15 Q145,20 127,20 Z;M127,15 Q140,12 150,15 Q140,18 127,20 Z" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <rect x="127" y="16" width="2" height="2" fill="#FFFFFF"/>
+      <rect x="135" y="16" width="2" height="2" fill="#FFFFFF"/>
+    </g>
+    
+    <!-- School sign -->
+    <rect x="85" y="160" width="80" height="15" fill="#FFFFFF" stroke="#333" stroke-width="1" rx="2"/>
+    <text x="125" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#333">ELEMENTARY SCHOOL</text>
+    
+    <!-- School bell tower -->
+    <rect x="115" y="60" width="20" height="25" fill="#CD853F" stroke="#8B4513" stroke-width="1"/>
+    <polygon points="110,60 125,50 140,60" fill="#8B0000" stroke="#654321" stroke-width="1"/>
+    
+    <!-- Bell -->
+    <circle cx="125" cy="70" r="4" fill="#FFD700" stroke="#E6C200" stroke-width="1"/>
+    <rect x="123" y="66" width="4" height="2" fill="#8B4513"/>
+    
+    <!-- Chimney -->
+    <rect x="180" y="45" width="12" height="25" fill="#8B4513" stroke="#654321" stroke-width="1"/>
+    <rect x="178" y="43" width="16" height="4" fill="#654321"/>
+    
+    <!-- Smoke -->
+    <g fill="#D3D3D3" opacity="0.6">
+      <circle cx="186" cy="35" r="2">
+        <animate attributeName="cy" values="35;25;15" dur="3s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.6;0.3;0" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="184" cy="30" r="1.5">
+        <animate attributeName="cy" values="30;20;10" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+        <animate attributeName="opacity" values="0.6;0.3;0" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+      </circle>
+      <circle cx="188" cy="32" r="1.8">
+        <animate attributeName="cy" values="32;22;12" dur="3s" repeatCount="indefinite" begin="1s"/>
+        <animate attributeName="opacity" values="0.6;0.3;0" dur="3s" repeatCount="indefinite" begin="1s"/>
+      </circle>
+    </g>
+  </g>
+</svg>

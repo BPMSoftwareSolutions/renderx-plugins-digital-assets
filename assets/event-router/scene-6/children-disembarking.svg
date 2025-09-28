@@ -1,0 +1,169 @@
+<svg viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- Children disembarking and walking to school -->
+  
+  <g id="children-disembarking">
+    <!-- Child 1 - just stepped off bus -->
+    <g id="child-1" transform="translate(20, 40)">
+      <!-- Head -->
+      <circle cx="0" cy="0" r="4" fill="#FBBF24" stroke="#F59E0B" stroke-width="0.5"/>
+      
+      <!-- Body -->
+      <rect x="-3" y="4" width="6" height="12" fill="#3B82F6" stroke="#1E40AF" stroke-width="0.5" rx="1"/>
+      
+      <!-- Arms -->
+      <rect x="-4" y="6" width="2" height="8" fill="#1E40AF" rx="1"/>
+      <rect x="2" y="6" width="2" height="8" fill="#1E40AF" rx="1"/>
+      
+      <!-- Legs -->
+      <rect x="-3" y="16" width="2" height="8" fill="#1F2937" rx="1"/>
+      <rect x="1" y="16" width="2" height="8" fill="#1F2937" rx="1"/>
+      
+      <!-- Shoes -->
+      <ellipse cx="-2" cy="25" rx="2" ry="1" fill="#000"/>
+      <ellipse cx="2" cy="25" rx="2" ry="1" fill="#000"/>
+      
+      <!-- Backpack -->
+      <rect x="3" y="6" width="3" height="6" fill="#DC2626" stroke="#B91C1C" stroke-width="0.5" rx="1"/>
+      <rect x="3.5" y="7" width="2" height="1" fill="#FFFFFF"/>
+      
+      <!-- Hair -->
+      <path d="M -3,-2 Q 0,-5 3,-2" fill="#8B4513"/>
+      
+      <!-- Simple facial features -->
+      <circle cx="-1" cy="-1" r="0.5" fill="#000"/>
+      <circle cx="1" cy="-1" r="0.5" fill="#000"/>
+      <path d="M -1,1 Q 0,2 1,1" stroke="#000" stroke-width="0.3" fill="none"/>
+    </g>
+    
+    <!-- Child 2 - walking toward school -->
+    <g id="child-2" transform="translate(60, 45)">
+      <!-- Head -->
+      <circle cx="0" cy="0" r="4" fill="#F87171" stroke="#EF4444" stroke-width="0.5"/>
+      
+      <!-- Body -->
+      <rect x="-3" y="4" width="6" height="12" fill="#10B981" stroke="#059669" stroke-width="0.5" rx="1"/>
+      
+      <!-- Arms (in walking motion) -->
+      <rect x="-4" y="6" width="2" height="8" fill="#059669" rx="1" transform="rotate(-10)"/>
+      <rect x="2" y="6" width="2" height="8" fill="#059669" rx="1" transform="rotate(10)"/>
+      
+      <!-- Legs (in walking motion) -->
+      <rect x="-3" y="16" width="2" height="8" fill="#1F2937" rx="1" transform="rotate(5)"/>
+      <rect x="1" y="16" width="2" height="8" fill="#1F2937" rx="1" transform="rotate(-5)"/>
+      
+      <!-- Shoes -->
+      <ellipse cx="-1" cy="25" rx="2" ry="1" fill="#000"/>
+      <ellipse cx="3" cy="25" rx="2" ry="1" fill="#000"/>
+      
+      <!-- Backpack -->
+      <rect x="3" y="6" width="3" height="6" fill="#7C3AED" stroke="#6D28D9" stroke-width="0.5" rx="1"/>
+      <circle cx="4.5" cy="8" r="0.5" fill="#FFFFFF"/>
+      
+      <!-- Hair (pigtails) -->
+      <circle cx="-2" cy="-2" r="1" fill="#8B4513"/>
+      <circle cx="2" cy="-2" r="1" fill="#8B4513"/>
+      <path d="M -2,-1 Q 0,-4 2,-1" fill="#8B4513"/>
+      
+      <!-- Simple facial features -->
+      <circle cx="-1" cy="-1" r="0.5" fill="#000"/>
+      <circle cx="1" cy="-1" r="0.5" fill="#000"/>
+      <path d="M -1,1 Q 0,2 1,1" stroke="#000" stroke-width="0.3" fill="none"/>
+    </g>
+    
+    <!-- Child 3 - halfway to school -->
+    <g id="child-3" transform="translate(100, 50)">
+      <!-- Head -->
+      <circle cx="0" cy="0" r="4" fill="#34D399" stroke="#10B981" stroke-width="0.5"/>
+      
+      <!-- Body -->
+      <rect x="-3" y="4" width="6" height="12" fill="#EF4444" stroke="#DC2626" stroke-width="0.5" rx="1"/>
+      
+      <!-- Arms -->
+      <rect x="-4" y="6" width="2" height="8" fill="#DC2626" rx="1"/>
+      <rect x="2" y="6" width="2" height="8" fill="#DC2626" rx="1"/>
+      
+      <!-- Legs -->
+      <rect x="-3" y="16" width="2" height="8" fill="#1F2937" rx="1"/>
+      <rect x="1" y="16" width="2" height="8" fill="#1F2937" rx="1"/>
+      
+      <!-- Shoes -->
+      <ellipse cx="-2" cy="25" rx="2" ry="1" fill="#000"/>
+      <ellipse cx="2" cy="25" rx="2" ry="1" fill="#000"/>
+      
+      <!-- Backpack -->
+      <rect x="3" y="6" width="3" height="6" fill="#F59E0B" stroke="#D97706" stroke-width="0.5" rx="1"/>
+      <rect x="3.5" y="7.5" width="2" height="0.5" fill="#FFFFFF"/>
+      <rect x="3.5" y="9" width="2" height="0.5" fill="#FFFFFF"/>
+      
+      <!-- Hair (curly) -->
+      <circle cx="-1.5" cy="-2" r="0.8" fill="#654321"/>
+      <circle cx="0" cy="-3" r="0.8" fill="#654321"/>
+      <circle cx="1.5" cy="-2" r="0.8" fill="#654321"/>
+      
+      <!-- Simple facial features -->
+      <circle cx="-1" cy="-1" r="0.5" fill="#000"/>
+      <circle cx="1" cy="-1" r="0.5" fill="#000"/>
+      <path d="M -1,1 Q 0,2 1,1" stroke="#000" stroke-width="0.3" fill="none"/>
+    </g>
+    
+    <!-- Child 4 - near school entrance -->
+    <g id="child-4" transform="translate(160, 55)">
+      <!-- Head -->
+      <circle cx="0" cy="0" r="4" fill="#A78BFA" stroke="#8B5CF6" stroke-width="0.5"/>
+      
+      <!-- Body -->
+      <rect x="-3" y="4" width="6" height="12" fill="#FBBF24" stroke="#F59E0B" stroke-width="0.5" rx="1"/>
+      
+      <!-- Arms (reaching for door) -->
+      <rect x="-4" y="6" width="2" height="8" fill="#F59E0B" rx="1"/>
+      <rect x="2" y="6" width="2" height="8" fill="#F59E0B" rx="1" transform="rotate(20)"/>
+      
+      <!-- Legs -->
+      <rect x="-3" y="16" width="2" height="8" fill="#1F2937" rx="1"/>
+      <rect x="1" y="16" width="2" height="8" fill="#1F2937" rx="1"/>
+      
+      <!-- Shoes -->
+      <ellipse cx="-2" cy="25" rx="2" ry="1" fill="#000"/>
+      <ellipse cx="2" cy="25" rx="2" ry="1" fill="#000"/>
+      
+      <!-- Backpack -->
+      <rect x="3" y="6" width="3" height="6" fill="#06B6D4" stroke="#0891B2" stroke-width="0.5" rx="1"/>
+      <polygon points="3.5,7 5.5,7 4.5,8.5" fill="#FFFFFF"/>
+      
+      <!-- Hair (short) -->
+      <path d="M -3,-1 Q 0,-4 3,-1 Q 0,-2 0,-1" fill="#2D1B69"/>
+      
+      <!-- Simple facial features -->
+      <circle cx="-1" cy="-1" r="0.5" fill="#000"/>
+      <circle cx="1" cy="-1" r="0.5" fill="#000"/>
+      <path d="M -1,1 Q 0,2 1,1" stroke="#000" stroke-width="0.3" fill="none"/>
+    </g>
+    
+    <!-- Motion lines and dust clouds -->
+    <g stroke="#D1D5DB" stroke-width="1" opacity="0.5">
+      <!-- Motion lines behind walking children -->
+      <line x1="45" y1="50" x2="50" y2="50">
+        <animate attributeName="opacity" values="0;0.5;0" dur="1s" repeatCount="indefinite"/>
+      </line>
+      <line x1="85" y1="55" x2="90" y2="55">
+        <animate attributeName="opacity" values="0;0.5;0" dur="1.2s" repeatCount="indefinite"/>
+      </line>
+      <line x1="145" y1="60" x2="150" y2="60">
+        <animate attributeName="opacity" values="0;0.5;0" dur="0.8s" repeatCount="indefinite"/>
+      </line>
+    </g>
+    
+    <!-- Small dust clouds -->
+    <g fill="#E5E7EB" opacity="0.3">
+      <ellipse cx="25" cy="65" rx="3" ry="1">
+        <animate attributeName="opacity" values="0;0.3;0" dur="2s" repeatCount="indefinite"/>
+      </ellipse>
+      <ellipse cx="65" cy="70" rx="2" ry="1">
+        <animate attributeName="opacity" values="0;0.3;0" dur="1.5s" repeatCount="indefinite" begin="0.5s"/>
+      </ellipse>
+      <ellipse cx="105" cy="75" rx="2.5" ry="1">
+        <animate attributeName="opacity" values="0;0.3;0" dur="1.8s" repeatCount="indefinite" begin="1s"/>
+      </ellipse>
+    </g>
+  </g>
+</svg>

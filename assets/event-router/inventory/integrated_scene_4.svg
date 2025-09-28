@@ -1,0 +1,92 @@
+<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="0" y="0" width="1200" height="220" fill="#87CEEB"/>
+  <rect x="0" y="220" width="1200" height="180" fill="#4A6B3A"/>
+
+  <!-- Road -->
+  <g id="road-layer">
+    <rect x="0" y="260" width="1200" height="60" fill="#505050"/>
+    <rect x="0" y="260" width="1200" height="3" fill="#FFFFFF"/>
+    <rect x="0" y="317" width="1200" height="3" fill="#FFFFFF"/>
+    <g fill="#FFFF00">
+      <rect x="60" y="289" width="90" height="2"/>
+      <rect x="210" y="289" width="90" height="2"/>
+      <rect x="360" y="289" width="90" height="2"/>
+      <rect x="510" y="289" width="90" height="2"/>
+      <rect x="660" y="289" width="90" height="2"/>
+      <rect x="810" y="289" width="90" height="2"/>
+      <rect x="960" y="289" width="90" height="2"/>
+      <rect x="1110" y="289" width="90" height="2"/>
+    </g>
+  </g>
+
+  <!-- Hub -->
+  <g id="hub-layer" transform="translate(600, 230)">
+    <circle cx="0" cy="0" r="40" fill="#4A90E2" stroke="#2E5A8A" stroke-width="3"/>
+    <text x="0" y="-55" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#333">CONDUCTOR (HUB)</text>
+    <!-- Connecting spokes -->
+    <line x1="0" y1="0" x2="200" y2="-50" stroke="#2E5A8A" stroke-width="3"/>
+    <line x1="0" y1="0" x2="220" y2="30" stroke="#2E5A8A" stroke-width="3"/>
+  </g>
+
+  <!-- Branch A -->
+  <g id="route-a" transform="translate(820, 180)">
+    <rect x="-10" y="-10" width="20" height="20" fill="#4A90E2"/>
+    <text x="0" y="-20" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">SEQUENCE A</text>
+    <path d="M-10,5 L 100,5" stroke="#4A90E2" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  </g>
+
+  <!-- Branch B -->
+  <g id="route-b" transform="translate(900, 260)">
+    <rect x="-10" y="-10" width="20" height="20" fill="#4A90E2"/>
+    <text x="0" y="-20" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">SEQUENCE B</text>
+    <path d="M-10,5 L 80,40" stroke="#4A90E2" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  </g>
+
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto-start-reverse">
+      <polygon points="0 0, 8 4, 0 8" fill="#4A90E2" />
+    </marker>
+  </defs>
+
+  <!-- Bus layer: aligned and animated -->
+  <g id="bus-layer" transform="translate(0, 125) scale(1)">
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="-400,0;1400,0" dur="20s" repeatCount="indefinite"/>
+      <rect x="70" y="60" width="280" height="80" rx="8" ry="8" fill="#FFD700" stroke="#E6C200" stroke-width="2"/>
+      <rect x="340" y="70" width="20" height="60" rx="10" ry="10" fill="#FFD700" stroke="#E6C200" stroke-width="2"/>
+      <rect x="65" y="55" width="290" height="10" rx="5" ry="5" fill="#FFA500"/>
+      <rect x="350" y="125" width="15" height="8" rx="4" ry="4" fill="#C0C0C0"/>
+      <rect x="342" y="75" width="16" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+      <rect x="305" y="70" width="25" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+      <rect x="275" y="70" width="25" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+      <rect x="245" y="70" width="25" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+      <rect x="215" y="70" width="25" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+      <rect x="185" y="70" width="25" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+      <rect x="155" y="70" width="25" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+      <rect x="125" y="70" width="25" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+      <rect x="95" y="70" width="25" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+      <rect x="75" y="75" width="15" height="15" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+      <rect x="315" y="95" width="20" height="35" rx="2" ry="2" fill="#E6C200" stroke="#D4AF37" stroke-width="1"/>
+      <rect x="317" y="97" width="16" height="15" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+      <circle cx="319" cy="112" r="1.5" fill="#000"/>
+      <text x="200" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#000">EVENT BUS</text>
+      <circle cx="353" cy="80" r="3" fill="#FFFF00"/>
+      <circle cx="353" cy="120" r="3" fill="#FF4500"/>
+      <rect x="69" y="77" width="6" height="8" rx="3" ry="3" fill="#FF0000"/>
+      <rect x="69" y="110" width="6" height="8" rx="3" ry="3" fill="#FF0000"/>
+      <g>
+        <circle cx="310" cy="155" r="20" fill="#2F2F2F" stroke="#000" stroke-width="2"/>
+        <circle cx="310" cy="155" r="15" fill="#4F4F4F"/>
+        <circle cx="310" cy="155" r="8" fill="#696969"/>
+        <circle cx="310" cy="155" r="3" fill="#2F2F2F"/>
+        <circle cx="110" cy="155" r="20" fill="#2F2F2F" stroke="#000" stroke-width="2"/>
+        <circle cx="110" cy="155" r="15" fill="#4F4F4F"/>
+        <circle cx="110" cy="155" r="8" fill="#696969"/>
+        <circle cx="110" cy="155" r="3" fill="#2F2F2F"/>
+      </g>
+    </g>
+  </g>
+</svg>
+

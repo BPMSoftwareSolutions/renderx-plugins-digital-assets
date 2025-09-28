@@ -1,0 +1,100 @@
+{
+  "version": "1.0.1",
+  "metadata": {
+    "createdAt": "2025-09-28T16:35:00.000Z",
+    "canvasSize": { "width": 1400, "height": 900 },
+    "componentCount": 6
+  },
+  "cssClasses": {
+    "rx-container": {
+      "name": "rx-container",
+      "content": ".rx-container { position: relative; background: var(--bg, #f8fafc); border: 1px dashed #9ca3af; border-radius: 8px; min-height: 120px; min-width: 200px; padding: var(--padding, 12px); box-sizing: border-box; }",
+      "isBuiltIn": true,
+      "createdAt": 1759077300000,
+      "updatedAt": 1759077300000
+    }
+  },
+  "components": [
+    {
+      "id": "scene-3",
+      "type": "container",
+      "template": { "tag": "div", "classRefs": ["rx-comp", "rx-container", "rx-scene"] , "style": {} },
+      "layout": { "x": 40, "y": 60, "width": 620, "height": 320 },
+      "parentId": null,
+      "siblingIndex": 0,
+      "createdAt": 1759077300001,
+      "content": { "text": "Scene 3: Subscribers" }
+    },
+    {
+      "id": "svg-subscribers",
+      "type": "svg",
+      "template": { "tag": "svg", "classRefs": ["rx-comp", "rx-svg"], "style": {} },
+      "layout": { "x": 60, "y": 80, "width": 580, "height": 280 },
+      "parentId": "scene-3",
+      "siblingIndex": 0,
+      "createdAt": 1759077300002,
+      "content": {
+        "content": "EVENT BUS NEW SUBSCRIBER REPLAY SUBSCRIBER PEOPLE",
+        "text": "EVENT BUS NEW SUBSCRIBER REPLAY SUBSCRIBER PEOPLE",
+        "viewBox": "0 0 900 500",
+        "preserveAspectRatio": "xMidYMid meet",
+        "svgMarkup": "<svg viewBox=\"0 0 400 200\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"20\" y=\"40\" font-size=\"14\">EVENT BUS</text><text x=\"20\" y=\"70\" font-size=\"12\">NEW SUBSCRIBER</text><text x=\"20\" y=\"95\" font-size=\"12\">REPLAY SUBSCRIBER</text><text x=\"20\" y=\"120\" font-size=\"12\">PEOPLE</text></svg>"
+      }
+    },
+
+    {
+      "id": "scene-4",
+      "type": "container",
+      "template": { "tag": "div", "classRefs": ["rx-comp", "rx-container", "rx-scene"], "style": {} },
+      "layout": { "x": 720, "y": 60, "width": 620, "height": 320 },
+      "parentId": null,
+      "siblingIndex": 1,
+      "createdAt": 1759077300003,
+      "content": { "text": "Scene 4: Conductor Hub" }
+    },
+    {
+      "id": "svg-hub",
+      "type": "svg",
+      "template": { "tag": "svg", "classRefs": ["rx-comp", "rx-svg"], "style": {} },
+      "layout": { "x": 740, "y": 80, "width": 580, "height": 280 },
+      "parentId": "scene-4",
+      "siblingIndex": 0,
+      "createdAt": 1759077300004,
+      "content": {
+        "content": "CONDUCTOR (HUB) ROUTE A ROUTE B",
+        "text": "CONDUCTOR (HUB) ROUTE A ROUTE B",
+        "viewBox": "0 0 900 500",
+        "preserveAspectRatio": "xMidYMid meet",
+        "svgMarkup": "<svg viewBox=\"0 0 400 200\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"20\" y=\"40\" font-size=\"14\">CONDUCTOR (HUB)</text><text x=\"20\" y=\"70\" font-size=\"12\">ROUTE A</text><text x=\"20\" y=\"95\" font-size=\"12\">ROUTE B</text></svg>"
+      }
+    },
+
+    {
+      "id": "scene-5",
+      "type": "container",
+      "template": { "tag": "div", "classRefs": ["rx-comp", "rx-container", "rx-scene"], "style": {} },
+      "layout": { "x": 380, "y": 420, "width": 640, "height": 330 },
+      "parentId": null,
+      "siblingIndex": 2,
+      "createdAt": 1759077300005,
+      "content": { "text": "Scene 5: Destination" }
+    },
+    {
+      "id": "svg-destination",
+      "type": "svg",
+      "template": { "tag": "svg", "classRefs": ["rx-comp", "rx-svg"], "style": {} },
+      "layout": { "x": 400, "y": 440, "width": 600, "height": 290 },
+      "parentId": "scene-5",
+      "siblingIndex": 0,
+      "createdAt": 1759077300006,
+      "content": {
+        "content": "DESTINATION DELIVERED BUS",
+        "text": "DESTINATION DELIVERED BUS",
+        "viewBox": "0 0 900 500",
+        "preserveAspectRatio": "xMidYMid meet",
+        "svgMarkup": "<svg viewBox=\"0 0 400 200\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"20\" y=\"40\" font-size=\"14\">DESTINATION</text><text x=\"20\" y=\"70\" font-size=\"12\">DELIVERED</text><text x=\"20\" y=\"95\" font-size=\"12\">BUS</text></svg>"
+      }
+    }
+  ]
+}
+

@@ -1,0 +1,72 @@
+<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="0" y="0" width="1200" height="220" fill="#E8F4FF"/>
+  <rect x="0" y="220" width="1200" height="180" fill="#F5F9F2"/>
+
+  <!-- Route map layer -->
+  <g id="route-map-layer">
+    <text x="600" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#2E5A8A">ROUTE MAP</text>
+    <!-- Simple schematic line with stations -->
+    <path d="M100,120 L1100,120" stroke="#2E5A8A" stroke-width="4" fill="none"/>
+    <!-- Stations: Depot, Hub, School -->
+    <g fill="#2E5A8A">
+      <circle cx="150" cy="120" r="8"/>
+      <circle cx="600" cy="120" r="8"/>
+      <circle cx="1050" cy="120" r="8"/>
+    </g>
+    <text x="150" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#333">DEPOT</text>
+    <text x="600" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#333">HUB</text>
+    <text x="1050" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#333">SCHOOL</text>
+    <!-- Branch routes A and B from Hub -->
+    <path d="M600,120 C650,130 700,140 750,160" stroke="#4A8A2E" stroke-width="3" fill="none"/>
+    <path d="M600,120 C550,130 500,140 450,160" stroke="#8A2E5A" stroke-width="3" fill="none"/>
+  </g>
+
+  <!-- Road at bottom just for continuity -->
+  <g id="road-layer">
+    <rect x="0" y="300" width="1200" height="40" fill="#505050"/>
+    <rect x="0" y="300" width="1200" height="3" fill="#FFFFFF"/>
+    <rect x="0" y="337" width="1200" height="3" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Bus layer (moving across bottom) -->
+  <g id="bus-layer" transform="translate(0, 125) scale(1)">
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="-400,0;1400,0" dur="20s" repeatCount="indefinite"/>
+      <!-- Bus body -->
+      <rect x="70" y="60" width="280" height="80" rx="8" ry="8" fill="#FFD700" stroke="#E6C200" stroke-width="2"/>
+      <rect x="340" y="70" width="20" height="60" rx="10" ry="10" fill="#FFD700" stroke="#E6C200" stroke-width="2"/>
+      <rect x="65" y="55" width="290" height="10" rx="5" ry="5" fill="#FFA500"/>
+      <rect x="350" y="125" width="15" height="8" rx="4" ry="4" fill="#C0C0C0"/>
+      <rect x="342" y="75" width="16" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+      <rect x="305" y="70" width="25" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+      <rect x="275" y="70" width="25" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+      <rect x="245" y="70" width="25" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+      <rect x="215" y="70" width="25" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+      <rect x="185" y="70" width="25" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+      <rect x="155" y="70" width="25" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+      <rect x="125" y="70" width="25" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+      <rect x="95" y="70" width="25" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+      <rect x="75" y="75" width="15" height="15" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+      <rect x="315" y="95" width="20" height="35" rx="2" ry="2" fill="#E6C200" stroke="#D4AF37" stroke-width="1"/>
+      <rect x="317" y="97" width="16" height="15" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+      <circle cx="319" cy="112" r="1.5" fill="#000"/>
+      <text x="200" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#000">EVENT BUS</text>
+      <circle cx="353" cy="80" r="3" fill="#FFFF00"/>
+      <circle cx="353" cy="120" r="3" fill="#FF4500"/>
+      <rect x="69" y="77" width="6" height="8" rx="3" ry="3" fill="#FF0000"/>
+      <rect x="69" y="110" width="6" height="8" rx="3" ry="3" fill="#FF0000"/>
+      <g>
+        <circle cx="310" cy="155" r="20" fill="#2F2F2F" stroke="#000" stroke-width="2"/>
+        <circle cx="310" cy="155" r="15" fill="#4F4F4F"/>
+        <circle cx="310" cy="155" r="8" fill="#696969"/>
+        <circle cx="310" cy="155" r="3" fill="#2F2F2F"/>
+        <circle cx="110" cy="155" r="20" fill="#2F2F2F" stroke="#000" stroke-width="2"/>
+        <circle cx="110" cy="155" r="15" fill="#4F4F4F"/>
+        <circle cx="110" cy="155" r="8" fill="#696969"/>
+        <circle cx="110" cy="155" r="3" fill="#2F2F2F"/>
+      </g>
+    </g>
+  </g>
+</svg>
+

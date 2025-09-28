@@ -1,0 +1,56 @@
+<svg viewBox="0 0 250 150" xmlns="http://www.w3.org/2000/svg">
+  <!-- Bus depot building for Scene 1 -->
+  
+  <g id="depot-building">
+    <!-- Main building structure -->
+    <rect x="25" y="40" width="200" height="110" fill="#8B7355" stroke="#6B5535" stroke-width="2"/>
+    
+    <!-- Roof -->
+    <polygon points="15,40 125,5 235,5 235,40" fill="#654321" stroke="#543210" stroke-width="2"/>
+    
+    <!-- Roof ridge -->
+    <line x1="125" y1="5" x2="125" y2="40" stroke="#543210" stroke-width="1"/>
+    
+    <!-- Front overhang -->
+    <polygon points="20,40 20,30 230,30 230,40" fill="#765432" stroke="#654321" stroke-width="1"/>
+    
+    <!-- Garage doors -->
+    <rect x="50" y="80" width="60" height="70" fill="#666" stroke="#444" stroke-width="2" rx="3"/>
+    <rect x="130" y="80" width="60" height="70" fill="#666" stroke="#444" stroke-width="2" rx="3"/>
+    
+    <!-- Garage door panels -->
+    <g stroke="#555" stroke-width="1" fill="none">
+      <!-- Door 1 panels -->
+      <line x1="50" y1="95" x2="110" y2="95"/>
+      <line x1="50" y1="110" x2="110" y2="110"/>
+      <line x1="50" y1="125" x2="110" y2="125"/>
+      <line x1="50" y1="140" x2="110" y2="140"/>
+      
+      <!-- Door 2 panels -->
+      <line x1="130" y1="95" x2="190" y2="95"/>
+      <line x1="130" y1="110" x2="190" y2="110"/>
+      <line x1="130" y1="125" x2="190" y2="125"/>
+      <line x1="130" y1="140" x2="190" y2="140"/>
+    </g>
+    
+    <!-- Door handles -->
+    <circle cx="105" cy="115" r="2" fill="#333"/>
+    <circle cx="135" cy="115" r="2" fill="#333"/>
+    
+    <!-- Building details -->
+    <rect x="30" y="50" width="15" height="20" fill="#654321" stroke="#543210" stroke-width="1"/>
+    <rect x="205" y="50" width="15" height="20" fill="#654321" stroke="#543210" stroke-width="1"/>
+    
+    <!-- Windows -->
+    <rect x="200" y="60" width="12" height="12" fill="#87CEEB" stroke="#333" stroke-width="1"/>
+    <line x1="206" y1="60" x2="206" y2="72" stroke="#333" stroke-width="0.5"/>
+    <line x1="200" y1="66" x2="212" y2="66" stroke="#333" stroke-width="0.5"/>
+    
+    <!-- Depot sign -->
+    <rect x="75" y="50" width="100" height="20" fill="#FFFFFF" stroke="#333" stroke-width="1" rx="3"/>
+    <text x="125" y="63" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">SCHOOL BUS DEPOT</text>
+    
+    <!-- Foundation -->
+    <rect x="20" y="145" width="210" height="5" fill="#555"/>
+  </g>
+</svg>

@@ -1,0 +1,39 @@
+{
+  "scene": {
+    "name": "event_route_onepage",
+    "viewBox": [0, 0, 1600, 400]
+  },
+  "layers": {
+    "depot": { "id": "depot-layer", "file": "school_bus_depot.svg", "viewBox": [0, 0, 800, 400], "placement": { "translate": [0, 0], "scale": 0.8 } },
+    "road": { "id": "road-layer", "file": "road_600px.svg", "viewBox": [0, 0, 600, 200], "tiling": { "countX": 3, "gap": 0 }, "placement": { "translate": [300, 150], "scale": 1.0 } },
+    "guardRails": { "id": "guard-rails", "file": "guard_rails.svg", "viewBox": [0, 0, 600, 200], "placement": { "translate": [300, 190], "scale": 1.0 } },
+    "trafficLights": [
+      { "id": "traffic-light-1", "file": "animated_traffic_light.svg", "viewBox": [0,0,200,400], "placement": { "translate": [700, 0], "scale": 0.5 } },
+      { "id": "traffic-light-2", "file": "animated_traffic_light.svg", "viewBox": [0,0,200,400], "placement": { "translate": [1050, 0], "scale": 0.5 } }
+    ],
+    "streetSigns": [
+      { "id": "street-sign-replay", "file": "street_sign.svg", "viewBox": [0,0,300,100], "placement": { "translate": [500, 40], "scale": 0.7 }, "label": "REPLAY CACHE" },
+      { "id": "street-sign-debug", "file": "street_sign.svg", "viewBox": [0,0,300,100], "placement": { "translate": [900, 40], "scale": 0.7 }, "label": "DEBUG LOGS" }
+    ],
+    "stops": { "id": "stops-layer", "items": [ { "id": "stop-1", "translate": [800, 240] }, { "id": "stop-2", "translate": [1200, 240] } ] },
+    "transferHub": { "id": "transfer-hub", "translate": [1350, 220] },
+    "school": { "id": "school-layer", "translate": [1450, 120] }
+  },
+  "bus": {
+    "file": "yellow_school_bus-driving-thru.svg",
+    "viewBox": [0, 0, 400, 200],
+    "wheel": { "front": { "cx": 310, "cy": 155, "r": 20 }, "rear": { "cx": 110, "cy": 155, "r": 20 } },
+    "placement": {
+      "scale": 1.0,
+      "alignToRoadBottomY": 300,
+      "computed": { "wheelBottomUnscaledY": 175, "translateY": 125 }
+    },
+    "horizontalPath": { "type": "translate", "startX": -400, "endX": 2000, "duration": "22s" },
+    "id": "bus-layer"
+  },
+  "output": {
+    "file": "integrated_event_route.svg",
+    "viewBox": [0, 0, 1600, 400]
+  }
+}
+

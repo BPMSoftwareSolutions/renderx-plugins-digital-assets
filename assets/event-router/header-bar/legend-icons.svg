@@ -1,0 +1,63 @@
+<svg viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- Legend icons for header bar -->
+  <g id="legend-icons">
+    <!-- Legend title -->
+    <text x="10" y="15" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E3A8A">Legend</text>
+    
+    <!-- Bus = publish -->
+    <g id="legend-bus" transform="translate(10, 25)">
+      <!-- Miniature bus icon -->
+      <g transform="scale(0.4)">
+        <rect x="0" y="0" width="40" height="15" rx="2" ry="2" fill="#FFD700" stroke="#E6C200" stroke-width="1"/>
+        <rect x="35" y="2" width="6" height="11" rx="3" ry="3" fill="#FFD700" stroke="#E6C200" stroke-width="1"/>
+        <rect x="32" y="3" width="3" height="4" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+        <rect x="28" y="3" width="3" height="4" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+        <rect x="24" y="3" width="3" height="4" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+        <rect x="20" y="3" width="3" height="4" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+        <rect x="16" y="3" width="3" height="4" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+        <rect x="12" y="3" width="3" height="4" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+        <rect x="8" y="3" width="3" height="4" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+        <rect x="4" y="3" width="3" height="4" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+        <circle cx="8" cy="17" r="3" fill="#333"/>
+        <circle cx="32" cy="17" r="3" fill="#333"/>
+        <circle cx="39" cy="6" r="1" fill="#FFFF00"/>
+        <rect x="0" y="8" width="40" height="2" fill="#FFA500"/>
+      </g>
+      <text x="20" y="12" font-family="Arial, sans-serif" font-size="10" fill="#1E3A8A">bus = publish</text>
+    </g>
+    
+    <!-- Stops = subscribers -->
+    <g id="legend-stops" transform="translate(10, 45)">
+      <!-- Bus stop shelter icon -->
+      <g transform="scale(0.4)">
+        <rect x="0" y="0" width="30" height="20" rx="2" ry="2" fill="#E0E7FF" stroke="#3B82F6" stroke-width="1"/>
+        <rect x="2" y="15" width="26" height="3" fill="#3B82F6"/>
+        <rect x="4" y="4" width="8" height="8" rx="1" ry="1" fill="#FFFFFF" stroke="#3B82F6" stroke-width="0.5"/>
+        <rect x="18" y="4" width="8" height="8" rx="1" ry="1" fill="#FFFFFF" stroke="#3B82F6" stroke-width="0.5"/>
+      </g>
+      <text x="20" y="12" font-family="Arial, sans-serif" font-size="10" fill="#1E3A8A">stops = subscribers</text>
+    </g>
+    
+    <!-- Hub = conductor -->
+    <g id="legend-hub" transform="translate(110, 25)">
+      <!-- Circular hub with conductor baton -->
+      <circle cx="8" cy="8" r="8" fill="#E0E7FF" stroke="#3B82F6" stroke-width="1"/>
+      <line x1="4" y1="12" x2="12" y2="4" stroke="#1E3A8A" stroke-width="1.5"/>
+      <circle cx="12" cy="4" r="1" fill="#1E3A8A"/>
+      <path d="M 6,10 Q 8,8 10,10" stroke="#1E3A8A" stroke-width="0.5" fill="none"/>
+      <text x="20" y="12" font-family="Arial, sans-serif" font-size="10" fill="#1E3A8A">hub = conductor</text>
+    </g>
+    
+    <!-- Lights = perf -->
+    <g id="legend-lights" transform="translate(110, 45)">
+      <!-- Traffic light icon -->
+      <g transform="scale(0.5)">
+        <rect x="0" y="0" width="12" height="30" rx="2" ry="2" fill="#333"/>
+        <circle cx="6" cy="6" r="3" fill="#FF0000"/>
+        <circle cx="6" cy="15" r="3" fill="#FFFF00"/>
+        <circle cx="6" cy="24" r="3" fill="#00FF00"/>
+      </g>
+      <text x="20" y="12" font-family="Arial, sans-serif" font-size="10" fill="#1E3A8A">lights = perf</text>
+    </g>
+  </g>
+</svg>

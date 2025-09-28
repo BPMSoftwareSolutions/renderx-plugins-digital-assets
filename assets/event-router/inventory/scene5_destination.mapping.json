@@ -1,0 +1,11 @@
+{
+  "scene": { "name": "scene5_destination", "viewBox": [0, 0, 1200, 400] },
+  "bus": {
+    "id": "bus-layer",
+    "placement": { "scale": 1, "computed": { "translateY": 125 } },
+    "horizontalPath": { "startX": -400, "endX": 1400, "duration": "20s" }
+  },
+  "school": { "id": "school-layer", "translate": [950, 200], "label": "DESTINATION: SCHOOL" },
+  "output": { "file": "integrated_scene_5.svg" }
+}
+

@@ -1,0 +1,133 @@
+<svg viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: auto;">
+  <!-- Ground/grass -->
+  <rect x="0" y="120" width="600" height="80" fill="#4A6B3A"/>
+  
+  <!-- Guard rail posts -->
+  <g fill="#C0C0C0" stroke="#A0A0A0" stroke-width="1">
+    <!-- Posts at regular intervals -->
+    <rect x="48" y="100" width="4" height="30" rx="2"/>
+    <rect x="98" y="100" width="4" height="30" rx="2"/>
+    <rect x="148" y="100" width="4" height="30" rx="2"/>
+    <rect x="198" y="100" width="4" height="30" rx="2"/>
+    <rect x="248" y="100" width="4" height="30" rx="2"/>
+    <rect x="298" y="100" width="4" height="30" rx="2"/>
+    <rect x="348" y="100" width="4" height="30" rx="2"/>
+    <rect x="398" y="100" width="4" height="30" rx="2"/>
+    <rect x="448" y="100" width="4" height="30" rx="2"/>
+    <rect x="498" y="100" width="4" height="30" rx="2"/>
+    <rect x="548" y="100" width="4" height="30" rx="2"/>
+  </g>
+  
+  <!-- Main guard rail beam (corrugated metal) -->
+  <rect x="0" y="105" width="600" height="12" fill="#E0E0E0" stroke="#C0C0C0" stroke-width="1"/>
+  
+  <!-- Corrugated texture lines -->
+  <g stroke="#D0D0D0" stroke-width="0.5" opacity="0.7">
+    <line x1="0" y1="107" x2="600" y2="107"/>
+    <line x1="0" y1="109" x2="600" y2="109"/>
+    <line x1="0" y1="111" x2="600" y2="111"/>
+    <line x1="0" y1="113" x2="600" y2="113"/>
+    <line x1="0" y1="115" x2="600" y2="115"/>
+  </g>
+  
+  <!-- Vertical corrugation pattern -->
+  <g stroke="#D0D0D0" stroke-width="0.3" opacity="0.5">
+    <line x1="10" y1="105" x2="10" y2="117"/>
+    <line x1="20" y1="105" x2="20" y2="117"/>
+    <line x1="30" y1="105" x2="30" y2="117"/>
+    <line x1="40" y1="105" x2="40" y2="117"/>
+    <line x1="60" y1="105" x2="60" y2="117"/>
+    <line x1="70" y1="105" x2="70" y2="117"/>
+    <line x1="80" y1="105" x2="80" y2="117"/>
+    <line x1="90" y1="105" x2="90" y2="117"/>
+    <line x1="110" y1="105" x2="110" y2="117"/>
+    <line x1="120" y1="105" x2="120" y2="117"/>
+    <line x1="130" y1="105" x2="130" y2="117"/>
+    <line x1="140" y1="105" x2="140" y2="117"/>
+    <line x1="160" y1="105" x2="160" y2="117"/>
+    <line x1="170" y1="105" x2="170" y2="117"/>
+    <line x1="180" y1="105" x2="180" y2="117"/>
+    <line x1="190" y1="105" x2="190" y2="117"/>
+    <line x1="210" y1="105" x2="210" y2="117"/>
+    <line x1="220" y1="105" x2="220" y2="117"/>
+    <line x1="230" y1="105" x2="230" y2="117"/>
+    <line x1="240" y1="105" x2="240" y2="117"/>
+    <line x1="260" y1="105" x2="260" y2="117"/>
+    <line x1="270" y1="105" x2="270" y2="117"/>
+    <line x1="280" y1="105" x2="280" y2="117"/>
+    <line x1="290" y1="105" x2="290" y2="117"/>
+    <line x1="310" y1="105" x2="310" y2="117"/>
+    <line x1="320" y1="105" x2="320" y2="117"/>
+    <line x1="330" y1="105" x2="330" y2="117"/>
+    <line x1="340" y1="105" x2="340" y2="117"/>
+    <line x1="360" y1="105" x2="360" y2="117"/>
+    <line x1="370" y1="105" x2="370" y2="117"/>
+    <line x1="380" y1="105" x2="380" y2="117"/>
+    <line x1="390" y1="105" x2="390" y2="117"/>
+    <line x1="410" y1="105" x2="410" y2="117"/>
+    <line x1="420" y1="105" x2="420" y2="117"/>
+    <line x1="430" y1="105" x2="430" y2="117"/>
+    <line x1="440" y1="105" x2="440" y2="117"/>
+    <line x1="460" y1="105" x2="460" y2="117"/>
+    <line x1="470" y1="105" x2="470" y2="117"/>
+    <line x1="480" y1="105" x2="480" y2="117"/>
+    <line x1="490" y1="105" x2="490" y2="117"/>
+    <line x1="510" y1="105" x2="510" y2="117"/>
+    <line x1="520" y1="105" x2="520" y2="117"/>
+    <line x1="530" y1="105" x2="530" y2="117"/>
+    <line x1="540" y1="105" x2="540" y2="117"/>
+    <line x1="560" y1="105" x2="560" y2="117"/>
+    <line x1="570" y1="105" x2="570" y2="117"/>
+    <line x1="580" y1="105" x2="580" y2="117"/>
+    <line x1="590" y1="105" x2="590" y2="117"/>
+  </g>
+  
+  <!-- Mounting bolts at each post -->
+  <g fill="#888" stroke="#666" stroke-width="0.5">
+    <circle cx="50" cy="111" r="1.5"/>
+    <circle cx="100" cy="111" r="1.5"/>
+    <circle cx="150" cy="111" r="1.5"/>
+    <circle cx="200" cy="111" r="1.5"/>
+    <circle cx="250" cy="111" r="1.5"/>
+    <circle cx="300" cy="111" r="1.5"/>
+    <circle cx="350" cy="111" r="1.5"/>
+    <circle cx="400" cy="111" r="1.5"/>
+    <circle cx="450" cy="111" r="1.5"/>
+    <circle cx="500" cy="111" r="1.5"/>
+    <circle cx="550" cy="111" r="1.5"/>
+  </g>
+  
+  <!-- Post foundations/bases -->
+  <g fill="#999" opacity="0.6">
+    <ellipse cx="50" cy="128" rx="4" ry="2"/>
+    <ellipse cx="100" cy="128" rx="4" ry="2"/>
+    <ellipse cx="150" cy="128" rx="4" ry="2"/>
+    <ellipse cx="200" cy="128" rx="4" ry="2"/>
+    <ellipse cx="250" cy="128" rx="4" ry="2"/>
+    <ellipse cx="300" cy="128" rx="4" ry="2"/>
+    <ellipse cx="350" cy="128" rx="4" ry="2"/>
+    <ellipse cx="400" cy="128" rx="4" ry="2"/>
+    <ellipse cx="450" cy="128" rx="4" ry="2"/>
+    <ellipse cx="500" cy="128" rx="4" ry="2"/>
+    <ellipse cx="550" cy="128" rx="4" ry="2"/>
+  </g>
+  
+  <!-- End caps -->
+  <rect x="0" y="105" width="3" height="12" fill="#B0B0B0" stroke="#909090" stroke-width="1"/>
+  <rect x="597" y="105" width="3" height="12" fill="#B0B0B0" stroke="#909090" stroke-width="1"/>
+  
+  <!-- Reflectors (small reflective strips) -->
+  <g fill="#FFFF00" opacity="0.8">
+    <rect x="75" y="109" width="8" height="3" rx="1"/>
+    <rect x="175" y="109" width="8" height="3" rx="1"/>
+    <rect x="275" y="109" width="8" height="3" rx="1"/>
+    <rect x="375" y="109" width="8" height="3" rx="1"/>
+    <rect x="475" y="109" width="8" height="3" rx="1"/>
+  </g>
+  
+  <!-- Warning/caution text -->
+  <text x="300" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#666" opacity="0.7">HIGHWAY SAFETY BARRIER</text>
+  
+  <!-- Subtle shadow under the rail -->
+  <rect x="0" y="117" width="600" height="2" fill="#000" opacity="0.1"/>
+</svg>

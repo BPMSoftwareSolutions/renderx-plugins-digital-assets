@@ -1,0 +1,76 @@
+<svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background sky and ground -->
+  <rect x="0" y="0" width="1000" height="220" fill="#87CEEB"/>
+  <rect x="0" y="220" width="1000" height="180" fill="#4A6B3A"/>
+  
+  <!-- Road -->
+  <g id="road-layer">
+    <rect x="0" y="260" width="1000" height="60" fill="#505050"/>
+    <g fill="#FFFF00">
+      <rect x="50" y="289" width="70" height="2"/>
+      <rect x="170" y="289" width="70" height="2"/>
+      <rect x="290" y="289" width="70" height="2"/>
+      <rect x="410" y="289" width="70" height="2"/>
+      <rect x="530" y="289" width="70" height="2"/>
+      <rect x="650" y="289" width="70" height="2"/>
+      <rect x="770" y="289" width="70" height="2"/>
+      <rect x="890" y="289" width="70" height="2"/>
+    </g>
+    <rect x="0" y="260" width="1000" height="3" fill="#FFFFFF"/>
+    <rect x="0" y="317" width="1000" height="3" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Bus layer: aligned to road bottom, animated horizontally -->
+  <g id="bus-layer" transform="translate(0, 125) scale(1)">
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="-400,0;1200,0" dur="20s" repeatCount="indefinite"/>
+      <!-- Bus body (reuse style consistent with earlier scenes) -->
+      <rect x="70" y="60" width="280" height="80" rx="8" ry="8" fill="#FFD700" stroke="#E6C200" stroke-width="2"/>
+      <rect x="340" y="70" width="20" height="60" rx="10" ry="10" fill="#FFD700" stroke="#E6C200" stroke-width="2"/>
+      <rect x="65" y="55" width="290" height="10" rx="5" ry="5" fill="#FFA500"/>
+      <rect x="350" y="125" width="15" height="8" rx="4" ry="4" fill="#C0C0C0"/>
+      <rect x="342" y="75" width="16" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+      <rect x="305" y="70" width="25" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+      <rect x="275" y="70" width="25" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+      <rect x="245" y="70" width="25" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+      <rect x="215" y="70" width="25" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+      <rect x="185" y="70" width="25" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+      <rect x="155" y="70" width="25" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+      <rect x="125" y="70" width="25" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+      <rect x="95" y="70" width="25" height="20" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+      <rect x="75" y="75" width="15" height="15" rx="2" ry="2" fill="#2F4F4F" opacity="0.8"/>
+      <rect x="315" y="95" width="20" height="35" rx="2" ry="2" fill="#E6C200" stroke="#D4AF37" stroke-width="1"/>
+      <rect x="317" y="97" width="16" height="15" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+      <circle cx="319" cy="112" r="1.5" fill="#000"/>
+      <text x="200" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#000">EVENT BUS</text>
+      <circle cx="353" cy="80" r="3" fill="#FFFF00"/>
+      <circle cx="353" cy="120" r="3" fill="#FF4500"/>
+      <rect x="69" y="77" width="6" height="8" rx="3" ry="3" fill="#FF0000"/>
+      <rect x="69" y="110" width="6" height="8" rx="3" ry="3" fill="#FF0000"/>
+      <g>
+        <circle cx="310" cy="155" r="20" fill="#2F2F2F" stroke="#000" stroke-width="2"/>
+        <circle cx="310" cy="155" r="15" fill="#4F4F4F"/>
+        <circle cx="310" cy="155" r="8" fill="#696969"/>
+        <circle cx="310" cy="155" r="3" fill="#2F2F2F"/>
+        <circle cx="110" cy="155" r="20" fill="#2F2F2F" stroke="#000" stroke-width="2"/>
+        <circle cx="110" cy="155" r="15" fill="#4F4F4F"/>
+        <circle cx="110" cy="155" r="8" fill="#696969"/>
+        <circle cx="110" cy="155" r="3" fill="#2F2F2F"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Subscriber stops -->
+  <g id="stop-new" transform="translate(300, 200)">
+    <rect x="-20" y="-50" width="8" height="50" fill="#666"/>
+    <rect x="-80" y="-90" width="160" height="40" rx="6" ry="6" fill="#006747" stroke="#FFFFFF" stroke-width="2"/>
+    <text x="0" y="-65" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">NEW SUBSCRIBER</text>
+  </g>
+
+  <g id="stop-replay" transform="translate(650, 200)">
+    <rect x="-20" y="-50" width="8" height="50" fill="#666"/>
+    <rect x="-95" y="-90" width="190" height="40" rx="6" ry="6" fill="#006747" stroke="#FFFFFF" stroke-width="2"/>
+    <text x="0" y="-65" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">REPLAY SUBSCRIBER</text>
+  </g>
+</svg>
+

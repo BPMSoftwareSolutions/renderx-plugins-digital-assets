@@ -1,0 +1,42 @@
+{
+  "depot": {
+    "file": "school_bus_depot.svg",
+    "viewBox": [0, 0, 800, 400],
+    "road": {
+      "topY": 250,
+      "bottomY": 300
+    }
+  },
+  "bus": {
+    "file": "yellow_school_bus-driving-thru.svg",
+    "viewBox": [0, 0, 400, 200],
+    "wheel": {
+      "front": { "cx": 310, "cy": 155, "r": 20 },
+      "rear":  { "cx": 110, "cy": 155, "r": 20 }
+    },
+    "horizontalPath": {
+      "type": "translate",
+      "startX": -365,
+      "endX": 1000,
+      "duration": "20s"
+    }
+  },
+  "integration": {
+    "scale": 1.0,
+    "alignment": {
+      "reference": "align bus wheel bottom to depot road bottom",
+      "busWheelBottomY": 175,
+      "depotRoadBottomY": 300,
+      "busTranslateY": 125
+    },
+    "zOrder": {
+      "depot": 0,
+      "bus": 1
+    },
+    "output": {
+      "file": "integrated_bus_leaving_depot.svg",
+      "viewBox": [0, 0, 800, 400]
+    }
+  }
+}
+

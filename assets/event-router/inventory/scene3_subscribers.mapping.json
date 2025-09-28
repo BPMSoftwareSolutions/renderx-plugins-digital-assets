@@ -1,0 +1,25 @@
+{
+  "scene": {
+    "name": "scene3_subscribers",
+    "viewBox": [0, 0, 1000, 400]
+  },
+  "bus": {
+    "id": "bus-layer",
+    "placement": { "scale": 1, "computed": { "translateY": 125 } },
+    "horizontalPath": { "startX": -400, "endX": 1200, "duration": "20s" }
+  },
+  "stops": [
+    {
+      "id": "stop-new",
+      "translate": [300, 200],
+      "label": "NEW SUBSCRIBER"
+    },
+    {
+      "id": "stop-replay",
+      "translate": [650, 200],
+      "label": "REPLAY SUBSCRIBER"
+    }
+  ],
+  "output": { "file": "integrated_scene_3.svg" }
+}
+
