@@ -1,0 +1,1 @@
+Two elegant connectors emerge from the plugin’s core and click into matching ports labeled onDragStart and publishCreateRequested. A violet gradient arcs between them, suggesting energy in motion. Fine circuit traces radiate outward, implying extensibility. The composition reads like an interface handshake—precise, confident, and ready to orchestrate behavior.

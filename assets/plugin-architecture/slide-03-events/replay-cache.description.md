@@ -1,0 +1,1 @@
+A compact time capsule—part safe, part circular buffer—sits beside the bus. Arrows loop clockwise around its rim while ghosted messages rest inside, ready to be replayed. The lock icon is small but present: persisted state is both accessible and protected from accidental mutation.

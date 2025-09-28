@@ -1,0 +1,1 @@
+Parallel lines—cool blues and steady grays—run horizontally like transit lanes. Station markers labeled with topic names create wayfinding. Occasional merge nodes show where UI and domain streams intertwine. The overall feel is dependable throughput: routes are clear, stops are known, and service is reliable.

@@ -1,0 +1,1 @@
+A stylized transit map overlays the host—nodes for panels and flows, lines for message routes. Orange lane markers indicate configured topics and paths, with directional chevrons showing traffic. It feels navigable and ready for change: add a station, extend a line, the map adapts elegantly.

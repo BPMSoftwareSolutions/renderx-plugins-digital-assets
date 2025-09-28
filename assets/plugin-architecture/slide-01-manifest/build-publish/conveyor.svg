@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 120">
+  <title>Build &amp; Publish - Conveyor</title>
+  <g id="conveyor" fill="#A97B50" stroke="#5A4634">
+    <rect x="10" y="70" width="240" height="30" rx="6"/>
+    <circle cx="30" cy="100" r="8" fill="#5A4634"/>
+    <circle cx="130" cy="100" r="8" fill="#5A4634"/>
+    <circle cx="230" cy="100" r="8" fill="#5A4634"/>
+  </g>
+</svg>
+

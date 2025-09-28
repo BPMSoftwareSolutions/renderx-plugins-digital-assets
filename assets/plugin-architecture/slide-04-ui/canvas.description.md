@@ -1,0 +1,1 @@
+An infinite plane with a soft grid recedes into the distance. Snap points twinkle faintly as a component ghost follows the cursor, ready to drop. Edges glow when alignment is achieved. The canvas promises control and play in equal measure—precise, but never stiff.

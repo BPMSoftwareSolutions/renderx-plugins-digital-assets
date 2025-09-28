@@ -1,0 +1,1 @@
+A confident shield bears a green check at its center, flanked by tiny test tubes. Log lines march beneath like a passing review parade, each assertion lighting up in sequence. The aesthetic is clean and modern—evidence of trust earned, not assumed.

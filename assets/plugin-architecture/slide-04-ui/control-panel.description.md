@@ -1,0 +1,1 @@
+A right-aligned panel arranges labeled fields into clear property groups. Labels sit left in a calm gray; inputs rest right with smart defaults. A small lock icon appears on protected fields, while a subtle ‘apply’ pulse confirms changes. It reflects selection faithfully—never guessing, never surprising.

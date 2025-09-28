@@ -1,0 +1,1 @@
+An assembly line rolls beneath watchful status lights: queued, running, passed. Small bots stamp artifacts with build numbers, while a dashboard in the background ticks green. The scene conveys continuous assurance—every change is exercised, measured, and approved.

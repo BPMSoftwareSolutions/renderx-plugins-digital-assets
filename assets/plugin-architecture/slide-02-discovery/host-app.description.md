@@ -1,0 +1,1 @@
+A minimalist app window with clean chrome floats above a neutral backdrop. Its toolbar is spare—only what’s essential to boot the system. A thin conductor line traces through the header, implying orchestration without clutter. The composition whispers “thin host”: poised to discover, not dominate.

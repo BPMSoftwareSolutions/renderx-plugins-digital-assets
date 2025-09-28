@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="420" height="140" viewBox="0 0 420 140">
+  <!-- Document card with cyan trim -->
+  <rect x="40" y="22" width="340" height="96" rx="10" ry="10" fill="#ECFEFF" stroke="#06B6D4" stroke-width="2.5"/>
+  <!-- JSON braces and rows -->
+  <text x="65" y="52" font-family="Consolas, monospace" font-size="22" fill="#0E7490">{</text>
+  <rect x="90" y="42" width="200" height="10" rx="3" fill="#CFFAFE"/>
+  <rect x="90" y="58" width="240" height="10" rx="3" fill="#BAE6FD"/>
+  <rect x="90" y="74" width="210" height="10" rx="3" fill="#C7D2FE"/>
+  <text x="350" y="92" font-family="Consolas, monospace" font-size="22" text-anchor="end" fill="#0E7490">}</text>
+  <!-- Tabs for sections -->
+  <rect x="60" y="26" width="70" height="16" rx="4" fill="#06B6D4" opacity="0.15"/>
+  <text x="95" y="38" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#0E7490">routes</text>
+  <rect x="135" y="26" width="70" height="16" rx="4" fill="#06B6D4" opacity="0.15"/>
+  <text x="170" y="38" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#0E7490">topics</text>
+  <rect x="210" y="26" width="90" height="16" rx="4" fill="#06B6D4" opacity="0.15"/>
+  <text x="255" y="38" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#0E7490">handlers</text>
+  <!-- Generated stamp -->
+  <g transform="translate(320,24) rotate(12)">
+    <rect x="0" y="0" width="80" height="22" rx="4" fill="#0EA5E9" opacity="0.2" stroke="#0284C7"/>
+    <text x="40" y="15" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#0369A1">generated</text>
+  </g>
+  <text x="210" y="120" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#0E7490">Plugin Manifest</text>
+  <!-- Composed from sub-elements -->
+  <g id="sub-elements">
+    <use x="0" y="0" xlink:href="plugin-manifest/document-card.svg#document-card"/>
+    <use x="0" y="0" xlink:href="plugin-manifest/json-braces.svg#json-braces"/>
+    <use x="0" y="0" xlink:href="plugin-manifest/key-value-rows.svg#key-value-rows"/>
+    <use x="0" y="0" xlink:href="plugin-manifest/generated-stamp.svg#generated-stamp"/>
+    <use x="0" y="0" xlink:href="plugin-manifest/tabs.svg#tabs"/>
+  </g>
+</svg>

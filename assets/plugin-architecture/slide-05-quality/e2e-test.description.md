@@ -1,0 +1,1 @@
+A small rocket lifts from a stylized host app window, a banner reading “smoke test” fluttering behind. Trail markers show boot steps passing in order. The lift-off is calm, not explosive—proof that everything works together under real conditions.

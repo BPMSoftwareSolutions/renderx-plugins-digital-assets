@@ -1,0 +1,1 @@
+A lint brush smooths away red squiggles from a file tree while green shields guard plugin boundaries. A rules panel to the side lists constraints with tidy checkmarks. The feeling is of a tidy workshop: constraints inspire quality rather than restrict creativity.

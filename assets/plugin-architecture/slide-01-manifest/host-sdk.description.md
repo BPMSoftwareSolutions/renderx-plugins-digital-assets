@@ -1,0 +1,1 @@
+A low-profile console—matte gray with precise controls—anchors the frame. Slender rails and labeled ports hint at Conductor and EventRouter modules sliding neatly into place. The design feels foundational: understated, reliable, and purpose-built to support plugins without overshadowing them. This is the chassis of the system.

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="420" height="140" viewBox="0 0 420 140">
+  <!-- Ports -->
+  <rect x="42" y="30" width="140" height="28" rx="6" fill="#EEF2FF" stroke="#4F46E5"/>
+  <text x="112" y="49" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#312E81">onDragStart</text>
+  <rect x="238" y="82" width="140" height="28" rx="6" fill="#EEF2FF" stroke="#4F46E5"/>
+  <text x="308" y="101" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#312E81">publishCreateRequested</text>
+  <!-- Connector arc -->
+  <path d="M182,44 C210,44 230,60 238,86" fill="none" stroke="#4F46E5" stroke-width="2"/>
+  <!-- Energy gradient overlay -->
+  <linearGradient id="hGlow" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#A78BFA" stop-opacity="0.0"/>
+    <stop offset="100%" stop-color="#7C3AED" stop-opacity="0.45"/>
+  </linearGradient>
+  <path d="M182,44 C210,44 230,60 238,86" fill="none" stroke="url(#hGlow)" stroke-width="6" stroke-linecap="round" opacity="0.6"/>
+  <!-- Arrowhead -->
+  <polygon points="238,86 232,82 240,80" fill="#4F46E5"/>
+  <!-- Title -->
+  <text x="210" y="20" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#1F2937">Handlers Export</text>
+  <!-- Composed from sub-elements -->
+  <g id="sub-elements">
+    <use x="0" y="0" xlink:href="handlers-export/ports.svg#ports"/>
+    <use x="0" y="0" xlink:href="handlers-export/connectors.svg#connectors"/>
+    <use x="0" y="0" xlink:href="handlers-export/gradient.svg#gradient"/>
+    <use x="0" y="0" xlink:href="handlers-export/circuit-traces.svg#circuit-traces"/>
+  </g>
+</svg>

@@ -1,0 +1,1 @@
+A compact conveyor feeds polished modules toward a staging pad where version tags click into place (1.0.0, 1.1.0). A bright uplink arrow rises from the platform, indicating publication. Warm amber tones convey momentum and care; every unit is inspected, labeled, and released. The scene embodies repeatable builds and trustworthy releases.

@@ -1,0 +1,1 @@
+Phase 1 sets up the plugin as an independent, publishable package. You define a manifest that declares capabilities and a handlers export that the host can discover via handlersPath. Keep boundaries strict: the plugin owns its data/JSON and emits events; the host remains thin and manifest-driven.

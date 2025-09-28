@@ -1,0 +1,1 @@
+Blocks labeled rules, map, and render sit in a left-to-right flow, with graceful arrows translating schema into interface. Layers stack to suggest overrides and composition. The piece radiates calm authority: decisions are encoded once and applied everywhere the same way.

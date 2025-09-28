@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="420" height="140" viewBox="0 0 420 140">
+  <defs>
+    <linearGradient id="pkgTop" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F3F4F6"/>
+      <stop offset="100%" stop-color="#E5E7EB"/>
+    </linearGradient>
+  </defs>
+  <!-- Isometric package box -->
+  <polygon points="140,40 210,20 280,40 210,60" fill="url(#pkgTop)" stroke="#374151" stroke-width="2"/>
+  <polygon points="140,40 210,60 210,100 140,80" fill="#E5E7EB" stroke="#374151" stroke-width="2"/>
+  <polygon points="280,40 210,60 210,100 280,80" fill="#FFFFFF" stroke="#374151" stroke-width="2"/>
+  <!-- Label band -->
+  <rect x="155" y="58" width="110" height="12" fill="#111827" opacity="0.08"/>
+  <!-- npm badge -->
+  <rect x="284" y="84" rx="3" ry="3" width="48" height="18" fill="#DC2626" stroke="#991B1B" stroke-width="1.5"/>
+  <text x="308" y="97" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#FFFFFF">npm</text>
+  <!-- Title and subtitle -->
+  <text x="210" y="120" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="middle" fill="#111827">Plugin Package</text>
+  <text x="210" y="135" font-family="Arial, Helvetica, sans-serif" font-size="11" text-anchor="middle" fill="#6B7280">Self-contained, shippable unit</text>
+  <!-- Composed from sub-elements -->
+  <g id="sub-elements">
+    <use x="0" y="0" xlink:href="plugin-package/package-box.svg#package-box"/>
+    <use x="0" y="0" xlink:href="plugin-package/shadow.svg#shadow"/>
+    <use x="0" y="0" xlink:href="plugin-package/label.svg#label"/>
+    <use x="0" y="0" xlink:href="plugin-package/glyphs.svg#glyphs"/>
+    <use x="0" y="0" xlink:href="plugin-package/npm-badge.svg#npm-badge"/>
+  </g>
+</svg>

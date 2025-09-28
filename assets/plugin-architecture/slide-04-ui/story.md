@@ -1,0 +1,1 @@
+Phase 4 mounts the UI: Library, Canvas, Control Panel. The plugin provides data (component JSON), and the host renders via mapper/rule engine. Control Panel reflects the selected item and is driven by data, not imperative host code.

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60">
+  <title>Plugin Package - Label</title>
+  <g id="label" font-family="Arial, sans-serif">
+    <rect x="5" y="10" width="190" height="40" rx="6" fill="#ffffff" stroke="#999"/>
+    <text x="100" y="37" text-anchor="middle" font-size="16" fill="#333">Plugin Package</text>
+  </g>
+</svg>
+

@@ -1,0 +1,1 @@
+A neat row of toggle switches sits atop a soft green panel. Each switch has a crisp label and an accessible on/off state, with tooltips hinting at safe rollout. A slim guardrail icon reminds the viewer that discovery is controlled—exposure can be dialed up or down without code churn.

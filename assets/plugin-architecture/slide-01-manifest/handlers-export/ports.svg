@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 120">
+  <title>Handlers Export - Ports</title>
+  <g id="ports" fill="#6B4EFF">
+    <rect x="20" y="40" width="30" height="40" rx="3"/>
+    <rect x="190" y="40" width="30" height="40" rx="3"/>
+    <text x="35" y="96" text-anchor="middle" font-size="10" fill="#333">onDragStart</text>
+    <text x="205" y="96" text-anchor="middle" font-size="10" fill="#333">publishCreateRequested</text>
+  </g>
+</svg>
+

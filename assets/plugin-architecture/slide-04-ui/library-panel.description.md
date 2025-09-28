@@ -1,0 +1,1 @@
+A curated shelf of component cards sits beside a tidy search bar. Each card has a miniature preview, a name, and small tags that suggest categories. The tone is editorial: discovery should feel inviting, not overwhelming, and the library should reward curiosity.

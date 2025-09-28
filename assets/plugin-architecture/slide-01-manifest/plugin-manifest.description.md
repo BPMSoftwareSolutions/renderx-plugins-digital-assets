@@ -1,0 +1,1 @@
+A sleek document card, trimmed with cyan, features stylized JSON braces and neatly aligned key–value rows. A subtle “generated” stamp in the corner indicates the canonical source. Tabs along the edge suggest navigable sections—routes, topics, handlers. The page glows lightly, conveying that this manifest is more than text: it’s the living contract that powers discovery.

@@ -1,0 +1,1 @@
+A graceful robotic arm reaches from the host frame and lifts a neatly labeled plugin cartridge. Cyan accents and a dotted guide rail emphasize precise, dynamic loading. A subtle glow at the contact point communicates safe, discoverable integration—modules slide in, no hard wiring required.

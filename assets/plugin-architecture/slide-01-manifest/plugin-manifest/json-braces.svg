@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120">
+  <title>Plugin Manifest - JSON Braces</title>
+  <g id="json-braces" font-family="Courier New, monospace" font-size="72" fill="#4AD1FF">
+    <text x="40" y="85">{</text>
+    <text x="140" y="85">}</text>
+  </g>
+</svg>
+

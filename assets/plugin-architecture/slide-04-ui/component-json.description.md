@@ -1,0 +1,1 @@
+A blueprint sheet unfurls with stylized JSON nodes connected by slender lines. Properties wear small badges—type, default, constraints. The mood is technical yet approachable: this is the data source that makes the UI predictable, explainable, and repeatable.

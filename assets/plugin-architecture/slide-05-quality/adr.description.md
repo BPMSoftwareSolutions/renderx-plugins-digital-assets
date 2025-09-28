@@ -1,0 +1,1 @@
+A handsome, stitched notebook sits open to a page titled “Decision Record,” with a branching diagram of options and a circled choice. A slim ribbon marks the issue link. The vibe is archival and accountable—choices are recorded so future readers understand the why, not just the what.

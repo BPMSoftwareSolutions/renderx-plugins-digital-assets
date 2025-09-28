@@ -1,0 +1,1 @@
+Phase 2 connects the host to the plugin through manifest-driven discovery. The host dynamically loads handlers via handlersPath and registers routes and topics based on the manifest. Avoid hard-coded plugin IDs; the manifest governs behavior.

@@ -1,0 +1,462 @@
+{
+  "title": "Plugin Integration Phases",
+  "version": "1.0",
+  "slides": [
+    {
+      "id": "slide-01-manifest",
+      "name": "Phase 1: Plugin Scaffolding & Manifest",
+      "story": "Start by scaffolding the plugin package, defining its manifest, and exporting merged handlers. The plugin should be self-contained and publishable.",
+      "effort": "S",
+      "time": "0.5–1 day",
+      "data_driven": [
+        "Generated plugin manifest (.generated/plugin-manifest.json)",
+        "Any component/control JSON owned by the plugin"
+      ],
+      "code_required": [
+        "Handlers export (e.g., onDragStart, publishCreateRequested)",
+        "Manifest build script and packaging"
+      ],
+      "dependencies": [
+        "@renderx-plugins/* SDK/manifest tools",
+        "Node/npm workspace tooling"
+      ],
+      "testing": [
+        "Vitest unit tests for handlers",
+        "Manifest generation test"
+      ],
+      "guardrails": [
+        "ESLint: restrict imports to SDK/manifest-tools/React",
+        "ADR describing plugin boundary"
+      ],
+      "elements": [
+        {
+          "id": "plugin-package",
+          "label": "Plugin Package",
+          "svg": "slide-01-manifest/plugin-package.svg",
+          "description": "A crisp, isometric package box sits center stage with a subtle shadow, wrapped in a clean label that reads “Plugin Package.” Along its sides, faint glyphs hint at capabilities and boundaries, while a small npm badge gleams like a seal of release-readiness. The palette is neutral with confident accents, suggesting maturity and portability. This is a self-contained unit\u2014tidy, shippable, and ready to slot into the ecosystem.",
+          "sub_elements": [
+            {
+              "id": "package-box",
+              "label": "Package Box",
+              "svg": "slide-01-manifest/plugin-package/package-box.svg",
+              "description": "A crisp, isometric package box with clean geometric lines and neutral colors, representing the core container of the plugin.",
+              "compose": { "x": 0, "y": 0 }
+            },
+            {
+              "id": "shadow",
+              "label": "Shadow",
+              "svg": "slide-01-manifest/plugin-package/shadow.svg",
+              "description": "A subtle shadow beneath the package box that grounds it and adds depth to the composition.",
+              "compose": { "x": 0, "y": 0 }
+            },
+            {
+              "id": "label",
+              "label": "Package Label",
+              "svg": "slide-01-manifest/plugin-package/label.svg",
+              "description": "A clean label wrapped around the package that clearly identifies it as 'Plugin Package'.",
+              "compose": { "x": 0, "y": 0 }
+            },
+            {
+              "id": "glyphs",
+              "label": "Capability Glyphs",
+              "svg": "slide-01-manifest/plugin-package/glyphs.svg",
+              "description": "Faint glyphs along the sides of the package that hint at capabilities and boundaries.",
+              "compose": { "x": 0, "y": 0 }
+            },
+            {
+              "id": "npm-badge",
+              "label": "NPM Badge",
+              "svg": "slide-01-manifest/plugin-package/npm-badge.svg",
+              "description": "A small npm badge that gleams like a seal of release-readiness, indicating the package is ready for publication.",
+              "compose": { "x": 0, "y": 0 }
+            }
+          ]
+        },
+        {
+          "id": "plugin-manifest",
+          "label": "Plugin Manifest",
+          "svg": "slide-01-manifest/plugin-manifest.svg",
+          "description": "A sleek document card, trimmed with cyan, features stylized JSON braces and neatly aligned key–value rows. A subtle “generated” stamp in the corner indicates the canonical source. Tabs along the edge suggest navigable sections\u2014routes, topics, handlers. The page glows lightly, conveying that this manifest is more than text: it’s the living contract that powers discovery.",
+          "sub_elements": [
+            {
+              "id": "document-card",
+              "label": "Document Card",
+              "svg": "slide-01-manifest/plugin-manifest/document-card.svg",
+              "description": "A sleek document card with cyan trim that serves as the foundation for the manifest display.",
+              "compose": { "x": 0, "y": 0 }
+            },
+            {
+              "id": "json-braces",
+              "label": "JSON Braces",
+              "svg": "slide-01-manifest/plugin-manifest/json-braces.svg",
+              "description": "Stylized JSON braces that frame the content and indicate the structured data format.",
+              "compose": { "x": 0, "y": 0 }
+            },
+            {
+              "id": "key-value-rows",
+              "label": "Key-Value Rows",
+              "svg": "slide-01-manifest/plugin-manifest/key-value-rows.svg",
+              "description": "Neatly aligned key-value rows that represent the structured data within the manifest.",
+              "compose": { "x": 0, "y": 0 }
+            },
+            {
+              "id": "generated-stamp",
+              "label": "Generated Stamp",
+              "svg": "slide-01-manifest/plugin-manifest/generated-stamp.svg",
+              "description": "A subtle 'generated' stamp in the corner that indicates the canonical source of the manifest.",
+              "compose": { "x": 0, "y": 0 }
+            },
+            {
+              "id": "tabs",
+              "label": "Navigation Tabs",
+              "svg": "slide-01-manifest/plugin-manifest/tabs.svg",
+              "description": "Tabs along the edge that suggest navigable sections—routes, topics, handlers.",
+              "compose": { "x": 0, "y": 0 }
+            }
+          ]
+        },
+        {
+          "id": "handlers-export",
+          "label": "Handlers Export",
+          "svg": "slide-01-manifest/handlers-export.svg",
+          "description": "Two elegant connectors emerge from the plugin’s core and click into matching ports labeled onDragStart and publishCreateRequested. A violet gradient arcs between them, suggesting energy in motion. Fine circuit traces radiate outward, implying extensibility. The composition reads like an interface handshake\u2014precise, confident, and ready to orchestrate behavior.",
+          "sub_elements": [
+            {
+              "id": "connectors",
+              "label": "Elegant Connectors",
+              "svg": "slide-01-manifest/handlers-export/connectors.svg",
+              "description": "Two elegant connectors that emerge from the plugin's core, representing the interface points.",
+              "compose": { "x": 0, "y": 0 }
+            },
+            {
+              "id": "ports",
+              "label": "Matching Ports",
+              "svg": "slide-01-manifest/handlers-export/ports.svg",
+              "description": "Matching ports labeled onDragStart and publishCreateRequested that receive the connectors.",
+              "compose": { "x": 0, "y": 0 }
+            },
+            {
+              "id": "gradient",
+              "label": "Violet Gradient",
+              "svg": "slide-01-manifest/handlers-export/gradient.svg",
+              "description": "A violet gradient that arcs between the connectors, suggesting energy in motion.",
+              "compose": { "x": 0, "y": 0 }
+            },
+            {
+              "id": "circuit-traces",
+              "label": "Circuit Traces",
+              "svg": "slide-01-manifest/handlers-export/circuit-traces.svg",
+              "description": "Fine circuit traces that radiate outward, implying extensibility and connection possibilities.",
+              "compose": { "x": 0, "y": 0 }
+            }
+          ]
+        },
+        {
+          "id": "build-publish",
+          "label": "Build & Publish",
+          "svg": "slide-01-manifest/build-publish.svg",
+          "description": "A compact conveyor feeds polished modules toward a staging pad where version tags click into place (1.0.0, 1.1.0). A bright uplink arrow rises from the platform, indicating publication. Warm amber tones convey momentum and care; every unit is inspected, labeled, and released. The scene embodies repeatable builds and trustworthy releases.",
+          "sub_elements": [
+            {
+              "id": "conveyor",
+              "label": "Compact Conveyor",
+              "svg": "slide-01-manifest/build-publish/conveyor.svg",
+              "description": "A compact conveyor that feeds polished modules toward the staging area."
+            },
+            {
+              "id": "staging-pad",
+              "label": "Staging Pad",
+              "svg": "slide-01-manifest/build-publish/staging-pad.svg",
+              "description": "A staging pad where modules are prepared and version tags are applied."
+            },
+            {
+              "id": "version-tags",
+              "label": "Version Tags",
+              "svg": "slide-01-manifest/build-publish/version-tags.svg",
+              "description": "Version tags (1.0.0, 1.1.0) that click into place on the staging pad."
+            },
+            {
+              "id": "uplink-arrow",
+              "label": "Uplink Arrow",
+              "svg": "slide-01-manifest/build-publish/uplink-arrow.svg",
+              "description": "A bright uplink arrow that rises from the platform, indicating publication to the registry."
+            }
+          ]
+        },
+        {
+          "id": "host-sdk",
+          "label": "Host SDK (Context)",
+          "svg": "slide-01-manifest/host-sdk.svg",
+          "description": "A low-profile console\u2014matte gray with precise controls\u2014anchors the frame. Slender rails and labeled ports hint at Conductor and EventRouter modules sliding neatly into place. The design feels foundational: understated, reliable, and purpose-built to support plugins without overshadowing them. This is the chassis of the system.",
+          "sub_elements": [
+            {
+              "id": "console",
+              "label": "Low-Profile Console",
+              "svg": "slide-01-manifest/host-sdk/console.svg",
+              "description": "A low-profile console in matte gray with precise controls that anchors the frame.",
+              "compose": { "x": 0, "y": 0 }
+            },
+            {
+              "id": "rails",
+              "label": "Slender Rails",
+              "svg": "slide-01-manifest/host-sdk/rails.svg",
+              "description": "Slender rails that provide the infrastructure for modules to slide into place.",
+              "compose": { "x": 0, "y": 0 }
+            },
+            {
+              "id": "ports",
+              "label": "Labeled Ports",
+              "svg": "slide-01-manifest/host-sdk/ports.svg",
+              "description": "Labeled ports that provide connection points for various system components.",
+              "compose": { "x": 0, "y": 0 }
+            },
+            {
+              "id": "modules",
+              "label": "System Modules",
+              "svg": "slide-01-manifest/host-sdk/modules.svg",
+              "description": "Conductor and EventRouter modules that slide neatly into place on the rails.",
+              "compose": { "x": 0, "y": 0 }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "slide-02-discovery",
+      "name": "Phase 2: Host Registration & Discovery",
+      "story": "Wire the host to discover the plugin via handlersPath and register routes/topics from the manifest.",
+      "effort": "S-M",
+      "time": "0.5–1 day",
+      "data_driven": [
+        "handlersPath from the plugin manifest",
+        "Route/topic declarations in the manifest"
+      ],
+      "code_required": [
+        "Host loader that imports handlers at runtime",
+        "Optional feature flag toggles"
+      ],
+      "dependencies": [
+        "Thin host startup/Conductor",
+        "Module resolution for dynamic import"
+      ],
+      "testing": [
+        "Host startup smoke test",
+        "Mocked plugin discovery test"
+      ],
+      "guardrails": [
+        "No hard-coded plugin IDs in host",
+        "Manifest is the single source of truth"
+      ],
+      "elements": [
+        {
+          "id": "host-app",
+          "label": "Host App (Thin)",
+          "svg": "slide-02-discovery/host-app.svg",
+          "description": "A minimalist app window with clean chrome floats above a neutral backdrop. Its toolbar is spare\u2014only what\u2019s essential to boot the system. A thin conductor line traces through the header, implying orchestration without clutter. The composition whispers \u201Cthin host\u201D: poised to discover, not dominate."
+        },
+        {
+          "id": "plugin-loader",
+          "label": "Plugin Loader",
+          "svg": "slide-02-discovery/plugin-loader.svg",
+          "description": "A graceful robotic arm reaches from the host frame and lifts a neatly labeled plugin cartridge. Cyan accents and a dotted guide rail emphasize precise, dynamic loading. A subtle glow at the contact point communicates safe, discoverable integration\u2014modules slide in, no hard wiring required."
+        },
+        {
+          "id": "handlers-path",
+          "label": "handlersPath",
+          "svg": "slide-02-discovery/handlers-path.svg",
+          "description": "A luminous thread snakes from the manifest card to a well-marked entry port labeled handlersPath. Breadcrumb dots align along the route, reinforcing clarity and intent. The path glows brighter as it nears the port\u2014an invitation to connect code by contract, not by coordinates."
+        },
+        {
+          "id": "routing-config",
+          "label": "Routing Config",
+          "svg": "slide-02-discovery/routing-config.svg",
+          "description": "A stylized transit map overlays the host\u2014nodes for panels and flows, lines for message routes. Orange lane markers indicate configured topics and paths, with directional chevrons showing traffic. It feels navigable and ready for change: add a station, extend a line, the map adapts elegantly."
+        },
+        {
+          "id": "feature-flags",
+          "label": "Feature Flags",
+          "svg": "slide-02-discovery/feature-flags.svg",
+          "description": "A neat row of toggle switches sits atop a soft green panel. Each switch has a crisp label and an accessible on/off state, with tooltips hinting at safe rollout. A slim guardrail icon reminds the viewer that discovery is controlled\u2014exposure can be dialed up or down without code churn."
+        }
+      ]
+    },
+    {
+      "id": "slide-03-events",
+      "name": "Phase 3: Events and Topics Integration",
+      "story": "Connect plugin flows to the EventRouter and Topics bus. Use topic replay cache to hydrate late consumers.",
+      "effort": "M",
+      "time": "1–2 days",
+      "data_driven": [
+        "Topic names and payload schemas",
+        "Symphony sequencing/contract"
+      ],
+      "code_required": [
+        "Event publish/subscribe in handlers",
+        "Selection-forwarded symphony integration"
+      ],
+      "dependencies": [
+        "EventRouter/Topics bus",
+        "Replay cache"
+      ],
+      "testing": [
+        "Topic contract tests",
+        "Selection symphony flow test"
+      ],
+      "guardrails": [
+        "Do not update Control Panel from canvas.component.create; selection drives updates",
+        "Stable topic naming and payload validation"
+      ],
+      "elements": [
+        {
+          "id": "event-router",
+          "label": "EventRouter",
+          "svg": "slide-03-events/event-router.svg",
+          "description": "At center, a luminous hub radiates violet spokes to surrounding modules. Tiny packets pulse along the spokes, converging and fanning out with rhythm and intent. The hub feels authoritative yet lightweight\u2014traffic flows smoothly, rules are respected, and pathways remain visible at a glance."
+        },
+        {
+          "id": "topics-bus",
+          "label": "Topics Bus",
+          "svg": "slide-03-events/topics-bus.svg",
+          "description": "Parallel lines\u2014cool blues and steady grays\u2014run horizontally like transit lanes. Station markers labeled with topic names create wayfinding. Occasional merge nodes show where UI and domain streams intertwine. The overall feel is dependable throughput: routes are clear, stops are known, and service is reliable."
+        },
+        {
+          "id": "replay-cache",
+          "label": "Replay Cache",
+          "svg": "slide-03-events/replay-cache.svg",
+          "description": "A compact time capsule\u2014part safe, part circular buffer\u2014sits beside the bus. Arrows loop clockwise around its rim while ghosted messages rest inside, ready to be replayed. The lock icon is small but present: persisted state is both accessible and protected from accidental mutation."
+        },
+        {
+          "id": "symphony",
+          "label": "Symphony",
+          "svg": "slide-03-events/symphony.svg",
+          "description": "A conductor\u2019s baton hovers above a musical staff composed of discrete steps: select, focus, act. Notes align into phrases that represent sequences. Warm golds and ambers convey choreography: the flow is orchestrated, not improvised, and every entrance has its moment."
+        },
+        {
+          "id": "selection-flow",
+          "label": "Selection Flow",
+          "svg": "slide-03-events/selection-flow.svg",
+          "description": "A clear pointer icon touches a component tile, and a green current travels along a path toward a control panel. Along the route, signposts mark events\u2014selection.changed, panel.update. The visual tells a truth: selection leads, and the rest follows naturally."
+        }
+      ]
+    },
+    {
+      "id": "slide-04-ui",
+      "name": "Phase 4: UI Integration (Panels, Canvas, Control Panel)",
+      "story": "Integrate UI components: Library, Canvas, and Control Panel using data-driven component JSON and mapper rules.",
+      "effort": "M",
+      "time": "1–2 days",
+      "data_driven": [
+        "Component JSON (plugin-served)",
+        "Mapper rules and property metadata"
+      ],
+      "code_required": [
+        "Panel mounting and canvas component handlers",
+        "Rule engine integration for rendering"
+      ],
+      "dependencies": [
+        "@renderx-plugins/library-component",
+        "Host PanelSlot and App shell"
+      ],
+      "testing": [
+        "LibraryPanel rendering test",
+        "Canvas mount/drag/create smoke tests"
+      ],
+      "guardrails": [
+        "No host-side JSON fallbacks",
+        "Control Panel updates are selection-driven"
+      ],
+      "elements": [
+        {
+          "id": "library-panel",
+          "label": "Library Panel",
+          "svg": "slide-04-ui/library-panel.svg",
+          "description": "A curated shelf of component cards sits beside a tidy search bar. Each card has a miniature preview, a name, and small tags that suggest categories. The tone is editorial: discovery should feel inviting, not overwhelming, and the library should reward curiosity."
+        },
+        {
+          "id": "canvas",
+          "label": "Canvas",
+          "svg": "slide-04-ui/canvas.svg",
+          "description": "An infinite plane with a soft grid recedes into the distance. Snap points twinkle faintly as a component ghost follows the cursor, ready to drop. Edges glow when alignment is achieved. The canvas promises control and play in equal measure—precise, but never stiff."
+        },
+        {
+          "id": "control-panel",
+          "label": "Control Panel",
+          "svg": "slide-04-ui/control-panel.svg",
+          "description": "A right-aligned panel arranges labeled fields into clear property groups. Labels sit left in a calm gray; inputs rest right with smart defaults. A small lock icon appears on protected fields, while a subtle 'apply' pulse confirms changes. It reflects selection faithfully—never guessing, never surprising."
+        },
+        {
+          "id": "component-json",
+          "label": "Component JSON",
+          "svg": "slide-04-ui/component-json.svg",
+          "description": "A blueprint sheet unfurls with stylized JSON nodes connected by slender lines. Properties wear small badges\u2014type, default, constraints. The mood is technical yet approachable: this is the data source that makes the UI predictable, explainable, and repeatable."
+        },
+        {
+          "id": "component-mapper",
+          "label": "Component Mapper",
+          "svg": "slide-04-ui/component-mapper.svg",
+          "description": "Blocks labeled rules, map, and render sit in a left-to-right flow, with graceful arrows translating schema into interface. Layers stack to suggest overrides and composition. The piece radiates calm authority: decisions are encoded once and applied everywhere the same way."
+        }
+      ]
+    },
+    {
+      "id": "slide-05-quality",
+      "name": "Phase 5: Validation, Testing, and Guardrails",
+      "story": "Harden the integration with unit tests, startup smoke tests, ESLint rules, ADRs, and CI checks.",
+      "effort": "S-M",
+      "time": "0.5–1.5 days",
+      "data_driven": [
+        "Generated manifests and topic catalogs",
+        "ESLint rule configurations"
+      ],
+      "code_required": [
+        "Vitest suites for plugins",
+        "Host startup test and custom ESLint rules"
+      ],
+      "dependencies": [
+        "CI workflow",
+        "ADR directory and templates"
+      ],
+      "testing": [
+        "All plugin unit tests green",
+        "Host startup E2E passes in CI"
+      ],
+      "guardrails": [
+        "Commit messages link to issues",
+        "ESLint forbids cross-plugin imports"
+      ],
+      "elements": [
+        {
+          "id": "vitest",
+          "label": "Vitest",
+          "svg": "slide-05-quality/vitest.svg",
+          "description": "A confident shield bears a green check at its center, flanked by tiny test tubes. Log lines march beneath like a passing review parade, each assertion lighting up in sequence. The aesthetic is clean and modern—evidence of trust earned, not assumed."
+        },
+        {
+          "id": "e2e-test",
+          "label": "E2E Startup Test",
+          "svg": "slide-05-quality/e2e-test.svg",
+          "description": "A small rocket lifts from a stylized host app window, a banner reading “smoke test” fluttering behind. Trail markers show boot steps passing in order. The lift-off is calm, not explosive—proof that everything works together under real conditions."
+        },
+        {
+          "id": "eslint-rules",
+          "label": "ESLint Rules",
+          "svg": "slide-05-quality/eslint-rules.svg",
+          "description": "A lint brush smooths away red squiggles from a file tree while green shields guard plugin boundaries. A rules panel to the side lists constraints with tidy checkmarks. The feeling is of a tidy workshop: constraints inspire quality rather than restrict creativity."
+        },
+        {
+          "id": "adr",
+          "label": "ADR",
+          "svg": "slide-05-quality/adr.svg",
+          "description": "A handsome, stitched notebook sits open to a page titled “Decision Record,” with a branching diagram of options and a circled choice. A slim ribbon marks the issue link. The vibe is archival and accountable—choices are recorded so future readers understand the why, not just the what."
+        },
+        {
+          "id": "ci",
+          "label": "CI",
+          "svg": "slide-05-quality/ci.svg",
+          "description": "An assembly line rolls beneath watchful status lights: queued, running, passed. Small bots stamp artifacts with build numbers, while a dashboard in the background ticks green. The scene conveys continuous assurance—every change is exercised, measured, and approved."
+        }
+      ]
+    }
+  ]
+}
+

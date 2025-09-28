@@ -1,0 +1,1 @@
+A luminous thread snakes from the manifest card to a well-marked entry port labeled handlersPath. Breadcrumb dots align along the route, reinforcing clarity and intent. The path glows brighter as it nears the port—an invitation to connect code by contract, not by coordinates.

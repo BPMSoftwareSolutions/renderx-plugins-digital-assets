@@ -1,0 +1,1 @@
+A clear pointer icon touches a component tile, and a green current travels along a path toward a control panel. Along the route, signposts mark events—selection.changed, panel.update. The visual tells a truth: selection leads, and the rest follows naturally.

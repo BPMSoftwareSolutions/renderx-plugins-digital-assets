@@ -1,0 +1,1 @@
+Phase 5 ensures durability: write/green unit tests in plugins, add a host startup smoke test, enforce ESLint architectural rules, record an ADR for key decisions, and run everything in CI so regressions are caught early.
