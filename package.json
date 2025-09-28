@@ -1,0 +1,32 @@
+{
+  "name": "renderx-plugins-digital-assets",
+  "version": "1.0.0",
+  "description": "Digital assets and SVG animations for RenderX plugins",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ],
+    "collectCoverageFrom": [
+      "assets/**/*.{js,svg}",
+      "!**/node_modules/**"
+    ]
+  },
+  "keywords": [
+    "svg",
+    "animation",
+    "renderx",
+    "digital-assets"
+  ],
+  "author": "BPM Software Solutions",
+  "license": "MIT"
+}
