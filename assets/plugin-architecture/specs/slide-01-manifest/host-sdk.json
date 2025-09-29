@@ -1,0 +1,9 @@
+{
+  "sub_elements": [
+    { "id": "console", "svg": "slide-01-manifest/host-sdk/console.svg", "compose": { "x": 0, "y": 0 } },
+    { "id": "rails",   "svg": "slide-01-manifest/host-sdk/rails.svg",   "compose": { "x": 0, "y": 0 } },
+    { "id": "ports",   "svg": "slide-01-manifest/host-sdk/ports.svg",   "compose": { "x": 0, "y": 0 } },
+    { "id": "modules", "svg": "slide-01-manifest/host-sdk/modules.svg", "compose": { "x": 0, "y": 0 } }
+  ]
+}
+
