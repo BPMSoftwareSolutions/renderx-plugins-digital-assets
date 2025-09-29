@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <title>Phase 3: Events and Topics Integration</title>
+  <desc>Connect plugin flows to the EventRouter and Topics bus. Use topic replay cache to hydrate late consumers.</desc>
+
+  <!-- Slide background -->
+  <rect width="100%" height="100%" fill="#FAFAFA"/>
+
+  <!-- Slide title -->
+  <text x="600" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="600" fill="#1F2937">Phase 3: Events and Topics Integration</text>
+
+  <!-- Elements -->
+  <g id="event-router" transform="translate(23,155)" data-element="EventRouter">
+    <!-- EventRouter -->
+<rect x="20" y="24" width="400" height="100" rx="10" ry="10" fill="#E0E7FF" stroke="#4338CA" stroke-width="2"/><text x="220" y="68" font-family="Arial, Helvetica, sans-serif" font-size="18" text-anchor="middle" fill="#312E81">EventRouter</text><text x="220" y="98" font-family="Arial, Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#3730A3">publish/subscribe hub</text>
+  </g>
+
+  <g id="topics-bus" transform="translate(390,155)" data-element="Topics Bus">
+    <!-- Topics Bus -->
+<rect x="20" y="24" width="400" height="100" rx="10" ry="10" fill="#DBEAFE" stroke="#2563EB" stroke-width="2"/><text x="220" y="68" font-family="Arial, Helvetica, sans-serif" font-size="18" text-anchor="middle" fill="#1D4ED8">Topics Bus</text><text x="220" y="98" font-family="Arial, Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#1E40AF">domain + UI topics</text>
+  </g>
+
+  <g id="replay-cache" transform="translate(757,155)" data-element="Replay Cache">
+    <!-- Replay Cache -->
+<rect x="20" y="24" width="400" height="100" rx="10" ry="10" fill="#FFF7ED" stroke="#EA580C" stroke-width="2"/><text x="220" y="68" font-family="Arial, Helvetica, sans-serif" font-size="18" text-anchor="middle" fill="#9A3412">Replay Cache</text><text x="220" y="98" font-family="Arial, Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#C2410C">hydrates late subscribers</text>
+  </g>
+
+  <g id="symphony" transform="translate(23,505)" data-element="Symphony">
+    <!-- Symphony -->
+<rect x="20" y="24" width="400" height="100" rx="10" ry="10" fill="#FDE68A" stroke="#CA8A04" stroke-width="2"/><text x="220" y="68" font-family="Arial, Helvetica, sans-serif" font-size="18" text-anchor="middle" fill="#92400E">Symphony</text><text x="220" y="98" font-family="Arial, Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#B45309">selection-forwarded flows</text>
+  </g>
+
+  <g id="selection-flow" transform="translate(390,505)" data-element="Selection Flow">
+    <!-- Selection Flow -->
+<rect x="20" y="24" width="400" height="100" rx="10" ry="10" fill="#DCFCE7" stroke="#16A34A" stroke-width="2"/><text x="220" y="68" font-family="Arial, Helvetica, sans-serif" font-size="18" text-anchor="middle" fill="#065F46">Selection Flow</text><text x="220" y="98" font-family="Arial, Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#047857">selection → control panel updates</text>
+  </g>
+</svg>

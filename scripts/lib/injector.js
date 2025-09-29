@@ -180,15 +180,24 @@ function generateForElementTemplateExact(parentSvgContent, element, options = {}
         idMatches.forEach(idMatch => {
           const idValue = idMatch.match(/id=["']([^"']+)["']/)[1];
           const uniqueId = `${se.id}-${idValue}`;
+
+          // Escape special regex characters in idValue
+          const escapedIdValue = idValue.replace(/[.*+?^${}()|[\]\\-]/g, '\\$&');
+
           // Update the ID definition
           processedInner = processedInner.replace(
-            new RegExp(`id=["']${idValue}["']`, 'g'),
+            new RegExp(`id=["']${escapedIdValue}["']`, 'g'),
             `id="${uniqueId}"`
           );
           // Update references to this ID
           processedInner = processedInner.replace(
-            new RegExp(`url\\(#${idValue}\\)`, 'g'),
+            new RegExp(`url\\(#${escapedIdValue}\\)`, 'g'),
             `url(#${uniqueId})`
+          );
+          // Update href references to this ID
+          processedInner = processedInner.replace(
+            new RegExp(`href=["']#${escapedIdValue}["']`, 'g'),
+            `href="#${uniqueId}"`
           );
         });
       }

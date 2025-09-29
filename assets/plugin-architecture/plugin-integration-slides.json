@@ -34,125 +34,185 @@
           "label": "Plugin Package",
           "svg": "slide-01-manifest/plugin-package.svg",
           "spec": "specs/slide-01-manifest/plugin-package.json",
-          "description": "A crisp, isometric package box sits center stage with a subtle shadow, wrapped in a clean label that reads “Plugin Package.” Along its sides, faint glyphs hint at capabilities and boundaries, while a small npm badge gleams like a seal of release-readiness. The palette is neutral with confident accents, suggesting maturity and portability. This is a self-contained unit\u2014tidy, shippable, and ready to slot into the ecosystem.",
+          "description": "A crisp, isometric package box sits center stage with a subtle shadow, wrapped in a clean label that reads “Plugin Package.” Along its sides, faint glyphs hint at capabilities and boundaries, while a small npm badge gleams like a seal of release-readiness. The palette is neutral with confident accents, suggesting maturity and portability. This is a self-contained unit—tidy, shippable, and ready to slot into the ecosystem.",
           "sub_elements": [
             {
               "id": "package-box",
               "label": "Package Box",
               "svg": "slide-01-manifest/plugin-package/package-box.svg",
               "description": "A crisp, isometric package box with clean geometric lines and neutral colors, representing the core container of the plugin.",
-              "compose": { "x": 0, "y": 0 }
+              "compose": {
+                "x": 0,
+                "y": 0
+              }
             },
             {
               "id": "shadow",
               "label": "Shadow",
               "svg": "slide-01-manifest/plugin-package/shadow.svg",
               "description": "A subtle shadow beneath the package box that grounds it and adds depth to the composition.",
-              "compose": { "x": 0, "y": 0 }
+              "compose": {
+                "x": 0,
+                "y": 0
+              }
             },
             {
               "id": "label",
               "label": "Package Label",
               "svg": "slide-01-manifest/plugin-package/label.svg",
               "description": "A clean label wrapped around the package that clearly identifies it as 'Plugin Package'.",
-              "compose": { "x": 0, "y": 0 }
+              "compose": {
+                "x": 0,
+                "y": 0
+              }
             },
             {
               "id": "glyphs",
               "label": "Capability Glyphs",
               "svg": "slide-01-manifest/plugin-package/glyphs.svg",
               "description": "Faint glyphs along the sides of the package that hint at capabilities and boundaries.",
-              "compose": { "x": 0, "y": 0 }
+              "compose": {
+                "x": 0,
+                "y": 0
+              }
             },
             {
               "id": "npm-badge",
               "label": "NPM Badge",
               "svg": "slide-01-manifest/plugin-package/npm-badge.svg",
               "description": "A small npm badge that gleams like a seal of release-readiness, indicating the package is ready for publication.",
-              "compose": { "x": 0, "y": 0 }
+              "compose": {
+                "x": 0,
+                "y": 0
+              }
             }
-          ]
+          ],
+          "compose": {
+            "x": 23,
+            "y": 155,
+            "width": 420,
+            "height": 140
+          }
         },
         {
           "id": "plugin-manifest",
           "label": "Plugin Manifest",
           "svg": "slide-01-manifest/plugin-manifest.svg",
           "spec": "specs/slide-01-manifest/plugin-manifest.json",
-          "description": "A sleek document card, trimmed with cyan, features stylized JSON braces and neatly aligned key–value rows. A subtle “generated” stamp in the corner indicates the canonical source. Tabs along the edge suggest navigable sections\u2014routes, topics, handlers. The page glows lightly, conveying that this manifest is more than text: it’s the living contract that powers discovery.",
+          "description": "A sleek document card, trimmed with cyan, features stylized JSON braces and neatly aligned key–value rows. A subtle “generated” stamp in the corner indicates the canonical source. Tabs along the edge suggest navigable sections—routes, topics, handlers. The page glows lightly, conveying that this manifest is more than text: it’s the living contract that powers discovery.",
           "sub_elements": [
             {
               "id": "document-card",
               "label": "Document Card",
               "svg": "slide-01-manifest/plugin-manifest/document-card.svg",
               "description": "A sleek document card with cyan trim that serves as the foundation for the manifest display.",
-              "compose": { "x": 0, "y": 0 }
+              "compose": {
+                "x": 0,
+                "y": 0
+              }
             },
             {
               "id": "json-braces",
               "label": "JSON Braces",
               "svg": "slide-01-manifest/plugin-manifest/json-braces.svg",
               "description": "Stylized JSON braces that frame the content and indicate the structured data format.",
-              "compose": { "x": 0, "y": 0 }
+              "compose": {
+                "x": 0,
+                "y": 0
+              }
             },
             {
               "id": "key-value-rows",
               "label": "Key-Value Rows",
               "svg": "slide-01-manifest/plugin-manifest/key-value-rows.svg",
               "description": "Neatly aligned key-value rows that represent the structured data within the manifest.",
-              "compose": { "x": 0, "y": 0 }
+              "compose": {
+                "x": 0,
+                "y": 0
+              }
             },
             {
               "id": "generated-stamp",
               "label": "Generated Stamp",
               "svg": "slide-01-manifest/plugin-manifest/generated-stamp.svg",
               "description": "A subtle 'generated' stamp in the corner that indicates the canonical source of the manifest.",
-              "compose": { "x": 0, "y": 0 }
+              "compose": {
+                "x": 0,
+                "y": 0
+              }
             },
             {
               "id": "tabs",
               "label": "Navigation Tabs",
               "svg": "slide-01-manifest/plugin-manifest/tabs.svg",
               "description": "Tabs along the edge that suggest navigable sections—routes, topics, handlers.",
-              "compose": { "x": 0, "y": 0 }
+              "compose": {
+                "x": 0,
+                "y": 0
+              }
             }
-          ]
+          ],
+          "compose": {
+            "x": 390,
+            "y": 155,
+            "width": 420,
+            "height": 140
+          }
         },
         {
           "id": "handlers-export",
           "label": "Handlers Export",
           "svg": "slide-01-manifest/handlers-export.svg",
           "spec": "specs/slide-01-manifest/handlers-export.json",
-          "description": "Two elegant connectors emerge from the plugin’s core and click into matching ports labeled onDragStart and publishCreateRequested. A violet gradient arcs between them, suggesting energy in motion. Fine circuit traces radiate outward, implying extensibility. The composition reads like an interface handshake\u2014precise, confident, and ready to orchestrate behavior.",
+          "description": "Two elegant connectors emerge from the plugin’s core and click into matching ports labeled onDragStart and publishCreateRequested. A violet gradient arcs between them, suggesting energy in motion. Fine circuit traces radiate outward, implying extensibility. The composition reads like an interface handshake—precise, confident, and ready to orchestrate behavior.",
           "sub_elements": [
             {
               "id": "connectors",
               "label": "Elegant Connectors",
               "svg": "slide-01-manifest/handlers-export/connectors.svg",
               "description": "Two elegant connectors that emerge from the plugin's core, representing the interface points.",
-              "compose": { "x": 0, "y": 0 }
+              "compose": {
+                "x": 0,
+                "y": 0
+              }
             },
             {
               "id": "ports",
               "label": "Matching Ports",
               "svg": "slide-01-manifest/handlers-export/ports.svg",
               "description": "Matching ports labeled onDragStart and publishCreateRequested that receive the connectors.",
-              "compose": { "x": 0, "y": 0 }
+              "compose": {
+                "x": 0,
+                "y": 0
+              }
             },
             {
               "id": "gradient",
               "label": "Violet Gradient",
               "svg": "slide-01-manifest/handlers-export/gradient.svg",
               "description": "A violet gradient that arcs between the connectors, suggesting energy in motion.",
-              "compose": { "x": 0, "y": 0 }
+              "compose": {
+                "x": 0,
+                "y": 0
+              }
             },
             {
               "id": "circuit-traces",
               "label": "Circuit Traces",
               "svg": "slide-01-manifest/handlers-export/circuit-traces.svg",
               "description": "Fine circuit traces that radiate outward, implying extensibility and connection possibilities.",
-              "compose": { "x": 0, "y": 0 }
+              "compose": {
+                "x": 0,
+                "y": 0
+              }
             }
-          ]
+          ],
+          "compose": {
+            "x": 757,
+            "y": 155,
+            "width": 420,
+            "height": 140
+          }
         },
         {
           "id": "build-publish",
@@ -185,44 +245,68 @@
               "svg": "slide-01-manifest/build-publish/uplink-arrow.svg",
               "description": "A bright uplink arrow that rises from the platform, indicating publication to the registry."
             }
-          ]
+          ],
+          "compose": {
+            "x": 23,
+            "y": 505,
+            "width": 420,
+            "height": 140
+          }
         },
         {
           "id": "host-sdk",
           "label": "Host SDK (Context)",
           "svg": "slide-01-manifest/host-sdk.svg",
           "spec": "specs/slide-01-manifest/host-sdk.json",
-          "description": "A low-profile console\u2014matte gray with precise controls\u2014anchors the frame. Slender rails and labeled ports hint at Conductor and EventRouter modules sliding neatly into place. The design feels foundational: understated, reliable, and purpose-built to support plugins without overshadowing them. This is the chassis of the system.",
+          "description": "A low-profile console—matte gray with precise controls—anchors the frame. Slender rails and labeled ports hint at Conductor and EventRouter modules sliding neatly into place. The design feels foundational: understated, reliable, and purpose-built to support plugins without overshadowing them. This is the chassis of the system.",
           "sub_elements": [
             {
               "id": "console",
               "label": "Low-Profile Console",
               "svg": "slide-01-manifest/host-sdk/console.svg",
               "description": "A low-profile console in matte gray with precise controls that anchors the frame.",
-              "compose": { "x": 0, "y": 0 }
+              "compose": {
+                "x": 0,
+                "y": 0
+              }
             },
             {
               "id": "rails",
               "label": "Slender Rails",
               "svg": "slide-01-manifest/host-sdk/rails.svg",
               "description": "Slender rails that provide the infrastructure for modules to slide into place.",
-              "compose": { "x": 0, "y": 0 }
+              "compose": {
+                "x": 0,
+                "y": 0
+              }
             },
             {
               "id": "ports",
               "label": "Labeled Ports",
               "svg": "slide-01-manifest/host-sdk/ports.svg",
               "description": "Labeled ports that provide connection points for various system components.",
-              "compose": { "x": 0, "y": 0 }
+              "compose": {
+                "x": 0,
+                "y": 0
+              }
             },
             {
               "id": "modules",
               "label": "System Modules",
               "svg": "slide-01-manifest/host-sdk/modules.svg",
               "description": "Conductor and EventRouter modules that slide neatly into place on the rails.",
-              "compose": { "x": 0, "y": 0 }
+              "compose": {
+                "x": 0,
+                "y": 0
+              }
             }
-          ]
+          ],
+          "compose": {
+            "x": 390,
+            "y": 505,
+            "width": 420,
+            "height": 140
+          }
         }
       ]
     },
@@ -257,31 +341,61 @@
           "id": "host-app",
           "label": "Host App (Thin)",
           "svg": "slide-02-discovery/host-app.svg",
-          "description": "A minimalist app window with clean chrome floats above a neutral backdrop. Its toolbar is spare\u2014only what\u2019s essential to boot the system. A thin conductor line traces through the header, implying orchestration without clutter. The composition whispers \u201Cthin host\u201D: poised to discover, not dominate."
+          "description": "A minimalist app window with clean chrome floats above a neutral backdrop. Its toolbar is spare—only what’s essential to boot the system. A thin conductor line traces through the header, implying orchestration without clutter. The composition whispers “thin host”: poised to discover, not dominate.",
+          "compose": {
+            "x": 23,
+            "y": 155,
+            "width": 420,
+            "height": 140
+          }
         },
         {
           "id": "plugin-loader",
           "label": "Plugin Loader",
           "svg": "slide-02-discovery/plugin-loader.svg",
-          "description": "A graceful robotic arm reaches from the host frame and lifts a neatly labeled plugin cartridge. Cyan accents and a dotted guide rail emphasize precise, dynamic loading. A subtle glow at the contact point communicates safe, discoverable integration\u2014modules slide in, no hard wiring required."
+          "description": "A graceful robotic arm reaches from the host frame and lifts a neatly labeled plugin cartridge. Cyan accents and a dotted guide rail emphasize precise, dynamic loading. A subtle glow at the contact point communicates safe, discoverable integration—modules slide in, no hard wiring required.",
+          "compose": {
+            "x": 390,
+            "y": 155,
+            "width": 420,
+            "height": 140
+          }
         },
         {
           "id": "handlers-path",
           "label": "handlersPath",
           "svg": "slide-02-discovery/handlers-path.svg",
-          "description": "A luminous thread snakes from the manifest card to a well-marked entry port labeled handlersPath. Breadcrumb dots align along the route, reinforcing clarity and intent. The path glows brighter as it nears the port\u2014an invitation to connect code by contract, not by coordinates."
+          "description": "A luminous thread snakes from the manifest card to a well-marked entry port labeled handlersPath. Breadcrumb dots align along the route, reinforcing clarity and intent. The path glows brighter as it nears the port—an invitation to connect code by contract, not by coordinates.",
+          "compose": {
+            "x": 757,
+            "y": 155,
+            "width": 420,
+            "height": 140
+          }
         },
         {
           "id": "routing-config",
           "label": "Routing Config",
           "svg": "slide-02-discovery/routing-config.svg",
-          "description": "A stylized transit map overlays the host\u2014nodes for panels and flows, lines for message routes. Orange lane markers indicate configured topics and paths, with directional chevrons showing traffic. It feels navigable and ready for change: add a station, extend a line, the map adapts elegantly."
+          "description": "A stylized transit map overlays the host—nodes for panels and flows, lines for message routes. Orange lane markers indicate configured topics and paths, with directional chevrons showing traffic. It feels navigable and ready for change: add a station, extend a line, the map adapts elegantly.",
+          "compose": {
+            "x": 23,
+            "y": 505,
+            "width": 420,
+            "height": 140
+          }
         },
         {
           "id": "feature-flags",
           "label": "Feature Flags",
           "svg": "slide-02-discovery/feature-flags.svg",
-          "description": "A neat row of toggle switches sits atop a soft green panel. Each switch has a crisp label and an accessible on/off state, with tooltips hinting at safe rollout. A slim guardrail icon reminds the viewer that discovery is controlled\u2014exposure can be dialed up or down without code churn."
+          "description": "A neat row of toggle switches sits atop a soft green panel. Each switch has a crisp label and an accessible on/off state, with tooltips hinting at safe rollout. A slim guardrail icon reminds the viewer that discovery is controlled—exposure can be dialed up or down without code churn.",
+          "compose": {
+            "x": 390,
+            "y": 505,
+            "width": 420,
+            "height": 140
+          }
         }
       ]
     },
@@ -316,31 +430,61 @@
           "id": "event-router",
           "label": "EventRouter",
           "svg": "slide-03-events/event-router.svg",
-          "description": "At center, a luminous hub radiates violet spokes to surrounding modules. Tiny packets pulse along the spokes, converging and fanning out with rhythm and intent. The hub feels authoritative yet lightweight\u2014traffic flows smoothly, rules are respected, and pathways remain visible at a glance."
+          "description": "At center, a luminous hub radiates violet spokes to surrounding modules. Tiny packets pulse along the spokes, converging and fanning out with rhythm and intent. The hub feels authoritative yet lightweight—traffic flows smoothly, rules are respected, and pathways remain visible at a glance.",
+          "compose": {
+            "x": 23,
+            "y": 155,
+            "width": 420,
+            "height": 140
+          }
         },
         {
           "id": "topics-bus",
           "label": "Topics Bus",
           "svg": "slide-03-events/topics-bus.svg",
-          "description": "Parallel lines\u2014cool blues and steady grays\u2014run horizontally like transit lanes. Station markers labeled with topic names create wayfinding. Occasional merge nodes show where UI and domain streams intertwine. The overall feel is dependable throughput: routes are clear, stops are known, and service is reliable."
+          "description": "Parallel lines—cool blues and steady grays—run horizontally like transit lanes. Station markers labeled with topic names create wayfinding. Occasional merge nodes show where UI and domain streams intertwine. The overall feel is dependable throughput: routes are clear, stops are known, and service is reliable.",
+          "compose": {
+            "x": 390,
+            "y": 155,
+            "width": 420,
+            "height": 140
+          }
         },
         {
           "id": "replay-cache",
           "label": "Replay Cache",
           "svg": "slide-03-events/replay-cache.svg",
-          "description": "A compact time capsule\u2014part safe, part circular buffer\u2014sits beside the bus. Arrows loop clockwise around its rim while ghosted messages rest inside, ready to be replayed. The lock icon is small but present: persisted state is both accessible and protected from accidental mutation."
+          "description": "A compact time capsule—part safe, part circular buffer—sits beside the bus. Arrows loop clockwise around its rim while ghosted messages rest inside, ready to be replayed. The lock icon is small but present: persisted state is both accessible and protected from accidental mutation.",
+          "compose": {
+            "x": 757,
+            "y": 155,
+            "width": 420,
+            "height": 140
+          }
         },
         {
           "id": "symphony",
           "label": "Symphony",
           "svg": "slide-03-events/symphony.svg",
-          "description": "A conductor\u2019s baton hovers above a musical staff composed of discrete steps: select, focus, act. Notes align into phrases that represent sequences. Warm golds and ambers convey choreography: the flow is orchestrated, not improvised, and every entrance has its moment."
+          "description": "A conductor’s baton hovers above a musical staff composed of discrete steps: select, focus, act. Notes align into phrases that represent sequences. Warm golds and ambers convey choreography: the flow is orchestrated, not improvised, and every entrance has its moment.",
+          "compose": {
+            "x": 23,
+            "y": 505,
+            "width": 420,
+            "height": 140
+          }
         },
         {
           "id": "selection-flow",
           "label": "Selection Flow",
           "svg": "slide-03-events/selection-flow.svg",
-          "description": "A clear pointer icon touches a component tile, and a green current travels along a path toward a control panel. Along the route, signposts mark events\u2014selection.changed, panel.update. The visual tells a truth: selection leads, and the rest follows naturally."
+          "description": "A clear pointer icon touches a component tile, and a green current travels along a path toward a control panel. Along the route, signposts mark events—selection.changed, panel.update. The visual tells a truth: selection leads, and the rest follows naturally.",
+          "compose": {
+            "x": 390,
+            "y": 505,
+            "width": 420,
+            "height": 140
+          }
         }
       ]
     },
@@ -375,31 +519,61 @@
           "id": "library-panel",
           "label": "Library Panel",
           "svg": "slide-04-ui/library-panel.svg",
-          "description": "A curated shelf of component cards sits beside a tidy search bar. Each card has a miniature preview, a name, and small tags that suggest categories. The tone is editorial: discovery should feel inviting, not overwhelming, and the library should reward curiosity."
+          "description": "A curated shelf of component cards sits beside a tidy search bar. Each card has a miniature preview, a name, and small tags that suggest categories. The tone is editorial: discovery should feel inviting, not overwhelming, and the library should reward curiosity.",
+          "compose": {
+            "x": 23,
+            "y": 155,
+            "width": 420,
+            "height": 140
+          }
         },
         {
           "id": "canvas",
           "label": "Canvas",
           "svg": "slide-04-ui/canvas.svg",
-          "description": "An infinite plane with a soft grid recedes into the distance. Snap points twinkle faintly as a component ghost follows the cursor, ready to drop. Edges glow when alignment is achieved. The canvas promises control and play in equal measure—precise, but never stiff."
+          "description": "An infinite plane with a soft grid recedes into the distance. Snap points twinkle faintly as a component ghost follows the cursor, ready to drop. Edges glow when alignment is achieved. The canvas promises control and play in equal measure—precise, but never stiff.",
+          "compose": {
+            "x": 390,
+            "y": 155,
+            "width": 420,
+            "height": 140
+          }
         },
         {
           "id": "control-panel",
           "label": "Control Panel",
           "svg": "slide-04-ui/control-panel.svg",
-          "description": "A right-aligned panel arranges labeled fields into clear property groups. Labels sit left in a calm gray; inputs rest right with smart defaults. A small lock icon appears on protected fields, while a subtle 'apply' pulse confirms changes. It reflects selection faithfully—never guessing, never surprising."
+          "description": "A right-aligned panel arranges labeled fields into clear property groups. Labels sit left in a calm gray; inputs rest right with smart defaults. A small lock icon appears on protected fields, while a subtle 'apply' pulse confirms changes. It reflects selection faithfully—never guessing, never surprising.",
+          "compose": {
+            "x": 757,
+            "y": 155,
+            "width": 420,
+            "height": 140
+          }
         },
         {
           "id": "component-json",
           "label": "Component JSON",
           "svg": "slide-04-ui/component-json.svg",
-          "description": "A blueprint sheet unfurls with stylized JSON nodes connected by slender lines. Properties wear small badges\u2014type, default, constraints. The mood is technical yet approachable: this is the data source that makes the UI predictable, explainable, and repeatable."
+          "description": "A blueprint sheet unfurls with stylized JSON nodes connected by slender lines. Properties wear small badges—type, default, constraints. The mood is technical yet approachable: this is the data source that makes the UI predictable, explainable, and repeatable.",
+          "compose": {
+            "x": 23,
+            "y": 505,
+            "width": 420,
+            "height": 140
+          }
         },
         {
           "id": "component-mapper",
           "label": "Component Mapper",
           "svg": "slide-04-ui/component-mapper.svg",
-          "description": "Blocks labeled rules, map, and render sit in a left-to-right flow, with graceful arrows translating schema into interface. Layers stack to suggest overrides and composition. The piece radiates calm authority: decisions are encoded once and applied everywhere the same way."
+          "description": "Blocks labeled rules, map, and render sit in a left-to-right flow, with graceful arrows translating schema into interface. Layers stack to suggest overrides and composition. The piece radiates calm authority: decisions are encoded once and applied everywhere the same way.",
+          "compose": {
+            "x": 390,
+            "y": 505,
+            "width": 420,
+            "height": 140
+          }
         }
       ]
     },
@@ -434,34 +608,63 @@
           "id": "vitest",
           "label": "Vitest",
           "svg": "slide-05-quality/vitest.svg",
-          "description": "A confident shield bears a green check at its center, flanked by tiny test tubes. Log lines march beneath like a passing review parade, each assertion lighting up in sequence. The aesthetic is clean and modern—evidence of trust earned, not assumed."
+          "description": "A confident shield bears a green check at its center, flanked by tiny test tubes. Log lines march beneath like a passing review parade, each assertion lighting up in sequence. The aesthetic is clean and modern—evidence of trust earned, not assumed.",
+          "compose": {
+            "x": 23,
+            "y": 155,
+            "width": 420,
+            "height": 140
+          }
         },
         {
           "id": "e2e-test",
           "label": "E2E Startup Test",
           "svg": "slide-05-quality/e2e-test.svg",
-          "description": "A small rocket lifts from a stylized host app window, a banner reading “smoke test” fluttering behind. Trail markers show boot steps passing in order. The lift-off is calm, not explosive—proof that everything works together under real conditions."
+          "description": "A small rocket lifts from a stylized host app window, a banner reading “smoke test” fluttering behind. Trail markers show boot steps passing in order. The lift-off is calm, not explosive—proof that everything works together under real conditions.",
+          "compose": {
+            "x": 390,
+            "y": 155,
+            "width": 420,
+            "height": 140
+          }
         },
         {
           "id": "eslint-rules",
           "label": "ESLint Rules",
           "svg": "slide-05-quality/eslint-rules.svg",
-          "description": "A lint brush smooths away red squiggles from a file tree while green shields guard plugin boundaries. A rules panel to the side lists constraints with tidy checkmarks. The feeling is of a tidy workshop: constraints inspire quality rather than restrict creativity."
+          "description": "A lint brush smooths away red squiggles from a file tree while green shields guard plugin boundaries. A rules panel to the side lists constraints with tidy checkmarks. The feeling is of a tidy workshop: constraints inspire quality rather than restrict creativity.",
+          "compose": {
+            "x": 757,
+            "y": 155,
+            "width": 420,
+            "height": 140
+          }
         },
         {
           "id": "adr",
           "label": "ADR",
           "svg": "slide-05-quality/adr.svg",
-          "description": "A handsome, stitched notebook sits open to a page titled “Decision Record,” with a branching diagram of options and a circled choice. A slim ribbon marks the issue link. The vibe is archival and accountable—choices are recorded so future readers understand the why, not just the what."
+          "description": "A handsome, stitched notebook sits open to a page titled “Decision Record,” with a branching diagram of options and a circled choice. A slim ribbon marks the issue link. The vibe is archival and accountable—choices are recorded so future readers understand the why, not just the what.",
+          "compose": {
+            "x": 23,
+            "y": 505,
+            "width": 420,
+            "height": 140
+          }
         },
         {
           "id": "ci",
           "label": "CI",
           "svg": "slide-05-quality/ci.svg",
-          "description": "An assembly line rolls beneath watchful status lights: queued, running, passed. Small bots stamp artifacts with build numbers, while a dashboard in the background ticks green. The scene conveys continuous assurance—every change is exercised, measured, and approved."
+          "description": "An assembly line rolls beneath watchful status lights: queued, running, passed. Small bots stamp artifacts with build numbers, while a dashboard in the background ticks green. The scene conveys continuous assurance—every change is exercised, measured, and approved.",
+          "compose": {
+            "x": 390,
+            "y": 505,
+            "width": 420,
+            "height": 140
+          }
         }
       ]
     }
   ]
 }
-

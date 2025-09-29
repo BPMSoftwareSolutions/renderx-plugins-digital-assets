@@ -41,6 +41,8 @@
 
   <!-- Subtle connecting lines -->
   <path d="M45 70 L45 250" stroke="#0891B2" stroke-width="1" opacity="0.3"/>
+  <g font-family="'SF Mono', 'Monaco', monospace">
+
   <!-- Neatly aligned key-value rows representing structured data -->
 
   <!-- Row 1: name -->
@@ -83,6 +85,10 @@
 
   <!-- Alignment guides (subtle) -->
   <line x1="160" y1="75" x2="160" y2="205" stroke="#F0F0F0" stroke-width="1" opacity="0.3"/>
+  
+</g>
+  <g font-family="Arial, sans-serif">
+
   <!-- Subtle 'generated' stamp in the corner -->
   <g transform="translate(320, 40)">
     <!-- Stamp background -->
@@ -94,6 +100,10 @@
     <!-- Corner fold effect -->
     <path d="M55 0 L60 0 L60 5 Z" fill="#E0F2FE" stroke="#0891B2" stroke-width="0.5"/>
   </g>
+  
+</g>
+  <g font-family="Arial, sans-serif">
+
   <!-- Tabs along the edge suggesting navigable sections -->
 
   <!-- Routes tab -->
@@ -122,5 +132,7 @@
 
   <!-- Tab connector line -->
   <line x1="30" y1="55" x2="240" y2="55" stroke="#E2E8F0" stroke-width="1"/>
+  
+</g>
 </svg>
 

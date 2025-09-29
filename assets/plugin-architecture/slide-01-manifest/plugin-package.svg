@@ -20,6 +20,8 @@
   </defs>
   <!-- Isometric shadow matching the package shape -->
   <path d="M45 165 L145 165 L165 145 L65 145 Z" fill="url(#shadow-shadowGradient)"/>
+  <g font-family="Arial, sans-serif">
+
   <!-- Clean label wrapped around the package -->
   <!-- Label band across the front -->
   <rect x="45" y="95" width="90" height="18" fill="#FFFFFF" stroke="#CCC" stroke-width="1" rx="2"/>
@@ -30,6 +32,10 @@
 
   <!-- Label continuation on the right face -->
   <path d="M135 95 L155 75 L155 93 L135 113" fill="#F0F0F0" stroke="#CCC" stroke-width="1"/>
+  
+</g>
+  <g fill="#AAA" opacity="0.6">
+
   <!-- Faint glyphs along the sides hinting at capabilities and boundaries -->
 
   <!-- Left side glyphs - capabilities -->
@@ -61,6 +67,10 @@
     <circle cx="8" cy="0" r="1" fill="#AAA"/>
     <circle cx="16" cy="0" r="1" fill="#AAA"/>
   </g>
+  
+</g>
+  <g font-family="Arial, sans-serif">
+
   <!-- Small npm badge that gleams like a seal of release-readiness -->
   <defs>
     <linearGradient id="npm-badge-npmGleam" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -86,5 +96,7 @@
     <!-- npm text -->
     <text x="17.5" y="11" text-anchor="middle" font-size="8" fill="#FFFFFF" font-weight="bold">npm</text>
   </g>
+  
+</g>
 </svg>
 

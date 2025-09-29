@@ -24,6 +24,8 @@
     <circle cx="320" cy="180" r="6" fill="url(#connectors-connectorGradient)"/>
     <circle cx="320" cy="180" r="3" fill="#FFFFFF" opacity="0.8"/>
   </g>
+  <g font-family="'SF Mono', 'Monaco', monospace">
+
   <!-- Matching ports labeled onDragStart and publishCreateRequested -->
 
   <!-- onDragStart port -->
@@ -45,10 +47,16 @@
     <!-- Port indicator -->
     <circle cx="10" cy="15" r="3" fill="#8B5CF6"/>
   </g>
+  
+</g>
   <rect x="10" y="10" width="220" height="40" fill="url(#violetGrad)" rx="6"/>
+  <g stroke="#999" fill="none">
+
   <path d="M20 80 h40 v-30 h40 v30 h40 v-20 h40"/>
   <circle cx="20" cy="80" r="3" fill="#6B4EFF"/>
   <circle cx="180" cy="60" r="3" fill="#6B4EFF"/>
   <circle cx="220" cy="60" r="3" fill="#6B4EFF"/>
+  
+</g>
 </svg>
 
