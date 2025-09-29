@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="680" viewBox="0 0 1200 680"
+     xmlns="http://www.w3.org/2000/svg" role="img" aria-label="slide-01-lanes">
+  <defs><linearGradient id="rail" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7c3aed"/><stop offset="1" stop-color="#a78bfa"/></linearGradient><filter id="laneShadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.35"/></filter><filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  
+    <style>
+      .active-glow rect { filter: url(#glow); stroke: #8b5cf6; }
+      .connector { stroke-linecap: round; stroke-linejoin: round; }
+      .boundary-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: 600; }
+      .flow-token { animation-fill-mode: forwards; }
+    </style>
+  
+  <rect x="0" y="0" width="100%" height="100%" fill="#0f1116"/>
+  <g class="connector" id="c.pkg_to_handlers">
+    <defs>
+      <marker id="arrowHead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M0 0 L10 5 L0 10Z" fill="url(#rail)"/>
+      </marker>
+    </defs>
+    <path d="M 268 142 L 480 142 L 480 142 L 692 142" fill="none" style="stroke:url(#rail);stroke-width:2"/>
+    
+  </g><g class="connector" id="c.manifest_to_sdk">
+    <defs>
+      <marker id="arrowHead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M0 0 L10 5 L0 10Z" fill="#8b5cf6"/>
+      </marker>
+    </defs>
+    <path d="M 268 262 L 480 262 L 480 262 L 692 262" fill="none" style="stroke:#8b5cf6;stroke-width:2;dashed:true"/>
+    <text x="480" y="256" font-size="11" fill="#94a3b8" text-anchor="middle">register()</text>
+  </g>
+  <g id="lane.plugin" class="boundary">
+      <rect x="48" y="72" width="480" height="480" rx="8" style="fill:#141a24;stroke:#253146;stroke-width:1.5;label-color:#e6edf3" filter="url(#laneShadow)"/>
+      <text x="60" y="64" class="boundary-title" fill="#e6edf3" font-size="14">Plugin Context</text>
+    </g><rect id="pkg.tile" x="68" y="92" width="200" height="100" rx="8" style="fill:#1f2430;stroke:#384559"></rect><text id="pkg.title" x="68" y="92" style="fill:#e6edf3;font-size:16;font-weight:700">Plugin Package</text><rect id="manifest.tile" x="68" y="212" width="200" height="100" rx="8" style="fill:#1f2430;stroke:#384559"></rect><text id="manifest.title" x="68" y="212" style="fill:#e6edf3;font-size:16;font-weight:700">Plugin Manifest</text><g id="lane.host" class="boundary">
+      <rect x="672" y="72" width="480" height="480" rx="8" style="fill:#141a24;stroke:#253146;stroke-width:1.5;label-color:#e6edf3" filter="url(#laneShadow)"/>
+      <text x="684" y="64" class="boundary-title" fill="#e6edf3" font-size="14">Host Context</text>
+    </g><rect id="handlers.tile" x="692" y="92" width="220" height="100" rx="8" style="fill:#1f2430;stroke:#384559"></rect><text id="handlers.title" x="692" y="92" style="fill:#e6edf3;font-size:16;font-weight:700">Handlers Export</text><rect id="sdk.tile" x="692" y="212" width="220" height="100" rx="8" style="fill:#1f2430;stroke:#384559"></rect><text id="sdk.title" x="692" y="212" style="fill:#e6edf3;font-size:16;font-weight:700">Host SDK</text>
+  <g class="flow" id="flow.pkg_build">
+    <path d="M 268 142 L 480 142 L 480 142 L 692 142" fill="none" stroke="none" id="flow.pkg_build-path"/>
+    <circle r="4" fill="#d6bcfa" class="flow-token">
+      <animateMotion dur="1.25s" repeatCount="infinite" rotate="auto">
+        <mpath href="#flow.pkg_build-path"/>
+      </animateMotion>
+    </circle>
+  </g>
+</svg>

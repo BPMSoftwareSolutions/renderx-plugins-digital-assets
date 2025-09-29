@@ -1,0 +1,155 @@
+{
+  "id": "neon",
+  "name": "Neon Cyberpunk Theme",
+  "description": "Vibrant cyberpunk aesthetic with neon colors, glowing effects, and futuristic styling for gaming and tech presentations",
+  "version": "1.0.0",
+  "colors": {
+    "primary": "#ff00ff",
+    "secondary": "#00ffff",
+    "background": "#0a0a0a",
+    "surface": "#1a1a1a",
+    "text": "#ffffff",
+    "textSecondary": "#cccccc",
+    "border": "#333333",
+    "accent": "#00ff00",
+    "success": "#00ff88",
+    "warning": "#ffaa00",
+    "error": "#ff0066",
+    "custom": {
+      "neonPink": "#ff00ff",
+      "neonPinkBorder": "#cc00cc",
+      "neonCyan": "#00ffff",
+      "neonCyanBorder": "#00cccc",
+      "neonGreen": "#00ff00",
+      "neonGreenBorder": "#00cc00",
+      "neonOrange": "#ff6600",
+      "neonOrangeBorder": "#cc5500",
+      "neonPurple": "#9900ff",
+      "neonPurpleBorder": "#7700cc",
+      "neonYellow": "#ffff00",
+      "neonYellowBorder": "#cccc00",
+      "neonRed": "#ff0066",
+      "neonRedBorder": "#cc0055",
+      "neonBlue": "#0066ff",
+      "neonBlueBorder": "#0055cc",
+      "shadowNeon": "#ff00ff"
+    }
+  },
+  "typography": {
+    "fontFamily": "'Orbitron', 'Exo 2', 'Rajdhani', 'Share Tech Mono', monospace",
+    "fontSize": {
+      "xs": 10,
+      "sm": 12,
+      "base": 14,
+      "lg": 16,
+      "xl": 20,
+      "xxl": 32
+    },
+    "fontWeight": {
+      "light": 300,
+      "normal": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700
+    },
+    "lineHeight": {
+      "tight": 1.1,
+      "normal": 1.3,
+      "relaxed": 1.5
+    }
+  },
+  "spacing": {
+    "xs": 4,
+    "sm": 8,
+    "md": 16,
+    "lg": 24,
+    "xl": 32,
+    "xxl": 48
+  },
+  "borders": {
+    "radius": {
+      "none": 0,
+      "sm": 2,
+      "md": 4,
+      "lg": 8,
+      "full": 9999
+    },
+    "width": {
+      "thin": 1,
+      "normal": 2,
+      "thick": 3
+    }
+  },
+  "shadows": {
+    "none": "none",
+    "sm": "0 0 4px rgba(255, 0, 255, 0.5)",
+    "md": "0 0 8px rgba(255, 0, 255, 0.6)",
+    "lg": "0 0 16px rgba(255, 0, 255, 0.7)",
+    "xl": "0 0 24px rgba(255, 0, 255, 0.8)"
+  },
+  "effects": {
+    "opacity": {
+      "disabled": 0.3,
+      "muted": 0.6,
+      "subtle": 0.8
+    },
+    "blur": {
+      "sm": 2,
+      "md": 4,
+      "lg": 8
+    },
+    "glow": {
+      "sm": "0 0 5px currentColor",
+      "md": "0 0 10px currentColor, 0 0 20px currentColor",
+      "lg": "0 0 10px currentColor, 0 0 20px currentColor, 0 0 40px currentColor",
+      "xl": "0 0 10px currentColor, 0 0 20px currentColor, 0 0 40px currentColor, 0 0 80px currentColor"
+    }
+  },
+  "animations": {
+    "pulse": {
+      "duration": "2s",
+      "timing": "ease-in-out",
+      "iteration": "infinite",
+      "alternate": true
+    },
+    "flicker": {
+      "duration": "0.1s",
+      "timing": "linear",
+      "iteration": "infinite"
+    },
+    "scan": {
+      "duration": "3s",
+      "timing": "linear",
+      "iteration": "infinite"
+    }
+  },
+  "cyberpunk": {
+    "description": "High-energy neon theme inspired by cyberpunk aesthetics, perfect for gaming interfaces, tech demos, and futuristic presentations",
+    "features": {
+      "glowEffects": "Multiple levels of neon glow effects",
+      "animations": "Built-in pulse, flicker, and scan animations",
+      "vibrantColors": "High-saturation neon color palette",
+      "futuristicFonts": "Sci-fi inspired typography",
+      "darkBackground": "Deep black backgrounds for maximum contrast"
+    },
+    "useCases": [
+      "Gaming interfaces",
+      "Tech conferences",
+      "Cybersecurity presentations",
+      "Futuristic demos",
+      "Creative showcases"
+    ],
+    "guidelines": {
+      "contrast": "Use dark backgrounds to make neon colors pop",
+      "moderation": "Use glow effects sparingly to avoid overwhelming",
+      "readability": "Ensure text remains readable despite effects",
+      "performance": "Consider performance impact of animations and effects"
+    },
+    "colorCombinations": {
+      "classic": ["#ff00ff", "#00ffff"],
+      "matrix": ["#00ff00", "#000000"],
+      "synthwave": ["#ff00ff", "#00ffff", "#ffff00"],
+      "cyberpunk": ["#ff0066", "#00ff88", "#0066ff"]
+    }
+  }
+}

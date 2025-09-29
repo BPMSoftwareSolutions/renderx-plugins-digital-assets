@@ -1,0 +1,116 @@
+{
+  "id": "light-professional",
+  "name": "Light Professional Theme",
+  "description": "Clean, corporate styling optimized for business presentations and professional documentation",
+  "version": "1.0.0",
+  "colors": {
+    "primary": "#2563eb",
+    "secondary": "#3b82f6",
+    "background": "#ffffff",
+    "surface": "#f8fafc",
+    "text": "#1e293b",
+    "textSecondary": "#64748b",
+    "border": "#e2e8f0",
+    "accent": "#0ea5e9",
+    "success": "#059669",
+    "warning": "#d97706",
+    "error": "#dc2626",
+    "custom": {
+      "corporateBlue": "#1e40af",
+      "corporateBlueBorder": "#1d4ed8",
+      "trustworthyGray": "#475569",
+      "trustworthyGrayBorder": "#334155",
+      "professionalTeal": "#0d9488",
+      "professionalTealBorder": "#0f766e",
+      "executiveNavy": "#1e3a8a",
+      "executiveNavyBorder": "#1e40af",
+      "premiumGold": "#ca8a04",
+      "premiumGoldBorder": "#a16207",
+      "reliableGreen": "#16a34a",
+      "reliableGreenBorder": "#15803d",
+      "innovativeOrange": "#ea580c",
+      "innovativeOrangeBorder": "#c2410c",
+      "shadowGray": "#94a3b8"
+    }
+  },
+  "typography": {
+    "fontFamily": "'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif",
+    "fontSize": {
+      "xs": 10,
+      "sm": 12,
+      "base": 14,
+      "lg": 16,
+      "xl": 18,
+      "xxl": 28
+    },
+    "fontWeight": {
+      "light": 300,
+      "normal": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700
+    },
+    "lineHeight": {
+      "tight": 1.25,
+      "normal": 1.5,
+      "relaxed": 1.75
+    }
+  },
+  "spacing": {
+    "xs": 4,
+    "sm": 8,
+    "md": 16,
+    "lg": 24,
+    "xl": 32,
+    "xxl": 48
+  },
+  "borders": {
+    "radius": {
+      "none": 0,
+      "sm": 2,
+      "md": 4,
+      "lg": 8,
+      "full": 9999
+    },
+    "width": {
+      "thin": 1,
+      "normal": 1.5,
+      "thick": 2
+    }
+  },
+  "shadows": {
+    "none": "none",
+    "sm": "0 1px 2px rgba(0, 0, 0, 0.05)",
+    "md": "0 2px 4px rgba(0, 0, 0, 0.1)",
+    "lg": "0 4px 8px rgba(0, 0, 0, 0.15)",
+    "xl": "0 8px 16px rgba(0, 0, 0, 0.2)"
+  },
+  "effects": {
+    "opacity": {
+      "disabled": 0.4,
+      "muted": 0.6,
+      "subtle": 0.8
+    },
+    "blur": {
+      "sm": 1,
+      "md": 2,
+      "lg": 4
+    }
+  },
+  "branding": {
+    "description": "Professional theme designed for corporate environments, client presentations, and business documentation. Features clean lines, subtle shadows, and a trustworthy color palette.",
+    "useCases": [
+      "Executive presentations",
+      "Client-facing documentation",
+      "Corporate architecture diagrams",
+      "Business process flows",
+      "Professional reports"
+    ],
+    "guidelines": {
+      "contrast": "Maintains WCAG AA compliance with high contrast ratios",
+      "readability": "Optimized for both screen and print media",
+      "consistency": "Uses standard corporate color conventions",
+      "accessibility": "Designed with colorblind-friendly palette"
+    }
+  }
+}
