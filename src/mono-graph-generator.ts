@@ -387,34 +387,46 @@ export function renderMonoGraph(monoGraph: MonoGraph): string {
   // Create unified bus sprite
   const unifiedBus = createUnifiedBusSprite(monoGraph);
 
-  // Render each scene at its position
+  // Create clipping path definitions for each scene
+  const clippingPaths = scenes.map((scene, index) => {
+    const sceneX = scene.position.x;
+    const sceneY = scene.position.y;
+
+    return `
+      <clipPath id="scene-${index + 1}-clip">
+        <rect x="${sceneX}" y="${sceneY}" width="800" height="400" rx="8" ry="8"/>
+      </clipPath>`;
+  }).join('\n');
+
+  // Render each scene at its position with enforced boundaries
   const scenesSvg = scenes.map((scene, index) => {
     const sceneX = scene.position.x;
     const sceneY = scene.position.y;
 
-    // Create scene boundary
+    // Create scene with enforced boundaries
     const sceneBoundary = `
-      <g id="scene-${index + 1}-boundary" transform="translate(${sceneX}, ${sceneY})">
+      <g id="scene-${index + 1}" class="scene-boundary" transform="translate(${sceneX}, ${sceneY})">
+        <!-- Scene background -->
         <rect x="0" y="0" width="800" height="400"
               fill="${scene.bg || '#87CEEB'}"
               stroke="#1976D2"
               stroke-width="2"
               rx="8"
-              ry="8"
-              opacity="0.9"/>
+              ry="8"/>
 
         <!-- Scene title -->
         <text x="400" y="25" text-anchor="middle"
-              font-family="Arial, sans-serif"
+              class="scene-title"
               font-size="16"
-              font-weight="bold"
               fill="#1976D2">
           Scene ${index + 1}: ${scene.id.replace('event-router-scene-', '').replace('-', ' ').toUpperCase()}
         </text>
 
-        <!-- Scene content -->
-        <g transform="translate(0, 40)">
-          ${scene.defs?.rawSvg?.join('\n') || ''}
+        <!-- Scene content with enforced clipping -->
+        <g class="scene-content" clip-path="url(#scene-${index + 1}-clip)">
+          <g transform="translate(0, 40)">
+            ${scene.defs?.rawSvg?.join('\n            ') || ''}
+          </g>
         </g>
       </g>
     `;
@@ -431,7 +443,22 @@ export function renderMonoGraph(monoGraph: MonoGraph): string {
 <svg width="${canvas.width}" height="${canvas.height}" viewBox="0 0 ${canvas.width} ${canvas.height}" xmlns="http://www.w3.org/2000/svg">
   <defs>
     ${defs}
+    ${clippingPaths}
   </defs>
+
+  <style>
+    .scene-boundary {
+      overflow: hidden;
+    }
+    .scene-content {
+      clip-path: inherit;
+    }
+    .scene-title {
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(255,255,255,0.8);
+    }
+  </style>
 
   <!-- Background -->
   <rect width="100%" height="100%" fill="${bg || '#87CEEB'}"/>

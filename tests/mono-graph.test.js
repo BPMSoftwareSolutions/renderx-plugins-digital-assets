@@ -158,8 +158,25 @@ describe('Mono Graph System', () => {
 
     test('should include all scene boundaries', () => {
       for (let i = 1; i <= 6; i++) {
-        expect(generatedSvg).toContain(`id="scene-${i}-boundary"`);
+        expect(generatedSvg).toContain(`id="scene-${i}"`);
+        expect(generatedSvg).toContain(`class="scene-boundary"`);
       }
+    });
+
+    test('should enforce contextual boundaries with clipping paths', () => {
+      // Check that clipping paths are defined for each scene
+      for (let i = 1; i <= 6; i++) {
+        expect(generatedSvg).toContain(`<clipPath id="scene-${i}-clip">`);
+        expect(generatedSvg).toContain(`clip-path="url(#scene-${i}-clip)"`);
+      }
+
+      // Check that scene content is wrapped in clipping groups
+      expect(generatedSvg).toContain('class="scene-content"');
+
+      // Check that CSS styles for boundary enforcement are included
+      expect(generatedSvg).toContain('.scene-boundary');
+      expect(generatedSvg).toContain('overflow: hidden');
+      expect(generatedSvg).toContain('clip-path: inherit');
     });
 
     test('should include connection paths between scenes', () => {
