@@ -1,0 +1,48 @@
+{
+  "scenes": {
+    "1": {
+      "startDelay": 0,
+      "exitTime": 6,
+      "elements": {
+        "bus": { "selector": { "type": "id", "value": "school-bus" } }
+      }
+    },
+    "2": {
+      "startDelay": 6,
+      "exitTime": 16,
+      "elements": {
+        "bus": { "selector": { "type": "id", "value": "school-bus" } },
+        "trafficLight": { "redAt": 10, "greenAt": 14 }
+      }
+    },
+    "3": {
+      "startDelay": 16,
+      "exitTime": 28,
+      "elements": {
+        "bus": { "selector": { "type": "id", "value": "school-bus" } }
+      }
+    },
+    "4": {
+      "startDelay": 28,
+      "exitTime": 42,
+      "elements": {
+        "bus": { "selector": { "type": "id", "value": "school-bus" } }
+      }
+    },
+    "5": {
+      "startDelay": 42,
+      "exitTime": 56,
+      "elements": {
+        "bus": { "selector": { "type": "id", "value": "school-bus" } }
+      }
+    },
+    "6": {
+      "startDelay": 56,
+      "exitTime": 68,
+      "elements": {
+        "bus": { "selector": { "type": "id", "value": "school-bus" } }
+      }
+    }
+  }
+}
+

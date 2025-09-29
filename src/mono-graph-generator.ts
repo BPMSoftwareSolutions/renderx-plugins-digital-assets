@@ -25,8 +25,9 @@ function loadScene(filename: string): Scene {
 
 /**
  * Get scene content - handles both rawSvg and nodes structures
+ * Works with both Scene and MonoScene types
  */
-function getSceneContent(scene: Scene): string {
+function getSceneContent(scene: Scene | MonoScene): string {
   // If scene has rawSvg in defs, use that
   if (scene.defs?.rawSvg && scene.defs.rawSvg.length > 0) {
     return scene.defs.rawSvg.join('\n            ');
@@ -35,8 +36,21 @@ function getSceneContent(scene: Scene): string {
   // If scene has nodes structure, render it to SVG
   if (scene.nodes && scene.nodes.length > 0) {
     try {
+      // Convert MonoScene to Scene for rendering by omitting MonoScene-specific properties
+      const sceneForRendering: Scene = {
+        id: scene.id,
+        canvas: scene.canvas,
+        bg: scene.bg,
+        defs: scene.defs,
+        nodes: scene.nodes,
+        ports: scene.ports,
+        connectors: scene.connectors,
+        flows: scene.flows,
+        timing: 'timing' in scene && scene.timing && 'startTime' in scene.timing ? scene.timing : undefined
+      };
+
       // Use the renderScene function to convert nodes to SVG
-      const fullSceneSvg = renderScene(scene);
+      const fullSceneSvg = renderScene(sceneForRendering);
 
       // Extract just the content between the <svg> tags, excluding the outer SVG wrapper
       const svgMatch = fullSceneSvg.match(/<svg[^>]*>([\s\S]*)<\/svg>/);
