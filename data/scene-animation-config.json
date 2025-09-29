@@ -10,6 +10,7 @@
     "2": {
       "startDelay": 6,
       "exitTime": 16,
+      "movement": { "dur": 12, "arriveAt": 3, "departAt": 8 },
       "elements": {
         "bus": { "selector": { "type": "id", "value": "school-bus" } },
         "trafficLight": { "redAt": 10, "greenAt": 14 },
