@@ -47,6 +47,18 @@ function saveFile(filename: string, content: string): void {
   console.log(`✅ Saved: ${filename}`);
 }
 
+// Load author image as data URI for embedding in SVG header
+function loadAuthorDataUri(): string {
+  try {
+    const authorPath = join(__dirname, '..', 'assets', 'event-router', 'inventory', 'author.png');
+    const buf = readFileSync(authorPath);
+    return `data:image/png;base64,${buf.toString('base64')}`;
+  } catch {
+    return '';
+  }
+}
+
+
 /**
  * Create default combined storybook configuration
  */
@@ -189,6 +201,15 @@ function createEnhancedCombinedStorybook(scenes: SceneInfo[]): void {
  */
 function generateEnhancedSVG(config: CombinedStorybookConfig, timeline: CombinedStorybookTimeline): string {
   const { canvas, layout, timing } = config;
+  const authorUri = loadAuthorDataUri();
+  const avatarSize = 48;
+  const avatarMargin = 20;
+  const avatarX = canvas.width - avatarMargin - avatarSize;
+  const avatarY = 12;
+  const avatarCx = avatarX + avatarSize / 2;
+  const avatarCy = avatarY + avatarSize / 2;
+  const avatarR = avatarSize / 2;
+
 
   // Start building enhanced SVG
   let svg = `<?xml version="1.0" encoding="UTF-8"?>
@@ -210,6 +231,12 @@ function generateEnhancedSVG(config: CombinedStorybookConfig, timeline: Combined
       <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
     </linearGradient>
+    ${authorUri ? `
+    <!-- Author avatar clip -->
+    <clipPath id="author-avatar-clip">
+      <circle cx="${avatarCx}" cy="${avatarCy}" r="${avatarR}"/>
+    </clipPath>
+    ` : ''}
   </defs>
 
   <style>
@@ -251,6 +278,12 @@ function generateEnhancedSVG(config: CombinedStorybookConfig, timeline: Combined
         font-family="Arial, sans-serif" font-size="16" fill="#3C556E">
     Enhanced with Scene-by-Scene Animation Coordination
   </text>
+
+  ${authorUri ? `
+  <!-- Author avatar -->
+  <image href="${authorUri}" x="${avatarX}" y="${avatarY}" width="${avatarSize}" height="${avatarSize}" clip-path="url(#author-avatar-clip)"/>
+  <circle cx="${avatarCx}" cy="${avatarCy}" r="${avatarR}" fill="none" stroke="#1E3A56" stroke-width="2" opacity="0.85"/>
+  ` : ''}
 
   <!-- Progress bar -->
   <rect x="50" y="85" width="${canvas.width - 100}" height="4" fill="#E0E0E0" rx="2"/>
