@@ -29,6 +29,15 @@ Both systems are implemented in pure TypeScript with zero external dependencies.
 - 📐 **Layout Configurations**: Algorithm-specific parameters for positioning nodes
 - 📄 **Scene Templates**: Parameterizable scene definitions with examples
 
+### 🏛️ Contextual Boundaries (NEW!)
+
+- 🏗️ **Context Lanes**: Semantic boundaries that group related nodes with titles and styling
+- 📍 **Port-Based Connections**: Precise attachment points for clean, predictable routing
+- 🛤️ **Manhattan Routing**: Orthogonal paths with automatic midpoint calculation
+- 🎬 **Animated Flows**: Token-based animation along connector paths with customizable speed
+- 📐 **Grid Snapping**: Automatic alignment of child nodes within boundary grids
+- 🎨 **Rich Styling**: Shadows, gradients, and CSS animations for professional appearance
+
 ## Quick Start
 
 ### Installation
@@ -264,6 +273,73 @@ npm run generate-slide-01-scene
 ```
 
 See `samples/slide-01-scene/` for complete implementation and documentation.
+
+## Contextual Boundaries
+
+The **Contextual Boundaries** feature introduces a powerful "Context-Lanes" pattern for creating structured diagrams with semantic boundaries, precise connections, and animated flows.
+
+### Key Features
+
+- **Boundary Nodes**: Semantic containers with titles, grids, and styling
+- **Port-Based Connections**: Precise attachment points on node edges
+- **Manhattan Routing**: Clean orthogonal paths between boundaries
+- **Animated Flows**: Token-based animation along connector sequences
+- **Grid Snapping**: Automatic alignment within boundary grids
+
+### Basic Example
+
+```json
+{
+  "id": "contextual-demo",
+  "canvas": { "width": 800, "height": 400 },
+  "nodes": [
+    {
+      "kind": "boundary",
+      "id": "input-lane",
+      "title": "Input Processing",
+      "at": { "x": 50, "y": 50 },
+      "size": { "width": 300, "height": 200 },
+      "style": { "fill": "#141a24", "stroke": "#253146", "labelColor": "#e6edf3" },
+      "grid": { "cols": 2, "rowH": 80, "gutter": 10, "padding": 20 },
+      "children": [
+        {
+          "kind": "shape",
+          "id": "processor",
+          "shape": "roundedRect",
+          "at": { "x": 20, "y": 20 },
+          "size": { "width": 120, "height": 60 },
+          "style": { "fill": "#1f2430", "stroke": "#384559" }
+        }
+      ]
+    }
+  ],
+  "ports": [
+    { "id": "proc-out", "nodeId": "processor", "side": "right", "offset": 30 }
+  ],
+  "flows": [
+    {
+      "id": "data-flow",
+      "path": "connector-1",
+      "token": { "size": 4, "color": "#d6bcfa" },
+      "speed": 160,
+      "loop": true
+    }
+  ]
+}
+```
+
+### Demo Generation
+
+Generate a contextual boundaries demo:
+
+```bash
+npm run build
+node dist/contextual-boundaries-demo.js
+```
+
+This creates `samples/contextual-boundaries-demo.svg` showcasing the full feature set.
+
+For detailed documentation, see [`docs/CONTEXTUAL-BOUNDARIES.md`](docs/CONTEXTUAL-BOUNDARIES.md).
 
 ## Configuration-Driven Architecture
 

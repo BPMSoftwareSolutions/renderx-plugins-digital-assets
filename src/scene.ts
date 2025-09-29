@@ -24,19 +24,45 @@ export type SpriteRef = {
   viewBox?: { x: number; y: number; w: number; h: number };
 };
 
+export type Port = {
+  id: string;
+  nodeId: string;                // host node (or boundary) ID
+  side: "left"|"right"|"top"|"bottom";
+  offset: number;                // px from top/left along that side
+};
+
 export type Connector = {
-  from: NodeId; to: NodeId;
+  id?: string;
+  from: NodeId | { port: string };
+  to: NodeId | { port: string };
   route?: "straight"|"orthogonal"|"curve";
   markerEnd?: "arrow"|"none";
   dashed?: boolean;
   label?: string;
   style?: Style;
-  // Optional ports/anchors to attach to sides on each node
+  // Optional ports/anchors to attach to sides on each node (legacy support)
   fromAnchor?: Anchor; toAnchor?: Anchor;
+};
+
+export type Flow = {
+  id: string;
+  path: string;                  // the connector.id sequence: "c1>c2>c3"
+  token?: {                      // how the "energy" looks
+    size?: number;               // circle radius
+    color?: string;
+    trail?: { length?: number; opacity?: number };
+  };
+  speed?: number;                // px/s along path length
+  loop?: boolean;
+  activate?: {                   // boundary/node highlight while token is inside
+    boundaryIds?: string[];
+    className?: string;          // CSS class applied during pass-through
+  };
 };
 
 export type Node =
   | { kind: "group"; id: NodeId; z?: number; at?: Vec2; size?: Size; style?: Style; transform?: Transform; children?: Node[] }
+  | { kind: "boundary"; id: NodeId; z?: number; at: Vec2; size: Size; title?: string; style?: Style & { labelColor?: string }; grid?: { cols: number; rowH: number; gutter: number; padding: number }; transform?: Transform; children?: Node[] }
   | { kind: "sprite"; id: NodeId; z?: number; at: Vec2; size?: Size; anchor?: Anchor; sprite: SpriteRef; style?: Style; transform?: Transform }
   | { kind: "shape";  id: NodeId; z?: number; at: Vec2; size: Size; shape: "rect"|"roundedRect"|"circle"|"path"; d?: string; style?: Style; transform?: Transform }
   | { kind: "text";   id: NodeId; z?: number; at: Vec2; text: string; anchor?: Anchor; style?: Style; transform?: Transform };
@@ -47,5 +73,7 @@ export type Scene = {
   bg?: string;
   defs?: { symbols?: Array<{ id: string; svg: string }>; filters?: string[]; gradients?: string[] };
   nodes: Node[];
+  ports?: Port[];
   connectors?: Connector[];
+  flows?: Flow[];
 };
