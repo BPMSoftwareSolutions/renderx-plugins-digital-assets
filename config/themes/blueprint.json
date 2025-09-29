@@ -1,0 +1,144 @@
+{
+  "id": "blueprint",
+  "name": "Blueprint Technical Theme",
+  "description": "Technical blueprint aesthetic inspired by architectural and engineering drawings with precise lines and technical styling",
+  "version": "1.0.0",
+  "colors": {
+    "primary": "#1e3a8a",
+    "secondary": "#3b82f6",
+    "background": "#0f172a",
+    "surface": "#1e293b",
+    "text": "#e2e8f0",
+    "textSecondary": "#94a3b8",
+    "border": "#475569",
+    "accent": "#06b6d4",
+    "success": "#10b981",
+    "warning": "#f59e0b",
+    "error": "#ef4444",
+    "custom": {
+      "blueprintBlue": "#1e40af",
+      "blueprintBlueBorder": "#1d4ed8",
+      "technicalCyan": "#06b6d4",
+      "technicalCyanBorder": "#0891b2",
+      "engineeringTeal": "#0d9488",
+      "engineeringTealBorder": "#0f766e",
+      "precisionGray": "#64748b",
+      "precisionGrayBorder": "#475569",
+      "schematicGreen": "#059669",
+      "schematicGreenBorder": "#047857",
+      "measurementOrange": "#ea580c",
+      "measurementOrangeBorder": "#c2410c",
+      "gridLines": "#334155",
+      "annotationYellow": "#eab308",
+      "shadowBlue": "#1e3a8a"
+    }
+  },
+  "typography": {
+    "fontFamily": "'JetBrains Mono', 'Fira Code', 'Consolas', 'Monaco', monospace",
+    "fontSize": {
+      "xs": 9,
+      "sm": 10,
+      "base": 12,
+      "lg": 14,
+      "xl": 16,
+      "xxl": 24
+    },
+    "fontWeight": {
+      "light": 300,
+      "normal": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700
+    },
+    "lineHeight": {
+      "tight": 1.1,
+      "normal": 1.3,
+      "relaxed": 1.5
+    }
+  },
+  "spacing": {
+    "xs": 2,
+    "sm": 4,
+    "md": 8,
+    "lg": 16,
+    "xl": 24,
+    "xxl": 32
+  },
+  "borders": {
+    "radius": {
+      "none": 0,
+      "sm": 1,
+      "md": 2,
+      "lg": 4,
+      "full": 9999
+    },
+    "width": {
+      "thin": 0.5,
+      "normal": 1,
+      "thick": 1.5
+    }
+  },
+  "shadows": {
+    "none": "none",
+    "sm": "0 1px 2px rgba(30, 58, 138, 0.3)",
+    "md": "0 2px 4px rgba(30, 58, 138, 0.4)",
+    "lg": "0 4px 8px rgba(30, 58, 138, 0.5)",
+    "xl": "0 8px 16px rgba(30, 58, 138, 0.6)"
+  },
+  "effects": {
+    "opacity": {
+      "disabled": 0.3,
+      "muted": 0.5,
+      "subtle": 0.7
+    },
+    "blur": {
+      "sm": 1,
+      "md": 2,
+      "lg": 4
+    }
+  },
+  "patterns": {
+    "grid": {
+      "size": 10,
+      "color": "#334155",
+      "opacity": 0.3,
+      "style": "dotted"
+    },
+    "hatching": {
+      "angle": 45,
+      "spacing": 3,
+      "color": "#475569",
+      "opacity": 0.4
+    },
+    "crossHatch": {
+      "angle1": 45,
+      "angle2": -45,
+      "spacing": 4,
+      "color": "#64748b",
+      "opacity": 0.3
+    }
+  },
+  "technical": {
+    "description": "Blueprint theme designed for technical documentation, system architecture, and engineering diagrams with precise, professional styling",
+    "features": {
+      "precision": "Pixel-perfect alignment and consistent spacing",
+      "monospace": "Monospace fonts for technical accuracy",
+      "gridSystem": "Built-in grid patterns for alignment",
+      "annotations": "Support for technical annotations and measurements",
+      "lineStyles": "Various line styles for different connection types"
+    },
+    "useCases": [
+      "System architecture diagrams",
+      "Network topology maps",
+      "Technical specifications",
+      "Engineering workflows",
+      "Infrastructure documentation"
+    ],
+    "guidelines": {
+      "alignment": "All elements should align to grid boundaries",
+      "consistency": "Use consistent line weights and spacing",
+      "annotations": "Include technical annotations where appropriate",
+      "precision": "Maintain precise measurements and proportions"
+    }
+  }
+}
