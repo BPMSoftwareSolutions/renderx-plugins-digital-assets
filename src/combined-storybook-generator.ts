@@ -202,7 +202,7 @@ function createEnhancedCombinedStorybook(scenes: SceneInfo[]): void {
 function generateEnhancedSVG(config: CombinedStorybookConfig, timeline: CombinedStorybookTimeline): string {
   const { canvas, layout, timing } = config;
   const authorUri = loadAuthorDataUri();
-  const avatarSize = 48;
+  const avatarSize = 72;
   const avatarMargin = 20;
   const avatarX = canvas.width - avatarMargin - avatarSize;
   const avatarY = 12;
