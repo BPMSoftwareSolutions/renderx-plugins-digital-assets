@@ -1,0 +1,287 @@
+{
+  "sceneId": "event-router-contextual-boundaries",
+  "timestamp": "2025-09-29T14:31:08.558Z",
+  "summary": {
+    "errors": 7,
+    "warnings": 0,
+    "totalNodes": 52,
+    "boundariesProcessed": 6
+  },
+  "diagnostics": [
+    {
+      "code": "OUT_OF_BOUNDS",
+      "nodeId": "manifest-content",
+      "boundaryId": "scene-2-manifest",
+      "severity": "error",
+      "message": "Node 'manifest-content' escapes boundary 'scene-2-manifest'.",
+      "actual": {
+        "rect": {
+          "x": 800,
+          "y": 100,
+          "w": 272,
+          "h": 16
+        },
+        "boundary": {
+          "x": 580,
+          "y": 50,
+          "w": 480,
+          "h": 280
+        }
+      },
+      "suggestedFix": {
+        "at": {
+          "x": 788,
+          "y": 100
+        }
+      }
+    },
+    {
+      "code": "OUT_OF_BOUNDS",
+      "nodeId": "logs-label",
+      "boundaryId": "scene-2-manifest",
+      "severity": "error",
+      "message": "Node 'logs-label' escapes boundary 'scene-2-manifest'.",
+      "actual": {
+        "rect": {
+          "x": 980,
+          "y": 104,
+          "w": 112,
+          "h": 16
+        },
+        "boundary": {
+          "x": 580,
+          "y": 50,
+          "w": 480,
+          "h": 280
+        }
+      },
+      "suggestedFix": {
+        "at": {
+          "x": 948,
+          "y": 104
+        }
+      }
+    },
+    {
+      "code": "OUT_OF_BOUNDS",
+      "nodeId": "scene-2-caption",
+      "boundaryId": "scene-2-manifest",
+      "severity": "error",
+      "message": "Node 'scene-2-caption' escapes boundary 'scene-2-manifest'.",
+      "actual": {
+        "rect": {
+          "x": 820,
+          "y": 192,
+          "w": 360,
+          "h": 16
+        },
+        "boundary": {
+          "x": 580,
+          "y": 50,
+          "w": 480,
+          "h": 280
+        }
+      },
+      "suggestedFix": {
+        "at": {
+          "x": 700,
+          "y": 192
+        }
+      }
+    },
+    {
+      "code": "OUT_OF_BOUNDS",
+      "nodeId": "scene-3-caption",
+      "boundaryId": "scene-3-subscribers",
+      "severity": "error",
+      "message": "Node 'scene-3-caption' escapes boundary 'scene-3-subscribers'.",
+      "actual": {
+        "rect": {
+          "x": 1336,
+          "y": 192,
+          "w": 368,
+          "h": 16
+        },
+        "boundary": {
+          "x": 1120,
+          "y": 50,
+          "w": 430,
+          "h": 280
+        }
+      },
+      "suggestedFix": {
+        "at": {
+          "x": 1182,
+          "y": 192
+        }
+      }
+    },
+    {
+      "code": "OUT_OF_BOUNDS",
+      "nodeId": "scene-4-caption",
+      "boundaryId": "scene-4-conductor",
+      "severity": "error",
+      "message": "Node 'scene-4-caption' escapes boundary 'scene-4-conductor'.",
+      "actual": {
+        "rect": {
+          "x": 292,
+          "y": 540,
+          "w": 408,
+          "h": 16
+        },
+        "boundary": {
+          "x": 50,
+          "y": 380,
+          "w": 480,
+          "h": 280
+        }
+      },
+      "suggestedFix": {
+        "at": {
+          "x": 122,
+          "y": 540
+        }
+      }
+    },
+    {
+      "code": "OUT_OF_BOUNDS",
+      "nodeId": "scene-5-caption",
+      "boundaryId": "scene-5-rules",
+      "severity": "error",
+      "message": "Node 'scene-5-caption' escapes boundary 'scene-5-rules'.",
+      "actual": {
+        "rect": {
+          "x": 820,
+          "y": 540,
+          "w": 424,
+          "h": 16
+        },
+        "boundary": {
+          "x": 580,
+          "y": 380,
+          "w": 480,
+          "h": 280
+        }
+      },
+      "suggestedFix": {
+        "at": {
+          "x": 636,
+          "y": 540
+        }
+      }
+    },
+    {
+      "code": "OUT_OF_BOUNDS",
+      "nodeId": "scene-6-caption",
+      "boundaryId": "scene-6-destination",
+      "severity": "error",
+      "message": "Node 'scene-6-caption' escapes boundary 'scene-6-destination'.",
+      "actual": {
+        "rect": {
+          "x": 1336,
+          "y": 540,
+          "w": 368,
+          "h": 16
+        },
+        "boundary": {
+          "x": 1120,
+          "y": 380,
+          "w": 430,
+          "h": 280
+        }
+      },
+      "suggestedFix": {
+        "at": {
+          "x": 1182,
+          "y": 540
+        }
+      }
+    }
+  ],
+  "suggestions": [
+    {
+      "type": "MOVE_NODE",
+      "nodeId": "manifest-content",
+      "description": "Move node 'manifest-content' to stay within boundary 'scene-2-manifest'",
+      "changes": {
+        "at": {
+          "x": 788,
+          "y": 100
+        }
+      },
+      "confidence": "high"
+    },
+    {
+      "type": "MOVE_NODE",
+      "nodeId": "logs-label",
+      "description": "Move node 'logs-label' to stay within boundary 'scene-2-manifest'",
+      "changes": {
+        "at": {
+          "x": 948,
+          "y": 104
+        }
+      },
+      "confidence": "high"
+    },
+    {
+      "type": "MOVE_NODE",
+      "nodeId": "scene-2-caption",
+      "description": "Move node 'scene-2-caption' to stay within boundary 'scene-2-manifest'",
+      "changes": {
+        "at": {
+          "x": 700,
+          "y": 192
+        }
+      },
+      "confidence": "high"
+    },
+    {
+      "type": "MOVE_NODE",
+      "nodeId": "scene-3-caption",
+      "description": "Move node 'scene-3-caption' to stay within boundary 'scene-3-subscribers'",
+      "changes": {
+        "at": {
+          "x": 1182,
+          "y": 192
+        }
+      },
+      "confidence": "high"
+    },
+    {
+      "type": "MOVE_NODE",
+      "nodeId": "scene-4-caption",
+      "description": "Move node 'scene-4-caption' to stay within boundary 'scene-4-conductor'",
+      "changes": {
+        "at": {
+          "x": 122,
+          "y": 540
+        }
+      },
+      "confidence": "high"
+    },
+    {
+      "type": "MOVE_NODE",
+      "nodeId": "scene-5-caption",
+      "description": "Move node 'scene-5-caption' to stay within boundary 'scene-5-rules'",
+      "changes": {
+        "at": {
+          "x": 636,
+          "y": 540
+        }
+      },
+      "confidence": "high"
+    },
+    {
+      "type": "MOVE_NODE",
+      "nodeId": "scene-6-caption",
+      "description": "Move node 'scene-6-caption' to stay within boundary 'scene-6-destination'",
+      "changes": {
+        "at": {
+          "x": 1182,
+          "y": 540
+        }
+      },
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600" height="1200" viewBox="0 0 1600 1200"
+     xmlns="http://www.w3.org/2000/svg" role="img" aria-label="event-router-contextual-boundaries">
+  <defs><linearGradient id="roadGradient" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#404040"/><stop offset="0.5" stop-color="#505050"/><stop offset="1" stop-color="#404040"/></linearGradient><linearGradient id="busGradient" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFD700"/><stop offset="0.5" stop-color="#FFA500"/><stop offset="1" stop-color="#FFD700"/></linearGradient><linearGradient id="skyGradient" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#87CEEB"/><stop offset="1" stop-color="#B0E0E6"/></linearGradient><filter id="sceneShadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.25"/></filter><filter id="busGlow"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter><filter id="activeGlow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter><clipPath id="clip-scene-1-depot">
+      <rect x="50" y="50" width="480" height="280" 
+            rx="8" ry="8"/>
+    </clipPath>
+<clipPath id="clip-scene-2-manifest">
+      <rect x="580" y="50" width="480" height="280" 
+            rx="8" ry="8"/>
+    </clipPath>
+<clipPath id="clip-scene-3-subscribers">
+      <rect x="1120" y="50" width="430" height="280" 
+            rx="8" ry="8"/>
+    </clipPath>
+<clipPath id="clip-scene-4-conductor">
+      <rect x="50" y="380" width="480" height="280" 
+            rx="8" ry="8"/>
+    </clipPath>
+<clipPath id="clip-scene-5-rules">
+      <rect x="580" y="380" width="480" height="280" 
+            rx="8" ry="8"/>
+    </clipPath>
+<clipPath id="clip-scene-6-destination">
+      <rect x="1120" y="380" width="430" height="280" 
+            rx="8" ry="8"/>
+    </clipPath>
+</defs>
+  
+    <style>
+      .active-glow rect { filter: url(#glow); stroke: #8b5cf6; }
+      .connector { stroke-linecap: round; stroke-linejoin: round; }
+      .boundary-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: 600; }
+      .flow-token { animation-fill-mode: forwards; }
+      .boundary-contained { overflow: hidden; }
+    </style>
+  
+  <rect x="0" y="0" width="100%" height="100%" fill="#87CEEB"/>
+  <g class="connector" id="depot-to-manifest">
+    <defs>
+      <marker id="arrowHead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M0 0 L10 5 L0 10Z" fill="#FFD700"/>
+      </marker>
+    </defs>
+    <path d="M 530 190 L 555 190 L 555 190 L 580 190" fill="none" style="stroke:#FFD700;stroke-width:4;stroke-dasharray:8,4"/>
+    <text x="555" y="184" font-size="11" fill="#94a3b8" text-anchor="middle">Event Published</text>
+  </g><g class="connector" id="manifest-to-subscribers">
+    <defs>
+      <marker id="arrowHead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M0 0 L10 5 L0 10Z" fill="#4CAF50"/>
+      </marker>
+    </defs>
+    <path d="M 1060 190 L 1090 190 L 1090 190 L 1120 190" fill="none" style="stroke:#4CAF50;stroke-width:4;stroke-dasharray:8,4"/>
+    <text x="1090" y="184" font-size="11" fill="#94a3b8" text-anchor="middle">Route Planned</text>
+  </g><g class="connector" id="subscribers-to-conductor">
+    <defs>
+      <marker id="arrowHead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M0 0 L10 5 L0 10Z" fill="#9C27B0"/>
+      </marker>
+    </defs>
+    <path d="M 1120 190 L 705 190 L 705 380 L 290 380" fill="none" style="stroke:#9C27B0;stroke-width:4;stroke-dasharray:8,4"/>
+    <text x="705" y="279" font-size="11" fill="#94a3b8" text-anchor="middle">Event Delivered</text>
+  </g><g class="connector" id="conductor-to-rules">
+    <defs>
+      <marker id="arrowHead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M0 0 L10 5 L0 10Z" fill="#FF9800"/>
+      </marker>
+    </defs>
+    <path d="M 530 520 L 555 520 L 555 520 L 580 520" fill="none" style="stroke:#FF9800;stroke-width:4;stroke-dasharray:8,4"/>
+    <text x="555" y="514" font-size="11" fill="#94a3b8" text-anchor="middle">Sequences Triggered</text>
+  </g><g class="connector" id="rules-to-destination">
+    <defs>
+      <marker id="arrowHead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M0 0 L10 5 L0 10Z" fill="#2E7D32"/>
+      </marker>
+    </defs>
+    <path d="M 1060 520 L 1090 520 L 1090 520 L 1120 520" fill="none" style="stroke:#2E7D32;stroke-width:4;stroke-dasharray:8,4"/>
+    <text x="1090" y="514" font-size="11" fill="#94a3b8" text-anchor="middle">State Updated</text>
+  </g>
+  <g id="scene-1-depot" class="boundary boundary-contained" clip-path="url(#clip-scene-1-depot)">
+      <rect x="50" y="50" width="480" height="280" rx="8" style="fill:#E8F4FD;stroke:#1976D2;stroke-width:2;label-color:#1976D2;filter:url(#sceneShadow)" filter="url(#sceneShadow)"/>
+      <text x="62" y="42" class="boundary-title" fill="#1976D2" font-size="14">Scene 1: Publisher Origin (Depot)</text>
+    </g><rect id="depot-building" x="72" y="72" width="120" height="80" rx="8" style="fill:#8B7355;stroke:#6B5535;stroke-width:2"></rect><text id="depot-label" x="132" y="96" style="fill:#FFFFFF;font-size:12;font-weight:bold;text-anchor:middle">BUS DEPOT</text><rect id="depot-road" x="212" y="112" width="280" height="40" rx="0" style="fill:url(#roadGradient);stroke:#606060;stroke-width:1"></rect><rect id="bus-scene-1" x="252" y="100" width="80" height="30" rx="8" style="fill:url(#busGradient);stroke:#CC8400;stroke-width:2;filter:url(#busGlow)"></rect><text id="scene-1-caption" x="292" y="192" style="fill:#1976D2;font-size:14;font-weight:bold;text-anchor:middle">publish(topic, payload)</text><g id="scene-2-manifest" class="boundary boundary-contained" clip-path="url(#clip-scene-2-manifest)">
+      <rect x="580" y="50" width="480" height="280" rx="8" style="fill:#FFF3E0;stroke:#F57C00;stroke-width:2;label-color:#F57C00;filter:url(#sceneShadow)" filter="url(#sceneShadow)"/>
+      <text x="592" y="42" class="boundary-title" fill="#F57C00" font-size="14">Scene 2: Route Planning (Manifest + Debounce)</text>
+    </g><rect id="traffic-light" x="640" y="72" width="30" height="80" rx="8" style="fill:#333333;stroke:#222222;stroke-width:2"></rect><circle id="yellow-light" cx="648" cy="96" r="7" style="fill:#FFFF00;stroke:#CCCC00;stroke-width:1;filter:url(#activeGlow)"></circle><rect id="manifest-billboard" x="700" y="80" width="200" height="60" rx="8" style="fill:#FFFFFF;stroke:#CCCCCC;stroke-width:2"></rect><text id="manifest-content" x="788" y="100" style="fill:#333333;font-size:11;font-family:monospace;text-anchor:middle">{ topic, routes, perf.debounceMs }</text><rect id="street-sign" x="932" y="92" width="100" height="40" rx="8" style="fill:#4CAF50;stroke:#388E3C;stroke-width:2"></rect><text id="logs-label" x="948" y="104" style="fill:#FFFFFF;font-size:10;font-family:monospace;text-anchor:middle">Logs ▶ routing</text><text id="scene-2-caption" x="700" y="192" style="fill:#F57C00;font-size:14;font-weight:bold;text-anchor:middle">Manifest plans route; debounce settles bursts</text><g id="scene-3-subscribers" class="boundary boundary-contained" clip-path="url(#clip-scene-3-subscribers)">
+      <rect x="1120" y="50" width="430" height="280" rx="8" style="fill:#E8F5E8;stroke:#4CAF50;stroke-width:2;label-color:#4CAF50;filter:url(#sceneShadow)" filter="url(#sceneShadow)"/>
+      <text x="1132" y="42" class="boundary-title" fill="#4CAF50" font-size="14">Scene 3: First Stop (Live &amp; Late Subscribers)</text>
+    </g><rect id="bus-shelter" x="1140" y="92" width="180" height="60" rx="8" style="fill:#FFFFFF;stroke:#CCCCCC;stroke-width:2"></rect><text id="live-subscriber" x="1180" y="112" style="fill:#4CAF50;font-size:12;font-weight:bold">LIVE SUB</text><text id="late-subscriber" x="1260" y="112" style="fill:#FF9800;font-size:12;font-weight:bold">LATE SUB</text><rect id="replay-cache" x="1340" y="80" width="80" height="80" rx="8" style="fill:#E1F5FE;stroke:#0288D1;stroke-width:2"></rect><text id="cache-label" x="1380" y="104" style="fill:#0288D1;font-size:10;font-weight:bold;text-anchor:middle">REPLAY</text><text id="cache-content" x="1380" y="120" style="fill:#0288D1;font-size:10;text-anchor:middle">📦 cache</text><text id="scene-3-caption" x="1182" y="192" style="fill:#4CAF50;font-size:14;font-weight:bold;text-anchor:middle">Live &amp; late subscribers; Replay Cache hydrates</text><g id="scene-4-conductor" class="boundary boundary-contained" clip-path="url(#clip-scene-4-conductor)">
+      <rect x="50" y="380" width="480" height="280" rx="8" style="fill:#F3E5F5;stroke:#9C27B0;stroke-width:2;label-color:#9C27B0;filter:url(#sceneShadow)" filter="url(#sceneShadow)"/>
+      <text x="62" y="372" class="boundary-title" fill="#9C27B0" font-size="14">Scene 4: Transfer Hub (Conductor Orchestration)</text>
+    </g><circle id="transfer-hub" cx="212" cy="420" r="60" style="fill:#E1BEE7;stroke:#9C27B0;stroke-width:3"></circle><text id="conductor-icon" x="272" y="452" style="font-size:24;text-anchor:middle">🎼</text><text id="conductor-label" x="272" y="472" style="fill:#9C27B0;font-size:11;font-family:monospace;text-anchor:middle">conductor.play()</text><rect id="route-a" x="372" y="400" width="100" height="30" rx="8" style="fill:#FFCDD2;stroke:#F44336;stroke-width:2"></rect><text id="route-a-label" x="420" y="416" style="fill:#F44336;font-size:10;font-weight:bold;text-anchor:middle">SEQUENCE A</text><rect id="route-b" x="372" y="440" width="100" height="30" rx="8" style="fill:#C8E6C9;stroke:#4CAF50;stroke-width:2"></rect><text id="route-b-label" x="420" y="456" style="fill:#4CAF50;font-size:10;font-weight:bold;text-anchor:middle">SEQUENCE B</text><rect id="route-c" x="372" y="480" width="100" height="30" rx="8" style="fill:#BBDEFB;stroke:#2196F3;stroke-width:2"></rect><text id="route-c-label" x="420" y="496" style="fill:#2196F3;font-size:10;font-weight:bold;text-anchor:middle">SEQUENCE C</text><text id="scene-4-caption" x="122" y="540" style="fill:#9C27B0;font-size:14;font-weight:bold;text-anchor:middle">Topics route into sequences via Conductor (plugins)</text><g id="scene-5-rules" class="boundary boundary-contained" clip-path="url(#clip-scene-5-rules)">
+      <rect x="580" y="380" width="480" height="280" rx="8" style="fill:#FFF8E1;stroke:#FF9800;stroke-width:2;label-color:#FF9800;filter:url(#sceneShadow)" filter="url(#sceneShadow)"/>
+      <text x="592" y="372" class="boundary-title" fill="#FF9800" font-size="14">Scene 5: Rules of the Road (Boundaries &amp; Performance)</text>
+    </g><rect id="guardrails" x="600" y="460" width="440" height="8" rx="0" style="fill:#757575;stroke:#424242;stroke-width:1"></rect><rect id="loop-prevention-sign" x="620" y="400" width="100" height="40" rx="8" style="fill:#FFEB3B;stroke:#F57F17;stroke-width:2"></rect><text id="loop-sign-text" x="672" y="416" style="fill:#F57F17;font-size:9;font-weight:bold;text-anchor:middle">⚠ Loop Prevention</text><rect id="isolation-sign" x="740" y="400" width="100" height="40" rx="8" style="fill:#E3F2FD;stroke:#1976D2;stroke-width:2"></rect><text id="isolation-sign-text" x="792" y="416" style="fill:#1976D2;font-size:9;font-weight:bold;text-anchor:middle">🧪 Handler Isolation</text><rect id="feature-flags-sign" x="860" y="400" width="100" height="40" rx="8" style="fill:#E8F5E8;stroke:#4CAF50;stroke-width:2"></rect><text id="flags-sign-text" x="912" y="416" style="fill:#4CAF50;font-size:9;font-weight:bold;text-anchor:middle">🔀 Feature Flags</text><text id="throttle-lane" x="700" y="492" style="fill:#FF5722;font-size:12;font-family:monospace;font-weight:bold">THROTTLE ||||||||</text><text id="debounce-lane" x="900" y="492" style="fill:#3F51B5;font-size:12;font-family:monospace;font-weight:bold">DEBOUNCE ▼ ●</text><text id="scene-5-caption" x="636" y="540" style="fill:#FF9800;font-size:14;font-weight:bold;text-anchor:middle">Enforced boundaries, flags, throttle &amp; debounce lanes</text><g id="scene-6-destination" class="boundary boundary-contained" clip-path="url(#clip-scene-6-destination)">
+      <rect x="1120" y="380" width="430" height="280" rx="8" style="fill:#E8F5E8;stroke:#2E7D32;stroke-width:2;label-color:#2E7D32;filter:url(#sceneShadow)" filter="url(#sceneShadow)"/>
+      <text x="1132" y="372" class="boundary-title" fill="#2E7D32" font-size="14">Scene 6: Final Destination (Application State)</text>
+    </g><rect id="school-building" x="1240" y="400" width="160" height="100" rx="8" style="fill:#FFCDD2;stroke:#D32F2F;stroke-width:3"></rect><text id="school-icon" x="1320" y="432" style="font-size:32;text-anchor:middle">🏫</text><text id="school-label" x="1320" y="460" style="fill:#D32F2F;font-size:12;font-weight:bold;text-anchor:middle">APPLICATION STATE</text><text id="ui-updated" x="1320" y="476" style="fill:#2E7D32;font-size:10;font-family:monospace;text-anchor:middle">[UI Updated]</text><rect id="final-bus" x="1140" y="460" width="80" height="30" rx="8" style="fill:url(#busGradient);stroke:#CC8400;stroke-width:2"></rect><text id="children-disembark" x="1440" y="480" style="font-size:20">👦👧👦</text><text id="scene-6-caption" x="1182" y="540" style="fill:#2E7D32;font-size:14;font-weight:bold;text-anchor:middle">Destination reached: application state updated</text>
+  <g class="flow" id="bus-journey-flow">
+    <path d="M 530 190 L 555 190 L 555 190 L 580 190 M 1060 190 L 1090 190 L 1090 190 L 1120 190 M 1120 190 L 705 190 L 705 380 L 290 380 M 530 520 L 555 520 L 555 520 L 580 520 M 1060 520 L 1090 520 L 1090 520 L 1120 520" fill="none" stroke="none" id="bus-journey-flow-path"/>
+    <circle r="8" fill="#FFD700" class="flow-token">
+      <animateMotion dur="8.333333333333334s" repeatCount="infinite" rotate="auto">
+        <mpath href="#bus-journey-flow-path"/>
+      </animateMotion>
+    </circle>
+  </g>
+</svg>

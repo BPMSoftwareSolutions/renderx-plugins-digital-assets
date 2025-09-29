@@ -1,0 +1,92 @@
+{
+  "sceneId": "event-router-violation-test",
+  "timestamp": "2025-09-29T14:31:08.565Z",
+  "summary": {
+    "errors": 2,
+    "warnings": 0,
+    "totalNodes": 4,
+    "boundariesProcessed": 1
+  },
+  "diagnostics": [
+    {
+      "code": "OUT_OF_BOUNDS",
+      "nodeId": "overflow-depot",
+      "boundaryId": "test-scene-boundary",
+      "severity": "error",
+      "message": "Node 'overflow-depot' escapes boundary 'test-scene-boundary'.",
+      "actual": {
+        "rect": {
+          "x": 448,
+          "y": 352,
+          "w": 120,
+          "h": 80
+        },
+        "boundary": {
+          "x": 100,
+          "y": 100,
+          "w": 400,
+          "h": 300
+        }
+      },
+      "suggestedFix": {
+        "at": {
+          "x": 380,
+          "y": 320
+        }
+      }
+    },
+    {
+      "code": "OUT_OF_BOUNDS",
+      "nodeId": "overflow-caption",
+      "boundaryId": "test-scene-boundary",
+      "severity": "error",
+      "message": "Node 'overflow-caption' escapes boundary 'test-scene-boundary'.",
+      "actual": {
+        "rect": {
+          "x": 480,
+          "y": 384,
+          "w": 336,
+          "h": 16
+        },
+        "boundary": {
+          "x": 100,
+          "y": 100,
+          "w": 400,
+          "h": 300
+        }
+      },
+      "suggestedFix": {
+        "at": {
+          "x": 164,
+          "y": 384
+        }
+      }
+    }
+  ],
+  "suggestions": [
+    {
+      "type": "MOVE_NODE",
+      "nodeId": "overflow-depot",
+      "description": "Move node 'overflow-depot' to stay within boundary 'test-scene-boundary'",
+      "changes": {
+        "at": {
+          "x": 380,
+          "y": 320
+        }
+      },
+      "confidence": "high"
+    },
+    {
+      "type": "MOVE_NODE",
+      "nodeId": "overflow-caption",
+      "description": "Move node 'overflow-caption' to stay within boundary 'test-scene-boundary'",
+      "changes": {
+        "at": {
+          "x": 164,
+          "y": 384
+        }
+      },
+      "confidence": "high"
+    }
+  ]
+}

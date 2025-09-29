@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600"
+     xmlns="http://www.w3.org/2000/svg" role="img" aria-label="event-router-violation-test">
+  <defs><clipPath id="clip-test-scene-boundary">
+      <rect x="100" y="100" width="400" height="300" 
+            rx="8" ry="8"/>
+    </clipPath>
+</defs>
+  
+    <style>
+      .active-glow rect { filter: url(#glow); stroke: #8b5cf6; }
+      .connector { stroke-linecap: round; stroke-linejoin: round; }
+      .boundary-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: 600; }
+      .flow-token { animation-fill-mode: forwards; }
+      .boundary-contained { overflow: hidden; }
+    </style>
+  
+  <rect x="0" y="0" width="100%" height="100%" fill="#87CEEB"/>
+  
+  <g id="test-scene-boundary" class="boundary boundary-contained" clip-path="url(#clip-test-scene-boundary)">
+      <rect x="100" y="100" width="400" height="300" rx="8" style="fill:#FFF3E0;stroke:#F57C00;stroke-width:2;label-color:#F57C00" filter="url(#laneShadow)"/>
+      <text x="112" y="92" class="boundary-title" fill="#F57C00" font-size="14">Test Scene: Intentional Violations</text>
+    </g><rect id="good-bus" x="152" y="152" width="80" height="30" rx="8" style="fill:#FFD700;stroke:#CC8400;stroke-width:2"></rect><rect id="overflow-depot" x="380" y="320" width="120" height="80" rx="8" style="fill:#8B7355;stroke:#6B5535;stroke-width:2"></rect><text id="overflow-caption" x="164" y="384" style="fill:#F57C00;font-size:14;font-weight:bold">This caption overflows the scene boundary!</text>
+  
+</svg>
