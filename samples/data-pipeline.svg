@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="-24 -24 1238 253" width="1238" height="253"
+     xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Graph">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9db7c7"/>
+    </marker>
+    <style>
+      .bg { fill: #0f1116; }
+      .node-rect { fill: #1f2430; stroke: #8aa1b1; stroke-width: 1; }
+      .node-label { font: 12px/1.3 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; fill: #e6edf3; }
+      .edge-line { fill: none; stroke: #9db7c7; stroke-width: 1.5; }
+      .edge-label { font: 11px/1 ui-sans-serif, system-ui; fill: #9db7c7; }
+    </style>
+  </defs>
+  <rect class="bg" x="-24" y="-24" width="1238" height="253"/>
+  <g class="edges">
+      <g class="edge" data-id="source1→ingestion">
+        <path d="M 50 22.5 L 245 25" class="edge-line" marker-end="url(#arrow)"/>
+        
+      </g>
+      <g class="edge" data-id="source2→ingestion">
+        <path d="M 50 102.5 L 245 25" class="edge-line" marker-end="url(#arrow)"/>
+        
+      </g>
+      <g class="edge" data-id="source3→ingestion">
+        <path d="M 50 182.5 L 245 25" class="edge-line" marker-end="url(#arrow)"/>
+        
+      </g>
+      <g class="edge" data-id="ingestion→transform">
+        <path d="M 245 25 L 415 22.5" class="edge-line" marker-end="url(#arrow)"/>
+        
+      </g>
+      <g class="edge" data-id="transform→validate">
+        <path d="M 415 22.5 L 590 22.5" class="edge-line" marker-end="url(#arrow)"/>
+        
+      </g>
+      <g class="edge" data-id="validate→warehouse">
+        <path d="M 590 22.5 L 790 25" class="edge-line" marker-end="url(#arrow)"/>
+        
+      </g>
+      <g class="edge" data-id="warehouse→analytics">
+        <path d="M 790 25 L 955 22.5" class="edge-line" marker-end="url(#arrow)"/>
+        
+      </g>
+      <g class="edge" data-id="analytics→dashboard">
+        <path d="M 955 22.5 L 1135 22.5" class="edge-line" marker-end="url(#arrow)"/>
+        
+      </g>
+      <g class="edge" data-id="analytics→alerts">
+        <path d="M 955 22.5 L 1125 102.5" class="edge-line" stroke-dasharray="6 6" marker-end="url(#arrow)"/>
+        <text class="edge-label"><tspan>threshold</tspan></text>
+      </g></g>
+  <g class="nodes">
+      <g class="node" data-id="source1">
+        <rect x="0" y="0" width="100" height="45" rx="8" ry="8" class="node-rect"/>
+        <text x="50" y="22.5" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>API Source</tspan>
+        </text>
+      </g>
+      <g class="node" data-id="source2">
+        <rect x="0" y="80" width="100" height="45" rx="8" ry="8" class="node-rect"/>
+        <text x="50" y="102.5" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>File Source</tspan>
+        </text>
+      </g>
+      <g class="node" data-id="source3">
+        <rect x="0" y="160" width="100" height="45" rx="8" ry="8" class="node-rect"/>
+        <text x="50" y="182.5" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>DB Source</tspan>
+        </text>
+      </g>
+      <g class="node" data-id="ingestion">
+        <rect x="180" y="0" width="130" height="50" rx="8" ry="8" class="node-rect"/>
+        <text x="245" y="25" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>Data Ingestion</tspan>
+        </text>
+      </g>
+      <g class="node" data-id="transform">
+        <rect x="360" y="0" width="110" height="45" rx="8" ry="8" class="node-rect"/>
+        <text x="415" y="22.5" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>Transform</tspan>
+        </text>
+      </g>
+      <g class="node" data-id="validate">
+        <rect x="540" y="0" width="100" height="45" rx="8" ry="8" class="node-rect"/>
+        <text x="590" y="22.5" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>Validate</tspan>
+        </text>
+      </g>
+      <g class="node" data-id="warehouse">
+        <rect x="720" y="0" width="140" height="50" rx="8" ry="8" class="node-rect"/>
+        <text x="790" y="25" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>Data Warehouse</tspan>
+        </text>
+      </g>
+      <g class="node" data-id="analytics">
+        <rect x="900" y="0" width="110" height="45" rx="8" ry="8" class="node-rect"/>
+        <text x="955" y="22.5" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>Analytics</tspan>
+        </text>
+      </g>
+      <g class="node" data-id="dashboard">
+        <rect x="1080" y="0" width="110" height="45" rx="8" ry="8" class="node-rect"/>
+        <text x="1135" y="22.5" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>Dashboard</tspan>
+        </text>
+      </g>
+      <g class="node" data-id="alerts">
+        <rect x="1080" y="80" width="90" height="45" rx="8" ry="8" class="node-rect"/>
+        <text x="1125" y="102.5" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>Alerts</tspan>
+        </text>
+      </g></g>
+</svg>

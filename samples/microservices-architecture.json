@@ -1,0 +1,124 @@
+{
+  "meta": {
+    "layout": "layered",
+    "theme": "light",
+    "arrowHeads": true,
+    "rounded": true,
+    "spacingX": 200,
+    "spacingY": 100
+  },
+  "nodes": [
+    {
+      "id": "gateway",
+      "label": "API Gateway",
+      "w": 140,
+      "h": 60
+    },
+    {
+      "id": "auth",
+      "label": "Auth Service",
+      "w": 120,
+      "h": 50
+    },
+    {
+      "id": "user",
+      "label": "User Service",
+      "w": 120,
+      "h": 50
+    },
+    {
+      "id": "order",
+      "label": "Order Service",
+      "w": 120,
+      "h": 50
+    },
+    {
+      "id": "payment",
+      "label": "Payment Service",
+      "w": 130,
+      "h": 50
+    },
+    {
+      "id": "notification",
+      "label": "Notification",
+      "w": 120,
+      "h": 50
+    },
+    {
+      "id": "db-user",
+      "label": "User DB",
+      "w": 100,
+      "h": 40
+    },
+    {
+      "id": "db-order",
+      "label": "Order DB",
+      "w": 100,
+      "h": 40
+    },
+    {
+      "id": "db-payment",
+      "label": "Payment DB",
+      "w": 100,
+      "h": 40
+    },
+    {
+      "id": "cache",
+      "label": "Redis Cache",
+      "w": 110,
+      "h": 40
+    }
+  ],
+  "edges": [
+    {
+      "from": "gateway",
+      "to": "auth",
+      "label": "authenticate"
+    },
+    {
+      "from": "gateway",
+      "to": "user"
+    },
+    {
+      "from": "gateway",
+      "to": "order"
+    },
+    {
+      "from": "gateway",
+      "to": "payment"
+    },
+    {
+      "from": "auth",
+      "to": "cache",
+      "dashed": true,
+      "label": "session"
+    },
+    {
+      "from": "user",
+      "to": "db-user"
+    },
+    {
+      "from": "order",
+      "to": "db-order"
+    },
+    {
+      "from": "order",
+      "to": "payment",
+      "label": "process payment"
+    },
+    {
+      "from": "payment",
+      "to": "db-payment"
+    },
+    {
+      "from": "payment",
+      "to": "notification",
+      "label": "notify"
+    },
+    {
+      "from": "order",
+      "to": "notification",
+      "label": "status update"
+    }
+  ]
+}

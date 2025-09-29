@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="-4 -4 568 528" width="568" height="528"
+     xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Graph">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b"/>
+    </marker>
+    <style>
+      .bg { fill: #ffffff; }
+      .node-rect { fill: #f7f8fa; stroke: #334155; stroke-width: 1; }
+      .node-label { font: 12px/1.3 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; fill: #0f172a; }
+      .edge-line { fill: none; stroke: #64748b; stroke-width: 1.5; }
+      .edge-label { font: 11px/1 ui-sans-serif, system-ui; fill: #64748b; }
+    </style>
+  </defs>
+  <rect class="bg" x="-4" y="-4" width="568" height="528"/>
+  <g class="edges">
+      <g class="edge" data-id="alice→bob">
+        <path d="M 500 260 L 435.56349186104046 415.56349186104046" class="edge-line"/>
+        
+      </g>
+      <g class="edge" data-id="alice→charlie">
+        <path d="M 500 260 L 280 480" class="edge-line"/>
+        
+      </g>
+      <g class="edge" data-id="alice→diana">
+        <path d="M 500 260 L 124.43650813895957 415.56349186104046" class="edge-line"/>
+        
+      </g>
+      <g class="edge" data-id="bob→eve">
+        <path d="M 435.56349186104046 415.56349186104046 L 60 260" class="edge-line"/>
+        
+      </g>
+      <g class="edge" data-id="bob→frank">
+        <path d="M 435.56349186104046 415.56349186104046 L 124.43650813895951 104.43650813895957" class="edge-line"/>
+        
+      </g>
+      <g class="edge" data-id="charlie→grace">
+        <path d="M 280 480 L 280 40" class="edge-line"/>
+        
+      </g>
+      <g class="edge" data-id="diana→henry">
+        <path d="M 124.43650813895957 415.56349186104046 L 435.5634918610404 104.43650813895951" class="edge-line"/>
+        
+      </g>
+      <g class="edge" data-id="eve→frank">
+        <path d="M 60 260 L 124.43650813895951 104.43650813895957" class="edge-line"/>
+        
+      </g>
+      <g class="edge" data-id="grace→henry">
+        <path d="M 280 40 L 435.5634918610404 104.43650813895951" class="edge-line"/>
+        
+      </g>
+      <g class="edge" data-id="frank→grace">
+        <path d="M 124.43650813895951 104.43650813895957 L 280 40" class="edge-line" stroke-dasharray="6 6"/>
+        
+      </g></g>
+  <g class="nodes">
+      <g class="node" data-id="alice">
+        <rect x="460" y="240" width="80" height="40" rx="8" ry="8" class="node-rect"/>
+        <text x="500" y="260" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>Alice</tspan>
+        </text>
+      </g>
+      <g class="node" data-id="bob">
+        <rect x="395.56349186104046" y="395.56349186104046" width="80" height="40" rx="8" ry="8" class="node-rect"/>
+        <text x="435.56349186104046" y="415.56349186104046" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>Bob</tspan>
+        </text>
+      </g>
+      <g class="node" data-id="charlie">
+        <rect x="240" y="460" width="80" height="40" rx="8" ry="8" class="node-rect"/>
+        <text x="280" y="480" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>Charlie</tspan>
+        </text>
+      </g>
+      <g class="node" data-id="diana">
+        <rect x="84.43650813895957" y="395.56349186104046" width="80" height="40" rx="8" ry="8" class="node-rect"/>
+        <text x="124.43650813895957" y="415.56349186104046" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>Diana</tspan>
+        </text>
+      </g>
+      <g class="node" data-id="eve">
+        <rect x="20" y="240.00000000000003" width="80" height="40" rx="8" ry="8" class="node-rect"/>
+        <text x="60" y="260" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>Eve</tspan>
+        </text>
+      </g>
+      <g class="node" data-id="frank">
+        <rect x="84.43650813895951" y="84.43650813895957" width="80" height="40" rx="8" ry="8" class="node-rect"/>
+        <text x="124.43650813895951" y="104.43650813895957" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>Frank</tspan>
+        </text>
+      </g>
+      <g class="node" data-id="grace">
+        <rect x="239.99999999999997" y="20" width="80" height="40" rx="8" ry="8" class="node-rect"/>
+        <text x="280" y="40" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>Grace</tspan>
+        </text>
+      </g>
+      <g class="node" data-id="henry">
+        <rect x="395.5634918610404" y="84.43650813895951" width="80" height="40" rx="8" ry="8" class="node-rect"/>
+        <text x="435.5634918610404" y="104.43650813895951" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>Henry</tspan>
+        </text>
+      </g></g>
+</svg>

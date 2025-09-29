@@ -4,6 +4,8 @@
   "description": "Digital assets and SVG animations for RenderX plugins",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
@@ -11,7 +13,10 @@
     "test:server": "node tests/server.js",
     "test:cypress": "cypress run",
     "test:cypress:open": "cypress open",
-    "test:svg": "npm run test:server & sleep 2 && npm run test:cypress && pkill -f 'node tests/server.js'"
+    "test:svg": "npm run test:server & sleep 2 && npm run test:cypress && pkill -f 'node tests/server.js'",
+    "example": "npm run build && node dist/example.js",
+    "graph-to-svg": "npm run build && node dist/cli.js",
+    "generate-samples": "npm run build && node dist/sample-generator.js"
   },
   "devDependencies": {
     "cypress": "^13.17.0",
