@@ -75,6 +75,20 @@ export type Node =
   | { kind: "text";   id: NodeId; z?: number; at: Vec2; text: string; anchor?: Anchor; style?: Style; transform?: Transform }
   | { kind: "raw-svg"; id: NodeId; z?: number; at: Vec2; size: Size; rawSvg: string; style?: Style; transform?: Transform };
 
+/**
+ * Scene timing configuration for coordinated animations
+ */
+export interface SceneTimingConfig {
+  startTime: number;        // When scene becomes active (seconds)
+  duration: number;         // How long scene stays active (seconds)
+  busEnterTime: number;     // When bus enters this scene (seconds)
+  busExitTime: number;      // When bus exits this scene (seconds)
+  transitionDuration: number; // Overlap with next scene (seconds)
+}
+
+/**
+ * Enhanced scene interface with optional timing configuration
+ */
 export type Scene = {
   id: string;
   canvas: Size;
@@ -84,4 +98,5 @@ export type Scene = {
   ports?: Port[];
   connectors?: Connector[];
   flows?: Flow[];
+  timing?: SceneTimingConfig; // Optional timing configuration for coordinated animations
 };

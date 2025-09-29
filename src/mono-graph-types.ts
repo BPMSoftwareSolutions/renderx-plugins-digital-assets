@@ -2,15 +2,25 @@
 import type { Scene, Node, Connector, Flow, Port } from './scene';
 
 /**
+ * Mono scene timing configuration (different from SceneTimingConfig)
+ */
+export interface MonoSceneTiming {
+  sceneStart: number; // when this scene becomes active (seconds)
+  sceneDuration: number; // how long scene stays active
+  busArrival: number; // when bus arrives in this scene
+  busDeparture: number; // when bus leaves this scene
+}
+
+/**
  * Extended scene type for mono graph with seamless bus travel
  */
-export interface MonoScene extends Scene {
+export interface MonoScene extends Omit<Scene, 'timing'> {
   // Scene positioning within the mono graph
   position: {
     x: number;
     y: number;
   };
-  
+
   // Bus travel configuration for this scene
   busTravel: {
     entryPoint: { x: number; y: number };
@@ -18,14 +28,9 @@ export interface MonoScene extends Scene {
     duration: number; // seconds
     path?: string; // SVG path for custom routing
   };
-  
-  // Scene-specific timing
-  timing: {
-    sceneStart: number; // when this scene becomes active (seconds)
-    sceneDuration: number; // how long scene stays active
-    busArrival: number; // when bus arrives in this scene
-    busDeparture: number; // when bus leaves this scene
-  };
+
+  // Scene-specific timing (different from SceneTimingConfig)
+  timing: MonoSceneTiming;
 }
 
 /**
