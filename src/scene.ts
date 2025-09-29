@@ -44,6 +44,13 @@ export type Connector = {
   fromAnchor?: Anchor; toAnchor?: Anchor;
 };
 
+export type BoundaryPolicy = {
+  mode: "strict" | "loose";          // strict = clamp/clip + errors; loose = warn only
+  overflow: "clip" | "mask" | "resize" | "error";
+  snap?: { grid: number; origin?: "local" | "parent"; }; // e.g., 4px grid snap
+  tolerance?: number;                 // px before a drift is flagged (e.g., 2)
+};
+
 export type Flow = {
   id: string;
   path: string;                  // the connector.id sequence: "c1>c2>c3"
@@ -62,7 +69,7 @@ export type Flow = {
 
 export type Node =
   | { kind: "group"; id: NodeId; z?: number; at?: Vec2; size?: Size; style?: Style; transform?: Transform; children?: Node[] }
-  | { kind: "boundary"; id: NodeId; z?: number; at: Vec2; size: Size; title?: string; style?: Style & { labelColor?: string }; grid?: { cols: number; rowH: number; gutter: number; padding: number }; transform?: Transform; children?: Node[] }
+  | { kind: "boundary"; id: NodeId; z?: number; at: Vec2; size: Size; title?: string; style?: Style & { labelColor?: string }; grid?: { cols: number; rowH: number; gutter: number; padding: number }; policy?: BoundaryPolicy; transform?: Transform; children?: Node[] }
   | { kind: "sprite"; id: NodeId; z?: number; at: Vec2; size?: Size; anchor?: Anchor; sprite: SpriteRef; style?: Style; transform?: Transform }
   | { kind: "shape";  id: NodeId; z?: number; at: Vec2; size: Size; shape: "rect"|"roundedRect"|"circle"|"path"; d?: string; style?: Style; transform?: Transform }
   | { kind: "text";   id: NodeId; z?: number; at: Vec2; text: string; anchor?: Anchor; style?: Style; transform?: Transform };

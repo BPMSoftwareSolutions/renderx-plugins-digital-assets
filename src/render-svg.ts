@@ -1,18 +1,30 @@
 // render-svg.ts
 import type { Scene, Node, Connector, Port, Flow } from "./scene";
+import { enforceBoundaries, type EnforcementResult } from "./boundary-enforcement";
+import { collectContainmentRequirements, renderContainmentDefs, applyContainmentAttributes, needsContainment } from "./visual-containment";
 
 export function renderScene(scene: Scene): string {
+  // PASS 1: Validate and correct positions with boundary enforcement
+  const enforcementResult = enforceBoundaries(scene);
+  const correctedScene = enforcementResult.scene;
+
+  // Collect containment requirements for clipPaths and masks
+  const containmentContext = collectContainmentRequirements(correctedScene);
+
+  // Build defs with original content plus containment definitions
   const defs = [
-    ...(scene.defs?.gradients ?? []),
-    ...(scene.defs?.filters ?? []),
-    ...(scene.defs?.symbols ?? []).map(s => `<symbol id="${esc(s.id)}">${s.svg}</symbol>`)
+    ...(correctedScene.defs?.gradients ?? []),
+    ...(correctedScene.defs?.filters ?? []),
+    ...(correctedScene.defs?.symbols ?? []).map(s => `<symbol id="${esc(s.id)}">${s.svg}</symbol>`),
+    renderContainmentDefs(containmentContext)
   ].join("");
 
-  // depth sort
-  const allNodes = flatten(scene.nodes).sort((a,b) => (a.z ?? 0) - (b.z ?? 0));
-  const nodeSvg = allNodes.map(n => emitNode(n)).join("");
-  const connectors = (scene.connectors ?? []).map(c => emitConnector(c, allNodes, scene.ports ?? [])).join("");
-  const flows = (scene.flows ?? []).map(f => emitFlow(f, scene.connectors ?? [], allNodes, scene.ports ?? [])).join("");
+  // PASS 2: Paint with containment
+  // depth sort using corrected positions
+  const allNodes = flattenWithContainment(correctedScene.nodes).sort((a,b) => (a.z ?? 0) - (b.z ?? 0));
+  const nodeSvg = allNodes.map(n => emitNodeWithContainment(n)).join("");
+  const connectors = (correctedScene.connectors ?? []).map(c => emitConnector(c, allNodes, correctedScene.ports ?? [])).join("");
+  const flows = (correctedScene.flows ?? []).map(f => emitFlow(f, correctedScene.connectors ?? [], allNodes, correctedScene.ports ?? [])).join("");
 
   // Add CSS for animations and contextual boundaries
   const css = `
@@ -21,21 +33,50 @@ export function renderScene(scene: Scene): string {
       .connector { stroke-linecap: round; stroke-linejoin: round; }
       .boundary-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: 600; }
       .flow-token { animation-fill-mode: forwards; }
+      .boundary-contained { overflow: hidden; }
     </style>
   `;
 
   return `<?xml version="1.0" encoding="UTF-8"?>
-<svg width="${scene.canvas.width}" height="${scene.canvas.height}" viewBox="0 0 ${scene.canvas.width} ${scene.canvas.height}"
-     xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${esc(scene.id)}">
+<svg width="${correctedScene.canvas.width}" height="${correctedScene.canvas.height}" viewBox="0 0 ${correctedScene.canvas.width} ${correctedScene.canvas.height}"
+     xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${esc(correctedScene.id)}">
   <defs>${defs}</defs>
   ${css}
-  ${scene.bg ? `<rect x="0" y="0" width="100%" height="100%" fill="${scene.bg}"/>` : ""}
+  ${correctedScene.bg ? `<rect x="0" y="0" width="100%" height="100%" fill="${correctedScene.bg}"/>` : ""}
   ${connectors}
   ${nodeSvg}
   ${flows}
 </svg>`;
 }
 
+// Export enforcement result for diagnostics
+export function renderSceneWithDiagnostics(scene: Scene): { svg: string; diagnostics: EnforcementResult } {
+  const enforcementResult = enforceBoundaries(scene);
+  const svg = renderScene(scene);
+  return { svg, diagnostics: enforcementResult };
+}
+
+// New flatten function that uses corrected positions from enforcement
+function flattenWithContainment(nodes: Node[], parentAt = {x:0,y:0}): (Node & { _abs: {x:number;y:number} })[] {
+  const out: any[] = [];
+  for (const n of nodes) {
+    // Use corrected absolute rectangle if available, otherwise fall back to original logic
+    const at = (n as any)._absRect ?
+      { x: (n as any)._absRect.x, y: (n as any)._absRect.y } :
+      ("at" in n && n.at ? { x: parentAt.x + n.at.x, y: parentAt.y + n.at.y } : parentAt);
+
+    const nn: any = { ...n, _abs: at };
+    out.push(nn);
+
+    if ((n.kind === "group" || n.kind === "boundary") && n.children?.length) {
+      // Children are processed separately in boundary enforcement, so just flatten them
+      out.push(...flattenWithContainment(n.children, at));
+    }
+  }
+  return out;
+}
+
+// Legacy flatten function for backward compatibility
 function flatten(nodes: Node[], parentAt = {x:0,y:0}): (Node & { _abs: {x:number;y:number} })[] {
   const out: any[] = [];
   for (const n of nodes) {
@@ -69,6 +110,37 @@ function snapToGrid(child: Node, grid: { cols: number; rowH: number; gutter: num
   return { ...child, at: { x: snappedX, y: snappedY } };
 }
 
+// New emit function with containment support
+function emitNodeWithContainment(n: any): string {
+  const t = transformAttr(n);
+  const style = styleAttr(n.style);
+
+  if (n.kind === "group") {
+    // group wrapper for filter/class usage
+    return `<g id="${esc(n.id)}"${t}${style}></g>`;
+  }
+
+  if (n.kind === "boundary") {
+    const { width, height } = n.size;
+    const titleY = n._abs.y - 8; // Title above the boundary
+    const labelColor = n.style?.labelColor ?? "#e6edf3";
+    const filter = n.style?.filter ? ` filter="${n.style.filter}"` : ` filter="url(#laneShadow)"`;
+
+    // Apply containment attributes if needed
+    const containmentAttrs = needsContainment(n) ? ` ${applyContainmentAttributes(n)}` : "";
+    const containmentClass = needsContainment(n) ? " boundary-contained" : "";
+
+    return `<g id="${esc(n.id)}" class="boundary${containmentClass}"${containmentAttrs}>
+      <rect x="${n._abs.x}" y="${n._abs.y}" width="${width}" height="${height}" rx="8"${style}${filter}/>
+      ${n.title ? `<text x="${n._abs.x + 12}" y="${titleY}" class="boundary-title" fill="${labelColor}" font-size="14">${esc(n.title)}</text>` : ""}
+    </g>`;
+  }
+
+  // For non-boundary nodes, use the original logic
+  return emitNode(n);
+}
+
+// Legacy emit function for backward compatibility
 function emitNode(n: any): string {
   const t = transformAttr(n);
   const style = styleAttr(n.style);

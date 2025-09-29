@@ -1,0 +1,92 @@
+{
+  "sceneId": "boundary-violation-test",
+  "timestamp": "2025-09-29T14:18:32.545Z",
+  "summary": {
+    "errors": 2,
+    "warnings": 0,
+    "totalNodes": 4,
+    "boundariesProcessed": 1
+  },
+  "diagnostics": [
+    {
+      "code": "OUT_OF_BOUNDS",
+      "nodeId": "bad-node",
+      "boundaryId": "test-boundary",
+      "severity": "error",
+      "message": "Node 'bad-node' escapes boundary 'test-boundary'.",
+      "actual": {
+        "rect": {
+          "x": 352,
+          "y": 252,
+          "w": 100,
+          "h": 80
+        },
+        "boundary": {
+          "x": 100,
+          "y": 100,
+          "w": 300,
+          "h": 200
+        }
+      },
+      "suggestedFix": {
+        "at": {
+          "x": 300,
+          "y": 220
+        }
+      }
+    },
+    {
+      "code": "OUT_OF_BOUNDS",
+      "nodeId": "overflow-text",
+      "boundaryId": "test-boundary",
+      "severity": "error",
+      "message": "Node 'overflow-text' escapes boundary 'test-boundary'.",
+      "actual": {
+        "rect": {
+          "x": 380,
+          "y": 280,
+          "w": 264,
+          "h": 16
+        },
+        "boundary": {
+          "x": 100,
+          "y": 100,
+          "w": 300,
+          "h": 200
+        }
+      },
+      "suggestedFix": {
+        "at": {
+          "x": 136,
+          "y": 280
+        }
+      }
+    }
+  ],
+  "suggestions": [
+    {
+      "type": "MOVE_NODE",
+      "nodeId": "bad-node",
+      "description": "Move node 'bad-node' to stay within boundary 'test-boundary'",
+      "changes": {
+        "at": {
+          "x": 300,
+          "y": 220
+        }
+      },
+      "confidence": "high"
+    },
+    {
+      "type": "MOVE_NODE",
+      "nodeId": "overflow-text",
+      "description": "Move node 'overflow-text' to stay within boundary 'test-boundary'",
+      "changes": {
+        "at": {
+          "x": 136,
+          "y": 280
+        }
+      },
+      "confidence": "high"
+    }
+  ]
+}
