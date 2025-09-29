@@ -3,37 +3,6 @@
      xmlns="http://www.w3.org/2000/svg" role="img" aria-label="EventRouter Journey: Enhanced Combined Storybook">
 
   <defs>
-    
-    <g id="unified-bus-sprite">
-      <!-- Bus body -->
-      <rect x="0" y="0" width="60" height="30" rx="4" ry="4" fill="#FFD700" stroke="#E6C200" stroke-width="1"/>
-      <!-- Bus front -->
-      <rect x="55" y="3" width="8" height="24" rx="4" ry="4" fill="#FFD700" stroke="#E6C200" stroke-width="1"/>
-      <!-- Bus roof -->
-      <rect x="-1" y="-2" width="62" height="4" rx="2" ry="2" fill="#FFA500"/>
-      <!-- Front bumper -->
-      <rect x="61" y="26" width="4" height="3" rx="1" ry="1" fill="#C0C0C0"/>
-      <!-- Wheels -->
-      <circle id="front-wheel" cx="50" cy="32" r="4" fill="#333">
-        <animateTransform attributeName="transform" type="rotate" values="0;360" dur="1s" repeatCount="indefinite"/>
-      </circle>
-      <circle id="rear-wheel" cx="15" cy="32" r="4" fill="#333">
-        <animateTransform attributeName="transform" type="rotate" values="0;360" dur="1s" repeatCount="indefinite"/>
-      </circle>
-      <!-- Headlights -->
-      <circle cx="63" cy="8" r="2" fill="#FFFFCC" opacity="0.8">
-        <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="63" cy="22" r="2" fill="#FFFFCC" opacity="0.8">
-        <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
-      </circle>
-      <!-- Windows -->
-      <rect x="8" y="5" width="12" height="8" rx="1" fill="#87CEEB" opacity="0.7"/>
-      <rect x="22" y="5" width="12" height="8" rx="1" fill="#87CEEB" opacity="0.7"/>
-      <rect x="36" y="5" width="12" height="8" rx="1" fill="#87CEEB" opacity="0.7"/>
-    </g>
-  
-
     <!-- Glow filter for scene highlighting -->
     <filter id="scene-glow" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
@@ -326,6 +295,70 @@
 <rect x="100" y="160" width="100" height="20" fill="#FFFFFF" stroke="#333" stroke-width="1" rx="3"></rect>
 <text x="150" y="173" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">SCHOOL BUS DEPOT</text>
 </g>
+<!-- School bus with movement animation -->
+<g id="school-bus" transform="translate(300, 250)">
+<!-- Bus movement animation from left to right -->
+<animateTransform attributeName="transform" type="translate" values="300,250; 900,250" dur="8s" repeatCount="indefinite"/>
+<!-- Bus body -->
+<rect x="0" y="0" width="120" height="40" rx="4" ry="4" fill="#FFD700" stroke="#E6C200" stroke-width="2"></rect>
+<!-- Bus front -->
+<rect x="115" y="3" width="12" height="34" rx="6" ry="6" fill="#FFD700" stroke="#E6C200" stroke-width="2"></rect>
+<!-- Bus roof -->
+<rect x="-2" y="-3" width="124" height="6" rx="3" ry="3" fill="#FFA500"></rect>
+<!-- Front bumper -->
+<rect x="125" y="35" width="8" height="4" rx="2" ry="2" fill="#C0C0C0"></rect>
+<!-- Windows (tinted dark) -->
+<rect x="110" y="6" width="8" height="12" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"></rect>
+<rect x="100" y="6" width="8" height="12" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"></rect>
+<rect x="90" y="6" width="8" height="12" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"></rect>
+<rect x="80" y="6" width="8" height="12" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"></rect>
+<rect x="70" y="6" width="8" height="12" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"></rect>
+<rect x="60" y="6" width="8" height="12" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"></rect>
+<rect x="50" y="6" width="8" height="12" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"></rect>
+<rect x="40" y="6" width="8" height="12" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"></rect>
+<rect x="30" y="6" width="8" height="12" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"></rect>
+<rect x="20" y="6" width="8" height="12" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"></rect>
+<rect x="10" y="6" width="8" height="12" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"></rect>
+<!-- Emergency exit window -->
+<rect x="5" y="8" width="6" height="8" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"></rect>
+<!-- Door -->
+<rect x="95" y="22" width="12" height="18" rx="1" ry="1" fill="#E6C200" stroke="#D4AF37" stroke-width="1"></rect>
+<rect x="97" y="24" width="8" height="8" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"></rect>
+<circle cx="99" cy="35" r="1" fill="#000"></circle>
+<!-- School Bus text -->
+<text x="60" y="28" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#000">SCHOOL BUS</text>
+<!-- Orange stripe -->
+<rect x="0" y="20" width="120" height="4" fill="#FFA500"></rect>
+<!-- Front headlight (glowing) -->
+<circle cx="123" cy="12" r="3" fill="#FFFF00">
+<animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"></animate>
+</circle>
+<!-- Rear lights -->
+<rect x="2" y="8" width="3" height="4" rx="1.5" ry="1.5" fill="#FF0000"></rect>
+<rect x="2" y="28" width="3" height="4" rx="1.5" ry="1.5" fill="#FF0000"></rect>
+<!-- Front wheel with spinning spokes -->
+<g id="front-wheel">
+<circle cx="25" cy="42" r="8" fill="#333" stroke="#222" stroke-width="2"></circle>
+<circle cx="25" cy="42" r="4" fill="#666"></circle>
+<circle cx="25" cy="42" r="2" fill="#999"></circle>
+<g transform-origin="25 42">
+<line x1="25" y1="36" x2="25" y2="48" stroke="#AAA" stroke-width="1"></line>
+<line x1="19" y1="42" x2="31" y2="42" stroke="#AAA" stroke-width="1"></line>
+<animateTransform attributeName="transform" type="rotate" values="0;360" dur="1s" repeatCount="indefinite"/>
+</g>
+</g>
+<!-- Rear wheel with spinning spokes -->
+<g id="rear-wheel">
+<circle cx="95" cy="42" r="8" fill="#333" stroke="#222" stroke-width="2"></circle>
+<circle cx="95" cy="42" r="4" fill="#666"></circle>
+<circle cx="95" cy="42" r="2" fill="#999"></circle>
+<g transform-origin="95 42">
+<line x1="95" y1="36" x2="95" y2="48" stroke="#AAA" stroke-width="1"></line>
+<line x1="89" y1="42" x2="101" y2="42" stroke="#AAA" stroke-width="1"></line>
+<animateTransform attributeName="transform" type="rotate" values="0;360" dur="1s" repeatCount="indefinite"/>
+</g>
+</g>
+</g>
 <!-- Sky Text -->
 <g id="sky-text" transform="translate(400, 40)">
 <!-- Bold headline -->
@@ -440,6 +473,113 @@
 <rect x="610" y="308" width="40" height="4"></rect>
 <rect x="680" y="308" width="40" height="4"></rect>
 </g>
+<!-- School bus with stop-and-go animation -->
+<g id="school-bus" transform="translate(200, 250)">
+<!-- Bus movement: approach, stop at red light, continue on green -->
+<animateTransform attributeName="transform" type="translate"
+values="50,250; 350,250; 350,250; 900,250"
+dur="12s"
+repeatCount="indefinite"/>
+<rect x="0" y="0" width="100" height="35" rx="4" ry="4" fill="#FFD700" stroke="#E6C200" stroke-width="2"></rect>
+<rect x="95" y="3" width="10" height="29" rx="5" ry="5" fill="#FFD700" stroke="#E6C200" stroke-width="2"></rect>
+<rect x="-2" y="-3" width="104" height="5" rx="2.5" ry="2.5" fill="#FFA500"></rect>
+<!-- Windows -->
+<rect x="90" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"></rect>
+<rect x="82" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"></rect>
+<rect x="74" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"></rect>
+<rect x="66" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"></rect>
+<rect x="58" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"></rect>
+<rect x="50" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"></rect>
+<rect x="42" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"></rect>
+<rect x="34" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"></rect>
+<rect x="26" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"></rect>
+<rect x="18" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"></rect>
+<rect x="97" y="6" width="6" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"></rect>
+<rect x="12" y="8" width="5" height="6" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"></rect>
+<!-- Door and details -->
+<rect x="80" y="20" width="10" height="13" rx="1" ry="1" fill="#E6C200" stroke="#D4AF37" stroke-width="1"></rect>
+<rect x="82" y="22" width="6" height="6" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"></rect>
+<circle cx="84" cy="30" r="0.8" fill="#000"></circle>
+<text x="50" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" font-weight="bold" fill="#000">SCHOOL BUS</text>
+<rect x="0" y="18" width="100" height="3" fill="#FFA500"></rect>
+<!-- Headlight -->
+<circle cx="101" cy="12" r="2.5" fill="#FFFF00">
+<animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"></animate>
+</circle>
+<!-- Wheels with spinning animation -->
+<g id="front-wheel">
+<circle cx="20" cy="37" r="6" fill="#333" stroke="#222" stroke-width="1"></circle>
+<circle cx="20" cy="37" r="3" fill="#666"></circle>
+<g transform-origin="20 37">
+<line x1="20" y1="32" x2="20" y2="42" stroke="#AAA" stroke-width="1"></line>
+<line x1="15" y1="37" x2="25" y2="37" stroke="#AAA" stroke-width="1"></line>
+<animateTransform attributeName="transform" type="rotate" values="0;360" dur="1s" repeatCount="indefinite"/>
+</g>
+</g>
+<g id="rear-wheel">
+<circle cx="80" cy="37" r="6" fill="#333" stroke="#222" stroke-width="1"></circle>
+<circle cx="80" cy="37" r="3" fill="#666"></circle>
+<g transform-origin="80 37">
+<line x1="80" y1="32" x2="80" y2="42" stroke="#AAA" stroke-width="1"></line>
+<line x1="75" y1="37" x2="85" y2="37" stroke="#AAA" stroke-width="1"></line>
+<animateTransform attributeName="transform" type="rotate" values="0;360" dur="1s" repeatCount="indefinite"/>
+</g>
+</g>
+</g>
+<!-- Traffic light with red-yellow-green sequence -->
+<g id="traffic-light" transform="translate(450, 180)">
+<!-- Pole -->
+<rect x="18" y="70" width="4" height="80" fill="#666" stroke="#444" stroke-width="1"></rect>
+<!-- Housing -->
+<rect x="5" y="10" width="30" height="70" rx="5" ry="5" fill="#333" stroke="#222" stroke-width="2"></rect>
+<rect x="7" y="12" width="26" height="66" rx="3" ry="3" fill="#444"></rect>
+<!-- Light housings -->
+<circle cx="20" cy="25" r="8" fill="#222" stroke="#111" stroke-width="1"></circle>
+<circle cx="20" cy="40" r="8" fill="#222" stroke="#111" stroke-width="1"></circle>
+<circle cx="20" cy="55" r="8" fill="#222" stroke="#111" stroke-width="1"></circle>
+<!-- Red light (on during bus stop phase) -->
+<circle cx="20" cy="25" r="6" fill="#FF0000">
+<animate attributeName="opacity" values="1;1;1;0.3;0.3" dur="12s" repeatCount="indefinite"></animate>
+</circle>
+<!-- Yellow light (debounce transition) -->
+<circle cx="20" cy="40" r="6" fill="#FFFF00">
+<animate attributeName="opacity" values="0.3;0.3;1;1;0.3" dur="12s" repeatCount="indefinite"></animate>
+</circle>
+<circle cx="17" cy="37" r="2" fill="#FFFFFF" opacity="0.6">
+<animate attributeName="opacity" values="0.2;0.2;0.8;0.8;0.2" dur="12s" repeatCount="indefinite"></animate>
+</circle>
+<!-- Green light (on when bus continues) -->
+<circle cx="20" cy="55" r="6" fill="#00FF00">
+<animate attributeName="opacity" values="0.3;0.3;0.3;1;1" dur="12s" repeatCount="indefinite"></animate>
+</circle>
+</g>
+<!-- Billboard with manifest -->
+<g id="billboard" transform="translate(500, 120)">
+<!-- Billboard structure -->
+<rect x="0" y="0" width="120" height="80" fill="#F0F0F0" stroke="#333" stroke-width="2" rx="3"></rect>
+<rect x="2" y="2" width="116" height="76" fill="#FFFFFF" stroke="#DDD" stroke-width="1" rx="2"></rect>
+<!-- Support posts -->
+<rect x="10" y="75" width="6" height="40" fill="#8B4513"></rect>
+<rect x="104" y="75" width="6" height="40" fill="#8B4513"></rect>
+<!-- Manifest content -->
+<text x="60" y="15" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#333">MANIFEST</text>
+<text x="10" y="30" font-family="Courier, monospace" font-size="8" fill="#000">{</text>
+<text x="15" y="42" font-family="Courier, monospace" font-size="8" fill="#000">"topic": "bus.route",</text>
+<text x="15" y="54" font-family="Courier, monospace" font-size="8" fill="#000">"routes": ["school"],</text>
+<text x="15" y="66" font-family="Courier, monospace" font-size="8" fill="#000">"perf.debounceMs": 500</text>
+<text x="10" y="78" font-family="Courier, monospace" font-size="8" fill="#000">}</text>
+</g>
+<!-- Street sign with diagnostics -->
+<g id="street-sign" transform="translate(650, 200)">
+<!-- Sign post -->
+<rect x="18" y="40" width="4" height="60" fill="#666"></rect>
+<!-- Sign -->
+<rect x="0" y="0" width="40" height="25" fill="#228B22" stroke="#006400" stroke-width="2" rx="2"></rect>
+<rect x="2" y="2" width="36" height="21" fill="#32CD32" stroke="#228B22" stroke-width="1" rx="1"></rect>
+<!-- Sign text -->
+<text x="20" y="10" text-anchor="middle" font-family="Courier, monospace" font-size="6" font-weight="bold" fill="#FFFFFF">Logs ▶</text>
+<text x="20" y="18" text-anchor="middle" font-family="Courier, monospace" font-size="5" fill="#FFFFFF">routing_to...</text>
+</g>
 <!-- Sky Text -->
 <g id="sky-text" transform="translate(400, 40)">
 <!-- Bold headline -->
@@ -535,6 +675,148 @@
 <rect x="610" y="308" width="40" height="4"/>
 <rect x="680" y="308" width="40" height="4"/>
 </g>
+<!-- School bus with pickup animation -->
+<g id="school-bus" transform="translate(350, 250)">
+<!-- Bus movement: approach stop, pause for pickup, continue -->
+<animateTransform attributeName="transform" type="translate"
+values="100,250; 450,250; 450,250; 900,250"
+dur="15s"
+repeatCount="indefinite"/>
+<rect x="0" y="0" width="100" height="35" rx="4" ry="4" fill="#FFD700" stroke="#E6C200" stroke-width="2"/>
+<rect x="95" y="3" width="10" height="29" rx="5" ry="5" fill="#FFD700" stroke="#E6C200" stroke-width="2"/>
+<rect x="-2" y="-3" width="104" height="5" rx="2.5" ry="2.5" fill="#FFA500"/>
+<!-- Windows -->
+<rect x="90" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="82" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="74" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="66" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="58" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="50" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="42" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="34" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="26" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="18" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="97" y="6" width="6" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="12" y="8" width="5" height="6" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<!-- Door with opening animation -->
+<rect x="80" y="20" width="10" height="13" rx="1" ry="1" fill="#E6C200" stroke="#D4AF37" stroke-width="1">
+<animate attributeName="width" values="10;2;10" dur="15s" repeatCount="indefinite"/>
+</rect>
+<text x="50" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" font-weight="bold" fill="#000">SCHOOL BUS</text>
+<rect x="0" y="18" width="100" height="3" fill="#FFA500"/>
+<circle cx="101" cy="12" r="2.5" fill="#FFFF00">
+<animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+</circle>
+<!-- Wheels with spinning animation -->
+<g id="front-wheel">
+<circle cx="20" cy="37" r="6" fill="#333" stroke="#222" stroke-width="1"/>
+<circle cx="20" cy="37" r="3" fill="#666"/>
+<g transform-origin="20 37">
+<line x1="20" y1="32" x2="20" y2="42" stroke="#AAA" stroke-width="1"/>
+<line x1="15" y1="37" x2="25" y2="37" stroke="#AAA" stroke-width="1"/>
+<animateTransform attributeName="transform" type="rotate" values="0;360" dur="1s" repeatCount="indefinite"/>
+</g>
+</g>
+<g id="rear-wheel">
+<circle cx="80" cy="37" r="6" fill="#333" stroke="#222" stroke-width="1"/>
+<circle cx="80" cy="37" r="3" fill="#666"/>
+<g transform-origin="80 37">
+<line x1="80" y1="32" x2="80" y2="42" stroke="#AAA" stroke-width="1"/>
+<line x1="75" y1="37" x2="85" y2="37" stroke="#AAA" stroke-width="1"/>
+<animateTransform attributeName="transform" type="rotate" values="0;360" dur="1s" repeatCount="indefinite"/>
+</g>
+</g>
+</g>
+<!-- Bus stop shelter -->
+<g id="bus-stop-shelter" transform="translate(550, 180)">
+<!-- Shelter roof -->
+<rect x="0" y="0" width="120" height="8" fill="#4682B4" stroke="#2F4F4F" stroke-width="2" rx="4"/>
+<!-- Shelter supports -->
+<rect x="5" y="8" width="4" height="60" fill="#708090"/>
+<rect x="111" y="8" width="4" height="60" fill="#708090"/>
+<!-- Shelter back wall -->
+<rect x="5" y="15" width="110" height="53" fill="#E0E7FF" stroke="#3B82F6" stroke-width="1" opacity="0.8"/>
+<!-- Shelter floor -->
+<rect x="0" y="65" width="120" height="5" fill="#C0C0C0"/>
+<!-- Live Subscriber bench -->
+<rect x="15" y="45" width="40" height="15" fill="#3B82F6" stroke="#1E3A8A" stroke-width="1" rx="2"/>
+<rect x="15" y="40" width="40" height="8" fill="#60A5FA" stroke="#3B82F6" stroke-width="1" rx="1"/>
+<!-- Late Subscriber bench -->
+<rect x="65" y="45" width="40" height="15" fill="#EF4444" stroke="#DC2626" stroke-width="1" rx="2"/>
+<rect x="65" y="40" width="40" height="8" fill="#F87171" stroke="#EF4444" stroke-width="1" rx="1"/>
+<!-- Bench labels -->
+<text x="35" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" font-weight="bold" fill="#1E3A8A">Live Subscriber</text>
+<text x="85" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" font-weight="bold" fill="#DC2626">Late Subscriber</text>
+<!-- Live subscriber with boarding animation -->
+<g id="live-subscriber" transform="translate(25, 25)">
+<circle cx="5" cy="5" r="3" fill="#FBBF24"/>
+<rect x="2" y="8" width="6" height="10" fill="#3B82F6" rx="1"/>
+<rect x="1" y="12" width="2" height="6" fill="#1E3A8A"/>
+<rect x="7" y="12" width="2" height="6" fill="#1E3A8A"/>
+<!-- Animation: subscriber moves toward bus during pickup -->
+<animateTransform attributeName="transform" type="translate"
+values="25,25; 25,25; -100,50; -100,50"
+dur="15s"
+repeatCount="indefinite"/>
+<!-- Opacity animation: subscriber disappears when boarding bus -->
+<animate attributeName="opacity"
+values="1;1;0;0"
+dur="15s"
+repeatCount="indefinite"/>
+</g>
+<!-- Late subscriber with waiting animation -->
+<g id="late-subscriber" transform="translate(75, 25)">
+<circle cx="5" cy="5" r="3" fill="#F87171"/>
+<rect x="2" y="8" width="6" height="10" fill="#EF4444" rx="1"/>
+<rect x="1" y="12" width="2" height="6" fill="#DC2626"/>
+<rect x="7" y="12" width="2" height="6" fill="#DC2626"/>
+<!-- Animation: late subscriber stays and fades (missed the bus) -->
+<animate attributeName="opacity" values="1;1;1;0.3;0.3" dur="15s" repeatCount="indefinite"/>
+</g>
+</g>
+<!-- Replay Cache kiosk -->
+<g id="replay-cache-kiosk" transform="translate(680, 200)">
+<!-- Kiosk structure -->
+<rect x="0" y="0" width="60" height="70" fill="#6B7280" stroke="#374151" stroke-width="2" rx="4"/>
+<rect x="3" y="3" width="54" height="64" fill="#9CA3AF" stroke="#6B7280" stroke-width="1" rx="3"/>
+<!-- Kiosk screen/window -->
+<rect x="8" y="15" width="44" height="30" fill="#1F2937" stroke="#111827" stroke-width="1" rx="2"/>
+<rect x="10" y="17" width="40" height="26" fill="#374151" stroke="#1F2937" stroke-width="1" rx="1"/>
+<!-- Cache content display -->
+<text x="30" y="27" text-anchor="middle" font-family="Courier, monospace" font-size="6" fill="#10B981">REPLAY CACHE</text>
+<text x="30" y="35" text-anchor="middle" font-family="Courier, monospace" font-size="5" fill="#FFFFFF">Last Message:</text>
+<text x="30" y="41" text-anchor="middle" font-family="Courier, monospace" font-size="4" fill="#FBBF24">{payload: "..."}</text>
+<!-- Kiosk label -->
+<rect x="5" y="50" width="50" height="12" fill="#FFFFFF" stroke="#333" stroke-width="1" rx="2"/>
+<text x="30" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#333">REPLAY CACHE</text>
+<!-- Activity indicator with enhanced animation -->
+<circle cx="52" cy="10" r="3" fill="#10B981">
+<animate attributeName="opacity" values="0.5;1;0.5" dur="1.5s" repeatCount="indefinite"/>
+</circle>
+<!-- Data flow animation to late subscriber -->
+<g id="cache-data-flow">
+<circle cx="30" cy="30" r="2" fill="#FBBF24">
+<animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/>
+<animateTransform attributeName="transform" type="translate"
+values="0,0; -50,-20; -100,-40"
+dur="3s"
+repeatCount="indefinite"/>
+</circle>
+</g>
+</g>
+<!-- Flow arrows -->
+<g stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)">
+<!-- Bus to live subscriber -->
+<path d="M 420,280 Q 480,260 570,220" stroke="#3B82F6"/>
+<!-- Replay cache to late subscriber -->
+<path d="M 680,235 Q 650,225 620,220" stroke="#EF4444"/>
+</g>
+<!-- Arrow marker definition -->
+<defs>
+<marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+<polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+</marker>
+</defs>
 <!-- Sky Text -->
 <g id="sky-text" transform="translate(400, 40)">
 <!-- Bold headline -->
@@ -695,6 +977,126 @@ fill="none" stroke="#E0E0E0" stroke-width="4" stroke-linecap="round"/>
 <!-- Hub label -->
 <text x="0" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#1E3A8A">Conductor: play()</text>
 </g>
+<!-- School bus with ramp flying animation -->
+<g id="school-bus" transform="translate(300, 250)">
+<!-- Bus movement: approach ramp, drive up ramp, fly off into sky -->
+<animateTransform attributeName="transform" type="translate"
+values="100,250; 350,310; 450,260; 550,220; 650,180; 750,140; 900,100"
+dur="18s"
+repeatCount="indefinite"/>
+<!-- Bus rotation during ramp ascent -->
+<g transform-origin="50 17.5">
+<animateTransform attributeName="transform" type="rotate"
+values="0; 0; -10; -20; -30; -40; -45"
+dur="18s"
+repeatCount="indefinite"/>
+<rect x="0" y="0" width="100" height="35" rx="4" ry="4" fill="#FFD700" stroke="#E6C200" stroke-width="2"/>
+<rect x="95" y="3" width="10" height="29" rx="5" ry="5" fill="#FFD700" stroke="#E6C200" stroke-width="2"/>
+<rect x="-2" y="-3" width="104" height="5" rx="2.5" ry="2.5" fill="#FFA500"/>
+<!-- Windows -->
+<rect x="90" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="82" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="74" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="66" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="58" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="50" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="42" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="34" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="26" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="18" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="97" y="6" width="6" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="12" y="8" width="5" height="6" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="80" y="20" width="10" height="13" rx="1" ry="1" fill="#E6C200" stroke="#D4AF37" stroke-width="1"/>
+<text x="50" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" font-weight="bold" fill="#000">SCHOOL BUS</text>
+<rect x="0" y="18" width="100" height="3" fill="#FFA500"/>
+<circle cx="101" cy="12" r="2.5" fill="#FFFF00">
+<animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+</circle>
+<!-- Wheels with spinning animation -->
+<g id="front-wheel">
+<circle cx="20" cy="37" r="6" fill="#333" stroke="#222" stroke-width="1"/>
+<circle cx="20" cy="37" r="3" fill="#666"/>
+<g transform-origin="20 37">
+<line x1="20" y1="32" x2="20" y2="42" stroke="#AAA" stroke-width="1"/>
+<line x1="15" y1="37" x2="25" y2="37" stroke="#AAA" stroke-width="1"/>
+<animateTransform attributeName="transform" type="rotate" values="0;360" dur="1s" repeatCount="indefinite"/>
+</g>
+</g>
+<g id="rear-wheel">
+<circle cx="80" cy="37" r="6" fill="#333" stroke="#222" stroke-width="1"/>
+<circle cx="80" cy="37" r="3" fill="#666"/>
+<g transform-origin="80 37">
+<line x1="80" y1="32" x2="80" y2="42" stroke="#AAA" stroke-width="1"/>
+<line x1="75" y1="37" x2="85" y2="37" stroke="#AAA" stroke-width="1"/>
+<animateTransform attributeName="transform" type="rotate" values="0;360" dur="1s" repeatCount="indefinite"/>
+</g>
+</g>
+</g>
+</g>
+<!-- Other buses at hub -->
+<!-- Upper branch bus -->
+<g id="upper-bus" transform="translate(520, 180) rotate(-25)">
+<!-- Green bus animation: drives off ramp and off the page -->
+<animateTransform attributeName="transform" type="translate"
+values="520,180; 600,160; 700,140; 850,120; 950,100"
+dur="20s"
+repeatCount="indefinite"/>
+<rect x="0" y="0" width="60" height="25" rx="3" ry="3" fill="#32CD32" stroke="#228B22" stroke-width="1"/>
+<rect x="55" y="2" width="8" height="21" rx="4" ry="4" fill="#32CD32" stroke="#228B22" stroke-width="1"/>
+<rect x="52" y="4" width="5" height="8" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="45" y="4" width="5" height="8" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="38" y="4" width="5" height="8" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<circle cx="15" cy="27" r="4" fill="#333"/>
+<circle cx="45" cy="27" r="4" fill="#333"/>
+<text x="30" y="16" text-anchor="middle" font-family="Arial, sans-serif" font-size="5" fill="#000">PLUGIN A</text>
+</g>
+<!-- Lower branch bus -->
+<g id="lower-bus" transform="translate(520, 360) rotate(25)">
+<rect x="0" y="0" width="60" height="25" rx="3" ry="3" fill="#FF6347" stroke="#DC143C" stroke-width="1"/>
+<rect x="55" y="2" width="8" height="21" rx="4" ry="4" fill="#FF6347" stroke="#DC143C" stroke-width="1"/>
+<rect x="52" y="4" width="5" height="8" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="45" y="4" width="5" height="8" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="38" y="4" width="5" height="8" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<circle cx="15" cy="27" r="4" fill="#333"/>
+<circle cx="45" cy="27" r="4" fill="#333"/>
+<text x="30" y="16" text-anchor="middle" font-family="Arial, sans-serif" font-size="5" fill="#000">PLUGIN B</text>
+</g>
+<!-- Passengers transferring -->
+<g id="transferring-passengers">
+<!-- Passenger 1 - walking to upper bus -->
+<g transform="translate(470, 270)">
+<circle cx="0" cy="0" r="2" fill="#FBBF24"/>
+<rect x="-1" y="2" width="2" height="6" fill="#3B82F6" rx="0.5"/>
+<rect x="-1.5" y="4" width="1" height="4" fill="#1E3A8A"/>
+<rect x="0.5" y="4" width="1" height="4" fill="#1E3A8A"/>
+</g>
+<!-- Passenger 2 - walking to lower bus -->
+<g transform="translate(460, 330)">
+<circle cx="0" cy="0" r="2" fill="#F87171"/>
+<rect x="-1" y="2" width="2" height="6" fill="#EF4444" rx="0.5"/>
+<rect x="-1.5" y="4" width="1" height="4" fill="#DC2626"/>
+<rect x="0.5" y="4" width="1" height="4" fill="#DC2626"/>
+</g>
+<!-- Passenger 3 - at hub -->
+<g transform="translate(440, 300)">
+<circle cx="0" cy="0" r="2" fill="#34D399"/>
+<rect x="-1" y="2" width="2" height="6" fill="#10B981" rx="0.5"/>
+<rect x="-1.5" y="4" width="1" height="4" fill="#059669"/>
+<rect x="0.5" y="4" width="1" height="4" fill="#059669"/>
+</g>
+</g>
+<!-- Direction arrows -->
+<g stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)">
+<path d="M 420,290 Q 440,280 460,270" stroke="#32CD32"/>
+<path d="M 420,320 Q 440,330 460,340" stroke="#FF6347"/>
+<path d="M 500,310 L 580,310" stroke="#FFD700"/>
+</g>
+<!-- Arrow marker definition -->
+<defs>
+<marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+<polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+</marker>
+</defs>
 <!-- Sky Text -->
 <g id="sky-text" transform="translate(400, 40)">
 <!-- Bold headline -->
@@ -823,6 +1225,113 @@ fill="none" stroke="#E0E0E0" stroke-width="4" stroke-linecap="round"/>
 <rect x="600" y="308" width="30" height="4"/>
 <rect x="680" y="308" width="30" height="4"/>
 <rect x="750" y="308" width="30" height="4"/>
+</g>
+<!-- School bus with traffic light stop-and-go animation -->
+<g id="school-bus" transform="translate(350, 250)">
+<!-- Bus movement: approach traffic light, stop at red, proceed on green -->
+<animateTransform attributeName="transform" type="translate"
+values="100,250; 600,250; 600,250; 900,250"
+dur="16s"
+repeatCount="indefinite"/>
+<rect x="0" y="0" width="100" height="35" rx="4" ry="4" fill="#FFD700" stroke="#E6C200" stroke-width="2"/>
+<rect x="95" y="3" width="10" height="29" rx="5" ry="5" fill="#FFD700" stroke="#E6C200" stroke-width="2"/>
+<rect x="-2" y="-3" width="104" height="5" rx="2.5" ry="2.5" fill="#FFA500"/>
+<!-- Windows -->
+<rect x="90" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="82" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="74" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="66" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="58" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="50" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="42" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="34" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="26" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="18" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="97" y="6" width="6" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="12" y="8" width="5" height="6" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="80" y="20" width="10" height="13" rx="1" ry="1" fill="#E6C200" stroke="#D4AF37" stroke-width="1"/>
+<text x="50" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" font-weight="bold" fill="#000">SCHOOL BUS</text>
+<rect x="0" y="18" width="100" height="3" fill="#FFA500"/>
+<circle cx="101" cy="12" r="2.5" fill="#FFFF00">
+<animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+</circle>
+<!-- Wheels with spinning animation -->
+<g id="front-wheel">
+<circle cx="20" cy="37" r="6" fill="#333" stroke="#222" stroke-width="1"/>
+<circle cx="20" cy="37" r="3" fill="#666"/>
+<g transform-origin="20 37">
+<line x1="20" y1="32" x2="20" y2="42" stroke="#AAA" stroke-width="1"/>
+<line x1="15" y1="37" x2="25" y2="37" stroke="#AAA" stroke-width="1"/>
+<animateTransform attributeName="transform" type="rotate" values="0;360" dur="1s" repeatCount="indefinite"/>
+</g>
+</g>
+<g id="rear-wheel">
+<circle cx="80" cy="37" r="6" fill="#333" stroke="#222" stroke-width="1"/>
+<circle cx="80" cy="37" r="3" fill="#666"/>
+<g transform-origin="80 37">
+<line x1="80" y1="32" x2="80" y2="42" stroke="#AAA" stroke-width="1"/>
+<line x1="75" y1="37" x2="85" y2="37" stroke="#AAA" stroke-width="1"/>
+<animateTransform attributeName="transform" type="rotate" values="0;360" dur="1s" repeatCount="indefinite"/>
+</g>
+</g>
+</g>
+<!-- Street signs for rules and boundaries -->
+<!-- Loop Prevention sign -->
+<g id="loop-prevention-sign" transform="translate(100, 180)">
+<rect x="18" y="40" width="4" height="50" fill="#666"/>
+<polygon points="0,0 40,0 35,35 5,35" fill="#FFD700" stroke="#E6C200" stroke-width="2"/>
+<polygon points="2,2 38,2 33,33 7,33" fill="#FFF8DC"/>
+<!-- Loop symbol crossed out -->
+<circle cx="20" cy="18" r="8" fill="none" stroke="#DC143C" stroke-width="2"/>
+<path d="M 15,13 Q 20,8 25,13 Q 20,18 15,13" fill="none" stroke="#DC143C" stroke-width="2"/>
+<line x1="12" y1="12" x2="28" y2="24" stroke="#DC143C" stroke-width="3"/>
+<text x="20" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" font-weight="bold" fill="#DC143C">LOOP</text>
+<text x="20" y="36" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" font-weight="bold" fill="#DC143C">PREVENTION</text>
+</g>
+<!-- Handler Isolation sign -->
+<g id="handler-isolation-sign" transform="translate(300, 170)">
+<rect x="18" y="50" width="4" height="60" fill="#666"/>
+<rect x="0" y="0" width="40" height="35" fill="#228B22" stroke="#006400" stroke-width="2" rx="3"/>
+<rect x="2" y="2" width="36" height="31" fill="#32CD32" rx="2"/>
+<!-- Lab flask icon -->
+<g transform="translate(20, 18)">
+<rect x="-3" y="-8" width="6" height="4" fill="#FFFFFF" rx="1"/>
+<polygon points="-5,0 5,0 3,8 -3,8" fill="#FFFFFF"/>
+<circle cx="0" cy="4" r="2" fill="#00BFFF"/>
+<rect x="-1" y="-6" width="2" height="2" fill="#FFFFFF"/>
+</g>
+<text x="20" y="28" text-anchor="middle" font-family="Arial, sans-serif" font-size="5" font-weight="bold" fill="#FFFFFF">HANDLER</text>
+<text x="20" y="33" text-anchor="middle" font-family="Arial, sans-serif" font-size="5" font-weight="bold" fill="#FFFFFF">ISOLATION</text>
+</g>
+<!-- Feature Flags sign -->
+<g id="feature-flags-sign" transform="translate(600, 175)">
+<rect x="18" y="45" width="4" height="55" fill="#666"/>
+<rect x="0" y="0" width="40" height="30" fill="#4169E1" stroke="#191970" stroke-width="2" rx="3"/>
+<rect x="2" y="2" width="36" height="26" fill="#6495ED" rx="2"/>
+<!-- Toggle switch -->
+<rect x="10" y="8" width="20" height="8" fill="#FFFFFF" stroke="#333" stroke-width="1" rx="4"/>
+<circle cx="25" cy="12" r="3" fill="#32CD32" stroke="#228B22" stroke-width="1"/>
+<text x="8" y="14" font-family="Arial, sans-serif" font-size="4" fill="#333">OFF</text>
+<text x="28" y="14" font-family="Arial, sans-serif" font-size="4" fill="#333">ON</text>
+<text x="20" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="5" font-weight="bold" fill="#FFFFFF">FEATURE</text>
+<text x="20" y="29" text-anchor="middle" font-family="Arial, sans-serif" font-size="5" font-weight="bold" fill="#FFFFFF">FLAGS</text>
+</g>
+<!-- Traffic light with synchronized sequence -->
+<g id="traffic-light" transform="translate(720, 190)">
+<rect x="18" y="50" width="3" height="40" fill="#666"/>
+<rect x="10" y="10" width="20" height="45" rx="3" ry="3" fill="#333"/>
+<!-- Red light (active during bus stop period) -->
+<circle cx="20" cy="20" r="4" fill="#FF0000">
+<animate attributeName="fill" values="#800000;#FF0000;#800000;#800000" dur="16s" repeatCount="indefinite"/>
+</circle>
+<!-- Yellow light (brief transition) -->
+<circle cx="20" cy="30" r="4" fill="#806000">
+<animate attributeName="fill" values="#806000;#806000;#FFFF00;#806000" dur="16s" repeatCount="indefinite"/>
+</circle>
+<!-- Green light (active during bus movement) -->
+<circle cx="20" cy="40" r="4" fill="#008000">
+<animate attributeName="fill" values="#008000;#008000;#008000;#00FF00" dur="16s" repeatCount="indefinite"/>
+</circle>
 </g>
 <!-- Sky Text -->
 <g id="sky-text" transform="translate(400, 40)">
@@ -971,6 +1480,145 @@ fill="none" stroke="#E0E0E0" stroke-width="4" stroke-linecap="round"/>
 <rect x="60" y="130" width="80" height="15" fill="#FFFFFF" stroke="#333" stroke-width="1" rx="2"/>
 <text x="100" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#333">ELEMENTARY SCHOOL</text>
 </g>
+<!-- School bus with arrival animation -->
+<g id="school-bus" transform="translate(250, 250)">
+<!-- Bus movement: approach school stop and park -->
+<animateTransform attributeName="transform" type="translate"
+values="100,250; 250,250; 250,250"
+dur="12s"
+repeatCount="indefinite"/>
+<rect x="0" y="0" width="120" height="35" rx="4" ry="4" fill="#FFD700" stroke="#E6C200" stroke-width="2"/>
+<rect x="115" y="3" width="12" height="29" rx="6" ry="6" fill="#FFD700" stroke="#E6C200" stroke-width="2"/>
+<rect x="-2" y="-3" width="124" height="5" rx="2.5" ry="2.5" fill="#FFA500"/>
+<!-- Windows -->
+<rect x="110" y="6" width="8" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="100" y="6" width="8" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="90" y="6" width="8" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="80" y="6" width="8" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="70" y="6" width="8" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="60" y="6" width="8" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="50" y="6" width="8" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="40" y="6" width="8" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="30" y="6" width="8" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="20" y="6" width="8" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="10" y="6" width="8" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="117" y="6" width="8" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="5" y="8" width="6" height="6" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="95" y="20" width="12" height="13" rx="1" ry="1" fill="#E6C200" stroke="#D4AF37" stroke-width="1"/>
+<text x="60" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" font-weight="bold" fill="#000">SCHOOL BUS</text>
+<rect x="0" y="18" width="120" height="3" fill="#FFA500"/>
+<!-- Headlight (glowing when moving) -->
+<circle cx="123" cy="12" r="2.5" fill="#FFFF00">
+<animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+</circle>
+<!-- Wheels with spinning animation -->
+<g id="front-wheel">
+<circle cx="25" cy="37" r="6" fill="#333" stroke="#222" stroke-width="1"/>
+<circle cx="25" cy="37" r="3" fill="#666"/>
+<g transform-origin="25 37">
+<line x1="25" y1="32" x2="25" y2="42" stroke="#AAA" stroke-width="1"/>
+<line x1="20" y1="37" x2="30" y2="37" stroke="#AAA" stroke-width="1"/>
+<animateTransform attributeName="transform" type="rotate" values="0;360" dur="1s" repeatCount="indefinite"/>
+</g>
+</g>
+<g id="rear-wheel">
+<circle cx="95" cy="37" r="6" fill="#333" stroke="#222" stroke-width="1"/>
+<circle cx="95" cy="37" r="3" fill="#666"/>
+<g transform-origin="95 37">
+<line x1="95" y1="32" x2="95" y2="42" stroke="#AAA" stroke-width="1"/>
+<line x1="90" y1="37" x2="100" y2="37" stroke="#AAA" stroke-width="1"/>
+<animateTransform attributeName="transform" type="rotate" values="0;360" dur="1s" repeatCount="indefinite"/>
+</g>
+</g>
+<!-- Door animation (opens when parked) -->
+<g id="bus-door">
+<rect x="95" y="20" width="12" height="13" fill="none" stroke="#D4AF37" stroke-width="1"/>
+<rect x="107" y="22" width="8" height="9" fill="#E6C200" stroke="#D4AF37" stroke-width="1">
+<animateTransform attributeName="transform" type="translate"
+values="0,0; 0,0; 15,0"
+dur="12s"
+repeatCount="indefinite"/>
+</rect>
+</g>
+</g>
+<!-- Children with jumping and boarding animations -->
+<g id="children-jumping">
+<!-- Child 1 - jumping off bus -->
+<g transform="translate(380, 270)">
+<animateTransform attributeName="transform" type="translate"
+values="380,270; 380,270; 380,265; 380,270; 420,275"
+dur="12s"
+repeatCount="indefinite"/>
+<circle cx="0" cy="0" r="3" fill="#FBBF24"/>
+<rect x="-2" y="3" width="4" height="8" fill="#3B82F6" rx="1"/>
+<rect x="-2.5" y="6" width="2" height="5" fill="#1E3A8A"/>
+<rect x="0.5" y="6" width="2" height="5" fill="#1E3A8A"/>
+<!-- Backpack -->
+<rect x="2" y="4" width="2" height="4" fill="#DC2626" rx="1"/>
+</g>
+<!-- Child 2 - jumping and walking toward school -->
+<g transform="translate(420, 275)">
+<animateTransform attributeName="transform" type="translate"
+values="420,275; 420,275; 420,270; 420,275; 480,280"
+dur="12s"
+repeatCount="indefinite"/>
+<circle cx="0" cy="0" r="3" fill="#F87171"/>
+<rect x="-2" y="3" width="4" height="8" fill="#10B981" rx="1"/>
+<rect x="-2.5" y="6" width="2" height="5" fill="#059669"/>
+<rect x="0.5" y="6" width="2" height="5" fill="#059669"/>
+<!-- Backpack -->
+<rect x="2" y="4" width="2" height="4" fill="#7C3AED" rx="1"/>
+</g>
+<!-- Child 3 - jumping near school entrance -->
+<g transform="translate(480, 280)">
+<animateTransform attributeName="transform" type="translate"
+values="480,280; 480,280; 480,275; 480,280; 580,285"
+dur="12s"
+repeatCount="indefinite"/>
+<circle cx="0" cy="0" r="3" fill="#34D399"/>
+<rect x="-2" y="3" width="4" height="8" fill="#EF4444" rx="1"/>
+<rect x="-2.5" y="6" width="2" height="5" fill="#DC2626"/>
+<rect x="0.5" y="6" width="2" height="5" fill="#DC2626"/>
+<!-- Backpack -->
+<rect x="2" y="4" width="2" height="4" fill="#F59E0B" rx="1"/>
+</g>
+<!-- Child 4 - jumping at school door -->
+<g transform="translate(580, 285)">
+<animateTransform attributeName="transform" type="translate"
+values="580,285; 580,285; 580,280; 580,285; 580,285"
+dur="12s"
+repeatCount="indefinite"/>
+<circle cx="0" cy="0" r="3" fill="#A78BFA"/>
+<rect x="-2" y="3" width="4" height="8" fill="#FBBF24" rx="1"/>
+<rect x="-2.5" y="6" width="2" height="5" fill="#F59E0B"/>
+<rect x="0.5" y="6" width="2" height="5" fill="#F59E0B"/>
+<!-- Backpack -->
+<rect x="2" y="4" width="2" height="4" fill="#06B6D4" rx="1"/>
+</g>
+</g>
+<!-- Festive decorations -->
+<g id="decorations">
+<!-- Pennant banners -->
+<line x1="450" y1="120" x2="650" y2="120" stroke="#8B4513" stroke-width="2"/>
+<g fill="#FF6B6B">
+<polygon points="460,120 470,125 460,130"/>
+<polygon points="480,120 490,125 480,130"/>
+<polygon points="500,120 510,125 500,130"/>
+<polygon points="520,120 530,125 520,130"/>
+<polygon points="540,120 550,125 540,130"/>
+<polygon points="560,120 570,125 560,130"/>
+<polygon points="580,120 590,125 580,130"/>
+<polygon points="600,120 610,125 600,130"/>
+<polygon points="620,120 630,125 620,130"/>
+</g>
+<!-- Balloons -->
+<g transform="translate(720, 200)">
+<line x1="0" y1="20" x2="0" y2="40" stroke="#333" stroke-width="1"/>
+<circle cx="0" cy="15" r="8" fill="#FF6B6B"/>
+<circle cx="-8" cy="18" r="6" fill="#4ECDC4"/>
+<circle cx="8" cy="18" r="6" fill="#45B7D1"/>
+</g>
+</g>
 <!-- Sky Text -->
 <g id="sky-text" transform="translate(400, 40)">
 <!-- Bold headline -->
@@ -1008,18 +1656,6 @@ fill="none" stroke="#E0E0E0" stroke-width="4" stroke-linecap="round"/>
     <text x="100" y="35" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">
       Journey Progress
     </text>
-  </g>
-
-  <!-- Unified Bus with Coordinated Animation -->
-  <g id="unified-coordinated-bus">
-    <animateTransform
-      attributeName="transform"
-      type="translate"
-      values="70,350;770,350;920,350;920,350;1620,350;70,800;70,800;770,800;920,800;920,800;1620,800;70,1250;70,1250;770,1250;920,1250;920,1250;1620,1250"
-      dur="60s"
-      repeatCount="indefinite"
-    />
-    <use href="#unified-bus-sprite"/>
   </g>
 
   <!-- Play/Pause Controls -->

@@ -83,10 +83,10 @@ function createDefaultConfig(): CombinedStorybookConfig {
     },
     scenes: [], // Will be populated
     bus: {
-      sprite: createBusSprite(),
+      sprite: '', // No unified sprite needed - using graph content
       size: { width: 60, height: 30 },
-      speed: 100, // pixels per second
-      enabled: true
+      speed: 100,
+      enabled: false // Individual scene buses from graphs provide coordination
     },
     controls: {
       showProgress: true,
@@ -97,41 +97,7 @@ function createDefaultConfig(): CombinedStorybookConfig {
   };
 }
 
-/**
- * Create SVG sprite for the unified bus
- */
-function createBusSprite(): string {
-  return `
-    <g id="unified-bus-sprite">
-      <!-- Bus body -->
-      <rect x="0" y="0" width="60" height="30" rx="4" ry="4" fill="#FFD700" stroke="#E6C200" stroke-width="1"/>
-      <!-- Bus front -->
-      <rect x="55" y="3" width="8" height="24" rx="4" ry="4" fill="#FFD700" stroke="#E6C200" stroke-width="1"/>
-      <!-- Bus roof -->
-      <rect x="-1" y="-2" width="62" height="4" rx="2" ry="2" fill="#FFA500"/>
-      <!-- Front bumper -->
-      <rect x="61" y="26" width="4" height="3" rx="1" ry="1" fill="#C0C0C0"/>
-      <!-- Wheels -->
-      <circle id="front-wheel" cx="50" cy="32" r="4" fill="#333">
-        <animateTransform attributeName="transform" type="rotate" values="0;360" dur="1s" repeatCount="indefinite"/>
-      </circle>
-      <circle id="rear-wheel" cx="15" cy="32" r="4" fill="#333">
-        <animateTransform attributeName="transform" type="rotate" values="0;360" dur="1s" repeatCount="indefinite"/>
-      </circle>
-      <!-- Headlights -->
-      <circle cx="63" cy="8" r="2" fill="#FFFFCC" opacity="0.8">
-        <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="63" cy="22" r="2" fill="#FFFFCC" opacity="0.8">
-        <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
-      </circle>
-      <!-- Windows -->
-      <rect x="8" y="5" width="12" height="8" rx="1" fill="#87CEEB" opacity="0.7"/>
-      <rect x="22" y="5" width="12" height="8" rx="1" fill="#87CEEB" opacity="0.7"/>
-      <rect x="36" y="5" width="12" height="8" rx="1" fill="#87CEEB" opacity="0.7"/>
-    </g>
-  `;
-}
+
 
 /**
  * Convert legacy SceneInfo to EnhancedSceneInfo with positioning and bus travel
@@ -218,8 +184,6 @@ function generateEnhancedSVG(config: CombinedStorybookConfig, timeline: Combined
      xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${config.title}">
 
   <defs>
-    ${bus.sprite}
-
     <!-- Glow filter for scene highlighting -->
     <filter id="scene-glow" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
@@ -306,9 +270,7 @@ function generateEnhancedSVG(config: CombinedStorybookConfig, timeline: Combined
     if (svgMatch) {
       let innerContent = svgMatch[1];
 
-      // Remove individual bus animations from scenes to avoid conflicts with unified bus
-      // Remove school bus and all content until Sky Text or Caption
-      innerContent = innerContent.replace(/<!-- School bus[^>]*-->[\s\S]*?(?=<!-- Sky Text|<!-- Caption|$)/g, '');
+      // Keep original graph content intact - graph is the single source of truth
 
       // Add scene as a group with enhanced features
       svg += `  <!-- Scene ${sceneInfo.sceneNumber}: ${sceneInfo.title} -->
@@ -361,24 +323,7 @@ ${innerContent}
 
 `;
 
-  // Add unified bus with coordinated animation
-  if (bus.enabled) {
-    const busAnimationValues = generateBusAnimationValues(timeline.busKeyframes);
-
-    svg += `  <!-- Unified Bus with Coordinated Animation -->
-  <g id="unified-coordinated-bus">
-    <animateTransform
-      attributeName="transform"
-      type="translate"
-      values="${busAnimationValues}"
-      dur="${timing.totalDuration}s"
-      repeatCount="${timing.loop ? 'indefinite' : '1'}"
-    />
-    <use href="#unified-bus-sprite"/>
-  </g>
-
-`;
-  }
+  // Individual scene buses from graphs provide the coordination - no unified bus needed
 
   // Add controls if enabled
   if (config.controls?.allowPlayPause) {
@@ -445,6 +390,9 @@ async function main(): Promise<void> {
 
     // Create enhanced combined storybook with animation coordination
     createEnhancedCombinedStorybook(scenes);
+
+    // Also create legacy version for backward compatibility
+    createCombinedStorybook(scenes);
 
     console.log('\n' + '='.repeat(80));
     console.log('📋 ENHANCED COMBINED STORYBOOK GENERATION SUMMARY');

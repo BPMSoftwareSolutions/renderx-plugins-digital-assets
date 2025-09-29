@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="1750" height="1500" viewBox="0 0 1750 1500"
      xmlns="http://www.w3.org/2000/svg" role="img" aria-label="EventRouter Complete Graph-Generated Storybook">
-  
+
   <!-- Background -->
   <rect x="0" y="0" width="100%" height="100%" fill="#F8F9FA"/>
-  
+
   <!-- Title -->
-  <text x="875" y="40" text-anchor="middle" 
+  <text x="875" y="40" text-anchor="middle"
         font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#1E3A56">
     EventRouter Journey: Graph-Generated Storybook
   </text>
-  <text x="875" y="70" text-anchor="middle" 
+  <text x="875" y="70" text-anchor="middle"
         font-family="Arial, sans-serif" font-size="16" fill="#3C556E">
     Six Scenes Generated from Graph Configurations (Single Source of Truth)
   </text>
-  
+
   <!-- Scene 1: The bus leaving the depot with animations -->
   <g transform="translate(50, 150)">
-    <rect x="0" y="0" width="800" height="400" 
+    <rect x="0" y="0" width="800" height="400"
           fill="#FFFFFF" stroke="#E0E0E0" stroke-width="2" rx="8"/>
     <clipPath id="scene-1-clip">
       <rect x="0" y="0" width="800" height="400" rx="8"/>
@@ -187,15 +187,15 @@
 
       </svg>
     </g>
-    <text x="400" y="425" text-anchor="middle" 
+    <text x="400" y="425" text-anchor="middle"
           font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E3A56">
       Scene 1: The bus leaving the depot with animations
     </text>
   </g>
-  
+
   <!-- Scene 2: Bus encountering first rules of the road with animations -->
   <g transform="translate(900, 150)">
-    <rect x="0" y="0" width="800" height="400" 
+    <rect x="0" y="0" width="800" height="400"
           fill="#FFFFFF" stroke="#E0E0E0" stroke-width="2" rx="8"/>
     <clipPath id="scene-2-clip">
       <rect x="0" y="0" width="800" height="400" rx="8"/>
@@ -397,15 +397,15 @@ repeatCount="indefinite"/>
 
       </svg>
     </g>
-    <text x="400" y="425" text-anchor="middle" 
+    <text x="400" y="425" text-anchor="middle"
           font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E3A56">
       Scene 2: Bus encountering first rules of the road with animations
     </text>
   </g>
-  
+
   <!-- Scene 3: First subscriber stop and replay cache with animations -->
   <g transform="translate(50, 600)">
-    <rect x="0" y="0" width="800" height="400" 
+    <rect x="0" y="0" width="800" height="400"
           fill="#FFFFFF" stroke="#E0E0E0" stroke-width="2" rx="8"/>
     <clipPath id="scene-3-clip">
       <rect x="0" y="0" width="800" height="400" rx="8"/>
@@ -623,15 +623,15 @@ repeatCount="indefinite"/>
 
       </svg>
     </g>
-    <text x="400" y="425" text-anchor="middle" 
+    <text x="400" y="425" text-anchor="middle"
           font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E3A56">
       Scene 3: First subscriber stop and replay cache with animations
     </text>
   </g>
-  
+
   <!-- Scene 4: Transfer hub and conductor with ramp animation -->
   <g transform="translate(900, 600)">
-    <rect x="0" y="0" width="800" height="400" 
+    <rect x="0" y="0" width="800" height="400"
           fill="#FFFFFF" stroke="#E0E0E0" stroke-width="2" rx="8"/>
     <clipPath id="scene-4-clip">
       <rect x="0" y="0" width="800" height="400" rx="8"/>
@@ -892,15 +892,15 @@ repeatCount="indefinite"/>
 
       </svg>
     </g>
-    <text x="400" y="425" text-anchor="middle" 
+    <text x="400" y="425" text-anchor="middle"
           font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E3A56">
       Scene 4: Transfer hub and conductor with ramp animation
     </text>
   </g>
-  
+
   <!-- Scene 5: Rules, boundaries, and street signs with traffic light animation -->
   <g transform="translate(50, 1050)">
-    <rect x="0" y="0" width="800" height="400" 
+    <rect x="0" y="0" width="800" height="400"
           fill="#FFFFFF" stroke="#E0E0E0" stroke-width="2" rx="8"/>
     <clipPath id="scene-5-clip">
       <rect x="0" y="0" width="800" height="400" rx="8"/>
@@ -1117,15 +1117,15 @@ repeatCount="indefinite"/>
 
       </svg>
     </g>
-    <text x="400" y="425" text-anchor="middle" 
+    <text x="400" y="425" text-anchor="middle"
           font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E3A56">
       Scene 5: Rules, boundaries, and street signs with traffic light animation
     </text>
   </g>
-  
+
   <!-- Scene 6: Destination reached. -->
   <g transform="translate(900, 1050)">
-    <rect x="0" y="0" width="800" height="400" 
+    <rect x="0" y="0" width="800" height="400"
           fill="#FFFFFF" stroke="#E0E0E0" stroke-width="2" rx="8"/>
     <clipPath id="scene-6-clip">
       <rect x="0" y="0" width="800" height="400" rx="8"/>
@@ -1392,10 +1392,10 @@ repeatCount="indefinite"/>
 
       </svg>
     </g>
-    <text x="400" y="425" text-anchor="middle" 
+    <text x="400" y="425" text-anchor="middle"
           font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E3A56">
       Scene 6: Destination reached.
     </text>
   </g>
-  
+
 </svg>

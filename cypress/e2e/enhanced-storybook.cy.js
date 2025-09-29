@@ -19,16 +19,15 @@ describe('Enhanced Combined Storybook Animation Tests', () => {
     cy.get('#enhanced-storybook-svg').should('have.attr', 'viewBox', '0 0 1750 1500')
   })
 
-  it('should have exactly one unified bus (no flying bus bug)', () => {
-    // Should have exactly one unified bus element
-    cy.get('#unified-coordinated-bus').should('have.length', 1)
-    
-    // Should NOT have multiple school-bus elements (they should be removed from scenes)
-    cy.get('#school-bus').should('have.length', 0)
-    
-    // Verify the unified bus has proper animation
-    cy.get('#unified-coordinated-bus animateTransform').should('exist')
-    cy.get('#unified-coordinated-bus animateTransform').should('have.attr', 'type', 'translate')
+  it('should preserve original graph content (no unified bus)', () => {
+    // Should NOT have unified bus (graph content is preserved)
+    cy.get('#unified-coordinated-bus').should('have.length', 0)
+
+    // Should have individual school-bus elements from graphs (preserved content)
+    cy.get('#school-bus').should('have.length.greaterThan', 0)
+
+    // Verify individual buses have their original animations from graphs
+    cy.get('#school-bus animateTransform').should('exist')
   })
 
   it('should have proper scene coordination', () => {
@@ -78,37 +77,32 @@ describe('Enhanced Combined Storybook Animation Tests', () => {
     }
   })
 
-  it('should have proper bus animation timing', () => {
-    // Get the unified bus animation
-    cy.get('#unified-coordinated-bus animateTransform').then($anim => {
-      const values = $anim.attr('values')
-      const dur = $anim.attr('dur')
-      
-      // Verify animation has multiple coordinate pairs (scene-by-scene movement)
-      expect(values).to.include(';')
-      expect(values.split(';').length).to.be.greaterThan(6) // Should have coordinates for each scene
-      
-      // Verify reasonable duration
-      expect(parseInt(dur)).to.be.greaterThan(30) // Should be longer than 30 seconds
+  it('should preserve original graph bus animations', () => {
+    // Get individual bus animations from graphs
+    cy.get('#school-bus animateTransform[type="translate"]').then($anims => {
+      // Should have multiple bus animations (one per scene)
+      expect($anims.length).to.be.greaterThan(0)
+
+      // Each should have proper animation values from the graph
+      $anims.each((index, anim) => {
+        const values = anim.getAttribute('values')
+        expect(values).to.exist
+        expect(values).to.include(',') // Should have coordinate pairs
+      })
     })
   })
 
-  it('should not have conflicting bus animations', () => {
-    // Should not have individual bus animations in scenes
-    cy.get('g[id="school-bus"] animateTransform[type="translate"]').should('have.length', 0)
+  it('should maintain graph integrity (no content modification)', () => {
+    // Should have individual bus animations from graphs (not removed)
+    cy.get('g[id="school-bus"] animateTransform[type="translate"]').should('have.length.greaterThan', 0)
 
-    // Should only have the unified bus animation (more specific check)
-    cy.get('#unified-coordinated-bus animateTransform[type="translate"]').should('have.length', 1)
+    // Should NOT have unified bus (content not modified)
+    cy.get('#unified-coordinated-bus').should('have.length', 0)
 
-    // Verify the unified bus animation has proper scene-by-scene coordinates
-    cy.get('#unified-coordinated-bus animateTransform[type="translate"]').then($anim => {
-      const values = $anim.attr('values')
-      const coordinates = values.split(';')
-
-      // Should have coordinates for all 6 scenes (multiple coordinates per scene for smooth transitions)
-      expect(coordinates.length).to.be.greaterThan(6)
-      expect(coordinates.length).to.be.lessThan(20) // Reasonable upper bound
-    })
+    // Verify original graph content is preserved
+    cy.get('#school-bus').should('exist')
+    cy.get('#depot').should('exist') // Should have depot from graph
+    cy.get('#traffic-light').should('exist') // Should have traffic light from graph
   })
 
   it('should be visually correct (screenshot test)', () => {
