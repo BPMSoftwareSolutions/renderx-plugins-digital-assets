@@ -1,0 +1,130 @@
+// slide01-data.ts
+import type { Scene } from "./scene";
+
+export const slide01: Scene = {
+  id: "slide-01-manifest",
+  canvas: { width: 1200, height: 720 },
+  bg: "#0f1116",
+  defs: {
+    // Register sprite symbols once; reuse with <use xlink:href="#...">
+    symbols: [
+      // Plugin Package sprites
+      { id: "pkg/box", svg: `<rect x="0" y="0" width="420" height="140" rx="8" fill="#2d3748" stroke="#4a5568" stroke-width="2"/>` },
+      { id: "pkg/shadow", svg: `<ellipse cx="210" cy="135" rx="200" ry="15" fill="#000" opacity="0.2"/>` },
+      { id: "pkg/label", svg: `<rect x="10" y="10" width="200" height="30" rx="4" fill="#4299e1" stroke="#3182ce"/><text x="110" y="28" text-anchor="middle" fill="white" font-size="14" font-weight="bold">Plugin Package</text>` },
+      { id: "pkg/glyphs", svg: `<g opacity="0.5"><circle cx="350" cy="30" r="8" fill="#a0aec0"/><rect x="340" y="50" width="20" height="20" rx="2" fill="#a0aec0"/><polygon points="345,80 355,80 350,90" fill="#a0aec0"/></g>` },
+      { id: "pkg/npm-badge", svg: `<rect x="0" y="0" width="80" height="28" rx="14" fill="#cb3837"/><text x="40" y="18" text-anchor="middle" fill="white" font-size="12" font-weight="bold">npm</text>` },
+
+      // Plugin Manifest sprites
+      { id: "manifest/card", svg: `<rect x="0" y="0" width="420" height="140" rx="8" fill="#1a202c" stroke="#00d9ff" stroke-width="2"/>` },
+      { id: "manifest/braces", svg: `<text x="20" y="40" fill="#00d9ff" font-size="24" font-weight="bold">{</text><text x="380" y="120" fill="#00d9ff" font-size="24" font-weight="bold">}</text>` },
+      { id: "manifest/rows", svg: `<g fill="#e2e8f0" font-size="12"><text x="40" y="60">"name": "my-plugin",</text><text x="40" y="80">"version": "1.0.0",</text><text x="40" y="100">"handlers": ["onDragStart"]</text></g>` },
+      { id: "manifest/stamp", svg: `<rect x="320" y="10" width="80" height="20" rx="10" fill="#38a169" opacity="0.8"/><text x="360" y="22" text-anchor="middle" fill="white" font-size="10">GENERATED</text>` },
+      { id: "manifest/tabs", svg: `<g fill="#4a5568"><rect x="0" y="0" width="60" height="20" rx="4"/><rect x="65" y="0" width="60" height="20" rx="4"/><rect x="130" y="0" width="60" height="20" rx="4"/></g><g fill="#a0aec0" font-size="10"><text x="30" y="12" text-anchor="middle">routes</text><text x="95" y="12" text-anchor="middle">topics</text><text x="160" y="12" text-anchor="middle">handlers</text></g>` },
+
+      // Handlers Export sprites
+      { id: "handlers/connectors", svg: `<g stroke="#4c1d95" stroke-width="2" fill="none" opacity="0.3"><path d="M30 80 Q150 80 270 80"/><path d="M30 100 Q150 100 270 100"/><circle cx="30" cy="80" r="4" fill="#4c1d95"/><circle cx="30" cy="100" r="4" fill="#4c1d95"/></g>` },
+      { id: "handlers/ports", svg: `<g><rect x="280" y="65" width="120" height="24" rx="12" fill="#553c9a" stroke="#7c3aed" stroke-width="1"/><text x="340" y="79" text-anchor="middle" fill="white" font-size="11" font-weight="500">onDragStart</text><rect x="280" y="95" width="130" height="24" rx="12" fill="#553c9a" stroke="#7c3aed" stroke-width="1"/><text x="345" y="109" text-anchor="middle" fill="white" font-size="10" font-weight="500">publishCreateRequested</text></g>` },
+      { id: "handlers/gradient", svg: `<path d="M 30 90 C 180 50, 270 50, 390 90" stroke="url(#violetArc)" stroke-width="4" fill="none" filter="url(#glow)"/><path d="M 30 90 C 180 50, 270 50, 390 90" stroke="#d6bcfa" stroke-width="1.2" fill="none" stroke-dasharray="8 8"><animate attributeName="stroke-dashoffset" from="0" to="-1000" dur="6s" repeatCount="indefinite"/></path>` },
+      { id: "handlers/traces", svg: `<g stroke="#a78bfa" stroke-width="1.5" fill="none" opacity="0.6"><path d="M390 85 L420 75"/><path d="M390 90 L420 85"/><path d="M390 95 L420 95"/><path d="M390 100 L420 105"/><polygon points="415,73 420,75 415,77" fill="#a78bfa"/><polygon points="415,83 420,85 415,87" fill="#a78bfa"/><polygon points="415,93 420,95 415,97" fill="#a78bfa"/><polygon points="415,103 420,105 415,107" fill="#a78bfa"/></g>` },
+
+      // Build & Publish sprites
+      { id: "build/conveyor", svg: `<rect x="0" y="60" width="300" height="20" fill="#4a5568"/><g fill="#718096"><circle cx="30" cy="70" r="8"/><circle cx="80" cy="70" r="8"/><circle cx="130" cy="70" r="8"/><circle cx="180" cy="70" r="8"/><circle cx="230" cy="70" r="8"/><circle cx="280" cy="70" r="8"/></g>` },
+      { id: "build/stage", svg: `<rect x="300" y="40" width="80" height="60" rx="8" fill="#2d3748" stroke="#4a5568"/><text x="340" y="75" text-anchor="middle" fill="#e2e8f0" font-size="12">STAGE</text>` },
+      { id: "build/tags", svg: `<g fill="#f6ad55"><rect x="320" y="20" width="40" height="15" rx="7"/><text x="340" y="30" text-anchor="middle" fill="white" font-size="10">v1.0</text></g>` },
+      { id: "build/uplink", svg: `<path d="M340 40 L340 10 L350 20 M340 10 L330 20" stroke="#f6ad55" stroke-width="3" fill="none"/>` },
+
+      // Host SDK sprites
+      { id: "host/console", svg: `<rect x="0" y="0" width="420" height="140" rx="8" fill="#2d3748" stroke="#4a5568" stroke-width="2"/>` },
+      { id: "host/rails", svg: `<g stroke="#718096" stroke-width="2"><line x1="50" y1="40" x2="370" y2="40"/><line x1="50" y1="100" x2="370" y2="100"/></g>` },
+      { id: "host/ports", svg: `<g fill="#4a5568"><rect x="20" y="30" width="60" height="20" rx="4"/><rect x="20" y="90" width="60" height="20" rx="4"/><rect x="340" y="30" width="60" height="20" rx="4"/><rect x="340" y="90" width="60" height="20" rx="4"/></g><g fill="#a0aec0" font-size="10"><text x="50" y="42" text-anchor="middle">IN</text><text x="50" y="102" text-anchor="middle">OUT</text><text x="370" y="42" text-anchor="middle">CTRL</text><text x="370" y="102" text-anchor="middle">DATA</text></g>` },
+      { id: "host/modules", svg: `<g><rect x="120" y="25" width="80" height="30" rx="4" fill="#553c9a"/><text x="160" y="42" text-anchor="middle" fill="white" font-size="11">Conductor</text><rect x="220" y="85" width="80" height="30" rx="4" fill="#553c9a"/><text x="260" y="102" text-anchor="middle" fill="white" font-size="11">EventRouter</text></g>` }
+    ],
+    filters: [
+      // Soft shadow for cards
+      `<filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+        <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.35"/>
+      </filter>`,
+      // Glow effect for neon elements
+      `<filter id="glow">
+        <feGaussianBlur stdDeviation="2.5" result="b"/>
+        <feMerge>
+          <feMergeNode in="b"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>`
+    ],
+    gradients: [
+      `<linearGradient id="violetArc" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#8b5cf6"/><stop offset="1" stop-color="#a78bfa"/>
+      </linearGradient>`
+    ]
+  },
+  nodes: [
+    // Tile A: Plugin Package (23,155, 420×140)
+    { kind: "group", id: "plugin-package", at: { x: 23, y: 155 }, size: { width: 420, height: 140 }, children: [
+      { kind: "sprite", id: "pp.shadow", at: { x: 0, y: 0 }, size: { width: 420, height: 140 }, sprite: { symbolId: "pkg/shadow" }, style: { filter: "url(#softShadow)" } },
+      { kind: "sprite", id: "pp.box", at: { x: 0, y: 0 }, size: { width: 420, height: 140 }, sprite: { symbolId: "pkg/box" } },
+      { kind: "sprite", id: "pp.label", at: { x: 0, y: 0 }, size: { width: 420, height: 140 }, sprite: { symbolId: "pkg/label" } },
+      { kind: "sprite", id: "pp.glyphs", at: { x: 0, y: 0 }, size: { width: 420, height: 140 }, sprite: { symbolId: "pkg/glyphs" }, style: { opacity: 0.5 } },
+      { kind: "sprite", id: "pp.npm", at: { x: 320, y: 12 }, size: { width: 80, height: 28 }, sprite: { symbolId: "pkg/npm-badge" } },
+      { kind: "text", id: "pp.title", at: { x: 18, y: 22 }, text: "Plugin Package", style: { fill: "#e6edf3", fontWeight: 700, fontSize: 16 } }
+    ]},
+
+    // Tile B: Plugin Manifest (390,155)
+    { kind: "group", id: "plugin-manifest", at: { x: 390, y: 155 }, size: { width: 420, height: 140 }, children: [
+      { kind: "sprite", id: "pm.card", at: { x: 0, y: 0 }, size: { width: 420, height: 140 }, sprite: { symbolId: "manifest/card" } },
+      { kind: "sprite", id: "pm.braces", at: { x: 0, y: 0 }, size: { width: 420, height: 140 }, sprite: { symbolId: "manifest/braces" } },
+      { kind: "sprite", id: "pm.rows", at: { x: 0, y: 0 }, size: { width: 420, height: 140 }, sprite: { symbolId: "manifest/rows" } },
+      { kind: "sprite", id: "pm.stamp", at: { x: 0, y: 0 }, size: { width: 420, height: 140 }, sprite: { symbolId: "manifest/stamp" } },
+      { kind: "sprite", id: "pm.tabs", at: { x: 0, y: 0 }, size: { width: 420, height: 140 }, sprite: { symbolId: "manifest/tabs" } },
+      { kind: "text", id: "pm.title", at: { x: 18, y: 22 }, text: "Plugin Manifest", style: { fill: "#e6edf3", fontWeight: 700, fontSize: 16 } }
+    ]},
+
+    // Tile C: Handlers Export (757,155)
+    { kind: "group", id: "handlers-export", at: { x: 757, y: 155 }, size: { width: 420, height: 140 }, children: [
+      // Dark card background with soft shadow
+      { kind: "shape", id: "hx.card", at: { x: 0, y: 0 }, size: { width: 420, height: 140 }, shape: "roundedRect",
+        style: { fill: "#151922", stroke: "#2b3645", strokeWidth: 1.5, filter: "url(#softShadow)" } },
+
+      // Title on top
+      { kind: "text", id: "hx.title", at: { x: 18, y: 22 }, text: "Handlers Export", style: { fill: "#e6edf3", fontWeight: 700, fontSize: 16 } },
+
+      // Background connectors (subtle)
+      { kind: "sprite", id: "hx.connect", at: { x: 0, y: 0 }, size: { width: 420, height: 140 }, sprite: { symbolId: "handlers/connectors" } },
+
+      // Main neon arc (uses global #violetArc)
+      { kind: "sprite", id: "hx.gradient", at: { x: 0, y: 0 }, size: { width: 420, height: 140 }, sprite: { symbolId: "handlers/gradient" } },
+
+      // Tracer lines on top
+      { kind: "sprite", id: "hx.traces", at: { x: 0, y: 0 }, size: { width: 420, height: 140 }, sprite: { symbolId: "handlers/traces" } },
+
+      // Ports on top layer
+      { kind: "sprite", id: "hx.ports", at: { x: 0, y: 0 }, size: { width: 420, height: 140 }, sprite: { symbolId: "handlers/ports" } }
+    ]},
+
+    // Tile D: Build & Publish (23,505)
+    { kind: "group", id: "build-publish", at: { x: 23, y: 505 }, size: { width: 420, height: 140 }, children: [
+      { kind: "sprite", id: "bp.conv", at: { x: 0, y: 0 }, size: { width: 420, height: 140 }, sprite: { symbolId: "build/conveyor" } },
+      { kind: "sprite", id: "bp.stage", at: { x: 0, y: 0 }, size: { width: 420, height: 140 }, sprite: { symbolId: "build/stage" } },
+      { kind: "sprite", id: "bp.tags", at: { x: 0, y: 0 }, size: { width: 420, height: 140 }, sprite: { symbolId: "build/tags" } },
+      { kind: "sprite", id: "bp.up", at: { x: 0, y: 0 }, size: { width: 420, height: 140 }, sprite: { symbolId: "build/uplink" } },
+      { kind: "text", id: "bp.title", at: { x: 18, y: 22 }, text: "Build & Publish", style: { fill: "#e6edf3", fontWeight: 700, fontSize: 16 } }
+    ]},
+
+    // Tile E: Host SDK (390,505)
+    { kind: "group", id: "host-sdk", at: { x: 390, y: 505 }, size: { width: 420, height: 140 }, children: [
+      { kind: "sprite", id: "hs.console", at: { x: 0, y: 0 }, size: { width: 420, height: 140 }, sprite: { symbolId: "host/console" } },
+      { kind: "sprite", id: "hs.rails", at: { x: 0, y: 0 }, size: { width: 420, height: 140 }, sprite: { symbolId: "host/rails" } },
+      { kind: "sprite", id: "hs.ports", at: { x: 0, y: 0 }, size: { width: 420, height: 140 }, sprite: { symbolId: "host/ports" } },
+      { kind: "sprite", id: "hs.modules", at: { x: 0, y: 0 }, size: { width: 420, height: 140 }, sprite: { symbolId: "host/modules" } },
+      { kind: "text", id: "hs.title", at: { x: 18, y: 22 }, text: "Host SDK (Context)", style: { fill: "#e6edf3", fontWeight: 700, fontSize: 16 } }
+    ]}
+  ],
+
+  // Example: a couple of animated "energy" connectors if you want motion
+  connectors: [
+    { from: "plugin-package", to: "build-publish", route: "curve", markerEnd: "arrow", style: { stroke: "#f59e0b", strokeWidth: 2 } },
+    { from: "plugin-manifest", to: "handlers-export", route: "orthogonal", dashed: true, markerEnd: "arrow", style: { stroke: "#8b5cf6", strokeWidth: 2 } }
+  ]
+};

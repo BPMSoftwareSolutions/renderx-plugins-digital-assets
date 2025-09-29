@@ -1,0 +1,66 @@
+{
+  "meta": {
+    "layout": "layered",
+    "theme": "light",
+    "arrowHeads": true,
+    "rounded": true,
+    "spacingX": 150,
+    "spacingY": 80
+  },
+  "nodes": [
+    {
+      "id": "package-box",
+      "label": "Package Box",
+      "w": 120,
+      "h": 50
+    },
+    {
+      "id": "shadow",
+      "label": "Shadow",
+      "w": 100,
+      "h": 40
+    },
+    {
+      "id": "label",
+      "label": "Package Label",
+      "w": 130,
+      "h": 45
+    },
+    {
+      "id": "glyphs",
+      "label": "Capability Glyphs",
+      "w": 140,
+      "h": 45
+    },
+    {
+      "id": "npm-badge",
+      "label": "NPM Badge",
+      "w": 110,
+      "h": 45
+    }
+  ],
+  "edges": [
+    {
+      "from": "package-box",
+      "to": "shadow",
+      "label": "grounds"
+    },
+    {
+      "from": "package-box",
+      "to": "label",
+      "label": "wraps"
+    },
+    {
+      "from": "package-box",
+      "to": "glyphs",
+      "label": "hints at"
+    },
+    {
+      "from": "package-box",
+      "to": "npm-badge",
+      "label": "sealed by"
+    }
+  ],
+  "description": "Internal structure of the plugin package showing relationships between box, shadow, label, glyphs, and npm badge",
+  "source": "slide-01-manifest elements from plugin-integration-slides.json"
+}

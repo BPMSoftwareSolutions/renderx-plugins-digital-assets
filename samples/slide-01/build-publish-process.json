@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "layout": "layered",
+    "theme": "light",
+    "arrowHeads": true,
+    "rounded": true,
+    "spacingX": 140,
+    "spacingY": 70
+  },
+  "nodes": [
+    {
+      "id": "conveyor",
+      "label": "Compact Conveyor",
+      "w": 140,
+      "h": 50
+    },
+    {
+      "id": "staging-pad",
+      "label": "Staging Pad",
+      "w": 120,
+      "h": 50
+    },
+    {
+      "id": "version-tags",
+      "label": "Version Tags",
+      "w": 120,
+      "h": 45
+    },
+    {
+      "id": "uplink-arrow",
+      "label": "Uplink Arrow",
+      "w": 120,
+      "h": 45
+    }
+  ],
+  "edges": [
+    {
+      "from": "conveyor",
+      "to": "staging-pad",
+      "label": "feeds to"
+    },
+    {
+      "from": "staging-pad",
+      "to": "version-tags",
+      "label": "applies"
+    },
+    {
+      "from": "staging-pad",
+      "to": "uplink-arrow",
+      "label": "publishes via"
+    }
+  ],
+  "description": "Build and publish process flow from conveyor to staging to publication",
+  "source": "slide-01-manifest elements from plugin-integration-slides.json"
+}

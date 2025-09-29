@@ -1,0 +1,66 @@
+{
+  "meta": {
+    "layout": "layered",
+    "theme": "light",
+    "arrowHeads": true,
+    "rounded": true,
+    "spacingX": 160,
+    "spacingY": 90
+  },
+  "nodes": [
+    {
+      "id": "document-card",
+      "label": "Document Card",
+      "w": 130,
+      "h": 50
+    },
+    {
+      "id": "json-braces",
+      "label": "JSON Braces",
+      "w": 120,
+      "h": 45
+    },
+    {
+      "id": "key-value-rows",
+      "label": "Key-Value Rows",
+      "w": 140,
+      "h": 45
+    },
+    {
+      "id": "generated-stamp",
+      "label": "Generated Stamp",
+      "w": 140,
+      "h": 45
+    },
+    {
+      "id": "tabs",
+      "label": "Navigation Tabs",
+      "w": 130,
+      "h": 45
+    }
+  ],
+  "edges": [
+    {
+      "from": "document-card",
+      "to": "json-braces",
+      "label": "frames"
+    },
+    {
+      "from": "json-braces",
+      "to": "key-value-rows",
+      "label": "contains"
+    },
+    {
+      "from": "document-card",
+      "to": "generated-stamp",
+      "label": "stamped with"
+    },
+    {
+      "from": "document-card",
+      "to": "tabs",
+      "label": "navigated by"
+    }
+  ],
+  "description": "Internal structure of the plugin manifest showing document card, JSON braces, key-value rows, stamp, and tabs",
+  "source": "slide-01-manifest elements from plugin-integration-slides.json"
+}

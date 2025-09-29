@@ -16,7 +16,9 @@
     "test:svg": "npm run test:server & sleep 2 && npm run test:cypress && pkill -f 'node tests/server.js'",
     "example": "npm run build && node dist/example.js",
     "graph-to-svg": "npm run build && node dist/cli.js",
-    "generate-samples": "npm run build && node dist/sample-generator.js"
+    "generate-samples": "npm run build && node dist/sample-generator.js",
+    "generate-slide-01": "npm run build && node dist/slide-01-generator.js",
+    "generate-slide-01-scene": "npm run build && node dist/slide01-generator.js"
   },
   "devDependencies": {
     "cypress": "^13.17.0",

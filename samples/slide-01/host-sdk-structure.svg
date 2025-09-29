@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="-24 -24 478 173" width="478" height="173"
+     xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Graph">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9db7c7"/>
+    </marker>
+    <style>
+      .bg { fill: #0f1116; }
+      .node-rect { fill: #1f2430; stroke: #8aa1b1; stroke-width: 1; }
+      .node-label { font: 12px/1.3 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; fill: #e6edf3; }
+      .edge-line { fill: none; stroke: #9db7c7; stroke-width: 1.5; }
+      .edge-label { font: 11px/1 ui-sans-serif, system-ui; fill: #9db7c7; }
+    </style>
+  </defs>
+  <rect class="bg" x="-24" y="-24" width="478" height="173"/>
+  <g class="edges">
+      <g class="edge" data-id="console→rails">
+        <path d="M 75 25 L 210 22.5" class="edge-line" marker-end="url(#arrow)"/>
+        <text class="edge-label"><tspan>provides</tspan></text>
+      </g>
+      <g class="edge" data-id="console→ports">
+        <path d="M 75 25 L 210 102.5" class="edge-line" marker-end="url(#arrow)"/>
+        <text class="edge-label"><tspan>exposes</tspan></text>
+      </g>
+      <g class="edge" data-id="rails→modules">
+        <path d="M 210 22.5 L 365 25" class="edge-line" marker-end="url(#arrow)"/>
+        <text class="edge-label"><tspan>guides</tspan></text>
+      </g>
+      <g class="edge" data-id="ports→modules">
+        <path d="M 210 102.5 L 365 25" class="edge-line" marker-end="url(#arrow)"/>
+        <text class="edge-label"><tspan>connects</tspan></text>
+      </g></g>
+  <g class="nodes">
+      <g class="node" data-id="console">
+        <rect x="0" y="0" width="150" height="50" rx="8" ry="8" class="node-rect"/>
+        <text x="75" y="25" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>Low-Profile Console</tspan>
+        </text>
+      </g>
+      <g class="node" data-id="rails">
+        <rect x="150" y="0" width="120" height="45" rx="8" ry="8" class="node-rect"/>
+        <text x="210" y="22.5" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>Slender Rails</tspan>
+        </text>
+      </g>
+      <g class="node" data-id="ports">
+        <rect x="150" y="80" width="120" height="45" rx="8" ry="8" class="node-rect"/>
+        <text x="210" y="102.5" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>Labeled Ports</tspan>
+        </text>
+      </g>
+      <g class="node" data-id="modules">
+        <rect x="300" y="0" width="130" height="50" rx="8" ry="8" class="node-rect"/>
+        <text x="365" y="25" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>System Modules</tspan>
+        </text>
+      </g></g>
+</svg>

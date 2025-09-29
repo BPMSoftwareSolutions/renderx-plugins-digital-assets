@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="-24 -24 1078 98" width="1078" height="98"
+     xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Graph">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b"/>
+    </marker>
+    <style>
+      .bg { fill: #ffffff; }
+      .node-rect { fill: #f7f8fa; stroke: #334155; stroke-width: 1; }
+      .node-label { font: 12px/1.3 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; fill: #0f172a; }
+      .edge-line { fill: none; stroke: #64748b; stroke-width: 1.5; }
+      .edge-label { font: 11px/1 ui-sans-serif, system-ui; fill: #64748b; }
+    </style>
+  </defs>
+  <rect class="bg" x="-24" y="-24" width="1078" height="98"/>
+  <g class="edges">
+      <g class="edge" data-id="scaffold→define-manifest">
+        <path d="M 65 25 L 245 25" class="edge-line" marker-end="url(#arrow)"/>
+        <text class="edge-label"><tspan>creates</tspan></text>
+      </g>
+      <g class="edge" data-id="define-manifest→implement-handlers">
+        <path d="M 245 25 L 435 25" class="edge-line" marker-end="url(#arrow)"/>
+        <text class="edge-label"><tspan>guides</tspan></text>
+      </g>
+      <g class="edge" data-id="implement-handlers→build-package">
+        <path d="M 435 25 L 605 25" class="edge-line" marker-end="url(#arrow)"/>
+        <text class="edge-label"><tspan>compiled into</tspan></text>
+      </g>
+      <g class="edge" data-id="build-package→publish-npm">
+        <path d="M 605 25 L 785 25" class="edge-line" marker-end="url(#arrow)"/>
+        <text class="edge-label"><tspan>released as</tspan></text>
+      </g>
+      <g class="edge" data-id="publish-npm→host-discovery">
+        <path d="M 785 25 L 965 25" class="edge-line" marker-end="url(#arrow)"/>
+        <text class="edge-label"><tspan>available for</tspan></text>
+      </g>
+      <g class="edge" data-id="define-manifest→host-discovery">
+        <path d="M 245 25 L 965 25" class="edge-line" stroke-dasharray="6 6" marker-end="url(#arrow)"/>
+        <text class="edge-label"><tspan>enables</tspan></text>
+      </g></g>
+  <g class="nodes">
+      <g class="node" data-id="scaffold">
+        <rect x="0" y="0" width="130" height="50" rx="8" ry="8" class="node-rect"/>
+        <text x="65" y="25" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>Scaffold Plugin</tspan>
+        </text>
+      </g>
+      <g class="node" data-id="define-manifest">
+        <rect x="180" y="0" width="130" height="50" rx="8" ry="8" class="node-rect"/>
+        <text x="245" y="25" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>Define Manifest</tspan>
+        </text>
+      </g>
+      <g class="node" data-id="implement-handlers">
+        <rect x="360" y="0" width="150" height="50" rx="8" ry="8" class="node-rect"/>
+        <text x="435" y="25" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>Implement Handlers</tspan>
+        </text>
+      </g>
+      <g class="node" data-id="build-package">
+        <rect x="540" y="0" width="130" height="50" rx="8" ry="8" class="node-rect"/>
+        <text x="605" y="25" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>Build Package</tspan>
+        </text>
+      </g>
+      <g class="node" data-id="publish-npm">
+        <rect x="720" y="0" width="130" height="50" rx="8" ry="8" class="node-rect"/>
+        <text x="785" y="25" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>Publish to NPM</tspan>
+        </text>
+      </g>
+      <g class="node" data-id="host-discovery">
+        <rect x="900" y="0" width="130" height="50" rx="8" ry="8" class="node-rect"/>
+        <text x="965" y="25" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>Host Discovery</tspan>
+        </text>
+      </g></g>
+</svg>

@@ -1,0 +1,83 @@
+{
+  "meta": {
+    "layout": "layered",
+    "theme": "light",
+    "arrowHeads": true,
+    "rounded": true,
+    "spacingX": 180,
+    "spacingY": 100
+  },
+  "nodes": [
+    {
+      "id": "scaffold",
+      "label": "Scaffold Plugin",
+      "w": 130,
+      "h": 50
+    },
+    {
+      "id": "define-manifest",
+      "label": "Define Manifest",
+      "w": 130,
+      "h": 50
+    },
+    {
+      "id": "implement-handlers",
+      "label": "Implement Handlers",
+      "w": 150,
+      "h": 50
+    },
+    {
+      "id": "build-package",
+      "label": "Build Package",
+      "w": 130,
+      "h": 50
+    },
+    {
+      "id": "publish-npm",
+      "label": "Publish to NPM",
+      "w": 130,
+      "h": 50
+    },
+    {
+      "id": "host-discovery",
+      "label": "Host Discovery",
+      "w": 130,
+      "h": 50
+    }
+  ],
+  "edges": [
+    {
+      "from": "scaffold",
+      "to": "define-manifest",
+      "label": "creates"
+    },
+    {
+      "from": "define-manifest",
+      "to": "implement-handlers",
+      "label": "guides"
+    },
+    {
+      "from": "implement-handlers",
+      "to": "build-package",
+      "label": "compiled into"
+    },
+    {
+      "from": "build-package",
+      "to": "publish-npm",
+      "label": "released as"
+    },
+    {
+      "from": "publish-npm",
+      "to": "host-discovery",
+      "label": "available for"
+    },
+    {
+      "from": "define-manifest",
+      "to": "host-discovery",
+      "label": "enables",
+      "dashed": true
+    }
+  ],
+  "description": "Plugin development workflow from scaffolding to host discovery",
+  "source": "slide-01-manifest elements from plugin-integration-slides.json"
+}

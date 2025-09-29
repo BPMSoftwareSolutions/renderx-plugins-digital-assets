@@ -1,6 +1,11 @@
-# Graph-to-SVG Converter
+# Graph-to-SVG Converter & Advanced Scene Graph System
 
-A clean, data-driven TypeScript library that turns graph definitions (nodes + edges) into SVG strings with pluggable layouts and themes—no external dependencies required.
+A comprehensive TypeScript library providing two powerful approaches to SVG generation:
+
+1. **Graph-to-SVG Converter**: Clean, data-driven graph visualization with pluggable layouts and themes
+2. **Advanced Scene Graph System**: Sprite-based composition with hierarchical groups, z-ordering, and visual effects
+
+Both systems are implemented in pure TypeScript with zero external dependencies.
 
 ## Features
 
@@ -129,15 +134,26 @@ Organizes nodes in layers based on dependencies (DAG-style).
 
 The library includes several pre-built graph patterns:
 
+### General Patterns
 - **Microservices Architecture**: API Gateway, services, and databases
 - **Data Pipeline**: ETL workflow with sources, transforms, and outputs
 - **Neural Network**: Multi-layer perceptron with full connections
 - **Social Network**: Radial friend connections
 - **CI/CD Pipeline**: Build, test, and deployment workflow
 
+### Plugin Architecture Patterns (Slide 1)
+- **Plugin Package Structure**: Internal components and relationships
+- **Plugin Manifest Structure**: Document structure and navigation
+- **Handlers Export Structure**: Connectors, ports, and circuit traces
+- **Build & Publish Process**: Conveyor to staging to publication
+- **Host SDK Structure**: Console, rails, ports, and modules
+- **Plugin Workflow**: Development lifecycle from scaffold to discovery
+- **Plugin Capabilities**: Radial view of plugin features and boundaries
+
 Generate all samples:
 ```bash
 npm run generate-samples
+npm run generate-slide-01
 ```
 
 ## Testing
@@ -163,11 +179,79 @@ npm run test:coverage
 
 ### Sample Generators
 
+#### General Patterns
 - `createMicroservicesGraph()` - Generate microservices architecture
 - `createDataPipelineGraph()` - Generate data processing pipeline
 - `createNeuralNetworkGraph()` - Generate neural network diagram
 - `createSocialNetworkGraph()` - Generate social network graph
 - `createCICDGraph()` - Generate CI/CD pipeline
+
+#### Plugin Architecture Patterns
+- `createPluginPackageGraph()` - Plugin package internal structure
+- `createPluginManifestGraph()` - Plugin manifest document structure
+- `createHandlersExportGraph()` - Handlers export connectors and ports
+- `createBuildPublishGraph()` - Build and publish process flow
+- `createHostSDKGraph()` - Host SDK infrastructure components
+- `createSlide01ArchitectureGraph()` - Overall slide 1 architecture
+- `createPluginWorkflowGraph()` - Plugin development workflow
+- `createPluginCapabilitiesGraph()` - Plugin capabilities and boundaries
+
+## Advanced Scene Graph System
+
+The Advanced Scene Graph System (Issue #7) provides a sophisticated approach to creating complex, layered SVG compositions. Unlike the simple graph-to-SVG converter, this system supports:
+
+### Key Features
+- **Sprite-based Composition**: Reusable SVG symbols for complex visual elements
+- **Hierarchical Groups**: Nested composition with precise positioning and transforms
+- **Z-ordering**: Depth sorting for proper layering of visual elements
+- **Visual Effects**: SVG filters (shadows, glows) and gradients for polish
+- **Smart Connectors**: Curved, orthogonal, and straight routing with markers
+- **Precise Positioning**: Pixel-perfect placement based on design specifications
+
+### Scene Schema
+```typescript
+export type Scene = {
+  id: string;
+  canvas: Size;
+  bg?: string;
+  defs?: {
+    symbols?: Array<{ id: string; svg: string }>;
+    filters?: string[];
+    gradients?: string[]
+  };
+  nodes: Node[];
+  connectors?: Connector[];
+};
+
+export type Node =
+  | { kind: "group"; id: NodeId; children?: Node[] }
+  | { kind: "sprite"; sprite: SpriteRef }
+  | { kind: "shape"; shape: "rect"|"circle"|"path" }
+  | { kind: "text"; text: string };
+```
+
+### Usage Example
+```typescript
+import { renderScene } from './src/render-svg';
+import { slide01 } from './src/slide01-data';
+
+const svg = renderScene(slide01);
+// Generates complex SVG with sprites, effects, and connectors
+```
+
+### Slide 1 Implementation
+The system includes a complete implementation of Slide 1 from the plugin architecture:
+- **22 Reusable Sprites**: Package components, manifest elements, handlers, build process, host SDK
+- **5 Hierarchical Tiles**: Plugin Package, Manifest, Handlers Export, Build & Publish, Host SDK
+- **Visual Effects**: Soft shadows, violet gradients, opacity layers
+- **Smart Connectors**: Curved and orthogonal routing between components
+
+Generate the advanced scene:
+```bash
+npm run generate-slide-01-scene
+```
+
+See `samples/slide-01-scene/` for complete implementation and documentation.
 
 ## Extending the Library
 

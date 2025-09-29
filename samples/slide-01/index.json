@@ -1,0 +1,88 @@
+{
+  "title": "Slide 1: Plugin Scaffolding & Manifest - Graph Specifications",
+  "description": "Graph representations of the elements and relationships described in slide-01-manifest",
+  "source": "assets/plugin-architecture/plugin-integration-slides.json",
+  "generated": "2025-09-29T12:03:00.149Z",
+  "graphs": [
+    {
+      "name": "plugin-package-structure",
+      "description": "Internal structure of the plugin package showing relationships between box, shadow, label, glyphs, and npm badge",
+      "file": "plugin-package-structure.json",
+      "svg": "plugin-package-structure.svg",
+      "nodes": 5,
+      "edges": 4,
+      "layout": "layered",
+      "theme": "light"
+    },
+    {
+      "name": "plugin-manifest-structure",
+      "description": "Internal structure of the plugin manifest showing document card, JSON braces, key-value rows, stamp, and tabs",
+      "file": "plugin-manifest-structure.json",
+      "svg": "plugin-manifest-structure.svg",
+      "nodes": 5,
+      "edges": 4,
+      "layout": "layered",
+      "theme": "light"
+    },
+    {
+      "name": "handlers-export-structure",
+      "description": "Internal structure of handlers export showing connectors, ports, gradient, and circuit traces",
+      "file": "handlers-export-structure.json",
+      "svg": "handlers-export-structure.svg",
+      "nodes": 4,
+      "edges": 4,
+      "layout": "radial",
+      "theme": "light"
+    },
+    {
+      "name": "build-publish-process",
+      "description": "Build and publish process flow from conveyor to staging to publication",
+      "file": "build-publish-process.json",
+      "svg": "build-publish-process.svg",
+      "nodes": 4,
+      "edges": 3,
+      "layout": "layered",
+      "theme": "light"
+    },
+    {
+      "name": "host-sdk-structure",
+      "description": "Host SDK internal structure showing console, rails, ports, and modules",
+      "file": "host-sdk-structure.json",
+      "svg": "host-sdk-structure.svg",
+      "nodes": 4,
+      "edges": 4,
+      "layout": "layered",
+      "theme": "dark"
+    },
+    {
+      "name": "slide-01-architecture",
+      "description": "Overall architecture of slide 1 showing relationships between main elements",
+      "file": "slide-01-architecture.json",
+      "svg": "slide-01-architecture.svg",
+      "nodes": 5,
+      "edges": 5,
+      "layout": "layered",
+      "theme": "light"
+    },
+    {
+      "name": "plugin-workflow",
+      "description": "Plugin development workflow from scaffolding to host discovery",
+      "file": "plugin-workflow.json",
+      "svg": "plugin-workflow.svg",
+      "nodes": 6,
+      "edges": 6,
+      "layout": "layered",
+      "theme": "light"
+    },
+    {
+      "name": "plugin-capabilities",
+      "description": "Plugin capabilities represented by the glyphs (icons, handlers, events, boundaries, security, versioning)",
+      "file": "plugin-capabilities.json",
+      "svg": "plugin-capabilities.svg",
+      "nodes": 7,
+      "edges": 6,
+      "layout": "radial",
+      "theme": "light"
+    }
+  ]
+}
