@@ -1,0 +1,133 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Scene Template Schema",
+  "description": "Schema for defining parameterizable scene templates",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for this scene template"
+    },
+    "name": {
+      "type": "string",
+      "description": "Human-readable name for this scene template"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the scene template's purpose"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "Semantic version of the scene template"
+    },
+    "parameters": {
+      "type": "object",
+      "description": "Template parameters that can be customized",
+      "patternProperties": {
+        "^[a-zA-Z][a-zA-Z0-9_]*$": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": ["string", "number", "boolean", "color", "size", "position", "array", "object"]
+            },
+            "description": {
+              "type": "string",
+              "description": "Description of this parameter"
+            },
+            "default": {
+              "description": "Default value for this parameter"
+            },
+            "required": {
+              "type": "boolean",
+              "default": false
+            },
+            "validation": {
+              "type": "object",
+              "description": "Validation rules for this parameter"
+            }
+          },
+          "required": ["type", "description"]
+        }
+      }
+    },
+    "canvas": {
+      "type": "object",
+      "properties": {
+        "width": { "type": ["number", "string"] },
+        "height": { "type": ["number", "string"] },
+        "background": { "type": "string" }
+      },
+      "required": ["width", "height"]
+    },
+    "dependencies": {
+      "type": "object",
+      "properties": {
+        "spriteLibraries": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Required sprite libraries"
+        },
+        "themes": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Required theme configurations"
+        },
+        "layouts": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Required layout configurations"
+        }
+      }
+    },
+    "template": {
+      "type": "object",
+      "description": "Scene template structure with parameter placeholders",
+      "properties": {
+        "defs": {
+          "type": "object",
+          "properties": {
+            "symbols": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "Sprite symbol references"
+            },
+            "filters": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "Filter references"
+            },
+            "gradients": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "Gradient references"
+            }
+          }
+        },
+        "nodes": {
+          "type": "array",
+          "description": "Template node definitions with parameter placeholders"
+        },
+        "connectors": {
+          "type": "array",
+          "description": "Template connector definitions"
+        }
+      }
+    },
+    "examples": {
+      "type": "array",
+      "description": "Example parameter sets for this template",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "description": { "type": "string" },
+          "parameters": { "type": "object" }
+        },
+        "required": ["name", "parameters"]
+      }
+    }
+  },
+  "required": ["id", "name", "version", "canvas", "template"]
+}

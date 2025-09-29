@@ -1,0 +1,78 @@
+{
+  "title": "Slide 1: Plugin Scaffolding & Manifest - Advanced Scene Graph",
+  "description": "Scene-graph representation with sprites, groups, z-ordering, and visual effects",
+  "source": "assets/plugin-architecture/plugin-integration-slides.json",
+  "generated": "2025-09-29T12:31:16.267Z",
+  "system": "Advanced Scene Graph (Issue #7)",
+  "features": [
+    "Sprite-based composition with reusable symbols",
+    "Hierarchical groups with z-ordering",
+    "SVG filters and gradients for visual polish",
+    "Connectors with routing (straight, orthogonal, curve)",
+    "Precise positioning from slide specifications"
+  ],
+  "scenes": [
+    {
+      "name": "slide-01-manifest",
+      "description": "Complete slide 1 scene with all tiles and connectors",
+      "file": "slide-01-manifest.json",
+      "svg": "slide-01-manifest.svg",
+      "canvas": {
+        "width": 1200,
+        "height": 720
+      },
+      "nodes": 5,
+      "connectors": 2
+    },
+    {
+      "name": "plugin-package",
+      "description": "Individual Plugin Package tile scene",
+      "file": "plugin-package.json",
+      "svg": "plugin-package.svg",
+      "canvas": {
+        "width": 500,
+        "height": 200
+      }
+    },
+    {
+      "name": "plugin-manifest",
+      "description": "Individual Plugin Manifest tile scene",
+      "file": "plugin-manifest.json",
+      "svg": "plugin-manifest.svg",
+      "canvas": {
+        "width": 500,
+        "height": 200
+      }
+    },
+    {
+      "name": "handlers-export",
+      "description": "Individual Handlers Export tile scene",
+      "file": "handlers-export.json",
+      "svg": "handlers-export.svg",
+      "canvas": {
+        "width": 500,
+        "height": 200
+      }
+    },
+    {
+      "name": "build-publish",
+      "description": "Individual Build & Publish tile scene",
+      "file": "build-publish.json",
+      "svg": "build-publish.svg",
+      "canvas": {
+        "width": 500,
+        "height": 200
+      }
+    },
+    {
+      "name": "host-sdk",
+      "description": "Individual Host SDK tile scene",
+      "file": "host-sdk.json",
+      "svg": "host-sdk.svg",
+      "canvas": {
+        "width": 500,
+        "height": 200
+      }
+    }
+  ]
+}

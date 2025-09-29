@@ -1,0 +1,126 @@
+{
+  "id": "simple-plugin-scene",
+  "name": "Simple Plugin Scene Template",
+  "description": "Simplified template for testing configuration-driven scene generation",
+  "version": "1.0.0",
+  "parameters": {
+    "sceneId": {
+      "type": "string",
+      "description": "Unique identifier for the generated scene",
+      "default": "simple-plugin-scene"
+    },
+    "canvasWidth": {
+      "type": "number",
+      "description": "Canvas width in pixels",
+      "default": 800
+    },
+    "canvasHeight": {
+      "type": "number",
+      "description": "Canvas height in pixels", 
+      "default": 600
+    },
+    "backgroundColor": {
+      "type": "color",
+      "description": "Scene background color",
+      "default": "#0f1116"
+    },
+    "tileWidth": {
+      "type": "number",
+      "description": "Width of each tile",
+      "default": 300
+    },
+    "tileHeight": {
+      "type": "number",
+      "description": "Height of each tile",
+      "default": 120
+    }
+  },
+  "canvas": {
+    "width": "{{canvasWidth}}",
+    "height": "{{canvasHeight}}",
+    "background": "{{backgroundColor}}"
+  },
+  "dependencies": {
+    "spriteLibraries": ["plugin-architecture"],
+    "themes": ["dark-plugin"],
+    "layouts": ["plugin-tiles"]
+  },
+  "template": {
+    "defs": {
+      "symbols": ["pkg/box", "pkg/label"],
+      "filters": ["softShadow"],
+      "gradients": ["violetArc"]
+    },
+    "nodes": [
+      {
+        "kind": "group",
+        "id": "plugin-package",
+        "at": { "x": 50, "y": 50 },
+        "size": { "width": "{{tileWidth}}", "height": "{{tileHeight}}" },
+        "children": [
+          {
+            "kind": "sprite",
+            "id": "pp.box",
+            "at": { "x": 0, "y": 0 },
+            "size": { "width": "{{tileWidth}}", "height": "{{tileHeight}}" },
+            "sprite": { "symbolId": "pkg/box" }
+          },
+          {
+            "kind": "sprite",
+            "id": "pp.label",
+            "at": { "x": 0, "y": 0 },
+            "size": { "width": "{{tileWidth}}", "height": "{{tileHeight}}" },
+            "sprite": { "symbolId": "pkg/label" }
+          },
+          {
+            "kind": "text",
+            "id": "pp.title",
+            "at": { "x": 18, "y": 22 },
+            "text": "Plugin Package",
+            "style": { "fill": "#e6edf3", "fontWeight": 700, "fontSize": 16 }
+          }
+        ]
+      },
+      {
+        "kind": "group",
+        "id": "plugin-manifest",
+        "at": { "x": 400, "y": 50 },
+        "size": { "width": "{{tileWidth}}", "height": "{{tileHeight}}" },
+        "children": [
+          {
+            "kind": "sprite",
+            "id": "pm.card",
+            "at": { "x": 0, "y": 0 },
+            "size": { "width": "{{tileWidth}}", "height": "{{tileHeight}}" },
+            "sprite": { "symbolId": "manifest/card" }
+          },
+          {
+            "kind": "text",
+            "id": "pm.title",
+            "at": { "x": 18, "y": 22 },
+            "text": "Plugin Manifest",
+            "style": { "fill": "#e6edf3", "fontWeight": 700, "fontSize": 16 }
+          }
+        ]
+      }
+    ],
+    "connectors": []
+  },
+  "examples": [
+    {
+      "name": "Default Simple Scene",
+      "description": "Basic two-tile scene with default settings",
+      "parameters": {}
+    },
+    {
+      "name": "Large Simple Scene",
+      "description": "Larger canvas with bigger tiles",
+      "parameters": {
+        "canvasWidth": 1200,
+        "canvasHeight": 800,
+        "tileWidth": 400,
+        "tileHeight": 150
+      }
+    }
+  ]
+}

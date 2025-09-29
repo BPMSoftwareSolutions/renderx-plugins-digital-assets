@@ -1,0 +1,87 @@
+{
+  "id": "simple-plugin-scene-plugin-package",
+  "canvas": {
+    "width": 500,
+    "height": 200
+  },
+  "bg": "#0f1116",
+  "defs": {
+    "symbols": [
+      {
+        "id": "pkg/box",
+        "svg": "<rect x=\"0\" y=\"0\" width=\"420\" height=\"140\" rx=\"8\" fill=\"#2d3748\" stroke=\"#4a5568\" stroke-width=\"2\"/>"
+      },
+      {
+        "id": "pkg/label",
+        "svg": "<rect x=\"10\" y=\"10\" width=\"200\" height=\"30\" rx=\"4\" fill=\"#4299e1\" stroke=\"#3182ce\"/><text x=\"110\" y=\"28\" text-anchor=\"middle\" fill=\"white\" font-size=\"14\" font-weight=\"bold\">Plugin Package</text>"
+      }
+    ],
+    "filters": [
+      "<filter id=\"softShadow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\"><feDropShadow dx=\"0\" dy=\"4\" stdDeviation=\"8\" flood-color=\"#000\" flood-opacity=\"0.35\"/></filter>"
+    ],
+    "gradients": [
+      "<linearGradient id=\"violetArc\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#8b5cf6\"/><stop offset=\"1\" stop-color=\"#a78bfa\"/></linearGradient>"
+    ]
+  },
+  "nodes": [
+    {
+      "kind": "group",
+      "id": "plugin-package",
+      "at": {
+        "x": 40,
+        "y": 30
+      },
+      "size": {
+        "width": "300",
+        "height": "120"
+      },
+      "children": [
+        {
+          "kind": "sprite",
+          "id": "pp.box",
+          "at": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": "300",
+            "height": "120"
+          },
+          "sprite": {
+            "symbolId": "pkg/box"
+          }
+        },
+        {
+          "kind": "sprite",
+          "id": "pp.label",
+          "at": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": "300",
+            "height": "120"
+          },
+          "sprite": {
+            "symbolId": "pkg/label"
+          }
+        },
+        {
+          "kind": "text",
+          "id": "pp.title",
+          "at": {
+            "x": 18,
+            "y": 22
+          },
+          "text": "Plugin Package",
+          "style": {
+            "fill": "#e6edf3",
+            "fontWeight": 700,
+            "fontSize": 16
+          }
+        }
+      ]
+    }
+  ],
+  "connectors": []
+}

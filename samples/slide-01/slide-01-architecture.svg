@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="-24 -24 798 228" width="798" height="228"
+     xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Graph">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b"/>
+    </marker>
+    <style>
+      .bg { fill: #ffffff; }
+      .node-rect { fill: #f7f8fa; stroke: #334155; stroke-width: 1; }
+      .node-label { font: 12px/1.3 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; fill: #0f172a; }
+      .edge-line { fill: none; stroke: #64748b; stroke-width: 1.5; }
+      .edge-label { font: 11px/1 ui-sans-serif, system-ui; fill: #64748b; }
+    </style>
+  </defs>
+  <rect class="bg" x="-24" y="-24" width="798" height="228"/>
+  <g class="edges">
+      <g class="edge" data-id="plugin-package→plugin-manifest">
+        <path d="M 70 30 L 270 30" class="edge-line" marker-end="url(#arrow)"/>
+        <text class="edge-label"><tspan>defines</tspan></text>
+      </g>
+      <g class="edge" data-id="plugin-manifest→handlers-export">
+        <path d="M 270 30 L 470 30" class="edge-line" marker-end="url(#arrow)"/>
+        <text class="edge-label"><tspan>exposes</tspan></text>
+      </g>
+      <g class="edge" data-id="plugin-package→build-publish">
+        <path d="M 70 30 L 270 150" class="edge-line" marker-end="url(#arrow)"/>
+        <text class="edge-label"><tspan>processed by</tspan></text>
+      </g>
+      <g class="edge" data-id="handlers-export→host-sdk">
+        <path d="M 470 30 L 675 30" class="edge-line" marker-end="url(#arrow)"/>
+        <text class="edge-label"><tspan>integrates with</tspan></text>
+      </g>
+      <g class="edge" data-id="plugin-manifest→host-sdk">
+        <path d="M 270 30 L 675 30" class="edge-line" marker-end="url(#arrow)"/>
+        <text class="edge-label"><tspan>discovered by</tspan></text>
+      </g></g>
+  <g class="nodes">
+      <g class="node" data-id="plugin-package">
+        <rect x="0" y="0" width="140" height="60" rx="8" ry="8" class="node-rect"/>
+        <text x="70" y="30" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>Plugin Package</tspan>
+        </text>
+      </g>
+      <g class="node" data-id="plugin-manifest">
+        <rect x="200" y="0" width="140" height="60" rx="8" ry="8" class="node-rect"/>
+        <text x="270" y="30" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>Plugin Manifest</tspan>
+        </text>
+      </g>
+      <g class="node" data-id="handlers-export">
+        <rect x="400" y="0" width="140" height="60" rx="8" ry="8" class="node-rect"/>
+        <text x="470" y="30" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>Handlers Export</tspan>
+        </text>
+      </g>
+      <g class="node" data-id="build-publish">
+        <rect x="200" y="120" width="140" height="60" rx="8" ry="8" class="node-rect"/>
+        <text x="270" y="150" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>Build &amp; Publish</tspan>
+        </text>
+      </g>
+      <g class="node" data-id="host-sdk">
+        <rect x="600" y="0" width="150" height="60" rx="8" ry="8" class="node-rect"/>
+        <text x="675" y="30" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>Host SDK (Context)</tspan>
+        </text>
+      </g></g>
+</svg>

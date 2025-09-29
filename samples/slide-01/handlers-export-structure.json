@@ -1,0 +1,58 @@
+{
+  "meta": {
+    "layout": "radial",
+    "theme": "light",
+    "arrowHeads": true,
+    "rounded": true
+  },
+  "nodes": [
+    {
+      "id": "connectors",
+      "label": "Elegant Connectors",
+      "w": 140,
+      "h": 50
+    },
+    {
+      "id": "ports",
+      "label": "Matching Ports",
+      "w": 130,
+      "h": 50
+    },
+    {
+      "id": "gradient",
+      "label": "Violet Gradient",
+      "w": 120,
+      "h": 45
+    },
+    {
+      "id": "circuit-traces",
+      "label": "Circuit Traces",
+      "w": 130,
+      "h": 45
+    }
+  ],
+  "edges": [
+    {
+      "from": "connectors",
+      "to": "ports",
+      "label": "click into"
+    },
+    {
+      "from": "connectors",
+      "to": "gradient",
+      "label": "energized by"
+    },
+    {
+      "from": "connectors",
+      "to": "circuit-traces",
+      "label": "extend via"
+    },
+    {
+      "from": "gradient",
+      "to": "circuit-traces",
+      "label": "powers"
+    }
+  ],
+  "description": "Internal structure of handlers export showing connectors, ports, gradient, and circuit traces",
+  "source": "slide-01-manifest elements from plugin-integration-slides.json"
+}

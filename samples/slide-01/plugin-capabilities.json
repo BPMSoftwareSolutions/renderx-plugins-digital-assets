@@ -1,0 +1,86 @@
+{
+  "meta": {
+    "layout": "radial",
+    "theme": "light",
+    "arrowHeads": false,
+    "rounded": true
+  },
+  "nodes": [
+    {
+      "id": "plugin-core",
+      "label": "Plugin Core",
+      "w": 100,
+      "h": 50
+    },
+    {
+      "id": "plugin-icon",
+      "label": "Plugin Icon",
+      "w": 90,
+      "h": 40
+    },
+    {
+      "id": "handler-icon",
+      "label": "Handler Icon",
+      "w": 90,
+      "h": 40
+    },
+    {
+      "id": "event-icon",
+      "label": "Event Icon",
+      "w": 90,
+      "h": 40
+    },
+    {
+      "id": "boundary-icon",
+      "label": "Boundary Icon",
+      "w": 100,
+      "h": 40
+    },
+    {
+      "id": "security-icon",
+      "label": "Security Icon",
+      "w": 100,
+      "h": 40
+    },
+    {
+      "id": "version-icon",
+      "label": "Version Icon",
+      "w": 90,
+      "h": 40
+    }
+  ],
+  "edges": [
+    {
+      "from": "plugin-core",
+      "to": "plugin-icon",
+      "label": "identifies"
+    },
+    {
+      "from": "plugin-core",
+      "to": "handler-icon",
+      "label": "exposes"
+    },
+    {
+      "from": "plugin-core",
+      "to": "event-icon",
+      "label": "emits"
+    },
+    {
+      "from": "plugin-core",
+      "to": "boundary-icon",
+      "label": "bounded by"
+    },
+    {
+      "from": "plugin-core",
+      "to": "security-icon",
+      "label": "secured by"
+    },
+    {
+      "from": "plugin-core",
+      "to": "version-icon",
+      "label": "versioned by"
+    }
+  ],
+  "description": "Plugin capabilities represented by the glyphs (icons, handlers, events, boundaries, security, versioning)",
+  "source": "slide-01-manifest elements from plugin-integration-slides.json"
+}

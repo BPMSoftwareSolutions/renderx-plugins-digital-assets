@@ -1,0 +1,99 @@
+{
+  "id": "dark-plugin",
+  "name": "Dark Plugin Theme",
+  "description": "Dark theme optimized for plugin architecture visualization",
+  "version": "1.0.0",
+  "colors": {
+    "primary": "#8b5cf6",
+    "secondary": "#a78bfa",
+    "background": "#0f1116",
+    "surface": "#151922",
+    "text": "#e6edf3",
+    "textSecondary": "#a0aec0",
+    "border": "#2b3645",
+    "accent": "#00d9ff",
+    "success": "#38a169",
+    "warning": "#f6ad55",
+    "error": "#e53e3e",
+    "custom": {
+      "packageBlue": "#4299e1",
+      "packageBlueBorder": "#3182ce",
+      "manifestCyan": "#00d9ff",
+      "handlerPurple": "#553c9a",
+      "handlerPurpleBorder": "#7c3aed",
+      "buildOrange": "#f6ad55",
+      "hostGray": "#2d3748",
+      "hostGrayBorder": "#4a5568",
+      "npmRed": "#cb3837",
+      "violetStart": "#8b5cf6",
+      "violetEnd": "#a78bfa",
+      "tracePurple": "#a78bfa",
+      "connectorPurple": "#4c1d95",
+      "shadowBlack": "#000000"
+    }
+  },
+  "typography": {
+    "fontFamily": "system-ui, -apple-system, sans-serif",
+    "fontSize": {
+      "xs": 10,
+      "sm": 11,
+      "base": 12,
+      "lg": 14,
+      "xl": 16,
+      "xxl": 24
+    },
+    "fontWeight": {
+      "light": 300,
+      "normal": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700
+    },
+    "lineHeight": {
+      "tight": 1.2,
+      "normal": 1.4,
+      "relaxed": 1.6
+    }
+  },
+  "spacing": {
+    "xs": 4,
+    "sm": 8,
+    "md": 16,
+    "lg": 24,
+    "xl": 32,
+    "xxl": 48
+  },
+  "borders": {
+    "radius": {
+      "none": 0,
+      "sm": 4,
+      "md": 8,
+      "lg": 12,
+      "full": 9999
+    },
+    "width": {
+      "thin": 1,
+      "normal": 1.5,
+      "thick": 2
+    }
+  },
+  "shadows": {
+    "none": "none",
+    "sm": "0 1px 2px rgba(0, 0, 0, 0.05)",
+    "md": "0 4px 8px rgba(0, 0, 0, 0.35)",
+    "lg": "0 8px 16px rgba(0, 0, 0, 0.45)",
+    "xl": "0 16px 32px rgba(0, 0, 0, 0.55)"
+  },
+  "effects": {
+    "opacity": {
+      "disabled": 0.3,
+      "muted": 0.5,
+      "subtle": 0.7
+    },
+    "blur": {
+      "sm": 2.5,
+      "md": 4,
+      "lg": 8
+    }
+  }
+}

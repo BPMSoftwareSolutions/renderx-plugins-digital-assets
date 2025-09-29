@@ -1,0 +1,62 @@
+{
+  "id": "data-pipeline",
+  "name": "Data Processing Pipeline",
+  "description": "A data processing pipeline from sources to analytics",
+  "nodes": [
+    {
+      "id": "sources",
+      "label": "Data Sources"
+    },
+    {
+      "id": "ingestion",
+      "label": "Data Ingestion"
+    },
+    {
+      "id": "transform",
+      "label": "Transform"
+    },
+    {
+      "id": "warehouse",
+      "label": "Data Warehouse"
+    },
+    {
+      "id": "analytics",
+      "label": "Analytics"
+    },
+    {
+      "id": "dashboard",
+      "label": "Dashboard"
+    }
+  ],
+  "edges": [
+    {
+      "from": "sources",
+      "to": "ingestion"
+    },
+    {
+      "from": "ingestion",
+      "to": "transform"
+    },
+    {
+      "from": "transform",
+      "to": "warehouse"
+    },
+    {
+      "from": "warehouse",
+      "to": "analytics"
+    },
+    {
+      "from": "analytics",
+      "to": "dashboard"
+    }
+  ],
+  "meta": {
+    "layout": "layered",
+    "theme": "dark-plugin",
+    "spacingX": 180,
+    "spacingY": 100,
+    "margin": 30,
+    "rounded": true,
+    "arrowHeads": true
+  }
+}

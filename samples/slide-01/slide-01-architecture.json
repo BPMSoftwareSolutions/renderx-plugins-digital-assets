@@ -1,0 +1,71 @@
+{
+  "meta": {
+    "layout": "layered",
+    "theme": "light",
+    "arrowHeads": true,
+    "rounded": true,
+    "spacingX": 200,
+    "spacingY": 120
+  },
+  "nodes": [
+    {
+      "id": "plugin-package",
+      "label": "Plugin Package",
+      "w": 140,
+      "h": 60
+    },
+    {
+      "id": "plugin-manifest",
+      "label": "Plugin Manifest",
+      "w": 140,
+      "h": 60
+    },
+    {
+      "id": "handlers-export",
+      "label": "Handlers Export",
+      "w": 140,
+      "h": 60
+    },
+    {
+      "id": "build-publish",
+      "label": "Build & Publish",
+      "w": 140,
+      "h": 60
+    },
+    {
+      "id": "host-sdk",
+      "label": "Host SDK (Context)",
+      "w": 150,
+      "h": 60
+    }
+  ],
+  "edges": [
+    {
+      "from": "plugin-package",
+      "to": "plugin-manifest",
+      "label": "defines"
+    },
+    {
+      "from": "plugin-manifest",
+      "to": "handlers-export",
+      "label": "exposes"
+    },
+    {
+      "from": "plugin-package",
+      "to": "build-publish",
+      "label": "processed by"
+    },
+    {
+      "from": "handlers-export",
+      "to": "host-sdk",
+      "label": "integrates with"
+    },
+    {
+      "from": "plugin-manifest",
+      "to": "host-sdk",
+      "label": "discovered by"
+    }
+  ],
+  "description": "Overall architecture of slide 1 showing relationships between main elements",
+  "source": "slide-01-manifest elements from plugin-integration-slides.json"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "plugin-tiles",
+  "name": "Plugin Architecture Tiles Layout",
+  "description": "Custom layout for plugin architecture visualization with precise tile positioning",
+  "version": "1.0.0",
+  "algorithm": "custom",
+  "parameters": {
+    "spacingX": 367,
+    "spacingY": 350,
+    "margin": 23,
+    "padding": 18,
+    "alignment": "start",
+    "direction": "horizontal",
+    "wrap": true
+  },
+  "nodeDefaults": {
+    "width": 420,
+    "height": 140,
+    "minWidth": 300,
+    "minHeight": 100,
+    "maxWidth": 600,
+    "maxHeight": 200
+  },
+  "edgeDefaults": {
+    "routing": "curved",
+    "arrowHeads": true,
+    "labels": false
+  },
+  "customPositions": {
+    "plugin-package": { "x": 23, "y": 155 },
+    "plugin-manifest": { "x": 390, "y": 155 },
+    "handlers-export": { "x": 757, "y": 155 },
+    "build-publish": { "x": 23, "y": 505 },
+    "host-sdk": { "x": 390, "y": 505 }
+  },
+  "tileConfiguration": {
+    "rows": 2,
+    "columns": 3,
+    "tileSize": { "width": 420, "height": 140 },
+    "tileSpacing": { "x": 367, "y": 350 },
+    "canvasSize": { "width": 1200, "height": 720 },
+    "startPosition": { "x": 23, "y": 155 }
+  },
+  "connectorRouting": {
+    "package-to-build": {
+      "from": "plugin-package",
+      "to": "build-publish",
+      "route": "curve",
+      "style": {
+        "stroke": "#f6ad55",
+        "strokeWidth": 2,
+        "markerEnd": "arrow"
+      }
+    },
+    "manifest-to-handlers": {
+      "from": "plugin-manifest", 
+      "to": "handlers-export",
+      "route": "orthogonal",
+      "style": {
+        "stroke": "#8b5cf6",
+        "strokeWidth": 2,
+        "strokeDasharray": "6 6",
+        "markerEnd": "arrow"
+      }
+    }
+  }
+}

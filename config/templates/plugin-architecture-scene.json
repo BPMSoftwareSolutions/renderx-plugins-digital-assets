@@ -1,0 +1,324 @@
+{
+  "id": "plugin-architecture-scene",
+  "name": "Plugin Architecture Scene Template",
+  "description": "Template for creating plugin architecture visualization scenes",
+  "version": "1.0.0",
+  "parameters": {
+    "sceneId": {
+      "type": "string",
+      "description": "Unique identifier for the generated scene",
+      "default": "plugin-scene"
+    },
+    "canvasWidth": {
+      "type": "number",
+      "description": "Canvas width in pixels",
+      "default": 1200
+    },
+    "canvasHeight": {
+      "type": "number",
+      "description": "Canvas height in pixels", 
+      "default": 720
+    },
+    "backgroundColor": {
+      "type": "color",
+      "description": "Scene background color",
+      "default": "#0f1116"
+    },
+    "tileWidth": {
+      "type": "number",
+      "description": "Width of each tile",
+      "default": 420
+    },
+    "tileHeight": {
+      "type": "number",
+      "description": "Height of each tile",
+      "default": 140
+    },
+    "showConnectors": {
+      "type": "boolean",
+      "description": "Whether to show connectors between tiles",
+      "default": true
+    },
+    "theme": {
+      "type": "string",
+      "description": "Theme configuration to use",
+      "default": "dark-plugin"
+    },
+    "spriteLibrary": {
+      "type": "string",
+      "description": "Sprite library to use",
+      "default": "plugin-architecture"
+    },
+    "layout": {
+      "type": "string",
+      "description": "Layout configuration to use",
+      "default": "plugin-tiles"
+    }
+  },
+  "canvas": {
+    "width": "{{canvasWidth}}",
+    "height": "{{canvasHeight}}",
+    "background": "{{backgroundColor}}"
+  },
+  "dependencies": {
+    "spriteLibraries": ["{{spriteLibrary}}"],
+    "themes": ["{{theme}}"],
+    "layouts": ["{{layout}}"]
+  },
+  "template": {
+    "defs": {
+      "symbols": ["pkg/*", "manifest/*", "handlers/*", "build/*", "host/*"],
+      "filters": ["softShadow", "glow"],
+      "gradients": ["violetArc"]
+    },
+    "nodes": [
+      {
+        "kind": "group",
+        "id": "plugin-package",
+        "at": { "x": 23, "y": 155 },
+        "size": { "width": "{{tileWidth}}", "height": "{{tileHeight}}" },
+        "children": [
+          {
+            "kind": "sprite",
+            "id": "pp.shadow",
+            "at": { "x": 0, "y": 0 },
+            "size": { "width": "{{tileWidth}}", "height": "{{tileHeight}}" },
+            "sprite": { "symbolId": "pkg/shadow" },
+            "style": { "filter": "url(#softShadow)" }
+          },
+          {
+            "kind": "sprite",
+            "id": "pp.box",
+            "at": { "x": 0, "y": 0 },
+            "size": { "width": "{{tileWidth}}", "height": "{{tileHeight}}" },
+            "sprite": { "symbolId": "pkg/box" }
+          },
+          {
+            "kind": "sprite",
+            "id": "pp.label",
+            "at": { "x": 0, "y": 0 },
+            "size": { "width": "{{tileWidth}}", "height": "{{tileHeight}}" },
+            "sprite": { "symbolId": "pkg/label" }
+          },
+          {
+            "kind": "sprite",
+            "id": "pp.glyphs",
+            "at": { "x": 0, "y": 0 },
+            "size": { "width": "{{tileWidth}}", "height": "{{tileHeight}}" },
+            "sprite": { "symbolId": "pkg/glyphs" },
+            "style": { "opacity": 0.5 }
+          },
+          {
+            "kind": "sprite",
+            "id": "pp.npm",
+            "at": { "x": 320, "y": 12 },
+            "size": { "width": 80, "height": 28 },
+            "sprite": { "symbolId": "pkg/npm-badge" }
+          },
+          {
+            "kind": "text",
+            "id": "pp.title",
+            "at": { "x": 18, "y": 22 },
+            "text": "Plugin Package",
+            "style": { "fill": "#e6edf3", "fontWeight": 700, "fontSize": 16 }
+          }
+        ]
+      },
+      {
+        "kind": "group",
+        "id": "plugin-manifest",
+        "at": { "x": 390, "y": 155 },
+        "size": { "width": "{{tileWidth}}", "height": "{{tileHeight}}" },
+        "children": [
+          {
+            "kind": "sprite",
+            "id": "pm.card",
+            "sprite": { "symbolId": "manifest/card" }
+          },
+          {
+            "kind": "sprite",
+            "id": "pm.braces",
+            "sprite": { "symbolId": "manifest/braces" }
+          },
+          {
+            "kind": "sprite",
+            "id": "pm.rows",
+            "sprite": { "symbolId": "manifest/rows" }
+          },
+          {
+            "kind": "sprite",
+            "id": "pm.stamp",
+            "sprite": { "symbolId": "manifest/stamp" }
+          },
+          {
+            "kind": "sprite",
+            "id": "pm.tabs",
+            "sprite": { "symbolId": "manifest/tabs" }
+          },
+          {
+            "kind": "text",
+            "id": "pm.title",
+            "at": { "x": 18, "y": 22 },
+            "text": "Plugin Manifest",
+            "style": { "fill": "#e6edf3", "fontWeight": 700, "fontSize": 16 }
+          }
+        ]
+      },
+      {
+        "kind": "group",
+        "id": "handlers-export",
+        "at": { "x": 757, "y": 155 },
+        "size": { "width": "{{tileWidth}}", "height": "{{tileHeight}}" },
+        "children": [
+          {
+            "kind": "shape",
+            "id": "hx.card",
+            "shape": "roundedRect",
+            "style": { "fill": "#151922", "stroke": "#2b3645", "strokeWidth": 1.5, "filter": "url(#softShadow)" }
+          },
+          {
+            "kind": "text",
+            "id": "hx.title",
+            "at": { "x": 18, "y": 22 },
+            "text": "Handlers Export",
+            "style": { "fill": "#e6edf3", "fontWeight": 700, "fontSize": 16 }
+          },
+          {
+            "kind": "sprite",
+            "id": "hx.connect",
+            "sprite": { "symbolId": "handlers/connectors" }
+          },
+          {
+            "kind": "sprite",
+            "id": "hx.gradient",
+            "sprite": { "symbolId": "handlers/gradient" }
+          },
+          {
+            "kind": "sprite",
+            "id": "hx.traces",
+            "sprite": { "symbolId": "handlers/traces" }
+          },
+          {
+            "kind": "sprite",
+            "id": "hx.ports",
+            "sprite": { "symbolId": "handlers/ports" }
+          }
+        ]
+      },
+      {
+        "kind": "group",
+        "id": "build-publish",
+        "at": { "x": 23, "y": 505 },
+        "size": { "width": "{{tileWidth}}", "height": "{{tileHeight}}" },
+        "children": [
+          {
+            "kind": "sprite",
+            "id": "bp.conv",
+            "sprite": { "symbolId": "build/conveyor" }
+          },
+          {
+            "kind": "sprite",
+            "id": "bp.stage",
+            "sprite": { "symbolId": "build/stage" }
+          },
+          {
+            "kind": "sprite",
+            "id": "bp.tags",
+            "sprite": { "symbolId": "build/tags" }
+          },
+          {
+            "kind": "sprite",
+            "id": "bp.up",
+            "sprite": { "symbolId": "build/uplink" }
+          },
+          {
+            "kind": "text",
+            "id": "bp.title",
+            "at": { "x": 18, "y": 22 },
+            "text": "Build & Publish",
+            "style": { "fill": "#e6edf3", "fontWeight": 700, "fontSize": 16 }
+          }
+        ]
+      },
+      {
+        "kind": "group",
+        "id": "host-sdk",
+        "at": { "x": 390, "y": 505 },
+        "size": { "width": "{{tileWidth}}", "height": "{{tileHeight}}" },
+        "children": [
+          {
+            "kind": "sprite",
+            "id": "hs.console",
+            "sprite": { "symbolId": "host/console" }
+          },
+          {
+            "kind": "sprite",
+            "id": "hs.rails",
+            "sprite": { "symbolId": "host/rails" }
+          },
+          {
+            "kind": "sprite",
+            "id": "hs.ports",
+            "sprite": { "symbolId": "host/ports" }
+          },
+          {
+            "kind": "sprite",
+            "id": "hs.modules",
+            "sprite": { "symbolId": "host/modules" }
+          },
+          {
+            "kind": "text",
+            "id": "hs.title",
+            "at": { "x": 18, "y": 22 },
+            "text": "Host SDK (Context)",
+            "style": { "fill": "#e6edf3", "fontWeight": 700, "fontSize": 16 }
+          }
+        ]
+      }
+    ],
+    "connectors": [
+      {
+        "from": "plugin-package",
+        "to": "build-publish",
+        "route": "curve",
+        "markerEnd": "arrow",
+        "style": { "stroke": "#f59e0b", "strokeWidth": 2 },
+        "condition": "{{showConnectors}}"
+      },
+      {
+        "from": "plugin-manifest",
+        "to": "handlers-export",
+        "route": "orthogonal",
+        "dashed": true,
+        "markerEnd": "arrow",
+        "style": { "stroke": "#8b5cf6", "strokeWidth": 2 },
+        "condition": "{{showConnectors}}"
+      }
+    ]
+  },
+  "examples": [
+    {
+      "name": "Default Plugin Architecture",
+      "description": "Standard plugin architecture scene with all default settings",
+      "parameters": {}
+    },
+    {
+      "name": "Compact Plugin Architecture", 
+      "description": "Smaller canvas size for compact display",
+      "parameters": {
+        "canvasWidth": 800,
+        "canvasHeight": 600,
+        "tileWidth": 300,
+        "tileHeight": 120
+      }
+    },
+    {
+      "name": "Light Theme Plugin Architecture",
+      "description": "Plugin architecture with light theme",
+      "parameters": {
+        "backgroundColor": "#ffffff",
+        "theme": "light-plugin"
+      }
+    }
+  ]
+}

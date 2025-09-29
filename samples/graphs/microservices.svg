@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="-24 -24 708 336" width="708" height="336"
+     xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Graph">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9db7c7"/>
+    </marker>
+    <style>
+      .bg { fill: #0f1116; }
+      .node-rect { fill: #1f2430; stroke: #8aa1b1; stroke-width: 1; }
+      .node-label { font: 12px/1.3 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; fill: #e6edf3; }
+      .edge-line { fill: none; stroke: #9db7c7; stroke-width: 1.5; }
+      .edge-label { font: 11px/1 ui-sans-serif, system-ui; fill: #9db7c7; }
+    </style>
+  </defs>
+  <rect class="bg" x="-24" y="-24" width="708" height="336"/>
+  <g class="edges">
+      <g class="edge" data-id="gateway→auth">
+        <path d="M 60 24 L 240 24" class="edge-line" marker-end="url(#arrow)"/>
+        
+      </g>
+      <g class="edge" data-id="gateway→user">
+        <path d="M 60 24 L 240 144" class="edge-line" marker-end="url(#arrow)"/>
+        
+      </g>
+      <g class="edge" data-id="gateway→order">
+        <path d="M 60 24 L 240 264" class="edge-line" marker-end="url(#arrow)"/>
+        
+      </g>
+      <g class="edge" data-id="gateway→payment">
+        <path d="M 60 24 L 420 24" class="edge-line" marker-end="url(#arrow)"/>
+        
+      </g>
+      <g class="edge" data-id="user→userdb">
+        <path d="M 240 144 L 420 144" class="edge-line" marker-end="url(#arrow)"/>
+        
+      </g>
+      <g class="edge" data-id="order→orderdb">
+        <path d="M 240 264 L 420 264" class="edge-line" marker-end="url(#arrow)"/>
+        
+      </g>
+      <g class="edge" data-id="payment→paymentdb">
+        <path d="M 420 24 L 600 24" class="edge-line" marker-end="url(#arrow)"/>
+        
+      </g>
+      <g class="edge" data-id="order→payment">
+        <path d="M 240 264 L 420 24" class="edge-line" stroke-dasharray="6 6" marker-end="url(#arrow)"/>
+        <text class="edge-label"><tspan>process</tspan></text>
+      </g></g>
+  <g class="nodes">
+      <g class="node" data-id="gateway">
+        <rect x="0" y="0" width="120" height="48" rx="8" ry="8" class="node-rect"/>
+        <text x="60" y="24" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>API Gateway</tspan>
+        </text>
+      </g>
+      <g class="node" data-id="auth">
+        <rect x="180" y="0" width="120" height="48" rx="8" ry="8" class="node-rect"/>
+        <text x="240" y="24" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>Auth Service</tspan>
+        </text>
+      </g>
+      <g class="node" data-id="user">
+        <rect x="180" y="120" width="120" height="48" rx="8" ry="8" class="node-rect"/>
+        <text x="240" y="144" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>User Service</tspan>
+        </text>
+      </g>
+      <g class="node" data-id="order">
+        <rect x="180" y="240" width="120" height="48" rx="8" ry="8" class="node-rect"/>
+        <text x="240" y="264" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>Order Service</tspan>
+        </text>
+      </g>
+      <g class="node" data-id="payment">
+        <rect x="360" y="0" width="120" height="48" rx="8" ry="8" class="node-rect"/>
+        <text x="420" y="24" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>Payment Service</tspan>
+        </text>
+      </g>
+      <g class="node" data-id="userdb">
+        <rect x="360" y="120" width="120" height="48" rx="8" ry="8" class="node-rect"/>
+        <text x="420" y="144" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>User DB</tspan>
+        </text>
+      </g>
+      <g class="node" data-id="orderdb">
+        <rect x="360" y="240" width="120" height="48" rx="8" ry="8" class="node-rect"/>
+        <text x="420" y="264" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>Order DB</tspan>
+        </text>
+      </g>
+      <g class="node" data-id="paymentdb">
+        <rect x="540" y="0" width="120" height="48" rx="8" ry="8" class="node-rect"/>
+        <text x="600" y="24" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>Payment DB</tspan>
+        </text>
+      </g></g>
+</svg>

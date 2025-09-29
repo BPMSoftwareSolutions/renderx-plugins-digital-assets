@@ -1,0 +1,60 @@
+{
+  "meta": {
+    "layout": "layered",
+    "theme": "dark",
+    "arrowHeads": true,
+    "rounded": true,
+    "spacingX": 150,
+    "spacingY": 80
+  },
+  "nodes": [
+    {
+      "id": "console",
+      "label": "Low-Profile Console",
+      "w": 150,
+      "h": 50
+    },
+    {
+      "id": "rails",
+      "label": "Slender Rails",
+      "w": 120,
+      "h": 45
+    },
+    {
+      "id": "ports",
+      "label": "Labeled Ports",
+      "w": 120,
+      "h": 45
+    },
+    {
+      "id": "modules",
+      "label": "System Modules",
+      "w": 130,
+      "h": 50
+    }
+  ],
+  "edges": [
+    {
+      "from": "console",
+      "to": "rails",
+      "label": "provides"
+    },
+    {
+      "from": "console",
+      "to": "ports",
+      "label": "exposes"
+    },
+    {
+      "from": "rails",
+      "to": "modules",
+      "label": "guides"
+    },
+    {
+      "from": "ports",
+      "to": "modules",
+      "label": "connects"
+    }
+  ],
+  "description": "Host SDK internal structure showing console, rails, ports, and modules",
+  "source": "slide-01-manifest elements from plugin-integration-slides.json"
+}

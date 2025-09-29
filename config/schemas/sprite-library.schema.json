@@ -1,0 +1,149 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Sprite Library Schema",
+  "description": "Schema for defining reusable SVG sprite libraries organized by category",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for this sprite library"
+    },
+    "name": {
+      "type": "string",
+      "description": "Human-readable name for this sprite library"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the sprite library's purpose"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "Semantic version of the sprite library"
+    },
+    "categories": {
+      "type": "object",
+      "description": "Sprite categories organized by namespace",
+      "patternProperties": {
+        "^[a-z][a-z0-9-]*$": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "Human-readable category name"
+            },
+            "description": {
+              "type": "string",
+              "description": "Description of this sprite category"
+            },
+            "sprites": {
+              "type": "object",
+              "description": "Individual sprites in this category",
+              "patternProperties": {
+                "^[a-z][a-z0-9-]*$": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "Full sprite ID (category/name)"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "Human-readable sprite name"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "Description of the sprite's purpose"
+                    },
+                    "svg": {
+                      "type": "string",
+                      "description": "SVG content for the sprite"
+                    },
+                    "viewBox": {
+                      "type": "string",
+                      "pattern": "^\\d+\\s+\\d+\\s+\\d+\\s+\\d+$",
+                      "description": "Default viewBox for the sprite"
+                    },
+                    "defaultSize": {
+                      "type": "object",
+                      "properties": {
+                        "width": { "type": "number" },
+                        "height": { "type": "number" }
+                      },
+                      "required": ["width", "height"]
+                    },
+                    "tags": {
+                      "type": "array",
+                      "items": { "type": "string" },
+                      "description": "Tags for categorizing and searching sprites"
+                    },
+                    "dependencies": {
+                      "type": "array",
+                      "items": { "type": "string" },
+                      "description": "Other sprites this sprite depends on"
+                    }
+                  },
+                  "required": ["id", "svg"]
+                }
+              }
+            }
+          },
+          "required": ["name", "sprites"]
+        }
+      }
+    },
+    "filters": {
+      "type": "array",
+      "description": "SVG filter definitions used by sprites",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Filter ID for referencing"
+          },
+          "name": {
+            "type": "string",
+            "description": "Human-readable filter name"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the filter's effect"
+          },
+          "svg": {
+            "type": "string",
+            "description": "SVG filter definition"
+          }
+        },
+        "required": ["id", "svg"]
+      }
+    },
+    "gradients": {
+      "type": "array",
+      "description": "SVG gradient definitions used by sprites",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Gradient ID for referencing"
+          },
+          "name": {
+            "type": "string",
+            "description": "Human-readable gradient name"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the gradient"
+          },
+          "svg": {
+            "type": "string",
+            "description": "SVG gradient definition"
+          }
+        },
+        "required": ["id", "svg"]
+      }
+    }
+  },
+  "required": ["id", "name", "version", "categories"]
+}

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="-24 -24 508 273" width="508" height="273"
+     xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Graph">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b"/>
+    </marker>
+    <style>
+      .bg { fill: #ffffff; }
+      .node-rect { fill: #f7f8fa; stroke: #334155; stroke-width: 1; }
+      .node-label { font: 12px/1.3 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; fill: #0f172a; }
+      .edge-line { fill: none; stroke: #64748b; stroke-width: 1.5; }
+      .edge-label { font: 11px/1 ui-sans-serif, system-ui; fill: #64748b; }
+    </style>
+  </defs>
+  <rect class="bg" x="-24" y="-24" width="508" height="273"/>
+  <g class="edges">
+      <g class="edge" data-id="document-card→json-braces">
+        <path d="M 65 25 L 220 22.5" class="edge-line" marker-end="url(#arrow)"/>
+        <text class="edge-label"><tspan>frames</tspan></text>
+      </g>
+      <g class="edge" data-id="json-braces→key-value-rows">
+        <path d="M 220 22.5 L 390 22.5" class="edge-line" marker-end="url(#arrow)"/>
+        <text class="edge-label"><tspan>contains</tspan></text>
+      </g>
+      <g class="edge" data-id="document-card→generated-stamp">
+        <path d="M 65 25 L 230 112.5" class="edge-line" marker-end="url(#arrow)"/>
+        <text class="edge-label"><tspan>stamped with</tspan></text>
+      </g>
+      <g class="edge" data-id="document-card→tabs">
+        <path d="M 65 25 L 225 202.5" class="edge-line" marker-end="url(#arrow)"/>
+        <text class="edge-label"><tspan>navigated by</tspan></text>
+      </g></g>
+  <g class="nodes">
+      <g class="node" data-id="document-card">
+        <rect x="0" y="0" width="130" height="50" rx="8" ry="8" class="node-rect"/>
+        <text x="65" y="25" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>Document Card</tspan>
+        </text>
+      </g>
+      <g class="node" data-id="json-braces">
+        <rect x="160" y="0" width="120" height="45" rx="8" ry="8" class="node-rect"/>
+        <text x="220" y="22.5" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>JSON Braces</tspan>
+        </text>
+      </g>
+      <g class="node" data-id="key-value-rows">
+        <rect x="320" y="0" width="140" height="45" rx="8" ry="8" class="node-rect"/>
+        <text x="390" y="22.5" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>Key-Value Rows</tspan>
+        </text>
+      </g>
+      <g class="node" data-id="generated-stamp">
+        <rect x="160" y="90" width="140" height="45" rx="8" ry="8" class="node-rect"/>
+        <text x="230" y="112.5" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>Generated Stamp</tspan>
+        </text>
+      </g>
+      <g class="node" data-id="tabs">
+        <rect x="160" y="180" width="130" height="45" rx="8" ry="8" class="node-rect"/>
+        <text x="225" y="202.5" dominant-baseline="middle" text-anchor="middle" class="node-label">
+          <tspan>Navigation Tabs</tspan>
+        </text>
+      </g></g>
+</svg>
