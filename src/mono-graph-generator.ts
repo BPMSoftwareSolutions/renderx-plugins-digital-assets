@@ -24,6 +24,50 @@ function loadScene(filename: string): Scene {
 }
 
 /**
+ * Get scene content - handles both rawSvg and nodes structures
+ */
+function getSceneContent(scene: Scene): string {
+  // If scene has rawSvg in defs, use that
+  if (scene.defs?.rawSvg && scene.defs.rawSvg.length > 0) {
+    return scene.defs.rawSvg.join('\n            ');
+  }
+
+  // If scene has nodes structure, render it to SVG
+  if (scene.nodes && scene.nodes.length > 0) {
+    try {
+      // Use the renderScene function to convert nodes to SVG
+      const fullSceneSvg = renderScene(scene);
+
+      // Extract just the content between the <svg> tags, excluding the outer SVG wrapper
+      const svgMatch = fullSceneSvg.match(/<svg[^>]*>([\s\S]*)<\/svg>/);
+      if (svgMatch && svgMatch[1]) {
+        // Remove the defs, background rect, and other wrapper elements
+        let content = svgMatch[1];
+
+        // Remove defs section
+        content = content.replace(/<defs>[\s\S]*?<\/defs>/g, '');
+
+        // Remove background rect
+        content = content.replace(/<rect[^>]*width="100%"[^>]*\/?>/, '');
+
+        // Remove style section
+        content = content.replace(/<style>[\s\S]*?<\/style>/g, '');
+
+        // Clean up extra whitespace
+        content = content.trim();
+
+        return content;
+      }
+    } catch (error) {
+      console.warn(`Warning: Could not render scene ${scene.id} from nodes:`, error);
+    }
+  }
+
+  // Fallback: return empty content
+  return '';
+}
+
+/**
  * Calculate scene positions based on layout configuration
  */
 function calculateScenePositions(sceneCount: number, layout: SceneLayout, canvas: { width: number; height: number }): Array<{ x: number; y: number }> {
@@ -425,7 +469,7 @@ export function renderMonoGraph(monoGraph: MonoGraph): string {
         <!-- Scene content with enforced clipping -->
         <g class="scene-content" clip-path="url(#scene-${index + 1}-clip)">
           <g transform="translate(0, 40)">
-            ${scene.defs?.rawSvg?.join('\n            ') || ''}
+            ${getSceneContent(scene)}
           </g>
         </g>
       </g>
