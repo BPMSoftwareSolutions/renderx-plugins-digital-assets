@@ -1,0 +1,78 @@
+{
+  "id": "social-network",
+  "name": "Social Network Graph",
+  "description": "A social network showing connections between users",
+  "nodes": [
+    {
+      "id": "alice",
+      "label": "Alice"
+    },
+    {
+      "id": "bob",
+      "label": "Bob"
+    },
+    {
+      "id": "charlie",
+      "label": "Charlie"
+    },
+    {
+      "id": "diana",
+      "label": "Diana"
+    },
+    {
+      "id": "eve",
+      "label": "Eve"
+    },
+    {
+      "id": "frank",
+      "label": "Frank"
+    }
+  ],
+  "edges": [
+    {
+      "from": "alice",
+      "to": "bob",
+      "label": "friends"
+    },
+    {
+      "from": "alice",
+      "to": "charlie",
+      "label": "friends"
+    },
+    {
+      "from": "bob",
+      "to": "diana",
+      "label": "friends"
+    },
+    {
+      "from": "charlie",
+      "to": "eve",
+      "label": "friends"
+    },
+    {
+      "from": "diana",
+      "to": "frank",
+      "label": "friends"
+    },
+    {
+      "from": "eve",
+      "to": "frank",
+      "label": "friends"
+    },
+    {
+      "from": "alice",
+      "to": "diana",
+      "label": "colleagues",
+      "dashed": true
+    }
+  ],
+  "meta": {
+    "layout": "radial",
+    "theme": "dark-plugin",
+    "spacingX": 150,
+    "spacingY": 150,
+    "margin": 50,
+    "rounded": true,
+    "arrowHeads": false
+  }
+}

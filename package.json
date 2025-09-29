@@ -18,7 +18,18 @@
     "graph-to-svg": "npm run build && node dist/cli.js",
     "generate-samples": "npm run build && node dist/sample-generator.js",
     "generate-slide-01": "npm run build && node dist/slide-01-generator.js",
-    "generate-slide-01-scene": "npm run build && node dist/slide01-generator.js"
+    "generate-slide-01-scene": "npm run build && node dist/slide01-generator.js",
+    "cli": "npm run build && node dist/cli.js",
+    "scene:list": "npm run build && node dist/cli.js scene list",
+    "scene:generate": "npm run build && node dist/cli.js scene generate",
+    "scene:example": "npm run build && node dist/cli.js scene example",
+    "graph:samples": "npm run build && node dist/cli.js graph create-samples",
+    "graph:list": "npm run build && node dist/cli.js graph list",
+    "graph:generate": "npm run build && node dist/cli.js graph generate",
+    "config:list": "npm run build && node dist/cli.js config list",
+    "config:sprites": "npm run build && node dist/cli.js config sprites",
+    "config:themes": "npm run build && node dist/cli.js config themes",
+    "config:layouts": "npm run build && node dist/cli.js config layouts"
   },
   "devDependencies": {
     "cypress": "^13.17.0",

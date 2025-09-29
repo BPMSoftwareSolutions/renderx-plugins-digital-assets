@@ -1,0 +1,46 @@
+{
+  "id": "standard-graph",
+  "name": "Standard Graph Layouts",
+  "description": "Standard layout configurations for simple node-edge graphs",
+  "version": "1.0.0",
+  "algorithm": "layered",
+  "parameters": {
+    "spacingX": 180,
+    "spacingY": 120,
+    "margin": 24,
+    "padding": 12,
+    "alignment": "center",
+    "direction": "horizontal",
+    "wrap": false
+  },
+  "gridSpecific": {
+    "columns": "auto",
+    "rows": "auto",
+    "aspectRatio": 1.6
+  },
+  "radialSpecific": {
+    "radius": 200,
+    "startAngle": 0,
+    "endAngle": 360,
+    "centerNode": null
+  },
+  "layeredSpecific": {
+    "layerSeparation": 120,
+    "nodeSeparation": 80,
+    "rankDirection": "TB",
+    "edgeRouting": "straight"
+  },
+  "nodeDefaults": {
+    "width": 120,
+    "height": 48,
+    "minWidth": 80,
+    "minHeight": 32,
+    "maxWidth": 200,
+    "maxHeight": 80
+  },
+  "edgeDefaults": {
+    "routing": "straight",
+    "arrowHeads": true,
+    "labels": true
+  }
+}

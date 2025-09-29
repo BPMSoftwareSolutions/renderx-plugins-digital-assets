@@ -1,0 +1,97 @@
+{
+  "nodes": [
+    {
+      "id": "gateway",
+      "label": "API Gateway",
+      "w": 120,
+      "h": 48
+    },
+    {
+      "id": "auth",
+      "label": "Auth Service",
+      "w": 120,
+      "h": 48
+    },
+    {
+      "id": "user",
+      "label": "User Service",
+      "w": 120,
+      "h": 48
+    },
+    {
+      "id": "order",
+      "label": "Order Service",
+      "w": 120,
+      "h": 48
+    },
+    {
+      "id": "payment",
+      "label": "Payment Service",
+      "w": 120,
+      "h": 48
+    },
+    {
+      "id": "userdb",
+      "label": "User DB",
+      "w": 120,
+      "h": 48
+    },
+    {
+      "id": "orderdb",
+      "label": "Order DB",
+      "w": 120,
+      "h": 48
+    },
+    {
+      "id": "paymentdb",
+      "label": "Payment DB",
+      "w": 120,
+      "h": 48
+    }
+  ],
+  "edges": [
+    {
+      "from": "gateway",
+      "to": "auth"
+    },
+    {
+      "from": "gateway",
+      "to": "user"
+    },
+    {
+      "from": "gateway",
+      "to": "order"
+    },
+    {
+      "from": "gateway",
+      "to": "payment"
+    },
+    {
+      "from": "user",
+      "to": "userdb"
+    },
+    {
+      "from": "order",
+      "to": "orderdb"
+    },
+    {
+      "from": "payment",
+      "to": "paymentdb"
+    },
+    {
+      "from": "order",
+      "to": "payment",
+      "label": "process",
+      "dashed": true
+    }
+  ],
+  "meta": {
+    "layout": "layered",
+    "theme": "dark",
+    "spacingX": 180,
+    "spacingY": 120,
+    "margin": 24,
+    "rounded": true,
+    "arrowHeads": true
+  }
+}

@@ -17,6 +17,18 @@ Both systems are implemented in pure TypeScript with zero external dependencies.
 - 🚀 **CLI Tool**: Command-line interface for quick conversions
 - ✅ **Well Tested**: Comprehensive unit test coverage
 
+### ✨ Configuration-Driven Architecture (NEW)
+
+- 📋 **Data-Driven Design**: All knowledge separated from TypeScript code into JSON configurations
+- 🧩 **Modular Components**: Mix and match sprites, themes, layouts, and templates
+- 🔄 **Scalable & Reusable**: Generic generators that work with any configuration
+- 🎛️ **Template Processing**: Parameter substitution and dependency management
+- ✅ **Schema Validation**: JSON Schema validation for all configuration files
+- 🎨 **Sprite Libraries**: Reusable SVG symbol collections organized by category
+- 🎭 **Theme Configurations**: Color palettes, typography, spacing, and visual effects
+- 📐 **Layout Configurations**: Algorithm-specific parameters for positioning nodes
+- 📄 **Scene Templates**: Parameterizable scene definitions with examples
+
 ## Quick Start
 
 ### Installation
@@ -253,6 +265,128 @@ npm run generate-slide-01-scene
 
 See `samples/slide-01-scene/` for complete implementation and documentation.
 
+## Configuration-Driven Architecture
+
+The system now features a **configuration-driven architecture** that separates all hard-coded knowledge from TypeScript code into structured JSON files. This makes the generators generic, scalable, and highly reusable.
+
+### Configuration Types
+
+#### 🎨 Sprite Libraries (`config/sprites/`)
+Reusable SVG symbol collections organized by category:
+```json
+{
+  "name": "Plugin Architecture Sprites",
+  "version": "1.0.0",
+  "description": "SVG sprites for plugin architecture diagrams",
+  "sprites": {
+    "plugin-package": {
+      "name": "Plugin Package",
+      "description": "Plugin package container with rounded corners",
+      "svg": "<rect width='280' height='100' rx='8' fill='#1a1f2e' stroke='#3d4465' stroke-width='1'/>"
+    }
+  }
+}
+```
+
+#### 🎭 Theme Configurations (`config/themes/`)
+Color palettes, typography, and visual styling:
+```json
+{
+  "name": "Dark Plugin Theme",
+  "colors": {
+    "background": "#0f1116",
+    "surface": "#1a1f2e",
+    "primary": "#8b5cf6",
+    "text": "#e2e8f0"
+  },
+  "typography": {
+    "fontFamily": "Inter, system-ui, sans-serif",
+    "fontSize": 12
+  }
+}
+```
+
+#### 📐 Layout Configurations (`config/layouts/`)
+Algorithm-specific parameters for positioning:
+```json
+{
+  "name": "Plugin Tiles Layout",
+  "algorithm": "grid",
+  "parameters": {
+    "columns": 3,
+    "spacing": { "x": 320, "y": 140 },
+    "padding": { "x": 20, "y": 20 }
+  }
+}
+```
+
+#### 📄 Scene Templates (`config/templates/`)
+Parameterizable scene definitions with examples:
+```json
+{
+  "name": "Simple Plugin Scene",
+  "description": "Basic two-tile plugin architecture scene",
+  "version": "1.0.0",
+  "parameters": {
+    "canvasWidth": { "type": "number", "default": 800 },
+    "tileWidth": { "type": "number", "default": 300 }
+  },
+  "dependencies": {
+    "sprites": ["plugin-architecture"],
+    "themes": ["dark-plugin"]
+  },
+  "canvas": {
+    "width": "{{canvasWidth}}",
+    "height": "{{canvasHeight}}"
+  }
+}
+```
+
+### Generic Generators
+
+#### Scene Generator
+```bash
+# Generate from template with custom parameters
+npm run scene:generate simple-plugin-scene -- --canvasWidth=1200 --tileWidth=400
+
+# List available templates
+npm run scene:list
+
+# Generate from example
+npm run scene:example simple-plugin-scene "Large Canvas"
+```
+
+#### Graph Generator
+```bash
+# Generate graph with theme and layout
+npm run graph:generate microservices.json dark-plugin standard-graph
+
+# Create sample templates
+npm run graph:samples
+```
+
+### CLI Commands
+
+The enhanced CLI provides comprehensive configuration management:
+
+```bash
+# Configuration management
+npm run config:list              # List all available configurations
+npm run config:sprites           # List sprite libraries
+npm run config:themes            # List theme configurations
+npm run config:layouts           # List layout configurations
+
+# Scene generation
+npm run scene:list               # List scene templates
+npm run scene:generate <template> # Generate scene from template
+npm run scene:example <template> <example> # Generate from example
+
+# Graph generation
+npm run graph:create-samples     # Create sample graph templates
+npm run graph:list               # List graph templates
+npm run graph:generate <template> <theme> <layout> # Generate graph
+```
+
 ## Extending the Library
 
 ### Custom Layouts
@@ -266,16 +400,34 @@ function customLayout(g: Graph, spacingX: number, spacingY: number): LayoutResul
 ```
 
 ### Custom Themes
-Extend the theme system by modifying the palette in `svg-export.ts`:
+Create new themes by adding JSON configuration files to `config/themes/`:
 
-```typescript
-const customPalette = {
-  bg: "#f0f0f0",
-  node: "#ffffff", 
-  stroke: "#333333",
-  text: "#000000",
-  edge: "#666666"
-};
+```json
+{
+  "name": "Custom Light Theme",
+  "description": "Clean light theme for professional diagrams",
+  "version": "1.0.0",
+  "colors": {
+    "background": "#ffffff",
+    "surface": "#f8fafc",
+    "primary": "#3b82f6",
+    "secondary": "#64748b",
+    "accent": "#10b981",
+    "text": "#1e293b",
+    "textSecondary": "#64748b",
+    "border": "#e2e8f0"
+  },
+  "typography": {
+    "fontFamily": "Inter, system-ui, sans-serif",
+    "fontSize": 12,
+    "fontWeight": 400
+  },
+  "spacing": {
+    "padding": 16,
+    "margin": 8,
+    "borderRadius": 6
+  }
+}
 ```
 
 ## Integration Examples

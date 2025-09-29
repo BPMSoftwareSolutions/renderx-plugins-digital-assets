@@ -1,0 +1,258 @@
+{
+  "id": "plugin-architecture",
+  "name": "Plugin Architecture Sprites",
+  "description": "Sprite library for plugin architecture visualization components",
+  "version": "1.0.0",
+  "categories": {
+    "pkg": {
+      "name": "Plugin Package",
+      "description": "Components for visualizing plugin packages",
+      "sprites": {
+        "box": {
+          "id": "pkg/box",
+          "name": "Package Box",
+          "description": "Main container box for plugin packages",
+          "svg": "<rect x=\"0\" y=\"0\" width=\"420\" height=\"140\" rx=\"8\" fill=\"#2d3748\" stroke=\"#4a5568\" stroke-width=\"2\"/>",
+          "viewBox": "0 0 420 140",
+          "defaultSize": { "width": 420, "height": 140 },
+          "tags": ["container", "package", "box"]
+        },
+        "shadow": {
+          "id": "pkg/shadow",
+          "name": "Package Shadow",
+          "description": "Drop shadow effect for plugin packages",
+          "svg": "<ellipse cx=\"210\" cy=\"135\" rx=\"200\" ry=\"15\" fill=\"#000\" opacity=\"0.2\"/>",
+          "viewBox": "0 0 420 140",
+          "defaultSize": { "width": 420, "height": 140 },
+          "tags": ["shadow", "effect"]
+        },
+        "label": {
+          "id": "pkg/label",
+          "name": "Package Label",
+          "description": "Label badge for plugin packages",
+          "svg": "<rect x=\"10\" y=\"10\" width=\"200\" height=\"30\" rx=\"4\" fill=\"#4299e1\" stroke=\"#3182ce\"/><text x=\"110\" y=\"28\" text-anchor=\"middle\" fill=\"white\" font-size=\"14\" font-weight=\"bold\">Plugin Package</text>",
+          "viewBox": "0 0 420 140",
+          "defaultSize": { "width": 200, "height": 30 },
+          "tags": ["label", "badge", "text"]
+        },
+        "glyphs": {
+          "id": "pkg/glyphs",
+          "name": "Package Glyphs",
+          "description": "Decorative glyphs for plugin packages",
+          "svg": "<g opacity=\"0.5\"><circle cx=\"350\" cy=\"30\" r=\"8\" fill=\"#a0aec0\"/><rect x=\"340\" y=\"50\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#a0aec0\"/><polygon points=\"345,80 355,80 350,90\" fill=\"#a0aec0\"/></g>",
+          "viewBox": "0 0 420 140",
+          "defaultSize": { "width": 80, "height": 80 },
+          "tags": ["decoration", "glyph", "icon"]
+        },
+        "npm-badge": {
+          "id": "pkg/npm-badge",
+          "name": "NPM Badge",
+          "description": "NPM registry badge for packages",
+          "svg": "<rect x=\"0\" y=\"0\" width=\"80\" height=\"28\" rx=\"14\" fill=\"#cb3837\"/><text x=\"40\" y=\"18\" text-anchor=\"middle\" fill=\"white\" font-size=\"12\" font-weight=\"bold\">npm</text>",
+          "viewBox": "0 0 80 28",
+          "defaultSize": { "width": 80, "height": 28 },
+          "tags": ["npm", "badge", "registry"]
+        }
+      }
+    },
+    "manifest": {
+      "name": "Plugin Manifest",
+      "description": "Components for visualizing plugin manifests",
+      "sprites": {
+        "card": {
+          "id": "manifest/card",
+          "name": "Manifest Card",
+          "description": "Main card container for plugin manifests",
+          "svg": "<rect x=\"0\" y=\"0\" width=\"420\" height=\"140\" rx=\"8\" fill=\"#1a202c\" stroke=\"#00d9ff\" stroke-width=\"2\"/>",
+          "viewBox": "0 0 420 140",
+          "defaultSize": { "width": 420, "height": 140 },
+          "tags": ["container", "manifest", "card"]
+        },
+        "braces": {
+          "id": "manifest/braces",
+          "name": "JSON Braces",
+          "description": "JSON opening and closing braces",
+          "svg": "<text x=\"20\" y=\"40\" fill=\"#00d9ff\" font-size=\"24\" font-weight=\"bold\">{</text><text x=\"380\" y=\"120\" fill=\"#00d9ff\" font-size=\"24\" font-weight=\"bold\">}</text>",
+          "viewBox": "0 0 420 140",
+          "defaultSize": { "width": 420, "height": 140 },
+          "tags": ["json", "syntax", "braces"]
+        },
+        "rows": {
+          "id": "manifest/rows",
+          "name": "Manifest Rows",
+          "description": "JSON content rows for manifest",
+          "svg": "<g fill=\"#e2e8f0\" font-size=\"12\"><text x=\"40\" y=\"60\">\\\"name\\\": \\\"my-plugin\\\",</text><text x=\"40\" y=\"80\">\\\"version\\\": \\\"1.0.0\\\",</text><text x=\"40\" y=\"100\">\\\"handlers\\\": [\\\"onDragStart\\\"]</text></g>",
+          "viewBox": "0 0 420 140",
+          "defaultSize": { "width": 380, "height": 80 },
+          "tags": ["json", "content", "text"]
+        },
+        "stamp": {
+          "id": "manifest/stamp",
+          "name": "Generated Stamp",
+          "description": "Generated status stamp for manifests",
+          "svg": "<rect x=\"320\" y=\"10\" width=\"80\" height=\"20\" rx=\"10\" fill=\"#38a169\" opacity=\"0.8\"/><text x=\"360\" y=\"22\" text-anchor=\"middle\" fill=\"white\" font-size=\"10\">GENERATED</text>",
+          "viewBox": "0 0 420 140",
+          "defaultSize": { "width": 80, "height": 20 },
+          "tags": ["stamp", "status", "generated"]
+        },
+        "tabs": {
+          "id": "manifest/tabs",
+          "name": "Manifest Tabs",
+          "description": "Tab navigation for manifest sections",
+          "svg": "<g fill=\"#4a5568\"><rect x=\"0\" y=\"0\" width=\"60\" height=\"20\" rx=\"4\"/><rect x=\"65\" y=\"0\" width=\"60\" height=\"20\" rx=\"4\"/><rect x=\"130\" y=\"0\" width=\"60\" height=\"20\" rx=\"4\"/></g><g fill=\"#a0aec0\" font-size=\"10\"><text x=\"30\" y=\"12\" text-anchor=\"middle\">routes</text><text x=\"95\" y=\"12\" text-anchor=\"middle\">topics</text><text x=\"160\" y=\"12\" text-anchor=\"middle\">handlers</text></g>",
+          "viewBox": "0 0 200 20",
+          "defaultSize": { "width": 200, "height": 20 },
+          "tags": ["tabs", "navigation", "sections"]
+        }
+      }
+    },
+    "handlers": {
+      "name": "Handlers Export",
+      "description": "Components for visualizing handler exports and connections",
+      "sprites": {
+        "connectors": {
+          "id": "handlers/connectors",
+          "name": "Handler Connectors",
+          "description": "Background connector lines for handlers",
+          "svg": "<g stroke=\"#4c1d95\" stroke-width=\"2\" fill=\"none\" opacity=\"0.3\"><path d=\"M30 80 Q150 80 270 80\"/><path d=\"M30 100 Q150 100 270 100\"/><circle cx=\"30\" cy=\"80\" r=\"4\" fill=\"#4c1d95\"/><circle cx=\"30\" cy=\"100\" r=\"4\" fill=\"#4c1d95\"/></g>",
+          "viewBox": "0 0 420 140",
+          "defaultSize": { "width": 420, "height": 140 },
+          "tags": ["connector", "line", "background"]
+        },
+        "ports": {
+          "id": "handlers/ports",
+          "name": "Handler Ports",
+          "description": "Output ports showing handler names",
+          "svg": "<g><rect x=\"280\" y=\"65\" width=\"120\" height=\"24\" rx=\"12\" fill=\"#553c9a\" stroke=\"#7c3aed\" stroke-width=\"1\"/><text x=\"340\" y=\"79\" text-anchor=\"middle\" fill=\"white\" font-size=\"11\" font-weight=\"500\">onDragStart</text><rect x=\"280\" y=\"95\" width=\"130\" height=\"24\" rx=\"12\" fill=\"#553c9a\" stroke=\"#7c3aed\" stroke-width=\"1\"/><text x=\"345\" y=\"109\" text-anchor=\"middle\" fill=\"white\" font-size=\"10\" font-weight=\"500\">publishCreateRequested</text></g>",
+          "viewBox": "0 0 420 140",
+          "defaultSize": { "width": 130, "height": 60 },
+          "tags": ["port", "handler", "output"]
+        },
+        "gradient": {
+          "id": "handlers/gradient",
+          "name": "Handler Gradient Arc",
+          "description": "Main neon arc with gradient and animation",
+          "svg": "<path d=\"M 30 90 C 180 50, 270 50, 390 90\" stroke=\"url(#violetArc)\" stroke-width=\"4\" fill=\"none\" filter=\"url(#glow)\"/><path d=\"M 30 90 C 180 50, 270 50, 390 90\" stroke=\"#d6bcfa\" stroke-width=\"1.2\" fill=\"none\" stroke-dasharray=\"8 8\"><animate attributeName=\"stroke-dashoffset\" from=\"0\" to=\"-1000\" dur=\"6s\" repeatCount=\"indefinite\"/></path>",
+          "viewBox": "0 0 420 140",
+          "defaultSize": { "width": 420, "height": 140 },
+          "tags": ["arc", "gradient", "animation", "neon"]
+        },
+        "traces": {
+          "id": "handlers/traces",
+          "name": "Handler Traces",
+          "description": "Tracer lines with directional arrows",
+          "svg": "<g stroke=\"#a78bfa\" stroke-width=\"1.5\" fill=\"none\" opacity=\"0.6\"><path d=\"M390 85 L420 75\"/><path d=\"M390 90 L420 85\"/><path d=\"M390 95 L420 95\"/><path d=\"M390 100 L420 105\"/><polygon points=\"415,73 420,75 415,77\" fill=\"#a78bfa\"/><polygon points=\"415,83 420,85 415,87\" fill=\"#a78bfa\"/><polygon points=\"415,93 420,95 415,97\" fill=\"#a78bfa\"/><polygon points=\"415,103 420,105 415,107\" fill=\"#a78bfa\"/></g>",
+          "viewBox": "0 0 420 140",
+          "defaultSize": { "width": 50, "height": 40 },
+          "tags": ["trace", "arrow", "direction", "flow"]
+        }
+      }
+    },
+    "build": {
+      "name": "Build & Publish",
+      "description": "Components for visualizing build and publish processes",
+      "sprites": {
+        "conveyor": {
+          "id": "build/conveyor",
+          "name": "Build Conveyor",
+          "description": "Conveyor belt for build process visualization",
+          "svg": "<rect x=\"0\" y=\"60\" width=\"300\" height=\"20\" fill=\"#4a5568\"/><g fill=\"#718096\"><circle cx=\"30\" cy=\"70\" r=\"8\"/><circle cx=\"80\" cy=\"70\" r=\"8\"/><circle cx=\"130\" cy=\"70\" r=\"8\"/><circle cx=\"180\" cy=\"70\" r=\"8\"/><circle cx=\"230\" cy=\"70\" r=\"8\"/><circle cx=\"280\" cy=\"70\" r=\"8\"/></g>",
+          "viewBox": "0 0 420 140",
+          "defaultSize": { "width": 300, "height": 40 },
+          "tags": ["conveyor", "process", "build"]
+        },
+        "stage": {
+          "id": "build/stage",
+          "name": "Build Stage",
+          "description": "Build stage container",
+          "svg": "<rect x=\"300\" y=\"40\" width=\"80\" height=\"60\" rx=\"8\" fill=\"#2d3748\" stroke=\"#4a5568\"/><text x=\"340\" y=\"75\" text-anchor=\"middle\" fill=\"#e2e8f0\" font-size=\"12\">STAGE</text>",
+          "viewBox": "0 0 420 140",
+          "defaultSize": { "width": 80, "height": 60 },
+          "tags": ["stage", "container", "build"]
+        },
+        "tags": {
+          "id": "build/tags",
+          "name": "Version Tags",
+          "description": "Version tag badges",
+          "svg": "<g fill=\"#f6ad55\"><rect x=\"320\" y=\"20\" width=\"40\" height=\"15\" rx=\"7\"/><text x=\"340\" y=\"30\" text-anchor=\"middle\" fill=\"white\" font-size=\"10\">v1.0</text></g>",
+          "viewBox": "0 0 420 140",
+          "defaultSize": { "width": 40, "height": 15 },
+          "tags": ["tag", "version", "badge"]
+        },
+        "uplink": {
+          "id": "build/uplink",
+          "name": "Upload Link",
+          "description": "Upload arrow indicator",
+          "svg": "<path d=\"M340 40 L340 10 L350 20 M340 10 L330 20\" stroke=\"#f6ad55\" stroke-width=\"3\" fill=\"none\"/>",
+          "viewBox": "0 0 420 140",
+          "defaultSize": { "width": 30, "height": 30 },
+          "tags": ["upload", "arrow", "link"]
+        }
+      }
+    },
+    "host": {
+      "name": "Host SDK",
+      "description": "Components for visualizing host SDK and runtime environment",
+      "sprites": {
+        "console": {
+          "id": "host/console",
+          "name": "Host Console",
+          "description": "Main console container for host SDK",
+          "svg": "<rect x=\"0\" y=\"0\" width=\"420\" height=\"140\" rx=\"8\" fill=\"#2d3748\" stroke=\"#4a5568\" stroke-width=\"2\"/>",
+          "viewBox": "0 0 420 140",
+          "defaultSize": { "width": 420, "height": 140 },
+          "tags": ["console", "container", "host"]
+        },
+        "rails": {
+          "id": "host/rails",
+          "name": "Data Rails",
+          "description": "Data flow rails in host environment",
+          "svg": "<g stroke=\"#718096\" stroke-width=\"2\"><line x1=\"50\" y1=\"40\" x2=\"370\" y2=\"40\"/><line x1=\"50\" y1=\"100\" x2=\"370\" y2=\"100\"/></g>",
+          "viewBox": "0 0 420 140",
+          "defaultSize": { "width": 320, "height": 100 },
+          "tags": ["rail", "data", "flow"]
+        },
+        "ports": {
+          "id": "host/ports",
+          "name": "Host Ports",
+          "description": "Input/output ports for host communication",
+          "svg": "<g fill=\"#4a5568\"><rect x=\"20\" y=\"30\" width=\"60\" height=\"20\" rx=\"4\"/><rect x=\"20\" y=\"90\" width=\"60\" height=\"20\" rx=\"4\"/><rect x=\"340\" y=\"30\" width=\"60\" height=\"20\" rx=\"4\"/><rect x=\"340\" y=\"90\" width=\"60\" height=\"20\" rx=\"4\"/></g><g fill=\"#a0aec0\" font-size=\"10\"><text x=\"50\" y=\"42\" text-anchor=\"middle\">IN</text><text x=\"50\" y=\"102\" text-anchor=\"middle\">OUT</text><text x=\"370\" y=\"42\" text-anchor=\"middle\">CTRL</text><text x=\"370\" y=\"102\" text-anchor=\"middle\">DATA</text></g>",
+          "viewBox": "0 0 420 140",
+          "defaultSize": { "width": 420, "height": 140 },
+          "tags": ["port", "io", "communication"]
+        },
+        "modules": {
+          "id": "host/modules",
+          "name": "Host Modules",
+          "description": "Internal host modules (Conductor, EventRouter)",
+          "svg": "<g><rect x=\"120\" y=\"25\" width=\"80\" height=\"30\" rx=\"4\" fill=\"#553c9a\"/><text x=\"160\" y=\"42\" text-anchor=\"middle\" fill=\"white\" font-size=\"11\">Conductor</text><rect x=\"220\" y=\"85\" width=\"80\" height=\"30\" rx=\"4\" fill=\"#553c9a\"/><text x=\"260\" y=\"102\" text-anchor=\"middle\" fill=\"white\" font-size=\"11\">EventRouter</text></g>",
+          "viewBox": "0 0 420 140",
+          "defaultSize": { "width": 180, "height": 90 },
+          "tags": ["module", "conductor", "router"]
+        }
+      }
+    }
+  },
+  "filters": [
+    {
+      "id": "softShadow",
+      "name": "Soft Shadow",
+      "description": "Soft drop shadow effect for cards and containers",
+      "svg": "<filter id=\"softShadow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\"><feDropShadow dx=\"0\" dy=\"4\" stdDeviation=\"8\" flood-color=\"#000\" flood-opacity=\"0.35\"/></filter>"
+    },
+    {
+      "id": "glow",
+      "name": "Glow Effect",
+      "description": "Glow effect for neon and highlighted elements",
+      "svg": "<filter id=\"glow\"><feGaussianBlur stdDeviation=\"2.5\" result=\"b\"/><feMerge><feMergeNode in=\"b\"/><feMergeNode in=\"SourceGraphic\"/></feMerge></filter>"
+    }
+  ],
+  "gradients": [
+    {
+      "id": "violetArc",
+      "name": "Violet Arc Gradient",
+      "description": "Purple to violet gradient for energy connectors",
+      "svg": "<linearGradient id=\"violetArc\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#8b5cf6\"/><stop offset=\"1\" stop-color=\"#a78bfa\"/></linearGradient>"
+    }
+  ]
+}

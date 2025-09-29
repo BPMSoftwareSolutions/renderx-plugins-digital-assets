@@ -1,0 +1,84 @@
+{
+  "id": "microservices",
+  "name": "Microservices Architecture",
+  "description": "A typical microservices architecture with API gateway, services, and databases",
+  "nodes": [
+    {
+      "id": "gateway",
+      "label": "API Gateway"
+    },
+    {
+      "id": "auth",
+      "label": "Auth Service"
+    },
+    {
+      "id": "user",
+      "label": "User Service"
+    },
+    {
+      "id": "order",
+      "label": "Order Service"
+    },
+    {
+      "id": "payment",
+      "label": "Payment Service"
+    },
+    {
+      "id": "userdb",
+      "label": "User DB"
+    },
+    {
+      "id": "orderdb",
+      "label": "Order DB"
+    },
+    {
+      "id": "paymentdb",
+      "label": "Payment DB"
+    }
+  ],
+  "edges": [
+    {
+      "from": "gateway",
+      "to": "auth"
+    },
+    {
+      "from": "gateway",
+      "to": "user"
+    },
+    {
+      "from": "gateway",
+      "to": "order"
+    },
+    {
+      "from": "gateway",
+      "to": "payment"
+    },
+    {
+      "from": "user",
+      "to": "userdb"
+    },
+    {
+      "from": "order",
+      "to": "orderdb"
+    },
+    {
+      "from": "payment",
+      "to": "paymentdb"
+    },
+    {
+      "from": "order",
+      "to": "payment",
+      "label": "process",
+      "dashed": true
+    }
+  ],
+  "meta": {
+    "layout": "layered",
+    "theme": "dark-plugin",
+    "spacingX": 200,
+    "spacingY": 120,
+    "margin": 40,
+    "rounded": true,
+    "arrowHeads": true
+  }
+}

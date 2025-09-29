@@ -1,0 +1,75 @@
+{
+  "template": {
+    "id": "simple-plugin-scene",
+    "name": "Simple Plugin Scene Template",
+    "description": "Simplified template for testing configuration-driven scene generation",
+    "version": "1.0.0"
+  },
+  "generation": {
+    "timestamp": "2025-09-29T12:51:35.698Z",
+    "parameters": {},
+    "parametersUsed": 0,
+    "parametersAvailable": 6
+  },
+  "scene": {
+    "id": "simple-plugin-scene",
+    "canvas": {
+      "width": 800,
+      "height": 600
+    },
+    "background": "#0f1116",
+    "nodes": 2,
+    "connectors": 0,
+    "sprites": 2,
+    "filters": 1,
+    "gradients": 1
+  },
+  "files": {
+    "mainScene": {
+      "svg": "simple-plugin-scene.svg",
+      "json": "simple-plugin-scene.json"
+    },
+    "tiles": [
+      {
+        "id": "plugin-package",
+        "name": "Plugin Package",
+        "svg": "plugin-package.svg",
+        "json": "plugin-package.json"
+      },
+      {
+        "id": "plugin-manifest",
+        "name": "Plugin Manifest",
+        "svg": "plugin-manifest.svg",
+        "json": "plugin-manifest.json"
+      }
+    ]
+  },
+  "dependencies": {
+    "spriteLibraries": [
+      "plugin-architecture"
+    ],
+    "themes": [
+      "dark-plugin"
+    ],
+    "layouts": [
+      "plugin-tiles"
+    ]
+  },
+  "examples": [
+    {
+      "name": "Default Simple Scene",
+      "description": "Basic two-tile scene with default settings",
+      "parameters": {}
+    },
+    {
+      "name": "Large Simple Scene",
+      "description": "Larger canvas with bigger tiles",
+      "parameters": {
+        "canvasWidth": 1200,
+        "canvasHeight": 800,
+        "tileWidth": 400,
+        "tileHeight": 150
+      }
+    }
+  ]
+}
