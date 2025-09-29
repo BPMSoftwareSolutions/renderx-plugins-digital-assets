@@ -154,8 +154,8 @@ function enhanceSceneInfo(scenes: SceneInfo[], config: CombinedStorybookConfig):
       },
       position: { x, y },
       busTravel: {
-        entryPoint: { x: -30, y: config.layout.sceneHeight / 2 }, // Bus enters from left
-        exitPoint: { x: config.layout.sceneWidth + 30, y: config.layout.sceneHeight / 2 } // Bus exits to right
+        entryPoint: { x: 20, y: config.layout.sceneHeight / 2 }, // Bus enters from left edge of scene
+        exitPoint: { x: config.layout.sceneWidth - 80, y: config.layout.sceneHeight / 2 } // Bus exits from right edge of scene
       }
     };
   });
@@ -304,7 +304,11 @@ function generateEnhancedSVG(config: CombinedStorybookConfig, timeline: Combined
     // Extract the inner SVG content (everything between <svg> tags)
     const svgMatch = sceneSvg.match(/<svg[^>]*>([\s\S]*)<\/svg>/);
     if (svgMatch) {
-      const innerContent = svgMatch[1];
+      let innerContent = svgMatch[1];
+
+      // Remove individual bus animations from scenes to avoid conflicts with unified bus
+      // Remove school bus and all content until Sky Text or Caption
+      innerContent = innerContent.replace(/<!-- School bus[^>]*-->[\s\S]*?(?=<!-- Sky Text|<!-- Caption|$)/g, '');
 
       // Add scene as a group with enhanced features
       svg += `  <!-- Scene ${sceneInfo.sceneNumber}: ${sceneInfo.title} -->
@@ -339,6 +343,23 @@ ${innerContent}
 `;
     }
   });
+
+  // Add progress indicator
+  svg += `  <!-- Progress Indicator -->
+  <g id="progress-indicator" transform="translate(50, 50)">
+    <rect x="0" y="0" width="200" height="20" fill="#E0E0E0" rx="10"/>
+    <rect x="0" y="0" width="0" height="20" fill="#4CAF50" rx="10">
+      <animate attributeName="width"
+               values="0;200"
+               dur="${timing.totalDuration}s"
+               repeatCount="${timing.loop ? 'indefinite' : '1'}"/>
+    </rect>
+    <text x="100" y="35" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">
+      Journey Progress
+    </text>
+  </g>
+
+`;
 
   // Add unified bus with coordinated animation
   if (bus.enabled) {

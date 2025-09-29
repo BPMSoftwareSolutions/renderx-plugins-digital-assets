@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Combined Storybook Test</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+        }
+        
+        .svg-container {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            background: white;
+            text-align: center;
+            overflow: auto;
+        }
+        
+        .svg-container svg {
+            max-width: 100%;
+            height: auto;
+            border: 1px dashed #ccc;
+        }
+        
+        .controls {
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .controls button {
+            background: #0891B2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            margin: 0 10px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .controls button:hover {
+            background: #0e7490;
+        }
+        
+        .status {
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .status.loading {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+        }
+        
+        .status.success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        
+        .status.error {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+        
+        .diagnostics {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 12px;
+        }
+        
+        .diagnostics h3 {
+            margin: 0 0 10px 0;
+            font-family: inherit;
+            font-size: 14px;
+        }
+        
+        .diagnostics ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        
+        .diagnostics li {
+            margin: 5px 0;
+        }
+        
+        .highlight {
+            background: #ffeb3b;
+            padding: 2px 4px;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Enhanced Combined Storybook Test</h1>
+        <p class="subtitle">Testing scene-by-scene animation coordination and bus travel</p>
+        
+        <div class="controls">
+            <button onclick="loadStorybook()">Load Enhanced Storybook</button>
+            <button onclick="runDiagnostics()">Run Diagnostics</button>
+            <button onclick="toggleAnimation()">Play/Pause Animation</button>
+        </div>
+        
+        <div id="status" class="status loading">
+            Ready to load enhanced storybook...
+        </div>
+        
+        <div class="svg-container" data-testid="enhanced-storybook-container">
+            <div id="svg-placeholder">Click "Load Enhanced Storybook" to begin</div>
+        </div>
+        
+        <div id="diagnostics" class="diagnostics" style="display: none;">
+            <h3>Animation Diagnostics</h3>
+            <ul id="diagnostics-list"></ul>
+        </div>
+    </div>
+
+    <script>
+        let currentSvg = null;
+        let animationsPaused = false;
+
+        function updateStatus(message, type = 'loading') {
+            const statusEl = document.getElementById('status');
+            statusEl.textContent = message;
+            statusEl.className = `status ${type}`;
+        }
+
+        function addDiagnostic(message, isError = false) {
+            const diagnosticsList = document.getElementById('diagnostics-list');
+            const li = document.createElement('li');
+            li.innerHTML = isError ? `❌ ${message}` : `✅ ${message}`;
+            if (isError) li.style.color = '#dc3545';
+            diagnosticsList.appendChild(li);
+        }
+
+        async function loadStorybook() {
+            updateStatus('Loading enhanced combined storybook...', 'loading');
+            
+            try {
+                const response = await fetch('../samples/enhanced-combined-storybook.svg');
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                const svgContent = await response.text();
+                const container = document.querySelector('.svg-container');
+                container.innerHTML = svgContent;
+                
+                // Add ID to the SVG for testing
+                const svgElement = container.querySelector('svg');
+                if (svgElement) {
+                    svgElement.id = 'enhanced-storybook-svg';
+                    currentSvg = svgElement;
+                }
+                
+                updateStatus('Enhanced storybook loaded successfully!', 'success');
+                
+                // Auto-run diagnostics
+                setTimeout(runDiagnostics, 1000);
+                
+            } catch (error) {
+                updateStatus(`Failed to load storybook: ${error.message}`, 'error');
+                console.error('Load error:', error);
+            }
+        }
+
+        function runDiagnostics() {
+            if (!currentSvg) {
+                updateStatus('No SVG loaded for diagnostics', 'error');
+                return;
+            }
+
+            const diagnosticsEl = document.getElementById('diagnostics');
+            const diagnosticsList = document.getElementById('diagnostics-list');
+            diagnosticsList.innerHTML = '';
+            diagnosticsEl.style.display = 'block';
+
+            // Check for unified bus
+            const unifiedBus = currentSvg.querySelector('#unified-coordinated-bus');
+            if (unifiedBus) {
+                addDiagnostic('Unified coordinated bus found');
+                
+                const busAnimation = unifiedBus.querySelector('animateTransform[type="translate"]');
+                if (busAnimation) {
+                    addDiagnostic('Bus animation found');
+                    
+                    const values = busAnimation.getAttribute('values');
+                    if (values) {
+                        const coordinates = values.split(';');
+                        addDiagnostic(`Bus animation has ${coordinates.length} coordinate pairs`);
+                        
+                        if (coordinates.length >= 6) {
+                            addDiagnostic('Bus animation covers all scenes');
+                        } else {
+                            addDiagnostic('Bus animation may not cover all scenes', true);
+                        }
+                    }
+                } else {
+                    addDiagnostic('Bus animation not found', true);
+                }
+            } else {
+                addDiagnostic('Unified coordinated bus not found', true);
+            }
+
+            // Check for individual scene buses (should be removed)
+            const individualBuses = currentSvg.querySelectorAll('g[id="school-bus"]');
+            if (individualBuses.length === 0) {
+                addDiagnostic('No individual scene buses found (good - prevents conflicts)');
+            } else {
+                addDiagnostic(`Found ${individualBuses.length} individual scene buses (may cause conflicts)`, true);
+            }
+
+            // Check for scenes
+            const scenes = currentSvg.querySelectorAll('[class*="scene-"]');
+            addDiagnostic(`Found ${scenes.length} scenes`);
+
+            // Check for connection paths
+            const connectionPaths = currentSvg.querySelectorAll('.connection-path');
+            if (connectionPaths.length > 0) {
+                addDiagnostic(`Found ${connectionPaths.length} connection paths`);
+            } else {
+                addDiagnostic('No connection paths found', true);
+            }
+
+            // Check for progress indicator
+            const progressIndicator = currentSvg.querySelector('#progress-indicator');
+            if (progressIndicator) {
+                addDiagnostic('Progress indicator found');
+            } else {
+                addDiagnostic('Progress indicator not found', true);
+            }
+
+            // Check for playback controls
+            const playbackControls = currentSvg.querySelector('#playback-controls');
+            if (playbackControls) {
+                addDiagnostic('Playback controls found');
+            } else {
+                addDiagnostic('Playback controls not found', true);
+            }
+
+            updateStatus('Diagnostics completed', 'success');
+        }
+
+        function toggleAnimation() {
+            if (!currentSvg) {
+                updateStatus('No SVG loaded', 'error');
+                return;
+            }
+
+            const animations = currentSvg.querySelectorAll('animate, animateTransform');
+            
+            if (animationsPaused) {
+                animations.forEach(anim => {
+                    anim.beginElement();
+                });
+                animationsPaused = false;
+                updateStatus('Animations resumed', 'success');
+            } else {
+                animations.forEach(anim => {
+                    anim.endElement();
+                });
+                animationsPaused = true;
+                updateStatus('Animations paused', 'success');
+            }
+        }
+
+        // Auto-load on page load for Cypress testing
+        document.addEventListener('DOMContentLoaded', () => {
+            // Small delay to ensure page is fully loaded
+            setTimeout(loadStorybook, 500);
+        });
+    </script>
+</body>
+</html>
