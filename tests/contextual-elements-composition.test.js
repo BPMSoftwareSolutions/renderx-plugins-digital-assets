@@ -34,11 +34,13 @@ describe('Contextual Element SVGs - Composition from sub-elements', () => {
   };
 
   Object.entries(expectations).forEach(([file, refs]) => {
-    test(`${file} should reference its sub-elements via <use xlink:href>`, () => {
+    test(`${file} should reference its sub-elements via <use xlink:href> or inline <g data-sub-id>`, () => {
       const full = path.join(base, file);
       const content = fs.readFileSync(full, 'utf8');
       refs.forEach(ref => {
-        expect(content).toContain(`xlink:href="${ref}"`);
+        const id = ref.split('#')[1];
+        const ok = content.includes(`xlink:href="${ref}"`) || content.includes(`data-sub-id="${id}"`);
+        expect(ok).toBe(true);
       });
     });
   });

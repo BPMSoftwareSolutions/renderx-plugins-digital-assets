@@ -1,10 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 120">
-  <title>Build &amp; Publish - Conveyor</title>
-  <g id="conveyor" fill="#A97B50" stroke="#5A4634">
-    <rect x="10" y="70" width="240" height="30" rx="6"/>
-    <circle cx="30" cy="100" r="8" fill="#5A4634"/>
-    <circle cx="130" cy="100" r="8" fill="#5A4634"/>
-    <circle cx="230" cy="100" r="8" fill="#5A4634"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 140">
+  <title>Build &amp; Publish - Conveyor Belt</title>
+  <g id="conveyor">
+    <!-- Conveyor belt -->
+    <rect x="40" y="88" width="340" height="22" rx="11" fill="#FEF3C7" stroke="#D97706"/>
+    <circle cx="70" cy="99" r="3" fill="#D97706"/><circle cx="110" cy="99" r="3" fill="#D97706"/>
+    <circle cx="150" cy="99" r="3" fill="#D97706"/><circle cx="190" cy="99" r="3" fill="#D97706"/>
+    <circle cx="230" cy="99" r="3" fill="#D97706"/><circle cx="270" cy="99" r="3" fill="#D97706"/>
+    <circle cx="310" cy="99" r="3" fill="#D97706"/><circle cx="350" cy="99" r="3" fill="#D97706"/>
   </g>
 </svg>
 

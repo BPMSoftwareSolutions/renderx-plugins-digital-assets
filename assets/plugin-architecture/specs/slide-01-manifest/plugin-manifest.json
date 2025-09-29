@@ -1,10 +1,10 @@
 {
   "sub_elements": [
-    { "id": "document-card",  "svg": "slide-01-manifest/plugin-manifest/document-card.svg",  "compose": { "x": 0, "y": 0 } },
-    { "id": "json-braces",    "svg": "slide-01-manifest/plugin-manifest/json-braces.svg",    "compose": { "x": 0, "y": 0 } },
-    { "id": "key-value-rows", "svg": "slide-01-manifest/plugin-manifest/key-value-rows.svg", "compose": { "x": 0, "y": 0 } },
-    { "id": "generated-stamp","svg": "slide-01-manifest/plugin-manifest/generated-stamp.svg","compose": { "x": 0, "y": 0 } },
-    { "id": "tabs",           "svg": "slide-01-manifest/plugin-manifest/tabs.svg",           "compose": { "x": 0, "y": 0 } }
+    { "id": "document-card",  "svg": "slide-01-manifest/plugin-manifest/document-card.svg",  "compose": { "transform": "translate(21.11,18) scale(1.89,0.40)" } },
+    { "id": "json-braces",    "svg": "slide-01-manifest/plugin-manifest/json-braces.svg",    "compose": { "transform": "translate(-35,1) scale(2.50,0.60)" } },
+    { "id": "key-value-rows", "svg": "slide-01-manifest/plugin-manifest/key-value-rows.svg", "compose": { "transform": "translate(66,0) scale(1.20,1.40)" } },
+    { "id": "generated-stamp","svg": "slide-01-manifest/plugin-manifest/generated-stamp.svg","compose": { "transform": "translate(320,6) scale(0.25,0.25)" } },
+    { "id": "tabs",           "svg": "slide-01-manifest/plugin-manifest/tabs.svg",           "compose": { "transform": "translate(48.33,18) scale(1.17,0.40)" } }
   ]
 }
 

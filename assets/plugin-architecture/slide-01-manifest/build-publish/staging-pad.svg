@@ -1,7 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 140">
-  <title>Build &amp; Publish - Staging Pad</title>
-  <g id="staging-pad" fill="#F2E8D5" stroke="#A97B50">
-    <rect x="10" y="20" width="200" height="100" rx="8"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 140">
+  <title>Build &amp; Publish - Modules on Belt</title>
+  <g id="staging-pad">
+    <!-- Modules on belt -->
+    <rect x="80" y="62" width="36" height="22" rx="4" fill="#FDE68A" stroke="#CA8A04"/>
+    <rect x="150" y="58" width="36" height="26" rx="4" fill="#FDE68A" stroke="#CA8A04"/>
+    <rect x="220" y="62" width="36" height="22" rx="4" fill="#FDE68A" stroke="#CA8A04"/>
   </g>
 </svg>
 

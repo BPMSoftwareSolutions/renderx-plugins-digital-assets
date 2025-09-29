@@ -53,11 +53,13 @@ function deepMergeElementFromSpec(element, options) {
 }
 
 function normalizeElement(element) {
-  // Ensure shape has sub_elements array and compose defaults
-  const subs = (element.sub_elements || []).map(s => ({
-    ...s,
-    compose: mergeCompose({ x: 0, y: 0 }, s.compose),
-  }));
+  // Ensure shape has sub_elements array and compose defaults, preserving transform fields
+  const subs = (element.sub_elements || []).map(s => {
+    const c = { ...(s.compose || {}) };
+    if (typeof c.x !== 'number') c.x = 0;
+    if (typeof c.y !== 'number') c.y = 0;
+    return { ...s, compose: c };
+  });
   return { ...element, sub_elements: subs };
 }
 

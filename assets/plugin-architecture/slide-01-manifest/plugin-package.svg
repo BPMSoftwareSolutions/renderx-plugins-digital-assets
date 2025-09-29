@@ -19,10 +19,74 @@
   <text x="210" y="135" font-family="Arial, Helvetica, sans-serif" font-size="11" text-anchor="middle" fill="#6B7280">Self-contained, shippable unit</text>
   <!-- Composed from sub-elements -->
   <g id="sub-elements">
-    <use x="0" y="0" xlink:href="plugin-package/package-box.svg#package-box"/>
-    <use x="0" y="0" xlink:href="plugin-package/shadow.svg#shadow"/>
-    <use x="0" y="0" xlink:href="plugin-package/label.svg#label"/>
-    <use x="0" y="0" xlink:href="plugin-package/glyphs.svg#glyphs"/>
-    <use x="0" y="0" xlink:href="plugin-package/npm-badge.svg#npm-badge"/>
+  <g data-sub-id="package-box" data-src="plugin-package/package-box.svg" transform="translate(0,0)">
+  <g fill="#D9D9D9" stroke="#666">
+
+    <rect x="20" y="20" width="160" height="160" rx="8" ry="8"/>
+  
   </g>
+  </g>
+  <g data-sub-id="shadow" data-src="plugin-package/shadow.svg" transform="translate(0,0)">
+
+  </g>
+  <g data-sub-id="label" data-src="plugin-package/label.svg" transform="translate(0,0)">
+  <g font-family="Arial, sans-serif">
+
+    <rect x="5" y="10" width="190" height="40" rx="6" fill="#ffffff" stroke="#999"/>
+    <text x="100" y="37" text-anchor="middle" font-size="16" fill="#333">Plugin Package</text>
+  
+  </g>
+  </g>
+  <g data-sub-id="glyphs" data-src="plugin-package/glyphs.svg" transform="translate(0,0)">
+  <g fill="#6A6A6A">
+
+    <circle cx="30" cy="30" r="6"/>
+    <rect x="60" y="24" width="12" height="12" rx="2"/>
+    <polygon points="100,24 110,36 90,36"/>
+    <path d="M140 24 h12 v12 h-12 z"/>
+    <path d="M170 24 h12 v12 h-12 z"/>
+  
+  </g>
+  </g>
+  <g data-sub-id="npm-badge" data-src="plugin-package/npm-badge.svg" transform="translate(0,0)">
+  <g font-family="Arial, sans-serif">
+
+    <rect x="5" y="10" width="110" height="40" fill="#CB3837" rx="4"/>
+    <text x="60" y="37" text-anchor="middle" font-size="20" fill="#fff">npm</text>
+  
+  </g>
+  </g>
+</g>
+  </g>
+  <g data-sub-id="shadow" data-src="plugin-package/shadow.svg" transform="translate(0,0)">
+
+  </g>
+  <g data-sub-id="label" data-src="plugin-package/label.svg" transform="translate(0,0)">
+  <g font-family="Arial, sans-serif">
+
+    <rect x="5" y="10" width="190" height="40" rx="6" fill="#ffffff" stroke="#999"/>
+    <text x="100" y="37" text-anchor="middle" font-size="16" fill="#333">Plugin Package</text>
+  
+  </g>
+  </g>
+  <g data-sub-id="glyphs" data-src="plugin-package/glyphs.svg" transform="translate(0,0)">
+  <g fill="#6A6A6A">
+
+    <circle cx="30" cy="30" r="6"/>
+    <rect x="60" y="24" width="12" height="12" rx="2"/>
+    <polygon points="100,24 110,36 90,36"/>
+    <path d="M140 24 h12 v12 h-12 z"/>
+    <path d="M170 24 h12 v12 h-12 z"/>
+  
+  </g>
+  </g>
+  <g data-sub-id="npm-badge" data-src="plugin-package/npm-badge.svg" transform="translate(0,0)">
+  <g font-family="Arial, sans-serif">
+
+    <rect x="5" y="10" width="110" height="40" fill="#CB3837" rx="4"/>
+    <text x="60" y="37" text-anchor="middle" font-size="20" fill="#fff">npm</text>
+  
+  </g>
+  </g>
+</g>
 </svg>

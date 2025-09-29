@@ -1,9 +1,9 @@
 {
   "sub_elements": [
-    { "id": "conveyor",      "svg": "slide-01-manifest/build-publish/conveyor.svg" },
-    { "id": "staging-pad",   "svg": "slide-01-manifest/build-publish/staging-pad.svg" },
-    { "id": "version-tags",  "svg": "slide-01-manifest/build-publish/version-tags.svg" },
-    { "id": "uplink-arrow",  "svg": "slide-01-manifest/build-publish/uplink-arrow.svg" }
+    { "id": "conveyor",      "svg": "slide-01-manifest/build-publish/conveyor.svg",      "compose": { "x": 0, "y": 0 } },
+    { "id": "staging-pad",   "svg": "slide-01-manifest/build-publish/staging-pad.svg",   "compose": { "x": 0, "y": 0 } },
+    { "id": "version-tags",  "svg": "slide-01-manifest/build-publish/version-tags.svg",  "compose": { "x": 0, "y": 0 } },
+    { "id": "uplink-arrow",  "svg": "slide-01-manifest/build-publish/uplink-arrow.svg",  "compose": { "x": 0, "y": 0 } }
   ]
 }
 

@@ -2,7 +2,7 @@
 /* JSON-driven SVG generator (Mode A: injector) */
 const fs = require('fs');
 const path = require('path');
-const { generateForElement } = require('./lib/injector');
+const { generateForElement, generateForElementInline, generateForElementTemplateExact } = require('./lib/injector');
 const { deepMergeElementFromSpec, normalizeElement } = require('./lib/spec-resolver');
 
 const ROOT = process.cwd();
@@ -10,7 +10,7 @@ const JSON_PATH = path.join(ROOT, 'assets', 'plugin-architecture', 'plugin-integ
 const ASSETS_ROOT = path.join(ROOT, 'assets', 'plugin-architecture');
 
 function parseArgs(argv) {
-  const args = { all: false, slide: null, element: null, dryRun: false, verbose: false, resolveRefs: true, validateOnly: false, specRoot: null, strict: false };
+  const args = { all: false, slide: null, element: null, dryRun: false, verbose: false, resolveRefs: true, validateOnly: false, specRoot: null, strict: false, inlineRefs: false };
   for (let i = 2; i < argv.length; i++) {
     const a = argv[i];
     if (a === '--all') args.all = true;
@@ -22,6 +22,8 @@ function parseArgs(argv) {
     else if (a === '--validate-only') args.validateOnly = true;
     else if (a === '--spec-root') args.specRoot = argv[++i];
     else if (a === '--strict') args.strict = true;
+    else if (a === '--inline-refs') args.inlineRefs = true;
+    else if (a === '--template-exact') args.templateExact = true;
   }
   return args;
 }
@@ -99,7 +101,22 @@ function run() {
       });
     } else {
       const orig = fs.readFileSync(parentPath, 'utf8');
-      const next = generateForElement(orig, effective);
+      let next;
+      if (args.templateExact) {
+        const loadSvg = (relPath) => {
+          const p = path.join(ASSETS_ROOT, relPath);
+          return fs.readFileSync(p, 'utf8');
+        };
+        next = generateForElementTemplateExact(orig, effective, { loadSvg });
+      } else if (args.inlineRefs) {
+        const loadSvg = (relPath) => {
+          const p = path.join(ASSETS_ROOT, relPath);
+          return fs.readFileSync(p, 'utf8');
+        };
+        next = generateForElementInline(orig, effective, { loadSvg });
+      } else {
+        next = generateForElement(orig, effective);
+      }
       if (orig !== next) {
         changed++;
         if (!args.dryRun) fs.writeFileSync(parentPath, next, 'utf8');
