@@ -135,6 +135,16 @@ function updateIdReferences(content, elementId) {
   return content;
 }
 
+// Escape XML entities in text content
+function escapeXML(text) {
+  return text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+}
+
 // Clean and escape SVG content for XML compliance
 function cleanSVGContent(content) {
   // Convert problematic CSS style attributes to individual SVG attributes
@@ -228,8 +238,8 @@ function generateSlideSVG(slide, elements) {
     allDefs.push(...cleanDefs);
 
     // Wrap in a group with transform for positioning
-    elementSVGs.push(`  <g id="${element.id}" transform="translate(${compose.x},${compose.y})" data-element="${element.label}">
-    <!-- ${element.label} -->
+    elementSVGs.push(`  <g id="${element.id}" transform="translate(${compose.x},${compose.y})" data-element="${escapeXML(element.label)}">
+    <!-- ${escapeXML(element.label)} -->
 ${finalContent}
   </g>`);
   });
@@ -239,16 +249,6 @@ ${finalContent}
 ${allDefs.map(def => `    ${def}`).join('\n')}
   </defs>
   ` : '';
-
-  // Escape XML entities in text content
-  const escapeXML = (text) => {
-    return text
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&apos;');
-  };
 
   // Create the complete slide SVG
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${SLIDE_WIDTH}" height="${SLIDE_HEIGHT}" viewBox="0 0 ${SLIDE_WIDTH} ${SLIDE_HEIGHT}">

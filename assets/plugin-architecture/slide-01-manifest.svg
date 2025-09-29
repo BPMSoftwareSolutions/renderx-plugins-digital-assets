@@ -311,8 +311,8 @@
 </g>
   </g>
 
-  <g id="build-publish" transform="translate(23,505)" data-element="Build & Publish">
-    <!-- Build & Publish -->
+  <g id="build-publish" transform="translate(23,505)" data-element="Build &amp; Publish">
+    <!-- Build &amp; Publish -->
 <!-- Conveyor belt -->
   <rect x="40" y="88" width="340" height="22" rx="11" fill="#FEF3C7" stroke="#D97706"/>
   <circle cx="70" cy="99" r="3" fill="#D97706"/><circle cx="110" cy="99" r="3" fill="#D97706"/>
