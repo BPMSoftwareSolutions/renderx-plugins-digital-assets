@@ -19,6 +19,7 @@ export interface TrafficLightConfig {
 export interface SceneConfigEntry {
   startDelay?: number; // absolute begin time for the bus movement in seconds
   exitTime?: number;   // absolute time to fade-out the bus group
+  movement?: { dur: number; arriveAt: number; departAt: number; }; // seconds within cycle
   elements: {
     bus: SceneElementConfig;
     trafficLight?: TrafficLightConfig;
@@ -60,8 +61,25 @@ export function applySceneAnimationFromConfig(svgContent: string, sceneNumber: n
     out = startElementAnimation(out, busSelector, beginTrigger);
   }
 
-  // Traffic light coordination (stop at red, resume at green)
-  if (entry.elements.trafficLight) {
+  // Traffic light coordination: prefer keyTimes normalization over begin/end
+  if (entry.elements.trafficLight && entry.movement) {
+    const { dur, arriveAt, departAt } = entry.movement;
+    const fractions = [0, arriveAt / dur, departAt / dur, 1];
+    out = normalizeBusMovementWithKeyTimes(out, busSelector, {
+      dur,
+      keyTimes: fractions,
+      begin: typeof entry.startDelay === 'number' ? `${entry.startDelay}s` : undefined,
+    });
+
+    // Wheel spin segments relative to scene timeline, offset by startDelay for combined
+    const beginOffset = typeof entry.startDelay === 'number' ? entry.startDelay : 0;
+    out = normalizeWheelSpinSegments(out, busSelector, {
+      firstBegin: `${0 + beginOffset}s`,
+      firstEnd: `${arriveAt + beginOffset}s`,
+      secondBegin: `${departAt + beginOffset}s`,
+    });
+  } else if (entry.elements.trafficLight) {
+    // Fallback to old behavior if movement not provided
     const { redAt, greenAt } = entry.elements.trafficLight;
     out = stopElementAnimation(out, busSelector, { type: 'time', value: redAt });
     out = startElementAnimation(out, busSelector, { type: 'time', value: greenAt });
@@ -73,6 +91,47 @@ export function applySceneAnimationFromConfig(svgContent: string, sceneNumber: n
   }
 
   return out;
+}
+
+// --- Helpers: movement normalization ---
+function normalizeBusMovementWithKeyTimes(svg: string, busSelector: ElementSelector, opts: { dur: number; keyTimes: number[]; begin?: string; }): string {
+  const pattern = createElementRegex(busSelector);
+  return svg.replace(pattern, (busMatch) => {
+    // replace translate animateTransform block: set keyTimes, dur, repeatCount, remove begin/end
+    let result = busMatch.replace(/<animateTransform([^>]*type="translate"[^>]*)\/>/gis, (_unused, attrs) => {
+      let a = attrs
+        .replace(/\sbegin="[^"]*"/i, '')
+        .replace(/\send="[^"]*"/i, '')
+        .replace(/\skeyTimes="[^"]*"/i, '')
+        .replace(/\sdur="[^"]*"/i, '')
+        .replace(/\srepeatCount="[^"]*"/i, '');
+      a += ` keyTimes="${opts.keyTimes.join('; ')}"`;
+      a += ` dur="${opts.dur}s"`;
+      a += ` repeatCount="indefinite"`;
+      if (opts.begin) a += ` begin="${opts.begin}"`;
+      return `<animateTransform${a}/>`;
+    });
+    return result;
+  });
+}
+
+function normalizeWheelSpinSegments(svg: string, busSelector: ElementSelector, seg: { firstBegin: string; firstEnd: string; secondBegin: string; }): string {
+  const pattern = createElementRegex(busSelector);
+  return svg.replace(pattern, (busMatch) => {
+    // Find rotate animateTransform inside bus and split into two segments
+    return busMatch.replace(/(<animateTransform[^>]*type="rotate"[^>]*)(\/>|>\s*<\/animateTransform>)/gis, (_unused, head) => {
+      // remove existing begin/end to avoid conflicts
+      let base = head
+        .replace(/\sbegin="[^"]*"/ig, '')
+        .replace(/\send="[^"]*"/ig, '')
+        .replace(/\srepeatCount="[^"]*"/ig, '')
+        .replace(/\sdur="[^"]*"/ig, '')
+        + ' dur="1s" repeatCount="indefinite"';
+      const first = `${base} begin="${seg.firstBegin}" end="${seg.firstEnd}"/>`;
+      const second = `${base} begin="${seg.secondBegin}"/>`;
+      return first + second;
+    });
+  });
 }
 
 // --- Helpers: positional alignment ---
