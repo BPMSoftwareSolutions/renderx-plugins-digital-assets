@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EventRouter Journey: Seamless Bus Travel Through All Scenes - Cinematic Presentation</title>
+  
+    <style>
+      .cinematic-container {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        background: #000;
+      }
+      
+      .scene-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transform: translateX(100%);
+      }
+      
+      .scene-container.active {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      
+      .progress-bar {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 2px;
+        overflow: hidden;
+      }
+      
+      .progress-fill {
+        height: 100%;
+        background: #4CAF50;
+        width: 0%;
+        transition: width 0.1s ease;
+      }
+      
+      .controls {
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+      }
+      
+      .control-button {
+        background: rgba(255, 255, 255, 0.8);
+        border: none;
+        border-radius: 4px;
+        padding: 8px 16px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background 0.2s ease;
+      }
+      
+      .control-button:hover {
+        background: rgba(255, 255, 255, 1);
+      }
+      
+      .scene-title {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        font-family: Arial, sans-serif;
+        font-size: 24px;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        z-index: 10;
+      }
+      
+      
+      .scene-1-enter {
+        animation: scene-1-enter-animation 1s ease-in-out;
+      }
+      
+      .scene-1-exit {
+        animation: scene-1-exit-animation 1s ease-in-out;
+      }
+      
+      @keyframes scene-1-enter-animation {
+        from {
+          opacity: 1;
+          transform: translateX(100%);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      
+      @keyframes scene-1-exit-animation {
+        from {
+          opacity: 1;
+          transform: translateX(0);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(100%);
+        }
+      }
+    
+
+      .scene-2-enter {
+        animation: scene-2-enter-animation 1s ease-in-out;
+      }
+      
+      .scene-2-exit {
+        animation: scene-2-exit-animation 1s ease-in-out;
+      }
+      
+      @keyframes scene-2-enter-animation {
+        from {
+          opacity: 0;
+          transform: ;
+        }
+        to {
+          opacity: 1;
+          transform: ;
+        }
+      }
+      
+      @keyframes scene-2-exit-animation {
+        from {
+          opacity: 1;
+          transform: ;
+        }
+        to {
+          opacity: 0;
+          transform: ;
+        }
+      }
+    
+
+      .scene-3-enter {
+        animation: scene-3-enter-animation 1s ease-in-out;
+      }
+      
+      .scene-3-exit {
+        animation: scene-3-exit-animation 1s ease-in-out;
+      }
+      
+      @keyframes scene-3-enter-animation {
+        from {
+          opacity: 1;
+          transform: translateX(100%);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      
+      @keyframes scene-3-exit-animation {
+        from {
+          opacity: 1;
+          transform: translateX(0);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(100%);
+        }
+      }
+    
+
+      .scene-4-enter {
+        animation: scene-4-enter-animation 1s ease-in-out;
+      }
+      
+      .scene-4-exit {
+        animation: scene-4-exit-animation 1s ease-in-out;
+      }
+      
+      @keyframes scene-4-enter-animation {
+        from {
+          opacity: 0;
+          transform: ;
+        }
+        to {
+          opacity: 1;
+          transform: ;
+        }
+      }
+      
+      @keyframes scene-4-exit-animation {
+        from {
+          opacity: 1;
+          transform: ;
+        }
+        to {
+          opacity: 0;
+          transform: ;
+        }
+      }
+    
+
+      .scene-5-enter {
+        animation: scene-5-enter-animation 1s ease-in-out;
+      }
+      
+      .scene-5-exit {
+        animation: scene-5-exit-animation 1s ease-in-out;
+      }
+      
+      @keyframes scene-5-enter-animation {
+        from {
+          opacity: 1;
+          transform: translateX(100%);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      
+      @keyframes scene-5-exit-animation {
+        from {
+          opacity: 1;
+          transform: translateX(0);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(100%);
+        }
+      }
+    
+
+      .scene-6-enter {
+        animation: scene-6-enter-animation 1s ease-in-out;
+      }
+      
+      .scene-6-exit {
+        animation: scene-6-exit-animation 1s ease-in-out;
+      }
+      
+      @keyframes scene-6-enter-animation {
+        from {
+          opacity: 0;
+          transform: ;
+        }
+        to {
+          opacity: 1;
+          transform: ;
+        }
+      }
+      
+      @keyframes scene-6-exit-animation {
+        from {
+          opacity: 1;
+          transform: ;
+        }
+        to {
+          opacity: 0;
+          transform: ;
+        }
+      }
+    
+    </style>
+  
+</head>
+<body>
+  <div class="cinematic-container">
+    
+      <div class="scene-container" id="scene-1">
+        <div class="scene-title">
+          Scene 1: 1 DEPOT
+        </div>
+        <svg width="100%" height="100%" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <filter id="sceneShadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.25"/></filter>
+<filter id="busGlow"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <linearGradient id="roadGradient" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#404040"/><stop offset="0.5" stop-color="#505050"/><stop offset="1" stop-color="#404040"/></linearGradient>
+<linearGradient id="busGradient" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFD700"/><stop offset="0.5" stop-color="#FFA500"/><stop offset="1" stop-color="#FFD700"/></linearGradient>
+          </defs>
+          <rect width="100%" height="100%" fill="#87CEEB"/>
+          <!-- Scene 1: The bus leaving the depot with animations -->
+<!-- Background sky -->
+<rect x="0" y="0" width="800" height="250" fill="#87CEEB"/>
+
+<!-- Clouds -->
+<g fill="#FFFFFF" opacity="0.8">
+  <!-- Cloud 1 -->
+  <circle cx="150" cy="60" r="20"/>
+  <circle cx="170" cy="60" r="15"/>
+  <circle cx="130" cy="65" r="12"/>
+  <circle cx="165" cy="50" r="10"/>
+  
+  <!-- Cloud 2 -->
+  <circle cx="600" cy="80" r="25"/>
+  <circle cx="625" cy="80" r="18"/>
+  <circle cx="580" cy="85" r="15"/>
+  <circle cx="620" cy="65" r="12"/>
+  
+  <!-- Cloud 3 -->
+  <circle cx="400" cy="50" r="18"/>
+  <circle cx="420" cy="50" r="12"/>
+  <circle cx="385" cy="55" r="10"/>
+</g>
+
+<!-- Ground/grass verges -->
+<rect x="0" y="250" width="800" height="150" fill="#4A6B3A"/>
+
+<!-- Road -->
+<rect x="0" y="280" width="800" height="60" fill="#404040"/>
+
+<!-- Road edges -->
+<rect x="0" y="278" width="800" height="2" fill="#606060"/>
+<rect x="0" y="340" width="800" height="2" fill="#606060"/>
+
+<!-- Dashed center line -->
+<g fill="#FFFF00">
+  <rect x="50" y="308" width="40" height="4"/>
+  <rect x="120" y="308" width="40" height="4"/>
+  <rect x="190" y="308" width="40" height="4"/>
+  <rect x="260" y="308" width="40" height="4"/>
+  <rect x="330" y="308" width="40" height="4"/>
+  <rect x="400" y="308" width="40" height="4"/>
+  <rect x="470" y="308" width="40" height="4"/>
+  <rect x="540" y="308" width="40" height="4"/>
+  <rect x="610" y="308" width="40" height="4"/>
+  <rect x="680" y="308" width="40" height="4"/>
+  <rect x="750" y="308" width="40" height="4"/>
+</g>
+
+<!-- Depot building -->
+<g id="depot">
+  <!-- Main building structure -->
+  <rect x="50" y="150" width="200" height="130" fill="#8B7355" stroke="#6B5535" stroke-width="2"/>
+  
+  <!-- Roof -->
+  <polygon points="40,150 150,110 260,110 260,150" fill="#654321" stroke="#543210" stroke-width="2"/>
+  
+  <!-- Front overhang -->
+  <polygon points="45,150 45,140 255,140 255,150" fill="#765432" stroke="#654321" stroke-width="1"/>
+  
+  <!-- Garage door -->
+  <rect x="80" y="200" width="60" height="80" fill="#666" stroke="#444" stroke-width="2" rx="3"/>
+  <rect x="160" y="200" width="60" height="80" fill="#666" stroke="#444" stroke-width="2" rx="3"/>
+  
+  <!-- Garage door panels -->
+  <g stroke="#555" stroke-width="1" fill="none">
+    <line x1="80" y1="215" x2="140" y2="215"/>
+    <line x1="80" y1="230" x2="140" y2="230"/>
+    <line x1="80" y1="245" x2="140" y2="245"/>
+    <line x1="80" y1="260" x2="140" y2="260"/>
+    
+    <line x1="160" y1="215" x2="220" y2="215"/>
+    <line x1="160" y1="230" x2="220" y2="230"/>
+    <line x1="160" y1="245" x2="220" y2="245"/>
+    <line x1="160" y1="260" x2="220" y2="260"/>
+  </g>
+  
+  <!-- Depot sign -->
+  <rect x="100" y="160" width="100" height="20" fill="#FFFFFF" stroke="#333" stroke-width="1" rx="3"/>
+  <text x="150" y="173" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">SCHOOL BUS DEPOT</text>
+</g>
+
+<!-- School bus with movement animation -->
+<g id="school-bus" transform="translate(300, 250)">
+  <!-- Bus movement animation from left to right -->
+  <animateTransform attributeName="transform" type="translate" values="300,250; 900,250" dur="8s" repeatCount="indefinite"/>
+  
+  <!-- Bus body -->
+  <rect x="0" y="0" width="120" height="40" rx="4" ry="4" fill="#FFD700" stroke="#E6C200" stroke-width="2"/>
+  
+  <!-- Bus front -->
+  <rect x="115" y="3" width="12" height="34" rx="6" ry="6" fill="#FFD700" stroke="#E6C200" stroke-width="2"/>
+  
+  <!-- Bus roof -->
+  <rect x="-2" y="-3" width="124" height="6" rx="3" ry="3" fill="#FFA500"/>
+  
+  <!-- Front bumper -->
+  <rect x="125" y="35" width="8" height="4" rx="2" ry="2" fill="#C0C0C0"/>
+  
+  <!-- Windows (tinted dark) -->
+  <rect x="110" y="6" width="8" height="12" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+  <rect x="100" y="6" width="8" height="12" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+  <rect x="90" y="6" width="8" height="12" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+  <rect x="80" y="6" width="8" height="12" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+  <rect x="70" y="6" width="8" height="12" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+  <rect x="60" y="6" width="8" height="12" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+  <rect x="50" y="6" width="8" height="12" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+  <rect x="40" y="6" width="8" height="12" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+  <rect x="30" y="6" width="8" height="12" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+  <rect x="20" y="6" width="8" height="12" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+  <rect x="10" y="6" width="8" height="12" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+  
+  <!-- Emergency exit window -->
+  <rect x="5" y="8" width="6" height="8" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+  
+  <!-- Door -->
+  <rect x="95" y="22" width="12" height="18" rx="1" ry="1" fill="#E6C200" stroke="#D4AF37" stroke-width="1"/>
+  <rect x="97" y="24" width="8" height="8" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+  <circle cx="99" cy="35" r="1" fill="#000"/>
+  
+  <!-- School Bus text -->
+  <text x="60" y="28" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#000">SCHOOL BUS</text>
+  
+  <!-- Orange stripe -->
+  <rect x="0" y="20" width="120" height="4" fill="#FFA500"/>
+  
+  <!-- Front headlight (glowing) -->
+  <circle cx="123" cy="12" r="3" fill="#FFFF00">
+    <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Rear lights -->
+  <rect x="2" y="8" width="3" height="4" rx="1.5" ry="1.5" fill="#FF0000"/>
+  <rect x="2" y="28" width="3" height="4" rx="1.5" ry="1.5" fill="#FF0000"/>
+  
+  <!-- Front wheel with spinning spokes -->
+  <g id="front-wheel">
+    <circle cx="25" cy="42" r="8" fill="#333" stroke="#222" stroke-width="2"/>
+    <circle cx="25" cy="42" r="4" fill="#666"/>
+    <circle cx="25" cy="42" r="2" fill="#999"/>
+    <g transform-origin="25 42">
+      <line x1="25" y1="36" x2="25" y2="48" stroke="#AAA" stroke-width="1"/>
+      <line x1="19" y1="42" x2="31" y2="42" stroke="#AAA" stroke-width="1"/>
+      <animateTransform attributeName="transform" type="rotate" values="0;360" dur="1s" repeatCount="indefinite"/>
+    </g>
+  </g>
+  
+  <!-- Rear wheel with spinning spokes -->
+  <g id="rear-wheel">
+    <circle cx="95" cy="42" r="8" fill="#333" stroke="#222" stroke-width="2"/>
+    <circle cx="95" cy="42" r="4" fill="#666"/>
+    <circle cx="95" cy="42" r="2" fill="#999"/>
+    <g transform-origin="95 42">
+      <line x1="95" y1="36" x2="95" y2="48" stroke="#AAA" stroke-width="1"/>
+      <line x1="89" y1="42" x2="101" y2="42" stroke="#AAA" stroke-width="1"/>
+      <animateTransform attributeName="transform" type="rotate" values="0;360" dur="1s" repeatCount="indefinite"/>
+    </g>
+  </g>
+</g>
+
+<!-- Sky Text -->
+<g id="sky-text" transform="translate(400, 40)">
+  <!-- Bold headline -->
+  <text x="0" y="0" text-anchor="middle" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="#1E3A56" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.8" style="filter: drop-shadow(0px 2px 3px rgba(255,255,255,0.6))">Every journey starts with a <tspan fill="#FFD700">publish</tspan>.</text>
+  <!-- Supporting description -->
+  <text x="0" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#3C556E" style="filter: drop-shadow(0px 1px 2px rgba(255,255,255,0.5))">The depot launches the event onto the route.</text>
+</g>
+
+<!-- Caption -->
+<g id="caption" transform="translate(400, 370)">
+  <rect x="-150" y="-10" width="300" height="25" fill="#FFFFFF" fill-opacity="0.9" stroke="#333" stroke-width="1" rx="5"/>
+  <text x="0" y="8" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">Bus leaves depot → publish(topic, payload)</text>
+</g>
+        </svg>
+      </div>
+    
+
+      <div class="scene-container" id="scene-2">
+        <div class="scene-title">
+          Scene 2: 2 MANIFEST
+        </div>
+        <svg width="100%" height="100%" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <filter id="sceneShadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.25"/></filter>
+<filter id="trafficLightGlow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <linearGradient id="roadGradient" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#404040"/><stop offset="0.5" stop-color="#505050"/><stop offset="1" stop-color="#404040"/></linearGradient>
+<linearGradient id="manifestGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00D9FF"/><stop offset="1" stop-color="#0099CC"/></linearGradient>
+          </defs>
+          <rect width="100%" height="100%" fill="#87CEEB"/>
+          
+        </svg>
+      </div>
+    
+
+      <div class="scene-container" id="scene-3">
+        <div class="scene-title">
+          Scene 3: 3 SUBSCRIBERS
+        </div>
+        <svg width="100%" height="100%" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <filter id="sceneShadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.25"/></filter>
+<filter id="subscriberGlow"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <linearGradient id="roadGradient" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#404040"/><stop offset="0.5" stop-color="#505050"/><stop offset="1" stop-color="#404040"/></linearGradient>
+<linearGradient id="liveSubscriberGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#32CD32"/><stop offset="1" stop-color="#228B22"/></linearGradient>
+<linearGradient id="lateSubscriberGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF6347"/><stop offset="1" stop-color="#DC143C"/></linearGradient>
+<linearGradient id="cacheGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4682B4"/><stop offset="1" stop-color="#2F4F4F"/></linearGradient>
+          </defs>
+          <rect width="100%" height="100%" fill="#87CEEB"/>
+          
+        </svg>
+      </div>
+    
+
+      <div class="scene-container" id="scene-4">
+        <div class="scene-title">
+          Scene 4: 4 CONDUCTOR
+        </div>
+        <svg width="100%" height="100%" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <filter id="sceneShadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.25"/></filter>
+<filter id="conductorGlow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <linearGradient id="roadGradient" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#404040"/><stop offset="0.5" stop-color="#505050"/><stop offset="1" stop-color="#404040"/></linearGradient>
+<linearGradient id="hubGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4682B4"/><stop offset="1" stop-color="#2F4F4F"/></linearGradient>
+<linearGradient id="conductorGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6B4EFF"/><stop offset="1" stop-color="#4A3ACD"/></linearGradient>
+          </defs>
+          <rect width="100%" height="100%" fill="#87CEEB"/>
+          
+        </svg>
+      </div>
+    
+
+      <div class="scene-container" id="scene-5">
+        <div class="scene-title">
+          Scene 5: 5 RULES
+        </div>
+        <svg width="100%" height="100%" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <filter id="sceneShadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.25"/></filter>
+<filter id="signGlow"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <linearGradient id="roadGradient" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#404040"/><stop offset="0.5" stop-color="#505050"/><stop offset="1" stop-color="#404040"/></linearGradient>
+<linearGradient id="warningGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFD700"/><stop offset="1" stop-color="#E6C200"/></linearGradient>
+<linearGradient id="safetyGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#228B22"/><stop offset="1" stop-color="#006400"/></linearGradient>
+<linearGradient id="controlGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4169E1"/><stop offset="1" stop-color="#191970"/></linearGradient>
+          </defs>
+          <rect width="100%" height="100%" fill="#87CEEB"/>
+          
+        </svg>
+      </div>
+    
+
+      <div class="scene-container" id="scene-6">
+        <div class="scene-title">
+          Scene 6: 6 SCHOOL
+        </div>
+        <svg width="100%" height="100%" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <filter id="sceneShadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.25"/></filter>
+<filter id="schoolGlow"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="celebrationGlow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <linearGradient id="roadGradient" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#404040"/><stop offset="0.5" stop-color="#505050"/><stop offset="1" stop-color="#404040"/></linearGradient>
+<linearGradient id="schoolGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#CD853F"/><stop offset="1" stop-color="#8B4513"/></linearGradient>
+<linearGradient id="roofGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8B0000"/><stop offset="1" stop-color="#654321"/></linearGradient>
+<linearGradient id="courtyardGradient" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#C0C0C0"/><stop offset="1" stop-color="#A0A0A0"/></linearGradient>
+          </defs>
+          <rect width="100%" height="100%" fill="#87CEEB"/>
+          
+        </svg>
+      </div>
+    
+    
+    <div class="progress-bar">
+      <div class="progress-fill"></div>
+    </div>
+  
+    
+    <div class="controls">
+      <button class="control-button" id="restart-btn">Restart</button>
+      <button class="control-button" id="prev-btn">Previous</button>
+      <button class="control-button" id="play-pause-btn">Pause</button>
+      <button class="control-button" id="next-btn">Next</button>
+    </div>
+  
+  </div>
+  
+    <script>
+      class CinematicPresentation {
+        constructor() {
+          this.currentScene = 0;
+          this.totalScenes = 6;
+          this.isPlaying = true;
+          this.totalDuration = 36;
+          this.startTime = Date.now();
+          
+          this.initializeControls();
+          this.startPresentation();
+        }
+        
+        initializeControls() {
+          const playPauseBtn = document.getElementById('play-pause-btn');
+          const prevBtn = document.getElementById('prev-btn');
+          const nextBtn = document.getElementById('next-btn');
+          const restartBtn = document.getElementById('restart-btn');
+          
+          if (playPauseBtn) {
+            playPauseBtn.addEventListener('click', () => this.togglePlayPause());
+          }
+          
+          if (prevBtn) {
+            prevBtn.addEventListener('click', () => this.previousScene());
+          }
+          
+          if (nextBtn) {
+            nextBtn.addEventListener('click', () => this.nextScene());
+          }
+          
+          if (restartBtn) {
+            restartBtn.addEventListener('click', () => this.restart());
+          }
+          
+          // Keyboard controls
+          document.addEventListener('keydown', (e) => {
+            switch(e.key) {
+              case ' ':
+                e.preventDefault();
+                this.togglePlayPause();
+                break;
+              case 'ArrowLeft':
+                this.previousScene();
+                break;
+              case 'ArrowRight':
+                this.nextScene();
+                break;
+              case 'r':
+                this.restart();
+                break;
+            }
+          });
+        }
+        
+        startPresentation() {
+          if (this.isPlaying) {
+            this.showScene(0);
+            this.scheduleNextScene();
+          }
+        }
+        
+        showScene(sceneIndex) {
+          const scenes = document.querySelectorAll('.scene-container');
+          const titles = document.querySelectorAll('.scene-title');
+          
+          // Hide all scenes
+          scenes.forEach((scene, index) => {
+            scene.classList.remove('active');
+            if (index === sceneIndex) {
+              setTimeout(() => {
+                scene.classList.add('active');
+              }, 100);
+            }
+          });
+          
+          // Update title
+          titles.forEach((title, index) => {
+            title.style.display = index === sceneIndex ? 'block' : 'none';
+          });
+          
+          this.currentScene = sceneIndex;
+          this.updateProgress();
+        }
+        
+        scheduleNextScene() {
+          if (!this.isPlaying) return;
+          
+          const currentSceneData = [{"id":"event-router-scene-1-depot","canvas":{"width":800,"height":400},"bg":"#87CEEB","defs":{"filters":["<filter id=\"sceneShadow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\"><feDropShadow dx=\"0\" dy=\"4\" stdDeviation=\"8\" flood-color=\"#000\" flood-opacity=\"0.25\"/></filter>","<filter id=\"busGlow\"><feGaussianBlur stdDeviation=\"2\" result=\"b\"/><feMerge><feMergeNode in=\"b\"/><feMergeNode in=\"SourceGraphic\"/></feMerge></filter>"],"gradients":["<linearGradient id=\"roadGradient\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0\" stop-color=\"#404040\"/><stop offset=\"0.5\" stop-color=\"#505050\"/><stop offset=\"1\" stop-color=\"#404040\"/></linearGradient>","<linearGradient id=\"busGradient\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0\" stop-color=\"#FFD700\"/><stop offset=\"0.5\" stop-color=\"#FFA500\"/><stop offset=\"1\" stop-color=\"#FFD700\"/></linearGradient>"],"rawSvg":["<!-- Scene 1: The bus leaving the depot with animations -->","<!-- Background sky -->","<rect x=\"0\" y=\"0\" width=\"800\" height=\"250\" fill=\"#87CEEB\"/>","","<!-- Clouds -->","<g fill=\"#FFFFFF\" opacity=\"0.8\">","  <!-- Cloud 1 -->","  <circle cx=\"150\" cy=\"60\" r=\"20\"/>","  <circle cx=\"170\" cy=\"60\" r=\"15\"/>","  <circle cx=\"130\" cy=\"65\" r=\"12\"/>","  <circle cx=\"165\" cy=\"50\" r=\"10\"/>","  ","  <!-- Cloud 2 -->","  <circle cx=\"600\" cy=\"80\" r=\"25\"/>","  <circle cx=\"625\" cy=\"80\" r=\"18\"/>","  <circle cx=\"580\" cy=\"85\" r=\"15\"/>","  <circle cx=\"620\" cy=\"65\" r=\"12\"/>","  ","  <!-- Cloud 3 -->","  <circle cx=\"400\" cy=\"50\" r=\"18\"/>","  <circle cx=\"420\" cy=\"50\" r=\"12\"/>","  <circle cx=\"385\" cy=\"55\" r=\"10\"/>","</g>","","<!-- Ground/grass verges -->","<rect x=\"0\" y=\"250\" width=\"800\" height=\"150\" fill=\"#4A6B3A\"/>","","<!-- Road -->","<rect x=\"0\" y=\"280\" width=\"800\" height=\"60\" fill=\"#404040\"/>","","<!-- Road edges -->","<rect x=\"0\" y=\"278\" width=\"800\" height=\"2\" fill=\"#606060\"/>","<rect x=\"0\" y=\"340\" width=\"800\" height=\"2\" fill=\"#606060\"/>","","<!-- Dashed center line -->","<g fill=\"#FFFF00\">","  <rect x=\"50\" y=\"308\" width=\"40\" height=\"4\"/>","  <rect x=\"120\" y=\"308\" width=\"40\" height=\"4\"/>","  <rect x=\"190\" y=\"308\" width=\"40\" height=\"4\"/>","  <rect x=\"260\" y=\"308\" width=\"40\" height=\"4\"/>","  <rect x=\"330\" y=\"308\" width=\"40\" height=\"4\"/>","  <rect x=\"400\" y=\"308\" width=\"40\" height=\"4\"/>","  <rect x=\"470\" y=\"308\" width=\"40\" height=\"4\"/>","  <rect x=\"540\" y=\"308\" width=\"40\" height=\"4\"/>","  <rect x=\"610\" y=\"308\" width=\"40\" height=\"4\"/>","  <rect x=\"680\" y=\"308\" width=\"40\" height=\"4\"/>","  <rect x=\"750\" y=\"308\" width=\"40\" height=\"4\"/>","</g>","","<!-- Depot building -->","<g id=\"depot\">","  <!-- Main building structure -->","  <rect x=\"50\" y=\"150\" width=\"200\" height=\"130\" fill=\"#8B7355\" stroke=\"#6B5535\" stroke-width=\"2\"/>","  ","  <!-- Roof -->","  <polygon points=\"40,150 150,110 260,110 260,150\" fill=\"#654321\" stroke=\"#543210\" stroke-width=\"2\"/>","  ","  <!-- Front overhang -->","  <polygon points=\"45,150 45,140 255,140 255,150\" fill=\"#765432\" stroke=\"#654321\" stroke-width=\"1\"/>","  ","  <!-- Garage door -->","  <rect x=\"80\" y=\"200\" width=\"60\" height=\"80\" fill=\"#666\" stroke=\"#444\" stroke-width=\"2\" rx=\"3\"/>","  <rect x=\"160\" y=\"200\" width=\"60\" height=\"80\" fill=\"#666\" stroke=\"#444\" stroke-width=\"2\" rx=\"3\"/>","  ","  <!-- Garage door panels -->","  <g stroke=\"#555\" stroke-width=\"1\" fill=\"none\">","    <line x1=\"80\" y1=\"215\" x2=\"140\" y2=\"215\"/>","    <line x1=\"80\" y1=\"230\" x2=\"140\" y2=\"230\"/>","    <line x1=\"80\" y1=\"245\" x2=\"140\" y2=\"245\"/>","    <line x1=\"80\" y1=\"260\" x2=\"140\" y2=\"260\"/>","    ","    <line x1=\"160\" y1=\"215\" x2=\"220\" y2=\"215\"/>","    <line x1=\"160\" y1=\"230\" x2=\"220\" y2=\"230\"/>","    <line x1=\"160\" y1=\"245\" x2=\"220\" y2=\"245\"/>","    <line x1=\"160\" y1=\"260\" x2=\"220\" y2=\"260\"/>","  </g>","  ","  <!-- Depot sign -->","  <rect x=\"100\" y=\"160\" width=\"100\" height=\"20\" fill=\"#FFFFFF\" stroke=\"#333\" stroke-width=\"1\" rx=\"3\"/>","  <text x=\"150\" y=\"173\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"12\" font-weight=\"bold\" fill=\"#333\">SCHOOL BUS DEPOT</text>","</g>","","<!-- School bus with movement animation -->","<g id=\"school-bus\" transform=\"translate(300, 250)\">","  <!-- Bus movement animation from left to right -->","  <animateTransform attributeName=\"transform\" type=\"translate\" values=\"300,250; 900,250\" dur=\"8s\" repeatCount=\"indefinite\"/>","  ","  <!-- Bus body -->","  <rect x=\"0\" y=\"0\" width=\"120\" height=\"40\" rx=\"4\" ry=\"4\" fill=\"#FFD700\" stroke=\"#E6C200\" stroke-width=\"2\"/>","  ","  <!-- Bus front -->","  <rect x=\"115\" y=\"3\" width=\"12\" height=\"34\" rx=\"6\" ry=\"6\" fill=\"#FFD700\" stroke=\"#E6C200\" stroke-width=\"2\"/>","  ","  <!-- Bus roof -->","  <rect x=\"-2\" y=\"-3\" width=\"124\" height=\"6\" rx=\"3\" ry=\"3\" fill=\"#FFA500\"/>","  ","  <!-- Front bumper -->","  <rect x=\"125\" y=\"35\" width=\"8\" height=\"4\" rx=\"2\" ry=\"2\" fill=\"#C0C0C0\"/>","  ","  <!-- Windows (tinted dark) -->","  <rect x=\"110\" y=\"6\" width=\"8\" height=\"12\" rx=\"1\" ry=\"1\" fill=\"#2F4F4F\" opacity=\"0.8\"/>","  <rect x=\"100\" y=\"6\" width=\"8\" height=\"12\" rx=\"1\" ry=\"1\" fill=\"#2F4F4F\" opacity=\"0.8\"/>","  <rect x=\"90\" y=\"6\" width=\"8\" height=\"12\" rx=\"1\" ry=\"1\" fill=\"#2F4F4F\" opacity=\"0.8\"/>","  <rect x=\"80\" y=\"6\" width=\"8\" height=\"12\" rx=\"1\" ry=\"1\" fill=\"#2F4F4F\" opacity=\"0.8\"/>","  <rect x=\"70\" y=\"6\" width=\"8\" height=\"12\" rx=\"1\" ry=\"1\" fill=\"#2F4F4F\" opacity=\"0.8\"/>","  <rect x=\"60\" y=\"6\" width=\"8\" height=\"12\" rx=\"1\" ry=\"1\" fill=\"#2F4F4F\" opacity=\"0.8\"/>","  <rect x=\"50\" y=\"6\" width=\"8\" height=\"12\" rx=\"1\" ry=\"1\" fill=\"#2F4F4F\" opacity=\"0.8\"/>","  <rect x=\"40\" y=\"6\" width=\"8\" height=\"12\" rx=\"1\" ry=\"1\" fill=\"#2F4F4F\" opacity=\"0.8\"/>","  <rect x=\"30\" y=\"6\" width=\"8\" height=\"12\" rx=\"1\" ry=\"1\" fill=\"#2F4F4F\" opacity=\"0.8\"/>","  <rect x=\"20\" y=\"6\" width=\"8\" height=\"12\" rx=\"1\" ry=\"1\" fill=\"#2F4F4F\" opacity=\"0.8\"/>","  <rect x=\"10\" y=\"6\" width=\"8\" height=\"12\" rx=\"1\" ry=\"1\" fill=\"#2F4F4F\" opacity=\"0.8\"/>","  ","  <!-- Emergency exit window -->","  <rect x=\"5\" y=\"8\" width=\"6\" height=\"8\" rx=\"1\" ry=\"1\" fill=\"#2F4F4F\" opacity=\"0.8\"/>","  ","  <!-- Door -->","  <rect x=\"95\" y=\"22\" width=\"12\" height=\"18\" rx=\"1\" ry=\"1\" fill=\"#E6C200\" stroke=\"#D4AF37\" stroke-width=\"1\"/>","  <rect x=\"97\" y=\"24\" width=\"8\" height=\"8\" rx=\"1\" ry=\"1\" fill=\"#2F4F4F\" opacity=\"0.8\"/>","  <circle cx=\"99\" cy=\"35\" r=\"1\" fill=\"#000\"/>","  ","  <!-- School Bus text -->","  <text x=\"60\" y=\"28\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"8\" font-weight=\"bold\" fill=\"#000\">SCHOOL BUS</text>","  ","  <!-- Orange stripe -->","  <rect x=\"0\" y=\"20\" width=\"120\" height=\"4\" fill=\"#FFA500\"/>","  ","  <!-- Front headlight (glowing) -->","  <circle cx=\"123\" cy=\"12\" r=\"3\" fill=\"#FFFF00\">","    <animate attributeName=\"opacity\" values=\"0.8;1;0.8\" dur=\"2s\" repeatCount=\"indefinite\"/>","  </circle>","  ","  <!-- Rear lights -->","  <rect x=\"2\" y=\"8\" width=\"3\" height=\"4\" rx=\"1.5\" ry=\"1.5\" fill=\"#FF0000\"/>","  <rect x=\"2\" y=\"28\" width=\"3\" height=\"4\" rx=\"1.5\" ry=\"1.5\" fill=\"#FF0000\"/>","  ","  <!-- Front wheel with spinning spokes -->","  <g id=\"front-wheel\">","    <circle cx=\"25\" cy=\"42\" r=\"8\" fill=\"#333\" stroke=\"#222\" stroke-width=\"2\"/>","    <circle cx=\"25\" cy=\"42\" r=\"4\" fill=\"#666\"/>","    <circle cx=\"25\" cy=\"42\" r=\"2\" fill=\"#999\"/>","    <g transform-origin=\"25 42\">","      <line x1=\"25\" y1=\"36\" x2=\"25\" y2=\"48\" stroke=\"#AAA\" stroke-width=\"1\"/>","      <line x1=\"19\" y1=\"42\" x2=\"31\" y2=\"42\" stroke=\"#AAA\" stroke-width=\"1\"/>","      <animateTransform attributeName=\"transform\" type=\"rotate\" values=\"0;360\" dur=\"1s\" repeatCount=\"indefinite\"/>","    </g>","  </g>","  ","  <!-- Rear wheel with spinning spokes -->","  <g id=\"rear-wheel\">","    <circle cx=\"95\" cy=\"42\" r=\"8\" fill=\"#333\" stroke=\"#222\" stroke-width=\"2\"/>","    <circle cx=\"95\" cy=\"42\" r=\"4\" fill=\"#666\"/>","    <circle cx=\"95\" cy=\"42\" r=\"2\" fill=\"#999\"/>","    <g transform-origin=\"95 42\">","      <line x1=\"95\" y1=\"36\" x2=\"95\" y2=\"48\" stroke=\"#AAA\" stroke-width=\"1\"/>","      <line x1=\"89\" y1=\"42\" x2=\"101\" y2=\"42\" stroke=\"#AAA\" stroke-width=\"1\"/>","      <animateTransform attributeName=\"transform\" type=\"rotate\" values=\"0;360\" dur=\"1s\" repeatCount=\"indefinite\"/>","    </g>","  </g>","</g>","","<!-- Sky Text -->","<g id=\"sky-text\" transform=\"translate(400, 40)\">","  <!-- Bold headline -->","  <text x=\"0\" y=\"0\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"40\" font-weight=\"bold\" fill=\"#1E3A56\" stroke=\"#FFFFFF\" stroke-width=\"2\" stroke-opacity=\"0.8\" style=\"filter: drop-shadow(0px 2px 3px rgba(255,255,255,0.6))\">Every journey starts with a <tspan fill=\"#FFD700\">publish</tspan>.</text>","  <!-- Supporting description -->","  <text x=\"0\" y=\"35\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"24\" fill=\"#3C556E\" style=\"filter: drop-shadow(0px 1px 2px rgba(255,255,255,0.5))\">The depot launches the event onto the route.</text>","</g>","","<!-- Caption -->","<g id=\"caption\" transform=\"translate(400, 370)\">","  <rect x=\"-150\" y=\"-10\" width=\"300\" height=\"25\" fill=\"#FFFFFF\" fill-opacity=\"0.9\" stroke=\"#333\" stroke-width=\"1\" rx=\"5\"/>","  <text x=\"0\" y=\"8\" text-anchor=\"middle\" font-family=\"Arial, sans-serif\" font-size=\"14\" font-weight=\"bold\" fill=\"#333\">Bus leaves depot → publish(topic, payload)</text>","</g>"]},"nodes":[{"kind":"raw-svg","id":"scene-1-content","title":"Scene 1: Publisher Origin (Bus Leaves Depot)","at":{"x":0,"y":0},"size":{"width":800,"height":400},"rawSvg":"USE_DEFS_RAWSVG"}],"position":{"x":100,"y":100},"busTravel":{"entryPoint":{"x":100,"y":300},"exitPoint":{"x":900,"y":300},"duration":3},"timing":{"sceneStart":0,"sceneDuration":4,"busArrival":0.5,"busDeparture":3.5},"cinematic":{"duration":5,"transition":{"type":"slide","duration":1,"direction":"right","easing":"ease-in-out"},"viewport":{"width":1200,"height":800}}},{"id":"event-router-scene-2-manifest","canvas":{"width":800,"height":400},"bg":"#87CEEB","defs":{"filters":["<filter id=\"sceneShadow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\"><feDropShadow dx=\"0\" dy=\"4\" stdDeviation=\"8\" flood-color=\"#000\" flood-opacity=\"0.25\"/></filter>","<filter id=\"trafficLightGlow\"><feGaussianBlur stdDeviation=\"3\" result=\"b\"/><feMerge><feMergeNode in=\"b\"/><feMergeNode in=\"SourceGraphic\"/></feMerge></filter>"],"gradients":["<linearGradient id=\"roadGradient\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0\" stop-color=\"#404040\"/><stop offset=\"0.5\" stop-color=\"#505050\"/><stop offset=\"1\" stop-color=\"#404040\"/></linearGradient>","<linearGradient id=\"manifestGradient\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#00D9FF\"/><stop offset=\"1\" stop-color=\"#0099CC\"/></linearGradient>"]},"nodes":[{"kind":"boundary","id":"scene-2-boundary","title":"Scene 2: Manifest & Debounce (Rules of the Road)","at":{"x":20,"y":20},"size":{"width":760,"height":360},"style":{"fill":"#FFF8E1","stroke":"#FF9800","strokeWidth":2,"labelColor":"#FF9800","filter":"url(#sceneShadow)"},"grid":{"cols":4,"rowH":80,"gutter":20,"padding":20},"policy":{"mode":"strict","overflow":"clip","tolerance":2,"snap":{"grid":4}},"children":[{"kind":"shape","id":"sky-background","at":{"x":0,"y":0},"size":{"width":760,"height":200},"shape":"rect","style":{"fill":"#87CEEB","stroke":"none"}},{"kind":"shape","id":"ground","at":{"x":0,"y":200},"size":{"width":760,"height":120},"shape":"rect","style":{"fill":"#4A6B3A","stroke":"none"}},{"kind":"shape","id":"road","at":{"x":0,"y":230},"size":{"width":760,"height":60},"shape":"rect","style":{"fill":"url(#roadGradient)","stroke":"#606060","strokeWidth":2}},{"kind":"shape","id":"traffic-light-pole","at":{"x":600,"y":150},"size":{"width":6,"height":80},"shape":"rect","style":{"fill":"#666666","stroke":"none"}},{"kind":"shape","id":"traffic-light-box","at":{"x":590,"y":150},"size":{"width":26,"height":60},"shape":"roundedRect","style":{"fill":"#333333","stroke":"#222222","strokeWidth":2}},{"kind":"shape","id":"red-light","at":{"x":603,"y":160},"size":{"width":10,"height":10},"shape":"circle","style":{"fill":"#FF0000","stroke":"none","filter":"url(#trafficLightGlow)"}},{"kind":"shape","id":"yellow-light","at":{"x":603,"y":175},"size":{"width":10,"height":10},"shape":"circle","style":{"fill":"#806000","stroke":"none"}},{"kind":"shape","id":"green-light","at":{"x":603,"y":190},"size":{"width":10,"height":10},"shape":"circle","style":{"fill":"#008000","stroke":"none"}},{"kind":"shape","id":"manifest-board","at":{"x":100,"y":80},"size":{"width":200,"height":120},"shape":"roundedRect","style":{"fill":"url(#manifestGradient)","stroke":"#0099CC","strokeWidth":3}},{"kind":"text","id":"manifest-title","at":{"x":200,"y":100},"text":"EVENT MANIFEST","style":{"fill":"#FFFFFF","fontSize":14,"fontWeight":"bold","textAnchor":"middle"}},{"kind":"text","id":"manifest-content","at":{"x":200,"y":130},"text":"{ topic: 'student.pickup',\n  payload: { route: 'A1', stop: 3 },\n  timestamp: Date.now() }","style":{"fill":"#FFFFFF","fontSize":10,"fontFamily":"monospace","textAnchor":"middle"}},{"kind":"shape","id":"debounce-funnel","at":{"x":400,"y":240},"size":{"width":80,"height":30},"shape":"polygon","style":{"fill":"#FFFF00","opacity":0.7,"stroke":"#E6E600","strokeWidth":2}},{"kind":"text","id":"debounce-label","at":{"x":440,"y":280},"text":"DEBOUNCE","style":{"fill":"#E6E600","fontSize":10,"fontWeight":"bold","textAnchor":"middle"}},{"kind":"shape","id":"school-bus","at":{"x":350,"y":200},"size":{"width":120,"height":40},"shape":"roundedRect","style":{"fill":"#FFD700","stroke":"#E6C200","strokeWidth":2}},{"kind":"text","id":"bus-label","at":{"x":410,"y":215},"text":"SCHOOL BUS","style":{"fill":"#000000","fontSize":8,"fontWeight":"bold","textAnchor":"middle"}},{"kind":"text","id":"sky-headline","at":{"x":380,"y":40},"text":"Rules of the road apply.","style":{"fill":"#1E3A56","fontSize":24,"fontWeight":"bold","textAnchor":"middle","stroke":"#FFFFFF","strokeWidth":1}},{"kind":"text","id":"sky-description","at":{"x":380,"y":65},"text":"Manifest validation and debounce controls ensure safe passage.","style":{"fill":"#3C556E","fontSize":16,"textAnchor":"middle"}},{"kind":"text","id":"scene-caption","at":{"x":380,"y":320},"text":"Manifest validation + debounce → controlled event flow","style":{"fill":"#FF9800","fontSize":14,"fontWeight":"bold","textAnchor":"middle"}}]}],"ports":[{"id":"manifest-in","nodeId":"scene-2-boundary","side":"left","offset":180},{"id":"debounce-out","nodeId":"scene-2-boundary","side":"right","offset":180}],"flows":[{"id":"manifest-validation-flow","path":"manifest-in -> debounce-out","token":{"size":6,"color":"#00D9FF","trail":{"length":100,"opacity":0.4}},"speed":80,"loop":true,"activate":{"boundaryIds":["scene-2-boundary"],"className":"active-scene"}}],"position":{"x":1000,"y":100},"busTravel":{"entryPoint":{"x":1000,"y":300},"exitPoint":{"x":1800,"y":300},"duration":3},"timing":{"sceneStart":4,"sceneDuration":4,"busArrival":4.5,"busDeparture":7.5},"cinematic":{"duration":5,"transition":{"type":"fade","duration":1,"easing":"ease-in-out"},"viewport":{"width":1200,"height":800}}},{"id":"event-router-scene-3-subscribers","canvas":{"width":800,"height":400},"bg":"#87CEEB","defs":{"filters":["<filter id=\"sceneShadow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\"><feDropShadow dx=\"0\" dy=\"4\" stdDeviation=\"8\" flood-color=\"#000\" flood-opacity=\"0.25\"/></filter>","<filter id=\"subscriberGlow\"><feGaussianBlur stdDeviation=\"2\" result=\"b\"/><feMerge><feMergeNode in=\"b\"/><feMergeNode in=\"SourceGraphic\"/></feMerge></filter>"],"gradients":["<linearGradient id=\"roadGradient\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0\" stop-color=\"#404040\"/><stop offset=\"0.5\" stop-color=\"#505050\"/><stop offset=\"1\" stop-color=\"#404040\"/></linearGradient>","<linearGradient id=\"liveSubscriberGradient\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#32CD32\"/><stop offset=\"1\" stop-color=\"#228B22\"/></linearGradient>","<linearGradient id=\"lateSubscriberGradient\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#FF6347\"/><stop offset=\"1\" stop-color=\"#DC143C\"/></linearGradient>","<linearGradient id=\"cacheGradient\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#4682B4\"/><stop offset=\"1\" stop-color=\"#2F4F4F\"/></linearGradient>"]},"nodes":[{"kind":"boundary","id":"scene-3-boundary","title":"Scene 3: Subscribers & Replay Cache (First Stop)","at":{"x":20,"y":20},"size":{"width":760,"height":360},"style":{"fill":"#E8F5E8","stroke":"#4CAF50","strokeWidth":2,"labelColor":"#4CAF50","filter":"url(#sceneShadow)"},"grid":{"cols":4,"rowH":80,"gutter":20,"padding":20},"policy":{"mode":"strict","overflow":"clip","tolerance":2,"snap":{"grid":4}},"children":[{"kind":"shape","id":"sky-background","at":{"x":0,"y":0},"size":{"width":760,"height":200},"shape":"rect","style":{"fill":"#87CEEB","stroke":"none"}},{"kind":"shape","id":"ground","at":{"x":0,"y":200},"size":{"width":760,"height":120},"shape":"rect","style":{"fill":"#4A6B3A","stroke":"none"}},{"kind":"shape","id":"road","at":{"x":0,"y":230},"size":{"width":760,"height":60},"shape":"rect","style":{"fill":"url(#roadGradient)","stroke":"#606060","strokeWidth":2}},{"kind":"shape","id":"bus-stop-pole","at":{"x":400,"y":150},"size":{"width":6,"height":80},"shape":"rect","style":{"fill":"#666666","stroke":"none"}},{"kind":"shape","id":"bus-stop-sign","at":{"x":380,"y":150},"size":{"width":50,"height":30},"shape":"roundedRect","style":{"fill":"#FFFFFF","stroke":"#333333","strokeWidth":2}},{"kind":"text","id":"bus-stop-text","at":{"x":405,"y":165},"text":"BUS STOP","style":{"fill":"#333333","fontSize":8,"fontWeight":"bold","textAnchor":"middle"}},{"kind":"shape","id":"live-subscriber-1","at":{"x":450,"y":270},"size":{"width":30,"height":40},"shape":"roundedRect","style":{"fill":"url(#liveSubscriberGradient)","stroke":"#228B22","strokeWidth":2,"filter":"url(#subscriberGlow)"}},{"kind":"text","id":"live-subscriber-1-label","at":{"x":465,"y":285},"text":"LIVE","style":{"fill":"#FFFFFF","fontSize":8,"fontWeight":"bold","textAnchor":"middle"}},{"kind":"shape","id":"live-subscriber-2","at":{"x":500,"y":270},"size":{"width":30,"height":40},"shape":"roundedRect","style":{"fill":"url(#liveSubscriberGradient)","stroke":"#228B22","strokeWidth":2,"filter":"url(#subscriberGlow)"}},{"kind":"text","id":"live-subscriber-2-label","at":{"x":515,"y":285},"text":"LIVE","style":{"fill":"#FFFFFF","fontSize":8,"fontWeight":"bold","textAnchor":"middle"}},{"kind":"shape","id":"late-subscriber","at":{"x":600,"y":270},"size":{"width":30,"height":40},"shape":"roundedRect","style":{"fill":"url(#lateSubscriberGradient)","stroke":"#DC143C","strokeWidth":2}},{"kind":"text","id":"late-subscriber-label","at":{"x":615,"y":285},"text":"LATE","style":{"fill":"#FFFFFF","fontSize":8,"fontWeight":"bold","textAnchor":"middle"}},{"kind":"shape","id":"replay-cache","at":{"x":100,"y":80},"size":{"width":150,"height":100},"shape":"roundedRect","style":{"fill":"url(#cacheGradient)","stroke":"#2F4F4F","strokeWidth":3}},{"kind":"text","id":"cache-title","at":{"x":175,"y":100},"text":"REPLAY CACHE","style":{"fill":"#FFFFFF","fontSize":12,"fontWeight":"bold","textAnchor":"middle"}},{"kind":"text","id":"cache-content","at":{"x":175,"y":130},"text":"[ event1, event2, event3 ]\nBuffer: 100ms\nRetention: 5min","style":{"fill":"#FFFFFF","fontSize":9,"fontFamily":"monospace","textAnchor":"middle"}},{"kind":"shape","id":"school-bus","at":{"x":320,"y":200},"size":{"width":120,"height":40},"shape":"roundedRect","style":{"fill":"#FFD700","stroke":"#E6C200","strokeWidth":2}},{"kind":"text","id":"bus-label","at":{"x":380,"y":215},"text":"SCHOOL BUS","style":{"fill":"#000000","fontSize":8,"fontWeight":"bold","textAnchor":"middle"}},{"kind":"text","id":"sky-headline","at":{"x":380,"y":40},"text":"Subscribers board the bus.","style":{"fill":"#1E3A56","fontSize":24,"fontWeight":"bold","textAnchor":"middle","stroke":"#FFFFFF","strokeWidth":1}},{"kind":"text","id":"sky-description","at":{"x":380,"y":65},"text":"Live subscribers get events immediately. Late ones use replay cache.","style":{"fill":"#3C556E","fontSize":16,"textAnchor":"middle"}},{"kind":"text","id":"scene-caption","at":{"x":380,"y":320},"text":"Live & late subscribers + replay cache → reliable event delivery","style":{"fill":"#4CAF50","fontSize":14,"fontWeight":"bold","textAnchor":"middle"}}]}],"ports":[{"id":"subscribers-in","nodeId":"scene-3-boundary","side":"left","offset":180},{"id":"subscribers-out","nodeId":"scene-3-boundary","side":"right","offset":180}],"flows":[{"id":"subscriber-delivery-flow","path":"subscribers-in -> subscribers-out","token":{"size":6,"color":"#32CD32","trail":{"length":100,"opacity":0.4}},"speed":90,"loop":true,"activate":{"boundaryIds":["scene-3-boundary"],"className":"active-scene"}}],"position":{"x":1900,"y":100},"busTravel":{"entryPoint":{"x":1900,"y":300},"exitPoint":{"x":2700,"y":300},"duration":3},"timing":{"sceneStart":8,"sceneDuration":4,"busArrival":8.5,"busDeparture":11.5},"cinematic":{"duration":5,"transition":{"type":"slide","duration":1,"direction":"right","easing":"ease-in-out"},"viewport":{"width":1200,"height":800}}},{"id":"event-router-scene-4-conductor","canvas":{"width":800,"height":400},"bg":"#87CEEB","defs":{"filters":["<filter id=\"sceneShadow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\"><feDropShadow dx=\"0\" dy=\"4\" stdDeviation=\"8\" flood-color=\"#000\" flood-opacity=\"0.25\"/></filter>","<filter id=\"conductorGlow\"><feGaussianBlur stdDeviation=\"3\" result=\"b\"/><feMerge><feMergeNode in=\"b\"/><feMergeNode in=\"SourceGraphic\"/></feMerge></filter>"],"gradients":["<linearGradient id=\"roadGradient\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0\" stop-color=\"#404040\"/><stop offset=\"0.5\" stop-color=\"#505050\"/><stop offset=\"1\" stop-color=\"#404040\"/></linearGradient>","<linearGradient id=\"hubGradient\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#4682B4\"/><stop offset=\"1\" stop-color=\"#2F4F4F\"/></linearGradient>","<linearGradient id=\"conductorGradient\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#6B4EFF\"/><stop offset=\"1\" stop-color=\"#4A3ACD\"/></linearGradient>"]},"nodes":[{"kind":"boundary","id":"scene-4-boundary","title":"Scene 4: Conductor Hub (Transfer & Orchestration)","at":{"x":20,"y":20},"size":{"width":760,"height":360},"style":{"fill":"#F3E5F5","stroke":"#9C27B0","strokeWidth":2,"labelColor":"#9C27B0","filter":"url(#sceneShadow)"},"grid":{"cols":4,"rowH":80,"gutter":20,"padding":20},"policy":{"mode":"strict","overflow":"clip","tolerance":2,"snap":{"grid":4}},"children":[{"kind":"shape","id":"sky-background","at":{"x":0,"y":0},"size":{"width":760,"height":200},"shape":"rect","style":{"fill":"#87CEEB","stroke":"none"}},{"kind":"shape","id":"ground","at":{"x":0,"y":200},"size":{"width":760,"height":120},"shape":"rect","style":{"fill":"#4A6B3A","stroke":"none"}},{"kind":"shape","id":"main-road","at":{"x":0,"y":230},"size":{"width":400,"height":60},"shape":"rect","style":{"fill":"url(#roadGradient)","stroke":"#606060","strokeWidth":2}},{"kind":"shape","id":"continuation-road","at":{"x":500,"y":230},"size":{"width":260,"height":60},"shape":"rect","style":{"fill":"url(#roadGradient)","stroke":"#606060","strokeWidth":2}},{"kind":"shape","id":"upper-branch","at":{"x":450,"y":180},"size":{"width":100,"height":30},"shape":"polygon","style":{"fill":"#404040","stroke":"#606060","strokeWidth":2}},{"kind":"shape","id":"lower-branch","at":{"x":450,"y":310},"size":{"width":100,"height":30},"shape":"polygon","style":{"fill":"#404040","stroke":"#606060","strokeWidth":2}},{"kind":"shape","id":"transfer-hub","at":{"x":400,"y":210},"size":{"width":100,"height":100},"shape":"circle","style":{"fill":"url(#hubGradient)","stroke":"#2F4F4F","strokeWidth":3}},{"kind":"shape","id":"conductor-center","at":{"x":425,"y":235},"size":{"width":50,"height":50},"shape":"circle","style":{"fill":"url(#conductorGradient)","stroke":"#4A3ACD","strokeWidth":2,"filter":"url(#conductorGlow)"}},{"kind":"text","id":"conductor-label","at":{"x":450,"y":275},"text":"Conductor: play()","style":{"fill":"#FFFFFF","fontSize":10,"fontWeight":"bold","textAnchor":"middle"}},{"kind":"shape","id":"plugin-a-bus","at":{"x":520,"y":160},"size":{"width":80,"height":30},"shape":"roundedRect","style":{"fill":"#32CD32","stroke":"#228B22","strokeWidth":2}},{"kind":"text","id":"plugin-a-label","at":{"x":560,"y":175},"text":"PLUGIN A","style":{"fill":"#FFFFFF","fontSize":8,"fontWeight":"bold","textAnchor":"middle"}},{"kind":"shape","id":"plugin-b-bus","at":{"x":520,"y":320},"size":{"width":80,"height":30},"shape":"roundedRect","style":{"fill":"#FF6347","stroke":"#DC143C","strokeWidth":2}},{"kind":"text","id":"plugin-b-label","at":{"x":560,"y":335},"text":"PLUGIN B","style":{"fill":"#FFFFFF","fontSize":8,"fontWeight":"bold","textAnchor":"middle"}},{"kind":"shape","id":"school-bus","at":{"x":300,"y":200},"size":{"width":120,"height":40},"shape":"roundedRect","style":{"fill":"#FFD700","stroke":"#E6C200","strokeWidth":2}},{"kind":"text","id":"bus-label","at":{"x":360,"y":215},"text":"SCHOOL BUS","style":{"fill":"#000000","fontSize":8,"fontWeight":"bold","textAnchor":"middle"}},{"kind":"text","id":"sky-headline","at":{"x":380,"y":40},"text":"The Conductor orchestrates the flow.","style":{"fill":"#1E3A56","fontSize":24,"fontWeight":"bold","textAnchor":"middle","stroke":"#FFFFFF","strokeWidth":1}},{"kind":"text","id":"sky-description","at":{"x":380,"y":65},"text":"At the hub, events branch into sequences and plugins.","style":{"fill":"#3C556E","fontSize":16,"textAnchor":"middle"}},{"kind":"text","id":"scene-caption","at":{"x":380,"y":320},"text":"Special hub: topics route into sequences via Conductor (plugins)","style":{"fill":"#9C27B0","fontSize":14,"fontWeight":"bold","textAnchor":"middle"}}]}],"ports":[{"id":"conductor-in","nodeId":"scene-4-boundary","side":"left","offset":180},{"id":"plugin-a-out","nodeId":"scene-4-boundary","side":"top","offset":520},{"id":"plugin-b-out","nodeId":"scene-4-boundary","side":"bottom","offset":520},{"id":"conductor-out","nodeId":"scene-4-boundary","side":"right","offset":180}],"flows":[{"id":"conductor-orchestration-flow","path":"conductor-in -> plugin-a-out","token":{"size":6,"color":"#6B4EFF","trail":{"length":100,"opacity":0.4}},"speed":85,"loop":true,"activate":{"boundaryIds":["scene-4-boundary"],"className":"active-scene"}},{"id":"conductor-branch-flow","path":"conductor-in -> plugin-b-out","token":{"size":6,"color":"#6B4EFF","trail":{"length":100,"opacity":0.4}},"speed":85,"loop":true,"delay":2000},{"id":"conductor-main-flow","path":"conductor-in -> conductor-out","token":{"size":6,"color":"#6B4EFF","trail":{"length":100,"opacity":0.4}},"speed":85,"loop":true,"delay":1000}],"position":{"x":2800,"y":100},"busTravel":{"entryPoint":{"x":2800,"y":300},"exitPoint":{"x":3600,"y":300},"duration":3},"timing":{"sceneStart":12,"sceneDuration":4,"busArrival":12.5,"busDeparture":15.5},"cinematic":{"duration":5,"transition":{"type":"fade","duration":1,"easing":"ease-in-out"},"viewport":{"width":1200,"height":800}}},{"id":"event-router-scene-5-rules","canvas":{"width":800,"height":400},"bg":"#87CEEB","defs":{"filters":["<filter id=\"sceneShadow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\"><feDropShadow dx=\"0\" dy=\"4\" stdDeviation=\"8\" flood-color=\"#000\" flood-opacity=\"0.25\"/></filter>","<filter id=\"signGlow\"><feGaussianBlur stdDeviation=\"2\" result=\"b\"/><feMerge><feMergeNode in=\"b\"/><feMergeNode in=\"SourceGraphic\"/></feMerge></filter>"],"gradients":["<linearGradient id=\"roadGradient\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0\" stop-color=\"#404040\"/><stop offset=\"0.5\" stop-color=\"#505050\"/><stop offset=\"1\" stop-color=\"#404040\"/></linearGradient>","<linearGradient id=\"warningGradient\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#FFD700\"/><stop offset=\"1\" stop-color=\"#E6C200\"/></linearGradient>","<linearGradient id=\"safetyGradient\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#228B22\"/><stop offset=\"1\" stop-color=\"#006400\"/></linearGradient>","<linearGradient id=\"controlGradient\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#4169E1\"/><stop offset=\"1\" stop-color=\"#191970\"/></linearGradient>"]},"nodes":[{"kind":"boundary","id":"scene-5-boundary","title":"Scene 5: Rules & Boundaries (Performance Controls)","at":{"x":20,"y":20},"size":{"width":760,"height":360},"style":{"fill":"#FFF3E0","stroke":"#FF9800","strokeWidth":2,"labelColor":"#FF9800","filter":"url(#sceneShadow)"},"grid":{"cols":4,"rowH":80,"gutter":20,"padding":20},"policy":{"mode":"strict","overflow":"clip","tolerance":2,"snap":{"grid":4}},"children":[{"kind":"shape","id":"sky-background","at":{"x":0,"y":0},"size":{"width":760,"height":200},"shape":"rect","style":{"fill":"#87CEEB","stroke":"none"}},{"kind":"shape","id":"ground","at":{"x":0,"y":200},"size":{"width":760,"height":120},"shape":"rect","style":{"fill":"#4A6B3A","stroke":"none"}},{"kind":"shape","id":"road","at":{"x":0,"y":230},"size":{"width":760,"height":60},"shape":"rect","style":{"fill":"url(#roadGradient)","stroke":"#606060","strokeWidth":2}},{"kind":"shape","id":"guardrail-top","at":{"x":0,"y":215},"size":{"width":760,"height":10},"shape":"rect","style":{"fill":"#E0E0E0","stroke":"#C0C0C0","strokeWidth":1}},{"kind":"shape","id":"guardrail-bottom","at":{"x":0,"y":295},"size":{"width":760,"height":10},"shape":"rect","style":{"fill":"#E0E0E0","stroke":"#C0C0C0","strokeWidth":1}},{"kind":"shape","id":"debounce-lane","at":{"x":200,"y":240},"size":{"width":80,"height":20},"shape":"polygon","style":{"fill":"#FFFF00","opacity":0.7,"stroke":"#E6E600","strokeWidth":2}},{"kind":"text","id":"debounce-label","at":{"x":240,"y":275},"text":"DEBOUNCE","style":{"fill":"#E6E600","fontSize":9,"fontWeight":"bold","textAnchor":"middle"}},{"kind":"shape","id":"throttle-lane","at":{"x":500,"y":245},"size":{"width":60,"height":10},"shape":"rect","style":{"fill":"#FFFF00","opacity":0.7,"stroke":"#E6E600","strokeWidth":1}},{"kind":"text","id":"throttle-label","at":{"x":530,"y":275},"text":"THROTTLE","style":{"fill":"#E6E600","fontSize":9,"fontWeight":"bold","textAnchor":"middle"}},{"kind":"shape","id":"loop-prevention-sign","at":{"x":100,"y":130},"size":{"width":40,"height":35},"shape":"polygon","style":{"fill":"url(#warningGradient)","stroke":"#E6C200","strokeWidth":2,"filter":"url(#signGlow)"}},{"kind":"text","id":"loop-prevention-text","at":{"x":120,"y":145},"text":"LOOP\nPREVENTION","style":{"fill":"#DC143C","fontSize":6,"fontWeight":"bold","textAnchor":"middle"}},{"kind":"shape","id":"handler-isolation-sign","at":{"x":300,"y":120},"size":{"width":40,"height":35},"shape":"rect","style":{"fill":"url(#safetyGradient)","stroke":"#006400","strokeWidth":2,"filter":"url(#signGlow)"}},{"kind":"text","id":"handler-isolation-text","at":{"x":320,"y":135},"text":"HANDLER\nISOLATION","style":{"fill":"#FFFFFF","fontSize":5,"fontWeight":"bold","textAnchor":"middle"}},{"kind":"shape","id":"feature-flags-sign","at":{"x":600,"y":125},"size":{"width":40,"height":30},"shape":"rect","style":{"fill":"url(#controlGradient)","stroke":"#191970","strokeWidth":2,"filter":"url(#signGlow)"}},{"kind":"text","id":"feature-flags-text","at":{"x":620,"y":138},"text":"FEATURE\nFLAGS","style":{"fill":"#FFFFFF","fontSize":5,"fontWeight":"bold","textAnchor":"middle"}},{"kind":"shape","id":"traffic-light-pole","at":{"x":720,"y":140},"size":{"width":3,"height":40},"shape":"rect","style":{"fill":"#666666","stroke":"none"}},{"kind":"shape","id":"traffic-light-box","at":{"x":710,"y":140},"size":{"width":20,"height":45},"shape":"roundedRect","style":{"fill":"#333333","stroke":"#222222","strokeWidth":2}},{"kind":"shape","id":"red-light","at":{"x":720,"y":150},"size":{"width":4,"height":4},"shape":"circle","style":{"fill":"#FF0000","stroke":"none"}},{"kind":"shape","id":"yellow-light","at":{"x":720,"y":160},"size":{"width":4,"height":4},"shape":"circle","style":{"fill":"#806000","stroke":"none"}},{"kind":"shape","id":"green-light","at":{"x":720,"y":170},"size":{"width":4,"height":4},"shape":"circle","style":{"fill":"#008000","stroke":"none"}},{"kind":"shape","id":"school-bus","at":{"x":350,"y":200},"size":{"width":120,"height":40},"shape":"roundedRect","style":{"fill":"#FFD700","stroke":"#E6C200","strokeWidth":2}},{"kind":"text","id":"bus-label","at":{"x":410,"y":215},"text":"SCHOOL BUS","style":{"fill":"#000000","fontSize":8,"fontWeight":"bold","textAnchor":"middle"}},{"kind":"text","id":"sky-headline","at":{"x":380,"y":40},"text":"Rules keep the ride safe.","style":{"fill":"#1E3A56","fontSize":24,"fontWeight":"bold","textAnchor":"middle","stroke":"#FFFFFF","strokeWidth":1}},{"kind":"text","id":"sky-description","at":{"x":380,"y":65},"text":"Guardrails, flags, throttle, and debounce enforce stability.","style":{"fill":"#3C556E","fontSize":16,"textAnchor":"middle"}},{"kind":"text","id":"scene-caption","at":{"x":380,"y":320},"text":"Street rules: enforced boundaries, flags, throttle & debounce lanes","style":{"fill":"#FF9800","fontSize":14,"fontWeight":"bold","textAnchor":"middle"}}]}],"ports":[{"id":"rules-in","nodeId":"scene-5-boundary","side":"left","offset":180},{"id":"rules-out","nodeId":"scene-5-boundary","side":"right","offset":180}],"flows":[{"id":"rules-enforcement-flow","path":"rules-in -> rules-out","token":{"size":6,"color":"#FFD700","trail":{"length":100,"opacity":0.4}},"speed":70,"loop":true,"activate":{"boundaryIds":["scene-5-boundary"],"className":"active-scene"}}],"position":{"x":3700,"y":100},"busTravel":{"entryPoint":{"x":3700,"y":300},"exitPoint":{"x":4500,"y":300},"duration":3},"timing":{"sceneStart":16,"sceneDuration":4,"busArrival":16.5,"busDeparture":19.5},"cinematic":{"duration":5,"transition":{"type":"slide","duration":1,"direction":"right","easing":"ease-in-out"},"viewport":{"width":1200,"height":800}}},{"id":"event-router-scene-6-school","canvas":{"width":800,"height":400},"bg":"#87CEEB","defs":{"filters":["<filter id=\"sceneShadow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\"><feDropShadow dx=\"0\" dy=\"4\" stdDeviation=\"8\" flood-color=\"#000\" flood-opacity=\"0.25\"/></filter>","<filter id=\"schoolGlow\"><feGaussianBlur stdDeviation=\"2\" result=\"b\"/><feMerge><feMergeNode in=\"b\"/><feMergeNode in=\"SourceGraphic\"/></feMerge></filter>","<filter id=\"celebrationGlow\"><feGaussianBlur stdDeviation=\"4\" result=\"b\"/><feMerge><feMergeNode in=\"b\"/><feMergeNode in=\"SourceGraphic\"/></feMerge></filter>"],"gradients":["<linearGradient id=\"roadGradient\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0\" stop-color=\"#404040\"/><stop offset=\"0.5\" stop-color=\"#505050\"/><stop offset=\"1\" stop-color=\"#404040\"/></linearGradient>","<linearGradient id=\"schoolGradient\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#CD853F\"/><stop offset=\"1\" stop-color=\"#8B4513\"/></linearGradient>","<linearGradient id=\"roofGradient\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#8B0000\"/><stop offset=\"1\" stop-color=\"#654321\"/></linearGradient>","<linearGradient id=\"courtyardGradient\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0\" stop-color=\"#C0C0C0\"/><stop offset=\"1\" stop-color=\"#A0A0A0\"/></linearGradient>"]},"nodes":[{"kind":"boundary","id":"scene-6-boundary","title":"Scene 6: Final Destination (Application State Updated)","at":{"x":20,"y":20},"size":{"width":760,"height":360},"style":{"fill":"#E8F5E8","stroke":"#4CAF50","strokeWidth":2,"labelColor":"#4CAF50","filter":"url(#sceneShadow)"},"grid":{"cols":4,"rowH":80,"gutter":20,"padding":20},"policy":{"mode":"strict","overflow":"clip","tolerance":2,"snap":{"grid":4}},"children":[{"kind":"shape","id":"sky-background","at":{"x":0,"y":0},"size":{"width":760,"height":200},"shape":"rect","style":{"fill":"#87CEEB","stroke":"none"}},{"kind":"shape","id":"ground","at":{"x":0,"y":200},"size":{"width":760,"height":120},"shape":"rect","style":{"fill":"#4A6B3A","stroke":"none"}},{"kind":"shape","id":"road-ending","at":{"x":0,"y":230},"size":{"width":400,"height":60},"shape":"rect","style":{"fill":"url(#roadGradient)","stroke":"#606060","strokeWidth":2}},{"kind":"shape","id":"school-courtyard","at":{"x":400,"y":230},"size":{"width":360,"height":60},"shape":"rect","style":{"fill":"url(#courtyardGradient)","stroke":"#606060","strokeWidth":2}},{"kind":"shape","id":"school-building","at":{"x":500,"y":50},"size":{"width":200,"height":120},"shape":"rect","style":{"fill":"url(#schoolGradient)","stroke":"#8B4513","strokeWidth":2,"filter":"url(#schoolGlow)"}},{"kind":"shape","id":"school-roof","at":{"x":490,"y":50},"size":{"width":220,"height":40},"shape":"polygon","style":{"fill":"url(#roofGradient)","stroke":"#654321","strokeWidth":2}},{"kind":"shape","id":"school-entrance","at":{"x":585,"y":120},"size":{"width":30,"height":50},"shape":"roundedRect","style":{"fill":"#4682B4","stroke":"#2F4F4F","strokeWidth":2}},{"kind":"shape","id":"entrance-window","at":{"x":587,"y":122},"size":{"width":26,"height":25},"shape":"roundedRect","style":{"fill":"#87CEEB","stroke":"#4682B4","strokeWidth":1}},{"kind":"shape","id":"school-window-1","at":{"x":520,"y":70},"size":{"width":20,"height":20},"shape":"rect","style":{"fill":"#87CEEB","stroke":"#4682B4","strokeWidth":1}},{"kind":"shape","id":"school-window-2","at":{"x":550,"y":70},"size":{"width":20,"height":20},"shape":"rect","style":{"fill":"#87CEEB","stroke":"#4682B4","strokeWidth":1}},{"kind":"shape","id":"school-window-3","at":{"x":630,"y":70},"size":{"width":20,"height":20},"shape":"rect","style":{"fill":"#87CEEB","stroke":"#4682B4","strokeWidth":1}},{"kind":"shape","id":"school-window-4","at":{"x":660,"y":70},"size":{"width":20,"height":20},"shape":"rect","style":{"fill":"#87CEEB","stroke":"#4682B4","strokeWidth":1}},{"kind":"shape","id":"flagpole","at":{"x":598,"y":0},"size":{"width":4,"height":60},"shape":"rect","style":{"fill":"#8B4513","stroke":"none"}},{"kind":"shape","id":"flag","at":{"x":602,"y":5},"size":{"width":30,"height":20},"shape":"rect","style":{"fill":"#FF0000","stroke":"none"}},{"kind":"text","id":"school-sign","at":{"x":600,"y":180},"text":"ELEMENTARY SCHOOL","style":{"fill":"#333333","fontSize":10,"fontWeight":"bold","textAnchor":"middle"}},{"kind":"shape","id":"school-bus","at":{"x":250,"y":200},"size":{"width":120,"height":40},"shape":"roundedRect","style":{"fill":"#FFD700","stroke":"#E6C200","strokeWidth":2}},{"kind":"text","id":"bus-label","at":{"x":310,"y":215},"text":"SCHOOL BUS","style":{"fill":"#000000","fontSize":8,"fontWeight":"bold","textAnchor":"middle"}},{"kind":"shape","id":"child-1","at":{"x":380,"y":270},"size":{"width":8,"height":16},"shape":"roundedRect","style":{"fill":"#3B82F6","stroke":"#1E3A8A","strokeWidth":1}},{"kind":"shape","id":"child-2","at":{"x":420,"y":275},"size":{"width":8,"height":16},"shape":"roundedRect","style":{"fill":"#10B981","stroke":"#059669","strokeWidth":1}},{"kind":"shape","id":"child-3","at":{"x":480,"y":280},"size":{"width":8,"height":16},"shape":"roundedRect","style":{"fill":"#EF4444","stroke":"#DC2626","strokeWidth":1}},{"kind":"shape","id":"child-4","at":{"x":580,"y":285},"size":{"width":8,"height":16},"shape":"roundedRect","style":{"fill":"#FBBF24","stroke":"#F59E0B","strokeWidth":1}},{"kind":"shape","id":"celebration-balloon-1","at":{"x":720,"y":150},"size":{"width":8,"height":8},"shape":"circle","style":{"fill":"#FF6B6B","stroke":"none","filter":"url(#celebrationGlow)"}},{"kind":"shape","id":"celebration-balloon-2","at":{"x":712,"y":158},"size":{"width":6,"height":6},"shape":"circle","style":{"fill":"#4ECDC4","stroke":"none","filter":"url(#celebrationGlow)"}},{"kind":"shape","id":"celebration-balloon-3","at":{"x":728,"y":158},"size":{"width":6,"height":6},"shape":"circle","style":{"fill":"#45B7D1","stroke":"none","filter":"url(#celebrationGlow)"}},{"kind":"text","id":"sky-headline","at":{"x":380,"y":40},"text":"Destination reached.","style":{"fill":"#1E3A56","fontSize":24,"fontWeight":"bold","textAnchor":"middle","stroke":"#FFFFFF","strokeWidth":1}},{"kind":"text","id":"sky-description","at":{"x":380,"y":65},"text":"Events arrive at the school — the application state is updated.","style":{"fill":"#3C556E","fontSize":16,"textAnchor":"middle"}},{"kind":"text","id":"scene-caption","at":{"x":380,"y":320},"text":"Destination reached: application state updated (successful delivery)","style":{"fill":"#4CAF50","fontSize":14,"fontWeight":"bold","textAnchor":"middle"}}]}],"ports":[{"id":"school-in","nodeId":"scene-6-boundary","side":"left","offset":180}],"flows":[{"id":"final-delivery-flow","path":"school-in","token":{"size":6,"color":"#4CAF50","trail":{"length":100,"opacity":0.4}},"speed":60,"loop":true,"activate":{"boundaryIds":["scene-6-boundary"],"className":"active-scene"}}],"position":{"x":4600,"y":100},"busTravel":{"entryPoint":{"x":4600,"y":300},"exitPoint":{"x":5400,"y":300},"duration":3},"timing":{"sceneStart":20,"sceneDuration":4,"busArrival":20.5,"busDeparture":23.5},"cinematic":{"duration":5,"transition":{"type":"fade","duration":1,"easing":"ease-in-out"},"viewport":{"width":1200,"height":800}}}];
+          const sceneDuration = currentSceneData[this.currentScene].cinematic.duration * 1000;
+          
+          setTimeout(() => {
+            if (this.isPlaying) {
+              this.nextScene();
+            }
+          }, sceneDuration);
+        }
+        
+        nextScene() {
+          const nextIndex = (this.currentScene + 1) % this.totalScenes;
+          this.showScene(nextIndex);
+          
+          if (this.isPlaying && (nextIndex !== 0 || true)) {
+            this.scheduleNextScene();
+          } else if (nextIndex === 0 && !true) {
+            this.isPlaying = false;
+            this.updatePlayPauseButton();
+          }
+        }
+        
+        previousScene() {
+          const prevIndex = this.currentScene === 0 ? this.totalScenes - 1 : this.currentScene - 1;
+          this.showScene(prevIndex);
+        }
+        
+        togglePlayPause() {
+          this.isPlaying = !this.isPlaying;
+          this.updatePlayPauseButton();
+          
+          if (this.isPlaying) {
+            this.scheduleNextScene();
+          }
+        }
+        
+        updatePlayPauseButton() {
+          const btn = document.getElementById('play-pause-btn');
+          if (btn) {
+            btn.textContent = this.isPlaying ? 'Pause' : 'Play';
+          }
+        }
+        
+        restart() {
+          this.currentScene = 0;
+          this.startTime = Date.now();
+          this.showScene(0);
+          
+          if (this.isPlaying) {
+            this.scheduleNextScene();
+          }
+        }
+        
+        updateProgress() {
+          const progressFill = document.querySelector('.progress-fill');
+          if (progressFill) {
+            const progress = ((this.currentScene + 1) / this.totalScenes) * 100;
+            progressFill.style.width = progress + '%';
+          }
+        }
+      }
+      
+      // Initialize presentation when DOM is loaded
+      document.addEventListener('DOMContentLoaded', () => {
+        new CinematicPresentation();
+      });
+    </script>
+  
+</body>
+</html>
