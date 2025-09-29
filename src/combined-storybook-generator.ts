@@ -103,30 +103,69 @@ function createDefaultConfig(): CombinedStorybookConfig {
  * Apply bus animation coordination to create illusion of single bus traveling between scenes
  */
 function applyBusCoordination(svgContent: string, sceneNumber: number): string {
-  // Calculate cumulative delays based on bus exit timing from each scene
-  const sceneDelays = [
-    0,    // Scene 1: starts immediately
-    6,    // Scene 2: starts when Scene 1 bus exits (8s * 0.75)
-    16,   // Scene 3: starts when Scene 2 bus exits (6 + 12s * 0.83)
-    28,   // Scene 4: starts when Scene 3 bus exits (16 + 15s * 0.8)
-    42,   // Scene 5: starts when Scene 4 bus exits (28 + 18s * 0.78)
-    56    // Scene 6: starts when Scene 5 bus exits (42 + 16s * 0.875)
+  // Calculate cumulative delays and durations for each scene
+  const sceneTimings = [
+    { delay: 0, duration: 8, exitTime: 6 },    // Scene 1: starts immediately, exits at 6s
+    { delay: 6, duration: 12, exitTime: 16 },  // Scene 2: starts at 6s, exits at 16s
+    { delay: 16, duration: 15, exitTime: 28 }, // Scene 3: starts at 16s, exits at 28s
+    { delay: 28, duration: 18, exitTime: 42 }, // Scene 4: starts at 28s, exits at 42s
+    { delay: 42, duration: 16, exitTime: 56 }, // Scene 5: starts at 42s, exits at 56s
+    { delay: 56, duration: 12, exitTime: 68 }  // Scene 6: starts at 56s, exits at 68s
   ];
 
-  const delay = sceneDelays[sceneNumber - 1] || 0;
+  const timing = sceneTimings[sceneNumber - 1];
+  if (!timing) return svgContent;
 
-  if (delay === 0) {
-    // Scene 1 starts immediately - no modification needed
-    return svgContent;
-  }
+  // Add visibility control and animation coordination
+  let modifiedContent = svgContent;
 
-  // Modify the bus animateTransform to include begin delay
-  const busAnimationRegex = /(<animateTransform[^>]*attributeName="transform"[^>]*type="translate"[^>]*)(dur="[^"]*"[^>]*)(repeatCount="[^"]*"[^>]*>)/g;
+  // 1. Add visibility control to the school bus group
+  const busGroupRegex = /(<g id="school-bus"[^>]*>)/;
+  modifiedContent = modifiedContent.replace(busGroupRegex, (match, busGroup) => {
+    if (sceneNumber === 1) {
+      // Scene 1: visible initially, hide when Scene 2 starts
+      const totalDuration = 100; // Use a long duration to cover the entire animation
+      const hideTime = 6 / totalDuration; // Hide at 6s
 
-  return svgContent.replace(busAnimationRegex, (match, prefix, durPart, suffix) => {
-    // Add begin attribute to delay the animation
-    return `${prefix}begin="${delay}s" ${durPart}${suffix}`;
+      return `${busGroup}
+<!-- Bus visibility: Scene 1 visible initially, hide at 6s -->
+<animate attributeName="opacity"
+         values="1;1;0"
+         keyTimes="0;${hideTime};1"
+         dur="${totalDuration}s"
+         begin="0s"
+         fill="freeze"/>`;
+    } else {
+      // Other scenes: hidden initially, show when scene starts, hide when next scene starts
+      const nextSceneStart = sceneTimings[sceneNumber] ? sceneTimings[sceneNumber].delay : timing.exitTime;
+      const totalDuration = 100; // Use a long duration to cover the entire animation
+
+      // Calculate keyframe percentages for precise timing
+      const showTime = timing.delay / totalDuration;
+      const hideTime = nextSceneStart / totalDuration;
+
+      return `${busGroup}
+<!-- Bus visibility: Scene ${sceneNumber} hidden initially, show at ${timing.delay}s, hide at ${nextSceneStart}s -->
+<animate attributeName="opacity"
+         values="0;0;1;1;0"
+         keyTimes="0;${showTime};${showTime + 0.01};${hideTime};1"
+         dur="${totalDuration}s"
+         begin="0s"
+         fill="freeze"/>`;
+    }
   });
+
+  // 2. Modify the bus animateTransform to include begin delay and proper closing
+  const busAnimationRegex = /(<animateTransform[^>]*attributeName="transform"[^>]*type="translate"[^>]*)(dur="[^"]*"[^>]*)(repeatCount="[^"]*"[^>]*\/>)/g;
+
+  modifiedContent = modifiedContent.replace(busAnimationRegex, (match, prefix, durPart, suffix) => {
+    // Add begin attribute to delay the animation and make it run once with proper self-closing tag
+    return `${prefix}begin="${timing.delay}s" ${durPart}repeatCount="1"/>`;
+  });
+
+  // 3. Bus visibility is now controlled by opacity animations in step 1
+
+  return modifiedContent;
 }
 
 /**

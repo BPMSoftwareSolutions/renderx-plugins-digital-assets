@@ -169,16 +169,17 @@
         </div>
 
         <div class="status">
-            ✅ <strong>Bus Coordination Active:</strong> Individual scene buses are timed to create seamless journey illusion
+            ✅ <strong>Single Bus Illusion Active:</strong> Only one bus visible at any time, creating perfect journey continuity
         </div>
 
         <div class="legend">
-            <h4>🎯 How the Illusion Works:</h4>
+            <h4>🎯 How the Single Bus Illusion Works:</h4>
             <ul>
-                <li><strong>Scene 1 Bus</strong> exits right edge → <strong>Scene 2 Bus</strong> enters from left</li>
-                <li><strong>Scene 2 Bus</strong> exits right edge → <strong>Scene 3 Bus</strong> enters from left</li>
-                <li><strong>Scene 3 Bus</strong> exits right edge → <strong>Scene 4 Bus</strong> enters from left</li>
-                <li>And so on... creating the perception of one continuous journey</li>
+                <li><strong>Scene 1:</strong> Bus visible initially, fades out when exiting right edge (6s)</li>
+                <li><strong>Scene 2:</strong> Bus hidden initially, appears when Scene 1 bus exits (6s), disappears when exiting (16s)</li>
+                <li><strong>Scene 3:</strong> Bus hidden initially, appears when Scene 2 bus exits (16s), disappears when exiting (28s)</li>
+                <li><strong>Scene 4-6:</strong> Same pattern continues with perfect timing coordination</li>
+                <li><strong>Result:</strong> User sees exactly one bus making the complete EventRouter journey</li>
                 <li><strong>Graph Content Preserved:</strong> All original animations and visual elements maintained</li>
             </ul>
         </div>

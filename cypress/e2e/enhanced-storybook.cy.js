@@ -77,28 +77,35 @@ describe('Enhanced Combined Storybook Animation Tests', () => {
     }
   })
 
-  it('should have coordinated bus animation timing (illusion of single bus)', () => {
-    // Get individual bus animations from graphs
-    cy.get('#school-bus animateTransform[type="translate"]').then($anims => {
-      // Should have multiple bus animations (one per scene)
-      expect($anims.length).to.be.greaterThan(4) // At least 5 scenes with buses
+  it('should show only one bus at a time (true single bus illusion)', () => {
+    // Wait for initial state
+    cy.wait(1000)
 
-      // Check that animations have staggered begin times to create coordination illusion
-      const beginTimes = []
-      $anims.each((index, anim) => {
-        const begin = anim.getAttribute('begin')
-        if (begin) {
-          beginTimes.push(parseInt(begin.replace('s', '')))
-        }
-      })
+    // At start: only Scene 1 bus should be visible
+    cy.get('.scene-1 #school-bus').should('be.visible')
+    cy.get('.scene-2 #school-bus').should('not.be.visible')
+    cy.get('.scene-3 #school-bus').should('not.be.visible')
+    cy.get('.scene-4 #school-bus').should('not.be.visible')
+    cy.get('.scene-5 #school-bus').should('not.be.visible')
+    cy.get('.scene-6 #school-bus').should('not.be.visible')
 
-      // Should have staggered timing (not all starting at 0)
-      expect(beginTimes.filter(time => time > 0).length).to.be.greaterThan(3)
+    // After 7 seconds: only Scene 2 bus should be visible
+    cy.wait(7000)
+    cy.get('.scene-1 #school-bus').should('not.be.visible')
+    cy.get('.scene-2 #school-bus').should('be.visible')
+    cy.get('.scene-3 #school-bus').should('not.be.visible')
+    cy.get('.scene-4 #school-bus').should('not.be.visible')
+    cy.get('.scene-5 #school-bus').should('not.be.visible')
+    cy.get('.scene-6 #school-bus').should('not.be.visible')
 
-      // Times should be in ascending order for scene coordination
-      const sortedTimes = [...beginTimes].sort((a, b) => a - b)
-      expect(beginTimes).to.deep.equal(sortedTimes)
-    })
+    // After 17 seconds: only Scene 3 bus should be visible
+    cy.wait(10000)
+    cy.get('.scene-1 #school-bus').should('not.be.visible')
+    cy.get('.scene-2 #school-bus').should('not.be.visible')
+    cy.get('.scene-3 #school-bus').should('be.visible')
+    cy.get('.scene-4 #school-bus').should('not.be.visible')
+    cy.get('.scene-5 #school-bus').should('not.be.visible')
+    cy.get('.scene-6 #school-bus').should('not.be.visible')
   })
 
   it('should maintain graph integrity with coordinated timing', () => {
