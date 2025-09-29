@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="400" viewBox="0 0 800 400"
+     xmlns="http://www.w3.org/2000/svg" role="img" aria-label="event-router-scene-4-rx-node-scene4">
+  <defs><linearGradient id="roadGradient" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#404040"/><stop offset="0.5" stop-color="#505050"/><stop offset="1" stop-color="#404040"/></linearGradient><linearGradient id="busGradient" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFD700"/><stop offset="0.5" stop-color="#FFA500"/><stop offset="1" stop-color="#FFD700"/></linearGradient><filter id="sceneShadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.25"/></filter><filter id="busGlow"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+  
+    <style>
+      .active-glow rect { filter: url(#glow); stroke: #8b5cf6; }
+      .connector { stroke-linecap: round; stroke-linejoin: round; }
+      .boundary-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: 600; }
+      .flow-token { animation-fill-mode: forwards; }
+      .boundary-contained { overflow: hidden; }
+    </style>
+  
+  <rect x="0" y="0" width="100%" height="100%" fill="#87CEEB"/>
+  <!-- Scene 4: Transfer hub and conductor with ramp animation -->
+<!-- Background sky -->
+<rect x="0" y="0" width="800" height="250" fill="#87CEEB"/>
+<!-- Clouds -->
+<g fill="#FFFFFF" opacity="0.8">
+<circle cx="90" cy="40" r="15"/>
+<circle cx="106" cy="40" r="10"/>
+<circle cx="80" cy="45" r="8"/>
+<circle cx="650" cy="60" r="18"/>
+<circle cx="670" cy="60" r="13"/>
+<circle cx="635" cy="65" r="10"/>
+<circle cx="300" cy="30" r="12"/>
+<circle cx="313" cy="30" r="8"/>
+<circle cx="290" cy="35" r="6"/>
+</g>
+<!-- Ground -->
+<rect x="0" y="250" width="800" height="150" fill="#4A6B3A"/>
+<!-- Main road -->
+<rect x="0" y="280" width="800" height="60" fill="#404040"/>
+<rect x="0" y="278" width="800" height="2" fill="#606060"/>
+<rect x="0" y="340" width="800" height="2" fill="#606060"/>
+<!-- Conductor ramp (curved path leading up to hub) -->
+<g id="conductor-ramp">
+<!-- Ramp surface -->
+<path d="M 350,310 Q 400,280 450,260 Q 500,240 550,220 Q 600,200 650,180"
+fill="none" stroke="#606060" stroke-width="40" stroke-linecap="round"/>
+<path d="M 350,310 Q 400,280 450,260 Q 500,240 550,220 Q 600,200 650,180"
+fill="none" stroke="#404040" stroke-width="36" stroke-linecap="round"/>
+<!-- Ramp guardrails -->
+<path d="M 350,290 Q 400,260 450,240 Q 500,220 550,200 Q 600,180 650,160"
+fill="none" stroke="#E0E0E0" stroke-width="4" stroke-linecap="round"/>
+<path d="M 350,330 Q 400,300 450,280 Q 500,260 550,240 Q 600,220 650,200"
+fill="none" stroke="#E0E0E0" stroke-width="4" stroke-linecap="round"/>
+<!-- Ramp center line -->
+<g fill="#FFFF00">
+<ellipse cx="370" cy="305" rx="8" ry="2" transform="rotate(-10 370 305)"/>
+<ellipse cx="400" cy="290" rx="8" ry="2" transform="rotate(-15 400 290)"/>
+<ellipse cx="430" cy="275" rx="8" ry="2" transform="rotate(-20 430 275)"/>
+<ellipse cx="460" cy="258" rx="8" ry="2" transform="rotate(-25 460 258)"/>
+<ellipse cx="490" cy="240" rx="8" ry="2" transform="rotate(-30 490 240)"/>
+<ellipse cx="520" cy="222" rx="8" ry="2" transform="rotate(-35 520 222)"/>
+<ellipse cx="550" cy="203" rx="8" ry="2" transform="rotate(-40 550 203)"/>
+<ellipse cx="580" cy="185" rx="8" ry="2" transform="rotate(-45 580 185)"/>
+</g>
+</g>
+<!-- Branching roads -->
+<!-- Upper branch -->
+<polygon points="450,280 550,200 570,210 460,290" fill="#404040"/>
+<polygon points="450,278 550,198 570,208 460,288" fill="#606060"/>
+<!-- Lower branch -->
+<polygon points="450,340 550,380 570,370 460,330" fill="#404040"/>
+<polygon points="450,342 550,382 570,372 460,332" fill="#606060"/>
+<!-- Straight continuation -->
+<rect x="500" y="280" width="300" height="60" fill="#404040"/>
+<rect x="500" y="278" width="300" height="2" fill="#606060"/>
+<rect x="500" y="340" width="300" height="2" fill="#606060"/>
+<!-- Guardrails on main road -->
+<rect x="0" y="265" width="350" height="8" fill="#E0E0E0" stroke="#C0C0C0" stroke-width="1"/>
+<rect x="0" y="345" width="350" height="8" fill="#E0E0E0" stroke="#C0C0C0" stroke-width="1"/>
+<!-- Guardrails on continuation -->
+<rect x="500" y="265" width="300" height="8" fill="#E0E0E0" stroke="#C0C0C0" stroke-width="1"/>
+<rect x="500" y="345" width="300" height="8" fill="#E0E0E0" stroke="#C0C0C0" stroke-width="1"/>
+<!-- Dashed center lines -->
+<g fill="#FFFF00">
+<!-- Main road -->
+<rect x="50" y="308" width="40" height="4"/>
+<rect x="120" y="308" width="40" height="4"/>
+<rect x="190" y="308" width="40" height="4"/>
+<rect x="260" y="308" width="40" height="4"/>
+<!-- Continuation -->
+<rect x="520" y="308" width="40" height="4"/>
+<rect x="590" y="308" width="40" height="4"/>
+<rect x="660" y="308" width="40" height="4"/>
+<rect x="730" y="308" width="40" height="4"/>
+<!-- Branch roads -->
+<rect x="480" y="240" width="20" height="3" transform="rotate(-25 490 241.5)"/>
+<rect x="510" y="220" width="20" height="3" transform="rotate(-25 520 221.5)"/>
+<rect x="480" y="360" width="20" height="3" transform="rotate(25 490 361.5)"/>
+<rect x="510" y="380" width="20" height="3" transform="rotate(25 520 381.5)"/>
+</g>
+<!-- Transfer hub (circular) -->
+<g id="transfer-hub" transform="translate(450, 310)">
+<!-- Hub platform -->
+<circle cx="0" cy="0" r="50" fill="#B0C4DE" stroke="#708090" stroke-width="3"/>
+<circle cx="0" cy="0" r="47" fill="#D3D3D3" stroke="#A9A9A9" stroke-width="1"/>
+<!-- Hub center -->
+<circle cx="0" cy="0" r="25" fill="#4682B4" stroke="#2F4F4F" stroke-width="2"/>
+<circle cx="0" cy="0" r="22" fill="#5F9EA0" stroke="#4682B4" stroke-width="1"/>
+<!-- Conductor's baton and musical note -->
+<g id="conductor-icon">
+<!-- Baton -->
+<line x1="-8" y1="8" x2="8" y2="-8" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+<circle cx="8" cy="-8" r="2" fill="#FFFFFF"/>
+<circle cx="-8" cy="8" r="1.5" fill="#FFFFFF"/>
+<!-- Musical note -->
+<circle cx="5" cy="5" r="3" fill="#FFD700" stroke="#FFA500" stroke-width="1"/>
+<rect x="7.5" y="-5" width="1.5" height="10" fill="#FFD700"/>
+<path d="M 9,0 Q 12,-2 12,2" stroke="#FFD700" stroke-width="1.5" fill="none"/>
+</g>
+<!-- Hub label -->
+<text x="0" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#1E3A8A">Conductor: play()</text>
+</g>
+<!-- School bus with ramp flying animation -->
+<g id="school-bus" transform="translate(300, 250)">
+<!-- Bus movement: approach ramp, drive up ramp, fly off into sky -->
+<animateTransform attributeName="transform" type="translate"
+values="100,250; 350,310; 450,260; 550,220; 650,180; 750,140; 900,100"
+dur="18s"
+repeatCount="indefinite"/>
+<!-- Bus rotation during ramp ascent -->
+<g transform-origin="50 17.5">
+<animateTransform attributeName="transform" type="rotate"
+values="0; 0; -10; -20; -30; -40; -45"
+dur="18s"
+repeatCount="indefinite"/>
+<rect x="0" y="0" width="100" height="35" rx="4" ry="4" fill="#FFD700" stroke="#E6C200" stroke-width="2"/>
+<rect x="95" y="3" width="10" height="29" rx="5" ry="5" fill="#FFD700" stroke="#E6C200" stroke-width="2"/>
+<rect x="-2" y="-3" width="104" height="5" rx="2.5" ry="2.5" fill="#FFA500"/>
+<!-- Windows -->
+<rect x="90" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="82" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="74" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="66" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="58" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="50" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="42" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="34" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="26" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="18" y="6" width="7" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="97" y="6" width="6" height="10" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="12" y="8" width="5" height="6" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="80" y="20" width="10" height="13" rx="1" ry="1" fill="#E6C200" stroke="#D4AF37" stroke-width="1"/>
+<text x="50" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" font-weight="bold" fill="#000">SCHOOL BUS</text>
+<rect x="0" y="18" width="100" height="3" fill="#FFA500"/>
+<circle cx="101" cy="12" r="2.5" fill="#FFFF00">
+<animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+</circle>
+<!-- Wheels with spinning animation -->
+<g id="front-wheel">
+<circle cx="20" cy="37" r="6" fill="#333" stroke="#222" stroke-width="1"/>
+<circle cx="20" cy="37" r="3" fill="#666"/>
+<g transform-origin="20 37">
+<line x1="20" y1="32" x2="20" y2="42" stroke="#AAA" stroke-width="1"/>
+<line x1="15" y1="37" x2="25" y2="37" stroke="#AAA" stroke-width="1"/>
+<animateTransform attributeName="transform" type="rotate" values="0;360" dur="1s" repeatCount="indefinite"/>
+</g>
+</g>
+<g id="rear-wheel">
+<circle cx="80" cy="37" r="6" fill="#333" stroke="#222" stroke-width="1"/>
+<circle cx="80" cy="37" r="3" fill="#666"/>
+<g transform-origin="80 37">
+<line x1="80" y1="32" x2="80" y2="42" stroke="#AAA" stroke-width="1"/>
+<line x1="75" y1="37" x2="85" y2="37" stroke="#AAA" stroke-width="1"/>
+<animateTransform attributeName="transform" type="rotate" values="0;360" dur="1s" repeatCount="indefinite"/>
+</g>
+</g>
+</g>
+</g>
+<!-- Other buses at hub -->
+<!-- Upper branch bus -->
+<g id="upper-bus" transform="translate(520, 180) rotate(-25)">
+<!-- Green bus animation: drives off ramp and off the page -->
+<animateTransform attributeName="transform" type="translate"
+values="520,180; 600,160; 700,140; 850,120; 950,100"
+dur="20s"
+repeatCount="indefinite"/>
+<rect x="0" y="0" width="60" height="25" rx="3" ry="3" fill="#32CD32" stroke="#228B22" stroke-width="1"/>
+<rect x="55" y="2" width="8" height="21" rx="4" ry="4" fill="#32CD32" stroke="#228B22" stroke-width="1"/>
+<rect x="52" y="4" width="5" height="8" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="45" y="4" width="5" height="8" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="38" y="4" width="5" height="8" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<circle cx="15" cy="27" r="4" fill="#333"/>
+<circle cx="45" cy="27" r="4" fill="#333"/>
+<text x="30" y="16" text-anchor="middle" font-family="Arial, sans-serif" font-size="5" fill="#000">PLUGIN A</text>
+</g>
+<!-- Lower branch bus -->
+<g id="lower-bus" transform="translate(520, 360) rotate(25)">
+<rect x="0" y="0" width="60" height="25" rx="3" ry="3" fill="#FF6347" stroke="#DC143C" stroke-width="1"/>
+<rect x="55" y="2" width="8" height="21" rx="4" ry="4" fill="#FF6347" stroke="#DC143C" stroke-width="1"/>
+<rect x="52" y="4" width="5" height="8" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="45" y="4" width="5" height="8" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<rect x="38" y="4" width="5" height="8" rx="1" ry="1" fill="#2F4F4F" opacity="0.8"/>
+<circle cx="15" cy="27" r="4" fill="#333"/>
+<circle cx="45" cy="27" r="4" fill="#333"/>
+<text x="30" y="16" text-anchor="middle" font-family="Arial, sans-serif" font-size="5" fill="#000">PLUGIN B</text>
+</g>
+<!-- Passengers transferring -->
+<g id="transferring-passengers">
+<!-- Passenger 1 - walking to upper bus -->
+<g transform="translate(470, 270)">
+<circle cx="0" cy="0" r="2" fill="#FBBF24"/>
+<rect x="-1" y="2" width="2" height="6" fill="#3B82F6" rx="0.5"/>
+<rect x="-1.5" y="4" width="1" height="4" fill="#1E3A8A"/>
+<rect x="0.5" y="4" width="1" height="4" fill="#1E3A8A"/>
+</g>
+<!-- Passenger 2 - walking to lower bus -->
+<g transform="translate(460, 330)">
+<circle cx="0" cy="0" r="2" fill="#F87171"/>
+<rect x="-1" y="2" width="2" height="6" fill="#EF4444" rx="0.5"/>
+<rect x="-1.5" y="4" width="1" height="4" fill="#DC2626"/>
+<rect x="0.5" y="4" width="1" height="4" fill="#DC2626"/>
+</g>
+<!-- Passenger 3 - at hub -->
+<g transform="translate(440, 300)">
+<circle cx="0" cy="0" r="2" fill="#34D399"/>
+<rect x="-1" y="2" width="2" height="6" fill="#10B981" rx="0.5"/>
+<rect x="-1.5" y="4" width="1" height="4" fill="#059669"/>
+<rect x="0.5" y="4" width="1" height="4" fill="#059669"/>
+</g>
+</g>
+<!-- Direction arrows -->
+<g stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)">
+<path d="M 420,290 Q 440,280 460,270" stroke="#32CD32"/>
+<path d="M 420,320 Q 440,330 460,340" stroke="#FF6347"/>
+<path d="M 500,310 L 580,310" stroke="#FFD700"/>
+</g>
+<!-- Arrow marker definition -->
+<defs>
+<marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+<polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+</marker>
+</defs>
+<!-- Sky Text -->
+<g id="sky-text" transform="translate(400, 40)">
+<!-- Bold headline -->
+<text x="0" y="0" text-anchor="middle" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="#1E3A56" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.8" style="filter: drop-shadow(0px 2px 3px rgba(255,255,255,0.6))">The <tspan fill="#6B4EFF">Conductor</tspan> orchestrates the flow.</text>
+<!-- Supporting description -->
+<text x="0" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#3C556E" style="filter: drop-shadow(0px 1px 2px rgba(255,255,255,0.5))">At the hub, events branch into sequences and plugins.</text>
+</g>
+<!-- Caption -->
+<g id="caption" transform="translate(400, 370)">
+<rect x="-220" y="-10" width="440" height="25" fill="#FFFFFF" fill-opacity="0.9" stroke="#333" stroke-width="1" rx="5"/>
+<text x="0" y="8" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#333">Special hub: topics route into sequences via Conductor (plugins)</text>
+</g>
+
+  
+  
+  
+</svg>

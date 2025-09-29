@@ -22,7 +22,21 @@ export function renderScene(scene: Scene): string {
   // PASS 2: Paint with containment
   // depth sort using corrected positions
   const allNodes = flattenWithContainment(correctedScene.nodes).sort((a,b) => (a.z ?? 0) - (b.z ?? 0));
-  const nodeSvg = allNodes.map(n => emitNodeWithContainment(n)).join("");
+
+  // Handle raw-svg nodes with USE_DEFS_RAWSVG
+  let rawSvgContent = "";
+  const filteredNodes = allNodes.filter(n => {
+    if (n.kind === "raw-svg" && n.rawSvg === "USE_DEFS_RAWSVG") {
+      // Inject rawSvg from defs directly into the main SVG content
+      if (correctedScene.defs?.rawSvg) {
+        rawSvgContent += correctedScene.defs.rawSvg.join('\n') + '\n';
+      }
+      return false; // Don't render this node normally
+    }
+    return true;
+  });
+
+  const nodeSvg = filteredNodes.map(n => emitNodeWithContainment(n)).join("");
   const connectors = (correctedScene.connectors ?? []).map(c => emitConnector(c, allNodes, correctedScene.ports ?? [])).join("");
   const flows = (correctedScene.flows ?? []).map(f => emitFlow(f, correctedScene.connectors ?? [], allNodes, correctedScene.ports ?? [])).join("");
 
@@ -43,6 +57,7 @@ export function renderScene(scene: Scene): string {
   <defs>${defs}</defs>
   ${css}
   ${correctedScene.bg ? `<rect x="0" y="0" width="100%" height="100%" fill="${correctedScene.bg}"/>` : ""}
+  ${rawSvgContent}
   ${connectors}
   ${nodeSvg}
   ${flows}
@@ -185,6 +200,18 @@ function emitNode(n: any): string {
     const anchor = n.anchor ?? "tl";
     const ta = (anchor === "center") ? ` text-anchor="middle" dominant-baseline="middle"` : "";
     return `<text id="${esc(n.id)}" x="${n._abs.x}" y="${n._abs.y}"${style}${ta}>${esc(n.text)}</text>`;
+  }
+  if (n.kind === "raw-svg") {
+    // Handle raw SVG content
+    let svgContent = n.rawSvg;
+
+    // Special case: USE_DEFS_RAWSVG means use the rawSvg from scene defs
+    if (svgContent === "USE_DEFS_RAWSVG") {
+      // This will be handled in the main render function
+      return `<!-- raw-svg placeholder for ${esc(n.id)} -->`;
+    }
+
+    return `<g id="${esc(n.id)}"${t}${style}>${svgContent}</g>`;
   }
   return "";
 }

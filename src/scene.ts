@@ -72,13 +72,14 @@ export type Node =
   | { kind: "boundary"; id: NodeId; z?: number; at: Vec2; size: Size; title?: string; style?: Style & { labelColor?: string }; grid?: { cols: number; rowH: number; gutter: number; padding: number }; policy?: BoundaryPolicy; transform?: Transform; children?: Node[] }
   | { kind: "sprite"; id: NodeId; z?: number; at: Vec2; size?: Size; anchor?: Anchor; sprite: SpriteRef; style?: Style; transform?: Transform }
   | { kind: "shape";  id: NodeId; z?: number; at: Vec2; size: Size; shape: "rect"|"roundedRect"|"circle"|"path"; d?: string; style?: Style; transform?: Transform }
-  | { kind: "text";   id: NodeId; z?: number; at: Vec2; text: string; anchor?: Anchor; style?: Style; transform?: Transform };
+  | { kind: "text";   id: NodeId; z?: number; at: Vec2; text: string; anchor?: Anchor; style?: Style; transform?: Transform }
+  | { kind: "raw-svg"; id: NodeId; z?: number; at: Vec2; size: Size; rawSvg: string; style?: Style; transform?: Transform };
 
 export type Scene = {
   id: string;
   canvas: Size;
   bg?: string;
-  defs?: { symbols?: Array<{ id: string; svg: string }>; filters?: string[]; gradients?: string[] };
+  defs?: { symbols?: Array<{ id: string; svg: string }>; filters?: string[]; gradients?: string[]; rawSvg?: string[] };
   nodes: Node[];
   ports?: Port[];
   connectors?: Connector[];
