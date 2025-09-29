@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "layout": "radial",
+    "theme": "light",
+    "arrowHeads": false,
+    "rounded": true
+  },
+  "nodes": [
+    {
+      "id": "alice",
+      "label": "Alice",
+      "w": 80,
+      "h": 40
+    },
+    {
+      "id": "bob",
+      "label": "Bob",
+      "w": 80,
+      "h": 40
+    },
+    {
+      "id": "charlie",
+      "label": "Charlie",
+      "w": 80,
+      "h": 40
+    },
+    {
+      "id": "diana",
+      "label": "Diana",
+      "w": 80,
+      "h": 40
+    },
+    {
+      "id": "eve",
+      "label": "Eve",
+      "w": 80,
+      "h": 40
+    },
+    {
+      "id": "frank",
+      "label": "Frank",
+      "w": 80,
+      "h": 40
+    },
+    {
+      "id": "grace",
+      "label": "Grace",
+      "w": 80,
+      "h": 40
+    },
+    {
+      "id": "henry",
+      "label": "Henry",
+      "w": 80,
+      "h": 40
+    }
+  ],
+  "edges": [
+    {
+      "from": "alice",
+      "to": "bob"
+    },
+    {
+      "from": "alice",
+      "to": "charlie"
+    },
+    {
+      "from": "alice",
+      "to": "diana"
+    },
+    {
+      "from": "bob",
+      "to": "eve"
+    },
+    {
+      "from": "bob",
+      "to": "frank"
+    },
+    {
+      "from": "charlie",
+      "to": "grace"
+    },
+    {
+      "from": "diana",
+      "to": "henry"
+    },
+    {
+      "from": "eve",
+      "to": "frank"
+    },
+    {
+      "from": "grace",
+      "to": "henry"
+    },
+    {
+      "from": "frank",
+      "to": "grace",
+      "dashed": true
+    }
+  ]
+}

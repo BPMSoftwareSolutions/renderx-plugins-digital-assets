@@ -1,0 +1,28 @@
+{
+  "id": "plugin-loader",
+  "label": "Plugin Loader",
+  "svg": "slide-02-discovery/plugin-loader.svg",
+  "description": "A graceful robotic arm reaches from the host frame and lifts a neatly labeled plugin cartridge. Cyan accents and a dotted guide rail emphasize precise, dynamic loading. A subtle glow at the contact point communicates safe, discoverable integration—modules slide in, no hard wiring required.",
+  "sub_elements": [
+    {
+      "id": "robotic-arm",
+      "svg": "slide-02-discovery/plugin-loader/robotic-arm.svg",
+      "description": "Graceful robotic arm reaching from host frame with cyan accents"
+    },
+    {
+      "id": "plugin-cartridge",
+      "svg": "slide-02-discovery/plugin-loader/plugin-cartridge.svg",
+      "description": "Neatly labeled plugin cartridge being lifted by the arm"
+    },
+    {
+      "id": "guide-rail",
+      "svg": "slide-02-discovery/plugin-loader/guide-rail.svg",
+      "description": "Dotted guide rail emphasizing precise, dynamic loading"
+    },
+    {
+      "id": "contact-glow",
+      "svg": "slide-02-discovery/plugin-loader/contact-glow.svg",
+      "description": "Subtle glow at contact point showing safe discoverable integration"
+    }
+  ]
+}

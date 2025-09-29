@@ -1,0 +1,28 @@
+{
+  "id": "vitest",
+  "label": "Vitest",
+  "svg": "slide-05-quality/vitest.svg",
+  "description": "A confident shield bears a green check at its center, flanked by tiny test tubes. Log lines march beneath like a passing review parade, each assertion lighting up in sequence. The aesthetic is clean and modern—evidence of trust earned, not assumed.",
+  "sub_elements": [
+    {
+      "id": "confident-shield",
+      "svg": "slide-05-quality/vitest/confident-shield.svg",
+      "description": "Confident shield with green check at center"
+    },
+    {
+      "id": "test-tubes",
+      "svg": "slide-05-quality/vitest/test-tubes.svg",
+      "description": "Tiny test tubes flanking the shield"
+    },
+    {
+      "id": "log-parade",
+      "svg": "slide-05-quality/vitest/log-parade.svg",
+      "description": "Log lines marching like a passing review parade"
+    },
+    {
+      "id": "assertion-lights",
+      "svg": "slide-05-quality/vitest/assertion-lights.svg",
+      "description": "Each assertion lighting up in sequence"
+    }
+  ]
+}

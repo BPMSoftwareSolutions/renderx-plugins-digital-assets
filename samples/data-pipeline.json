@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "layout": "layered",
+    "theme": "dark",
+    "arrowHeads": true,
+    "rounded": true,
+    "spacingX": 180,
+    "spacingY": 80
+  },
+  "nodes": [
+    {
+      "id": "source1",
+      "label": "API Source",
+      "w": 100,
+      "h": 45
+    },
+    {
+      "id": "source2",
+      "label": "File Source",
+      "w": 100,
+      "h": 45
+    },
+    {
+      "id": "source3",
+      "label": "DB Source",
+      "w": 100,
+      "h": 45
+    },
+    {
+      "id": "ingestion",
+      "label": "Data Ingestion",
+      "w": 130,
+      "h": 50
+    },
+    {
+      "id": "transform",
+      "label": "Transform",
+      "w": 110,
+      "h": 45
+    },
+    {
+      "id": "validate",
+      "label": "Validate",
+      "w": 100,
+      "h": 45
+    },
+    {
+      "id": "warehouse",
+      "label": "Data Warehouse",
+      "w": 140,
+      "h": 50
+    },
+    {
+      "id": "analytics",
+      "label": "Analytics",
+      "w": 110,
+      "h": 45
+    },
+    {
+      "id": "dashboard",
+      "label": "Dashboard",
+      "w": 110,
+      "h": 45
+    },
+    {
+      "id": "alerts",
+      "label": "Alerts",
+      "w": 90,
+      "h": 45
+    }
+  ],
+  "edges": [
+    {
+      "from": "source1",
+      "to": "ingestion"
+    },
+    {
+      "from": "source2",
+      "to": "ingestion"
+    },
+    {
+      "from": "source3",
+      "to": "ingestion"
+    },
+    {
+      "from": "ingestion",
+      "to": "transform"
+    },
+    {
+      "from": "transform",
+      "to": "validate"
+    },
+    {
+      "from": "validate",
+      "to": "warehouse"
+    },
+    {
+      "from": "warehouse",
+      "to": "analytics"
+    },
+    {
+      "from": "analytics",
+      "to": "dashboard"
+    },
+    {
+      "from": "analytics",
+      "to": "alerts",
+      "dashed": true,
+      "label": "threshold"
+    }
+  ]
+}

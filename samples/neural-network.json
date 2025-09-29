@@ -1,0 +1,176 @@
+{
+  "meta": {
+    "layout": "layered",
+    "theme": "light",
+    "arrowHeads": false,
+    "rounded": true,
+    "spacingX": 120,
+    "spacingY": 60
+  },
+  "nodes": [
+    {
+      "id": "i1",
+      "label": "Input 1",
+      "w": 80,
+      "h": 40
+    },
+    {
+      "id": "i2",
+      "label": "Input 2",
+      "w": 80,
+      "h": 40
+    },
+    {
+      "id": "i3",
+      "label": "Input 3",
+      "w": 80,
+      "h": 40
+    },
+    {
+      "id": "h1",
+      "label": "Hidden 1",
+      "w": 80,
+      "h": 40
+    },
+    {
+      "id": "h2",
+      "label": "Hidden 2",
+      "w": 80,
+      "h": 40
+    },
+    {
+      "id": "h3",
+      "label": "Hidden 3",
+      "w": 80,
+      "h": 40
+    },
+    {
+      "id": "h4",
+      "label": "Hidden 4",
+      "w": 80,
+      "h": 40
+    },
+    {
+      "id": "h5",
+      "label": "Hidden 5",
+      "w": 80,
+      "h": 40
+    },
+    {
+      "id": "h6",
+      "label": "Hidden 6",
+      "w": 80,
+      "h": 40
+    },
+    {
+      "id": "o1",
+      "label": "Output 1",
+      "w": 80,
+      "h": 40
+    },
+    {
+      "id": "o2",
+      "label": "Output 2",
+      "w": 80,
+      "h": 40
+    }
+  ],
+  "edges": [
+    {
+      "from": "i1",
+      "to": "h1"
+    },
+    {
+      "from": "i1",
+      "to": "h2"
+    },
+    {
+      "from": "i1",
+      "to": "h3"
+    },
+    {
+      "from": "i1",
+      "to": "h4"
+    },
+    {
+      "from": "i2",
+      "to": "h1"
+    },
+    {
+      "from": "i2",
+      "to": "h2"
+    },
+    {
+      "from": "i2",
+      "to": "h3"
+    },
+    {
+      "from": "i2",
+      "to": "h4"
+    },
+    {
+      "from": "i3",
+      "to": "h1"
+    },
+    {
+      "from": "i3",
+      "to": "h2"
+    },
+    {
+      "from": "i3",
+      "to": "h3"
+    },
+    {
+      "from": "i3",
+      "to": "h4"
+    },
+    {
+      "from": "h1",
+      "to": "h5"
+    },
+    {
+      "from": "h1",
+      "to": "h6"
+    },
+    {
+      "from": "h2",
+      "to": "h5"
+    },
+    {
+      "from": "h2",
+      "to": "h6"
+    },
+    {
+      "from": "h3",
+      "to": "h5"
+    },
+    {
+      "from": "h3",
+      "to": "h6"
+    },
+    {
+      "from": "h4",
+      "to": "h5"
+    },
+    {
+      "from": "h4",
+      "to": "h6"
+    },
+    {
+      "from": "h5",
+      "to": "o1"
+    },
+    {
+      "from": "h5",
+      "to": "o2"
+    },
+    {
+      "from": "h6",
+      "to": "o1"
+    },
+    {
+      "from": "h6",
+      "to": "o2"
+    }
+  ]
+}

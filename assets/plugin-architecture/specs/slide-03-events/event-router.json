@@ -1,0 +1,28 @@
+{
+  "id": "event-router",
+  "label": "EventRouter",
+  "svg": "slide-03-events/event-router.svg",
+  "description": "At center, a luminous hub radiates violet spokes to surrounding modules. Tiny packets pulse along the spokes, converging and fanning out with rhythm and intent. The hub feels authoritative yet lightweight—traffic flows smoothly, rules are respected, and pathways remain visible at a glance.",
+  "sub_elements": [
+    {
+      "id": "luminous-hub",
+      "svg": "slide-03-events/event-router/luminous-hub.svg",
+      "description": "Central luminous hub that feels authoritative yet lightweight"
+    },
+    {
+      "id": "violet-spokes",
+      "svg": "slide-03-events/event-router/violet-spokes.svg",
+      "description": "Violet spokes radiating to surrounding modules"
+    },
+    {
+      "id": "pulse-packets",
+      "svg": "slide-03-events/event-router/pulse-packets.svg",
+      "description": "Tiny packets pulsing along spokes with rhythm and intent"
+    },
+    {
+      "id": "traffic-flow",
+      "svg": "slide-03-events/event-router/traffic-flow.svg",
+      "description": "Smooth traffic flow showing respected rules and visible pathways"
+    }
+  ]
+}

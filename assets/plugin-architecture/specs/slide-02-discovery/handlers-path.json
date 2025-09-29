@@ -1,0 +1,28 @@
+{
+  "id": "handlers-path",
+  "label": "handlersPath",
+  "svg": "slide-02-discovery/handlers-path.svg",
+  "description": "A luminous thread snakes from the manifest card to a well-marked entry port labeled handlersPath. Breadcrumb dots align along the route, reinforcing clarity and intent. The path glows brighter as it nears the port—an invitation to connect code by contract, not by coordinates.",
+  "sub_elements": [
+    {
+      "id": "luminous-thread",
+      "svg": "slide-02-discovery/handlers-path/luminous-thread.svg",
+      "description": "Luminous thread snaking from manifest card to entry port"
+    },
+    {
+      "id": "entry-port",
+      "svg": "slide-02-discovery/handlers-path/entry-port.svg",
+      "description": "Well-marked entry port labeled handlersPath"
+    },
+    {
+      "id": "breadcrumb-dots",
+      "svg": "slide-02-discovery/handlers-path/breadcrumb-dots.svg",
+      "description": "Breadcrumb dots aligned along route for clarity and intent"
+    },
+    {
+      "id": "glow-effect",
+      "svg": "slide-02-discovery/handlers-path/glow-effect.svg",
+      "description": "Path glow that brightens near the port showing connection invitation"
+    }
+  ]
+}

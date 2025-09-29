@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <title>Phase 2: Host Registration &amp; Discovery</title>
+  <desc>Wire the host to discover the plugin via handlersPath and register routes/topics from the manifest.</desc>
+
+  <!-- Slide background -->
+  <rect width="100%" height="100%" fill="#FAFAFA"/>
+
+  <!-- Slide title -->
+  <text x="600" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="600" fill="#1F2937">Phase 2: Host Registration &amp; Discovery</text>
+
+  <!-- Elements -->
+  <g id="host-app" transform="translate(23,155)" data-element="Host App (Thin)">
+    <!-- Host App (Thin) -->
+<rect x="16" y="22" width="388" height="96" rx="10" ry="10" fill="#F3F4F6" stroke="#111827" stroke-width="2"/><text x="210" y="65" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" fill="#111827">Host App (Thin)</text><text x="210" y="95" font-family="Arial, Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#6B7280">Conductor + dynamic plugin discovery</text>
+  </g>
+
+  <g id="plugin-loader" transform="translate(390,155)" data-element="Plugin Loader">
+    <!-- Plugin Loader -->
+<rect x="16" y="22" width="388" height="96" rx="10" ry="10" fill="#ECFEFF" stroke="#06B6D4" stroke-width="2"/><text x="210" y="65" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" fill="#0E7490">Plugin Loader</text><text x="210" y="95" font-family="Arial, Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#155E75">dynamic import from handlersPath</text>
+  </g>
+
+  <g id="handlers-path" transform="translate(757,155)" data-element="handlersPath">
+    <!-- handlersPath -->
+<rect x="16" y="22" width="388" height="96" rx="10" ry="10" fill="#EEF2FF" stroke="#4F46E5" stroke-width="2"/><text x="210" y="65" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" fill="#312E81">handlersPath</text><text x="210" y="95" font-family="Arial, Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#4338CA">manifest-provided entry point</text>
+  </g>
+
+  <g id="routing-config" transform="translate(23,505)" data-element="Routing Config">
+    <!-- Routing Config -->
+<rect x="16" y="22" width="388" height="96" rx="10" ry="10" fill="#FEF3C7" stroke="#D97706" stroke-width="2"/><text x="210" y="65" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" fill="#92400E">Routing Config</text><text x="210" y="95" font-family="Arial, Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#B45309">routes/topics from manifest</text>
+  </g>
+
+  <g id="feature-flags" transform="translate(390,505)" data-element="Feature Flags">
+    <!-- Feature Flags -->
+<rect x="16" y="22" width="388" height="96" rx="10" ry="10" fill="#DCFCE7" stroke="#16A34A" stroke-width="2"/><text x="210" y="65" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" fill="#065F46">Feature Flags</text><text x="210" y="95" font-family="Arial, Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#047857">toggle plugin exposure</text>
+  </g>
+</svg>

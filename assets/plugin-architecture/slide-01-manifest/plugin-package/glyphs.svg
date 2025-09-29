@@ -1,11 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
   <title>Plugin Package - Capability Glyphs</title>
-  <g id="glyphs" fill="#6A6A6A">
-    <circle cx="30" cy="30" r="6"/>
-    <rect x="60" y="24" width="12" height="12" rx="2"/>
-    <polygon points="100,24 110,36 90,36"/>
-    <path d="M140 24 h12 v12 h-12 z"/>
-    <path d="M170 24 h12 v12 h-12 z"/>
+  <g id="glyphs" fill="#AAA" opacity="0.6">
+    <!-- Faint glyphs along the sides hinting at capabilities and boundaries -->
+
+    <!-- Left side glyphs - capabilities -->
+    <g transform="translate(50, 70)">
+      <!-- Plugin icon -->
+      <path d="M0 0 L6 0 L6 6 L0 6 Z M2 2 L4 2 L4 4 L2 4 Z" fill="#AAA"/>
+      <!-- Handler icon -->
+      <path d="M0 12 L3 9 L6 12 L3 15 Z" fill="#AAA"/>
+      <!-- Event icon -->
+      <circle cx="3" cy="24" r="2" fill="none" stroke="#AAA" stroke-width="0.5"/>
+      <path d="M1 24 L5 24 M3 22 L3 26" stroke="#AAA" stroke-width="0.5"/>
+    </g>
+
+    <!-- Right side glyphs - boundaries -->
+    <g transform="translate(145, 70)">
+      <!-- Boundary icon -->
+      <rect x="0" y="0" width="6" height="6" fill="none" stroke="#AAA" stroke-width="0.5"/>
+      <path d="M2 2 L4 4 M4 2 L2 4" stroke="#AAA" stroke-width="0.5"/>
+      <!-- Security icon -->
+      <path d="M3 9 L1 11 L1 15 L5 15 L5 11 Z M2 11 L2 10 C2 9.5 2.5 9 3 9 C3.5 9 4 9.5 4 10 L4 11"
+            fill="none" stroke="#AAA" stroke-width="0.5"/>
+      <!-- Version icon -->
+      <text x="3" y="26" text-anchor="middle" font-size="4" fill="#AAA" font-family="monospace">v</text>
+    </g>
+
+    <!-- Top edge glyphs -->
+    <g transform="translate(80, 50)" opacity="0.4">
+      <circle cx="0" cy="0" r="1" fill="#AAA"/>
+      <circle cx="8" cy="0" r="1" fill="#AAA"/>
+      <circle cx="16" cy="0" r="1" fill="#AAA"/>
+    </g>
   </g>
 </svg>
 
