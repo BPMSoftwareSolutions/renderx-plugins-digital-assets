@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Coordination Illusion Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        .header p {
+            margin: 10px 0 0 0;
+            opacity: 0.9;
+        }
+        .controls {
+            padding: 20px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+            text-align: center;
+        }
+        .btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+        .btn.secondary {
+            background: #6c757d;
+        }
+        .btn.secondary:hover {
+            background: #545b62;
+        }
+        .timing-info {
+            padding: 20px;
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            margin: 20px;
+            border-radius: 4px;
+        }
+        .timing-info h3 {
+            margin-top: 0;
+            color: #1976d2;
+        }
+        .timing-table {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .timing-item {
+            background: white;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+            border: 1px solid #bbdefb;
+        }
+        .timing-item strong {
+            color: #1976d2;
+        }
+        .svg-container {
+            padding: 20px;
+            text-align: center;
+            background: white;
+        }
+        .status {
+            padding: 10px 20px;
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            margin: 20px;
+            border-radius: 4px;
+        }
+        .legend {
+            padding: 20px;
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            margin: 20px;
+            border-radius: 4px;
+        }
+        .legend h4 {
+            margin-top: 0;
+            color: #856404;
+        }
+        .legend ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .legend li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚌 Bus Coordination Illusion Test</h1>
+            <p>Demonstrating scene-by-scene animation triggers that create the illusion of a single bus traveling between scenes</p>
+        </div>
+
+        <div class="controls">
+            <button class="btn" onclick="restartAnimation()">🔄 Restart Animation</button>
+            <button class="btn secondary" onclick="togglePause()">⏸️ Pause/Resume</button>
+            <button class="btn secondary" onclick="showTimingDetails()">📊 Show Timing</button>
+        </div>
+
+        <div class="timing-info" id="timingInfo" style="display: none;">
+            <h3>🎬 Bus Animation Coordination Timeline</h3>
+            <p>Each scene's bus animation is delayed to create the illusion of a single bus traveling scene-by-scene:</p>
+            <div class="timing-table">
+                <div class="timing-item">
+                    <strong>Scene 1</strong><br>
+                    Starts: 0s<br>
+                    Duration: 8s
+                </div>
+                <div class="timing-item">
+                    <strong>Scene 2</strong><br>
+                    Starts: 6s<br>
+                    Duration: 12s
+                </div>
+                <div class="timing-item">
+                    <strong>Scene 3</strong><br>
+                    Starts: 16s<br>
+                    Duration: 15s
+                </div>
+                <div class="timing-item">
+                    <strong>Scene 4</strong><br>
+                    Starts: 28s<br>
+                    Duration: 18s
+                </div>
+                <div class="timing-item">
+                    <strong>Scene 5</strong><br>
+                    Starts: 42s<br>
+                    Duration: 16s
+                </div>
+                <div class="timing-item">
+                    <strong>Scene 6</strong><br>
+                    Starts: 56s<br>
+                    Duration: 12s
+                </div>
+            </div>
+        </div>
+
+        <div class="status">
+            ✅ <strong>Bus Coordination Active:</strong> Individual scene buses are timed to create seamless journey illusion
+        </div>
+
+        <div class="legend">
+            <h4>🎯 How the Illusion Works:</h4>
+            <ul>
+                <li><strong>Scene 1 Bus</strong> exits right edge → <strong>Scene 2 Bus</strong> enters from left</li>
+                <li><strong>Scene 2 Bus</strong> exits right edge → <strong>Scene 3 Bus</strong> enters from left</li>
+                <li><strong>Scene 3 Bus</strong> exits right edge → <strong>Scene 4 Bus</strong> enters from left</li>
+                <li>And so on... creating the perception of one continuous journey</li>
+                <li><strong>Graph Content Preserved:</strong> All original animations and visual elements maintained</li>
+            </ul>
+        </div>
+
+        <div class="svg-container">
+            <div id="svgContent">Loading enhanced combined storybook...</div>
+        </div>
+    </div>
+
+    <script>
+        let isPaused = false;
+        let timingVisible = false;
+
+        // Load the enhanced combined storybook SVG
+        fetch('/samples/enhanced-combined-storybook.svg')
+            .then(response => response.text())
+            .then(svgContent => {
+                document.getElementById('svgContent').innerHTML = svgContent;
+            })
+            .catch(error => {
+                document.getElementById('svgContent').innerHTML = 
+                    '<p style="color: red;">Error loading SVG: ' + error.message + '</p>';
+            });
+
+        function restartAnimation() {
+            // Reload the SVG to restart all animations
+            const svgContainer = document.getElementById('svgContent');
+            const currentSvg = svgContainer.innerHTML;
+            svgContainer.innerHTML = '';
+            setTimeout(() => {
+                svgContainer.innerHTML = currentSvg;
+            }, 100);
+        }
+
+        function togglePause() {
+            const svg = document.querySelector('svg');
+            if (svg) {
+                if (isPaused) {
+                    svg.unpauseAnimations();
+                    document.querySelector('.btn.secondary').textContent = '⏸️ Pause';
+                } else {
+                    svg.pauseAnimations();
+                    document.querySelector('.btn.secondary').textContent = '▶️ Resume';
+                }
+                isPaused = !isPaused;
+            }
+        }
+
+        function showTimingDetails() {
+            const timingInfo = document.getElementById('timingInfo');
+            timingVisible = !timingVisible;
+            timingInfo.style.display = timingVisible ? 'block' : 'none';
+            
+            const btn = document.querySelector('.btn.secondary:last-child');
+            btn.textContent = timingVisible ? '📊 Hide Timing' : '📊 Show Timing';
+        }
+    </script>
+</body>
+</html>

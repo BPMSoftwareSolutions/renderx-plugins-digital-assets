@@ -77,24 +77,33 @@ describe('Enhanced Combined Storybook Animation Tests', () => {
     }
   })
 
-  it('should preserve original graph bus animations', () => {
+  it('should have coordinated bus animation timing (illusion of single bus)', () => {
     // Get individual bus animations from graphs
     cy.get('#school-bus animateTransform[type="translate"]').then($anims => {
       // Should have multiple bus animations (one per scene)
-      expect($anims.length).to.be.greaterThan(0)
+      expect($anims.length).to.be.greaterThan(4) // At least 5 scenes with buses
 
-      // Each should have proper animation values from the graph
+      // Check that animations have staggered begin times to create coordination illusion
+      const beginTimes = []
       $anims.each((index, anim) => {
-        const values = anim.getAttribute('values')
-        expect(values).to.exist
-        expect(values).to.include(',') // Should have coordinate pairs
+        const begin = anim.getAttribute('begin')
+        if (begin) {
+          beginTimes.push(parseInt(begin.replace('s', '')))
+        }
       })
+
+      // Should have staggered timing (not all starting at 0)
+      expect(beginTimes.filter(time => time > 0).length).to.be.greaterThan(3)
+
+      // Times should be in ascending order for scene coordination
+      const sortedTimes = [...beginTimes].sort((a, b) => a - b)
+      expect(beginTimes).to.deep.equal(sortedTimes)
     })
   })
 
-  it('should maintain graph integrity (no content modification)', () => {
+  it('should maintain graph integrity with coordinated timing', () => {
     // Should have individual bus animations from graphs (not removed)
-    cy.get('g[id="school-bus"] animateTransform[type="translate"]').should('have.length.greaterThan', 0)
+    cy.get('g[id="school-bus"] animateTransform[type="translate"]').should('have.length.greaterThan', 4)
 
     // Should NOT have unified bus (content not modified)
     cy.get('#unified-coordinated-bus').should('have.length', 0)
@@ -103,6 +112,9 @@ describe('Enhanced Combined Storybook Animation Tests', () => {
     cy.get('#school-bus').should('exist')
     cy.get('#depot').should('exist') // Should have depot from graph
     cy.get('#traffic-light').should('exist') // Should have traffic light from graph
+
+    // Verify coordination timing is applied without corrupting content
+    cy.get('#school-bus animateTransform[begin]').should('have.length.greaterThan', 3)
   })
 
   it('should be visually correct (screenshot test)', () => {

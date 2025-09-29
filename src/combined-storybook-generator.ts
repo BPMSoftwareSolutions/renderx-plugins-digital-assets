@@ -100,6 +100,36 @@ function createDefaultConfig(): CombinedStorybookConfig {
 
 
 /**
+ * Apply bus animation coordination to create illusion of single bus traveling between scenes
+ */
+function applyBusCoordination(svgContent: string, sceneNumber: number): string {
+  // Calculate cumulative delays based on bus exit timing from each scene
+  const sceneDelays = [
+    0,    // Scene 1: starts immediately
+    6,    // Scene 2: starts when Scene 1 bus exits (8s * 0.75)
+    16,   // Scene 3: starts when Scene 2 bus exits (6 + 12s * 0.83)
+    28,   // Scene 4: starts when Scene 3 bus exits (16 + 15s * 0.8)
+    42,   // Scene 5: starts when Scene 4 bus exits (28 + 18s * 0.78)
+    56    // Scene 6: starts when Scene 5 bus exits (42 + 16s * 0.875)
+  ];
+
+  const delay = sceneDelays[sceneNumber - 1] || 0;
+
+  if (delay === 0) {
+    // Scene 1 starts immediately - no modification needed
+    return svgContent;
+  }
+
+  // Modify the bus animateTransform to include begin delay
+  const busAnimationRegex = /(<animateTransform[^>]*attributeName="transform"[^>]*type="translate"[^>]*)(dur="[^"]*"[^>]*)(repeatCount="[^"]*"[^>]*>)/g;
+
+  return svgContent.replace(busAnimationRegex, (match, prefix, durPart, suffix) => {
+    // Add begin attribute to delay the animation
+    return `${prefix}begin="${delay}s" ${durPart}${suffix}`;
+  });
+}
+
+/**
  * Convert legacy SceneInfo to EnhancedSceneInfo with positioning and bus travel
  */
 function enhanceSceneInfo(scenes: SceneInfo[], config: CombinedStorybookConfig): EnhancedSceneInfo[] {
@@ -272,6 +302,9 @@ function generateEnhancedSVG(config: CombinedStorybookConfig, timeline: Combined
 
       // Keep original graph content intact - graph is the single source of truth
 
+      // Apply bus animation coordination to create illusion of single bus
+      innerContent = applyBusCoordination(innerContent, sceneInfo.sceneNumber);
+
       // Add scene as a group with enhanced features
       svg += `  <!-- Scene ${sceneInfo.sceneNumber}: ${sceneInfo.title} -->
   <g class="scene-${sceneInfo.sceneNumber}" transform="translate(${position.x}, ${position.y})">
@@ -323,7 +356,7 @@ ${innerContent}
 
 `;
 
-  // Individual scene buses from graphs provide the coordination - no unified bus needed
+  // Bus coordination is applied directly to individual scene animations
 
   // Add controls if enabled
   if (config.controls?.allowPlayPause) {

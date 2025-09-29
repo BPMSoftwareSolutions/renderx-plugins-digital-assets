@@ -478,7 +478,7 @@
 <!-- Bus movement: approach, stop at red light, continue on green -->
 <animateTransform attributeName="transform" type="translate"
 values="50,250; 350,250; 350,250; 900,250"
-dur="12s"
+begin="6s" dur="12s"
 repeatCount="indefinite"/>
 <rect x="0" y="0" width="100" height="35" rx="4" ry="4" fill="#FFD700" stroke="#E6C200" stroke-width="2"></rect>
 <rect x="95" y="3" width="10" height="29" rx="5" ry="5" fill="#FFD700" stroke="#E6C200" stroke-width="2"></rect>
@@ -680,7 +680,7 @@ repeatCount="indefinite"/>
 <!-- Bus movement: approach stop, pause for pickup, continue -->
 <animateTransform attributeName="transform" type="translate"
 values="100,250; 450,250; 450,250; 900,250"
-dur="15s"
+begin="16s" dur="15s"
 repeatCount="indefinite"/>
 <rect x="0" y="0" width="100" height="35" rx="4" ry="4" fill="#FFD700" stroke="#E6C200" stroke-width="2"/>
 <rect x="95" y="3" width="10" height="29" rx="5" ry="5" fill="#FFD700" stroke="#E6C200" stroke-width="2"/>
@@ -756,7 +756,7 @@ repeatCount="indefinite"/>
 <!-- Animation: subscriber moves toward bus during pickup -->
 <animateTransform attributeName="transform" type="translate"
 values="25,25; 25,25; -100,50; -100,50"
-dur="15s"
+begin="16s" dur="15s"
 repeatCount="indefinite"/>
 <!-- Opacity animation: subscriber disappears when boarding bus -->
 <animate attributeName="opacity"
@@ -799,7 +799,7 @@ repeatCount="indefinite"/>
 <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/>
 <animateTransform attributeName="transform" type="translate"
 values="0,0; -50,-20; -100,-40"
-dur="3s"
+begin="16s" dur="3s"
 repeatCount="indefinite"/>
 </circle>
 </g>
@@ -982,7 +982,7 @@ fill="none" stroke="#E0E0E0" stroke-width="4" stroke-linecap="round"/>
 <!-- Bus movement: approach ramp, drive up ramp, fly off into sky -->
 <animateTransform attributeName="transform" type="translate"
 values="100,250; 350,310; 450,260; 550,220; 650,180; 750,140; 900,100"
-dur="18s"
+begin="28s" dur="18s"
 repeatCount="indefinite"/>
 <!-- Bus rotation during ramp ascent -->
 <g transform-origin="50 17.5">
@@ -1039,7 +1039,7 @@ repeatCount="indefinite"/>
 <!-- Green bus animation: drives off ramp and off the page -->
 <animateTransform attributeName="transform" type="translate"
 values="520,180; 600,160; 700,140; 850,120; 950,100"
-dur="20s"
+begin="28s" dur="20s"
 repeatCount="indefinite"/>
 <rect x="0" y="0" width="60" height="25" rx="3" ry="3" fill="#32CD32" stroke="#228B22" stroke-width="1"/>
 <rect x="55" y="2" width="8" height="21" rx="4" ry="4" fill="#32CD32" stroke="#228B22" stroke-width="1"/>
@@ -1231,7 +1231,7 @@ repeatCount="indefinite"/>
 <!-- Bus movement: approach traffic light, stop at red, proceed on green -->
 <animateTransform attributeName="transform" type="translate"
 values="100,250; 600,250; 600,250; 900,250"
-dur="16s"
+begin="42s" dur="16s"
 repeatCount="indefinite"/>
 <rect x="0" y="0" width="100" height="35" rx="4" ry="4" fill="#FFD700" stroke="#E6C200" stroke-width="2"/>
 <rect x="95" y="3" width="10" height="29" rx="5" ry="5" fill="#FFD700" stroke="#E6C200" stroke-width="2"/>
@@ -1485,7 +1485,7 @@ repeatCount="indefinite"/>
 <!-- Bus movement: approach school stop and park -->
 <animateTransform attributeName="transform" type="translate"
 values="100,250; 250,250; 250,250"
-dur="12s"
+begin="56s" dur="12s"
 repeatCount="indefinite"/>
 <rect x="0" y="0" width="120" height="35" rx="4" ry="4" fill="#FFD700" stroke="#E6C200" stroke-width="2"/>
 <rect x="115" y="3" width="12" height="29" rx="6" ry="6" fill="#FFD700" stroke="#E6C200" stroke-width="2"/>
@@ -1536,7 +1536,7 @@ repeatCount="indefinite"/>
 <rect x="107" y="22" width="8" height="9" fill="#E6C200" stroke="#D4AF37" stroke-width="1">
 <animateTransform attributeName="transform" type="translate"
 values="0,0; 0,0; 15,0"
-dur="12s"
+begin="56s" dur="12s"
 repeatCount="indefinite"/>
 </rect>
 </g>
@@ -1547,7 +1547,7 @@ repeatCount="indefinite"/>
 <g transform="translate(380, 270)">
 <animateTransform attributeName="transform" type="translate"
 values="380,270; 380,270; 380,265; 380,270; 420,275"
-dur="12s"
+begin="56s" dur="12s"
 repeatCount="indefinite"/>
 <circle cx="0" cy="0" r="3" fill="#FBBF24"/>
 <rect x="-2" y="3" width="4" height="8" fill="#3B82F6" rx="1"/>
@@ -1560,7 +1560,7 @@ repeatCount="indefinite"/>
 <g transform="translate(420, 275)">
 <animateTransform attributeName="transform" type="translate"
 values="420,275; 420,275; 420,270; 420,275; 480,280"
-dur="12s"
+begin="56s" dur="12s"
 repeatCount="indefinite"/>
 <circle cx="0" cy="0" r="3" fill="#F87171"/>
 <rect x="-2" y="3" width="4" height="8" fill="#10B981" rx="1"/>
@@ -1573,7 +1573,7 @@ repeatCount="indefinite"/>
 <g transform="translate(480, 280)">
 <animateTransform attributeName="transform" type="translate"
 values="480,280; 480,280; 480,275; 480,280; 580,285"
-dur="12s"
+begin="56s" dur="12s"
 repeatCount="indefinite"/>
 <circle cx="0" cy="0" r="3" fill="#34D399"/>
 <rect x="-2" y="3" width="4" height="8" fill="#EF4444" rx="1"/>
@@ -1586,7 +1586,7 @@ repeatCount="indefinite"/>
 <g transform="translate(580, 285)">
 <animateTransform attributeName="transform" type="translate"
 values="580,285; 580,285; 580,280; 580,285; 580,285"
-dur="12s"
+begin="56s" dur="12s"
 repeatCount="indefinite"/>
 <circle cx="0" cy="0" r="3" fill="#A78BFA"/>
 <rect x="-2" y="3" width="4" height="8" fill="#FBBF24" rx="1"/>
