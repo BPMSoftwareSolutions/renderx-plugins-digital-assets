@@ -123,33 +123,24 @@ function applyBusCoordination(svgContent: string, sceneNumber: number): string {
   const busGroupRegex = /(<g id="school-bus"[^>]*>)/;
   modifiedContent = modifiedContent.replace(busGroupRegex, (match, busGroup) => {
     if (sceneNumber === 1) {
-      // Scene 1: visible initially, hide when Scene 2 starts
-      const totalDuration = 100; // Use a long duration to cover the entire animation
-      const hideTime = 6 / totalDuration; // Hide at 6s
-
+      // Scene 1: visible initially, hide permanently at 6s
       return `${busGroup}
-<!-- Bus visibility: Scene 1 visible initially, hide at 6s -->
+<!-- Bus visibility: Scene 1 visible initially, hide permanently at 6s -->
 <animate attributeName="opacity"
-         values="1;1;0"
-         keyTimes="0;${hideTime};1"
-         dur="${totalDuration}s"
+         values="1;1;0;0"
+         dur="6s;1s;1000s"
          begin="0s"
          fill="freeze"/>`;
     } else {
-      // Other scenes: hidden initially, show when scene starts, hide when next scene starts
+      // Other scenes: hidden initially, show when scene starts, hide permanently when next scene starts
       const nextSceneStart = sceneTimings[sceneNumber] ? sceneTimings[sceneNumber].delay : timing.exitTime;
-      const totalDuration = 100; // Use a long duration to cover the entire animation
-
-      // Calculate keyframe percentages for precise timing
-      const showTime = timing.delay / totalDuration;
-      const hideTime = nextSceneStart / totalDuration;
+      const showDuration = nextSceneStart - timing.delay;
 
       return `${busGroup}
-<!-- Bus visibility: Scene ${sceneNumber} hidden initially, show at ${timing.delay}s, hide at ${nextSceneStart}s -->
+<!-- Bus visibility: Scene ${sceneNumber} hidden initially, show at ${timing.delay}s, hide permanently at ${nextSceneStart}s -->
 <animate attributeName="opacity"
-         values="0;0;1;1;0"
-         keyTimes="0;${showTime};${showTime + 0.01};${hideTime};1"
-         dur="${totalDuration}s"
+         values="0;1;0"
+         dur="${timing.delay}s;${showDuration}s;1000s"
          begin="0s"
          fill="freeze"/>`;
     }

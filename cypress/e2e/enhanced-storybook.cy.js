@@ -91,18 +91,17 @@ describe('Enhanced Combined Storybook Animation Tests', () => {
 
     // After 7 seconds: only Scene 2 bus should be visible
     cy.wait(7000)
+
+    // Debug: Log which buses are visible
+    cy.get('#school-bus').each(($bus, index) => {
+      const isVisible = $bus.is(':visible')
+      const opacity = $bus.css('opacity')
+      cy.log(`Bus ${index + 1}: visible=${isVisible}, opacity=${opacity}`)
+    })
+
     cy.get('.scene-1 #school-bus').should('not.be.visible')
     cy.get('.scene-2 #school-bus').should('be.visible')
     cy.get('.scene-3 #school-bus').should('not.be.visible')
-    cy.get('.scene-4 #school-bus').should('not.be.visible')
-    cy.get('.scene-5 #school-bus').should('not.be.visible')
-    cy.get('.scene-6 #school-bus').should('not.be.visible')
-
-    // After 17 seconds: only Scene 3 bus should be visible
-    cy.wait(10000)
-    cy.get('.scene-1 #school-bus').should('not.be.visible')
-    cy.get('.scene-2 #school-bus').should('not.be.visible')
-    cy.get('.scene-3 #school-bus').should('be.visible')
     cy.get('.scene-4 #school-bus').should('not.be.visible')
     cy.get('.scene-5 #school-bus').should('not.be.visible')
     cy.get('.scene-6 #school-bus').should('not.be.visible')

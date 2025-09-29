@@ -297,11 +297,10 @@
 </g>
 <!-- School bus with movement animation -->
 <g id="school-bus" transform="translate(300, 250)">
-<!-- Bus visibility: Scene 1 visible initially, hide at 6s -->
+<!-- Bus visibility: Scene 1 visible initially, hide permanently at 6s -->
 <animate attributeName="opacity"
-         values="1;1;0"
-         keyTimes="0;0.06;1"
-         dur="100s"
+         values="1;1;0;0"
+         dur="6s;1s;1000s"
          begin="0s"
          fill="freeze"/>
 <!-- Bus movement animation from left to right -->
@@ -482,11 +481,10 @@
 </g>
 <!-- School bus with stop-and-go animation -->
 <g id="school-bus" transform="translate(200, 250)">
-<!-- Bus visibility: Scene 2 hidden initially, show at 6s, hide at 16s -->
+<!-- Bus visibility: Scene 2 hidden initially, show at 6s, hide permanently at 16s -->
 <animate attributeName="opacity"
-         values="0;0;1;1;0"
-         keyTimes="0;0.06;0.06999999999999999;0.16;1"
-         dur="100s"
+         values="0;1;0"
+         dur="6s;10s;1000s"
          begin="0s"
          fill="freeze"/>
 <!-- Bus movement: approach, stop at red light, continue on green -->
@@ -691,11 +689,10 @@ repeatCount="1"/>
 </g>
 <!-- School bus with pickup animation -->
 <g id="school-bus" transform="translate(350, 250)">
-<!-- Bus visibility: Scene 3 hidden initially, show at 16s, hide at 28s -->
+<!-- Bus visibility: Scene 3 hidden initially, show at 16s, hide permanently at 28s -->
 <animate attributeName="opacity"
-         values="0;0;1;1;0"
-         keyTimes="0;0.16;0.17;0.28;1"
-         dur="100s"
+         values="0;1;0"
+         dur="16s;12s;1000s"
          begin="0s"
          fill="freeze"/>
 <!-- Bus movement: approach stop, pause for pickup, continue -->
@@ -1000,11 +997,10 @@ fill="none" stroke="#E0E0E0" stroke-width="4" stroke-linecap="round"/>
 </g>
 <!-- School bus with ramp flying animation -->
 <g id="school-bus" transform="translate(300, 250)">
-<!-- Bus visibility: Scene 4 hidden initially, show at 28s, hide at 42s -->
+<!-- Bus visibility: Scene 4 hidden initially, show at 28s, hide permanently at 42s -->
 <animate attributeName="opacity"
-         values="0;0;1;1;0"
-         keyTimes="0;0.28;0.29000000000000004;0.42;1"
-         dur="100s"
+         values="0;1;0"
+         dur="28s;14s;1000s"
          begin="0s"
          fill="freeze"/>
 <!-- Bus movement: approach ramp, drive up ramp, fly off into sky -->
@@ -1256,11 +1252,10 @@ repeatCount="1"/>
 </g>
 <!-- School bus with traffic light stop-and-go animation -->
 <g id="school-bus" transform="translate(350, 250)">
-<!-- Bus visibility: Scene 5 hidden initially, show at 42s, hide at 56s -->
+<!-- Bus visibility: Scene 5 hidden initially, show at 42s, hide permanently at 56s -->
 <animate attributeName="opacity"
-         values="0;0;1;1;0"
-         keyTimes="0;0.42;0.43;0.56;1"
-         dur="100s"
+         values="0;1;0"
+         dur="42s;14s;1000s"
          begin="0s"
          fill="freeze"/>
 <!-- Bus movement: approach traffic light, stop at red, proceed on green -->
@@ -1517,11 +1512,10 @@ repeatCount="1"/>
 </g>
 <!-- School bus with arrival animation -->
 <g id="school-bus" transform="translate(250, 250)">
-<!-- Bus visibility: Scene 6 hidden initially, show at 56s, hide at 68s -->
+<!-- Bus visibility: Scene 6 hidden initially, show at 56s, hide permanently at 68s -->
 <animate attributeName="opacity"
-         values="0;0;1;1;0"
-         keyTimes="0;0.56;0.5700000000000001;0.68;1"
-         dur="100s"
+         values="0;1;0"
+         dur="56s;12s;1000s"
          begin="0s"
          fill="freeze"/>
 <!-- Bus movement: approach school stop and park -->
