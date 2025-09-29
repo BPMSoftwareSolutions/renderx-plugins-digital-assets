@@ -92,3 +92,7 @@ typings/
 .Trashes
 ehthumbs.db
 Thumbs.db
+/.vs/renderx-plugins-digital-assets/v17
+/.vs/renderx-plugins-digital-assets/FileContentIndex
+/.vs
+/.*
