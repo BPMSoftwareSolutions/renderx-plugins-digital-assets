@@ -1,0 +1,449 @@
+{
+  "id": "event-router-combined-storybook",
+  "canvas": { "width": 1600, "height": 1200 },
+  "bg": "#F5F5F5",
+  "defs": {
+    "filters": [
+      "<filter id=\"sceneShadow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\"><feDropShadow dx=\"0\" dy=\"4\" stdDeviation=\"8\" flood-color=\"#000\" flood-opacity=\"0.25\"/></filter>",
+      "<filter id=\"busGlow\"><feGaussianBlur stdDeviation=\"2\" result=\"b\"/><feMerge><feMergeNode in=\"b\"/><feMergeNode in=\"SourceGraphic\"/></feMerge></filter>",
+      "<filter id=\"flowGlow\"><feGaussianBlur stdDeviation=\"3\" result=\"b\"/><feMerge><feMergeNode in=\"b\"/><feMergeNode in=\"SourceGraphic\"/></feMerge></filter>"
+    ],
+    "gradients": [
+      "<linearGradient id=\"roadGradient\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0\" stop-color=\"#404040\"/><stop offset=\"0.5\" stop-color=\"#505050\"/><stop offset=\"1\" stop-color=\"#404040\"/></linearGradient>",
+      "<linearGradient id=\"busGradient\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0\" stop-color=\"#FFD700\"/><stop offset=\"0.5\" stop-color=\"#FFA500\"/><stop offset=\"1\" stop-color=\"#FFD700\"/></linearGradient>",
+      "<linearGradient id=\"flowGradient\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0\" stop-color=\"#FFD700\"/><stop offset=\"0.5\" stop-color=\"#FF6B35\"/><stop offset=\"1\" stop-color=\"#4CAF50\"/></linearGradient>"
+    ]
+  },
+  "nodes": [
+    {
+      "kind": "text",
+      "id": "storybook-title",
+      "at": { "x": 800, "y": 30 },
+      "text": "EventRouter Journey: From Publisher to Application State",
+      "style": { "fill": "#1E3A56", "fontSize": 32, "fontWeight": "bold", "textAnchor": "middle" }
+    },
+    {
+      "kind": "text",
+      "id": "storybook-subtitle",
+      "at": { "x": 800, "y": 60 },
+      "text": "A School Bus Metaphor for Event-Driven Architecture",
+      "style": { "fill": "#3C556E", "fontSize": 18, "textAnchor": "middle" }
+    },
+    {
+      "kind": "boundary",
+      "id": "scene-1-depot",
+      "title": "Scene 1: Publisher Origin",
+      "at": { "x": 50, "y": 100 },
+      "size": { "width": 750, "height": 350 },
+      "style": { 
+        "fill": "#E8F4FD", 
+        "stroke": "#1976D2", 
+        "strokeWidth": 3, 
+        "labelColor": "#1976D2",
+        "filter": "url(#sceneShadow)"
+      },
+      "grid": { "cols": 4, "rowH": 70, "gutter": 15, "padding": 15 },
+      "policy": { "mode": "strict", "overflow": "clip", "tolerance": 2, "snap": { "grid": 4 } },
+      "children": [
+        {
+          "kind": "shape",
+          "id": "depot-building-1",
+          "at": { "x": 50, "y": 80 },
+          "size": { "width": 150, "height": 100 },
+          "shape": "roundedRect",
+          "style": { "fill": "#8B7355", "stroke": "#6B5535", "strokeWidth": 2 }
+        },
+        {
+          "kind": "text",
+          "id": "depot-sign-1",
+          "at": { "x": 125, "y": 120 },
+          "text": "BUS DEPOT",
+          "style": { "fill": "#FFFFFF", "fontSize": 12, "fontWeight": "bold", "textAnchor": "middle" }
+        },
+        {
+          "kind": "shape",
+          "id": "school-bus-1",
+          "at": { "x": 250, "y": 200 },
+          "size": { "width": 100, "height": 35 },
+          "shape": "roundedRect",
+          "style": { "fill": "url(#busGradient)", "stroke": "#E6C200", "strokeWidth": 2, "filter": "url(#busGlow)" }
+        },
+        {
+          "kind": "text",
+          "id": "scene-1-caption",
+          "at": { "x": 375, "y": 320 },
+          "text": "Bus leaves depot → publish(topic, payload)",
+          "style": { "fill": "#1976D2", "fontSize": 12, "fontWeight": "bold", "textAnchor": "middle" }
+        }
+      ]
+    },
+    {
+      "kind": "boundary",
+      "id": "scene-2-manifest",
+      "title": "Scene 2: Manifest & Debounce",
+      "at": { "x": 850, "y": 100 },
+      "size": { "width": 750, "height": 350 },
+      "style": { 
+        "fill": "#FFF8E1", 
+        "stroke": "#FF9800", 
+        "strokeWidth": 3, 
+        "labelColor": "#FF9800",
+        "filter": "url(#sceneShadow)"
+      },
+      "grid": { "cols": 4, "rowH": 70, "gutter": 15, "padding": 15 },
+      "policy": { "mode": "strict", "overflow": "clip", "tolerance": 2, "snap": { "grid": 4 } },
+      "children": [
+        {
+          "kind": "shape",
+          "id": "manifest-board-2",
+          "at": { "x": 80, "y": 60 },
+          "size": { "width": 150, "height": 90 },
+          "shape": "roundedRect",
+          "style": { "fill": "#00D9FF", "stroke": "#0099CC", "strokeWidth": 3 }
+        },
+        {
+          "kind": "text",
+          "id": "manifest-title-2",
+          "at": { "x": 155, "y": 90 },
+          "text": "MANIFEST",
+          "style": { "fill": "#FFFFFF", "fontSize": 12, "fontWeight": "bold", "textAnchor": "middle" }
+        },
+        {
+          "kind": "shape",
+          "id": "traffic-light-2",
+          "at": { "x": 600, "y": 120 },
+          "size": { "width": 20, "height": 50 },
+          "shape": "roundedRect",
+          "style": { "fill": "#333333", "stroke": "#222222", "strokeWidth": 2 }
+        },
+        {
+          "kind": "text",
+          "id": "scene-2-caption",
+          "at": { "x": 375, "y": 320 },
+          "text": "Manifest validation + debounce → controlled flow",
+          "style": { "fill": "#FF9800", "fontSize": 12, "fontWeight": "bold", "textAnchor": "middle" }
+        }
+      ]
+    },
+    {
+      "kind": "boundary",
+      "id": "scene-3-subscribers",
+      "title": "Scene 3: Subscribers & Cache",
+      "at": { "x": 50, "y": 500 },
+      "size": { "width": 750, "height": 350 },
+      "style": { 
+        "fill": "#E8F5E8", 
+        "stroke": "#4CAF50", 
+        "strokeWidth": 3, 
+        "labelColor": "#4CAF50",
+        "filter": "url(#sceneShadow)"
+      },
+      "grid": { "cols": 4, "rowH": 70, "gutter": 15, "padding": 15 },
+      "policy": { "mode": "strict", "overflow": "clip", "tolerance": 2, "snap": { "grid": 4 } },
+      "children": [
+        {
+          "kind": "shape",
+          "id": "bus-stop-3",
+          "at": { "x": 350, "y": 120 },
+          "size": { "width": 50, "height": 30 },
+          "shape": "roundedRect",
+          "style": { "fill": "#FFFFFF", "stroke": "#333333", "strokeWidth": 2 }
+        },
+        {
+          "kind": "text",
+          "id": "bus-stop-text-3",
+          "at": { "x": 375, "y": 135 },
+          "text": "STOP",
+          "style": { "fill": "#333333", "fontSize": 8, "fontWeight": "bold", "textAnchor": "middle" }
+        },
+        {
+          "kind": "shape",
+          "id": "live-subscriber-3",
+          "at": { "x": 450, "y": 250 },
+          "size": { "width": 25, "height": 35 },
+          "shape": "roundedRect",
+          "style": { "fill": "#32CD32", "stroke": "#228B22", "strokeWidth": 2 }
+        },
+        {
+          "kind": "shape",
+          "id": "replay-cache-3",
+          "at": { "x": 80, "y": 60 },
+          "size": { "width": 120, "height": 80 },
+          "shape": "roundedRect",
+          "style": { "fill": "#4682B4", "stroke": "#2F4F4F", "strokeWidth": 3 }
+        },
+        {
+          "kind": "text",
+          "id": "cache-title-3",
+          "at": { "x": 140, "y": 90 },
+          "text": "CACHE",
+          "style": { "fill": "#FFFFFF", "fontSize": 10, "fontWeight": "bold", "textAnchor": "middle" }
+        },
+        {
+          "kind": "text",
+          "id": "scene-3-caption",
+          "at": { "x": 375, "y": 320 },
+          "text": "Live & late subscribers + replay cache → reliable delivery",
+          "style": { "fill": "#4CAF50", "fontSize": 12, "fontWeight": "bold", "textAnchor": "middle" }
+        }
+      ]
+    },
+    {
+      "kind": "boundary",
+      "id": "scene-4-conductor",
+      "title": "Scene 4: Conductor Hub",
+      "at": { "x": 850, "y": 500 },
+      "size": { "width": 750, "height": 350 },
+      "style": {
+        "fill": "#F3E5F5",
+        "stroke": "#9C27B0",
+        "strokeWidth": 3,
+        "labelColor": "#9C27B0",
+        "filter": "url(#sceneShadow)"
+      },
+      "grid": { "cols": 4, "rowH": 70, "gutter": 15, "padding": 15 },
+      "policy": { "mode": "strict", "overflow": "clip", "tolerance": 2, "snap": { "grid": 4 } },
+      "children": [
+        {
+          "kind": "shape",
+          "id": "transfer-hub-4",
+          "at": { "x": 325, "y": 150 },
+          "size": { "width": 100, "height": 100 },
+          "shape": "circle",
+          "style": { "fill": "#4682B4", "stroke": "#2F4F4F", "strokeWidth": 3 }
+        },
+        {
+          "kind": "shape",
+          "id": "conductor-center-4",
+          "at": { "x": 350, "y": 175 },
+          "size": { "width": 50, "height": 50 },
+          "shape": "circle",
+          "style": { "fill": "#6B4EFF", "stroke": "#4A3ACD", "strokeWidth": 2 }
+        },
+        {
+          "kind": "text",
+          "id": "conductor-label-4",
+          "at": { "x": 375, "y": 280 },
+          "text": "Conductor: play()",
+          "style": { "fill": "#9C27B0", "fontSize": 10, "fontWeight": "bold", "textAnchor": "middle" }
+        },
+        {
+          "kind": "shape",
+          "id": "plugin-a-bus-4",
+          "at": { "x": 500, "y": 100 },
+          "size": { "width": 70, "height": 25 },
+          "shape": "roundedRect",
+          "style": { "fill": "#32CD32", "stroke": "#228B22", "strokeWidth": 2 }
+        },
+        {
+          "kind": "shape",
+          "id": "plugin-b-bus-4",
+          "at": { "x": 500, "y": 280 },
+          "size": { "width": 70, "height": 25 },
+          "shape": "roundedRect",
+          "style": { "fill": "#FF6347", "stroke": "#DC143C", "strokeWidth": 2 }
+        },
+        {
+          "kind": "text",
+          "id": "scene-4-caption",
+          "at": { "x": 375, "y": 320 },
+          "text": "Hub: topics route into sequences via Conductor",
+          "style": { "fill": "#9C27B0", "fontSize": 12, "fontWeight": "bold", "textAnchor": "middle" }
+        }
+      ]
+    },
+    {
+      "kind": "boundary",
+      "id": "scene-5-rules",
+      "title": "Scene 5: Rules & Boundaries",
+      "at": { "x": 50, "y": 900 },
+      "size": { "width": 750, "height": 350 },
+      "style": {
+        "fill": "#FFF3E0",
+        "stroke": "#FF9800",
+        "strokeWidth": 3,
+        "labelColor": "#FF9800",
+        "filter": "url(#sceneShadow)"
+      },
+      "grid": { "cols": 4, "rowH": 70, "gutter": 15, "padding": 15 },
+      "policy": { "mode": "strict", "overflow": "clip", "tolerance": 2, "snap": { "grid": 4 } },
+      "children": [
+        {
+          "kind": "shape",
+          "id": "loop-prevention-sign-5",
+          "at": { "x": 100, "y": 100 },
+          "size": { "width": 35, "height": 30 },
+          "shape": "polygon",
+          "style": { "fill": "#FFD700", "stroke": "#E6C200", "strokeWidth": 2 }
+        },
+        {
+          "kind": "shape",
+          "id": "handler-isolation-sign-5",
+          "at": { "x": 250, "y": 90 },
+          "size": { "width": 35, "height": 30 },
+          "shape": "rect",
+          "style": { "fill": "#228B22", "stroke": "#006400", "strokeWidth": 2 }
+        },
+        {
+          "kind": "shape",
+          "id": "feature-flags-sign-5",
+          "at": { "x": 500, "y": 95 },
+          "size": { "width": 35, "height": 25 },
+          "shape": "rect",
+          "style": { "fill": "#4169E1", "stroke": "#191970", "strokeWidth": 2 }
+        },
+        {
+          "kind": "shape",
+          "id": "traffic-light-5",
+          "at": { "x": 650, "y": 110 },
+          "size": { "width": 18, "height": 40 },
+          "shape": "roundedRect",
+          "style": { "fill": "#333333", "stroke": "#222222", "strokeWidth": 2 }
+        },
+        {
+          "kind": "text",
+          "id": "scene-5-caption",
+          "at": { "x": 375, "y": 320 },
+          "text": "Street rules: boundaries, flags, throttle & debounce",
+          "style": { "fill": "#FF9800", "fontSize": 12, "fontWeight": "bold", "textAnchor": "middle" }
+        }
+      ]
+    },
+    {
+      "kind": "boundary",
+      "id": "scene-6-school",
+      "title": "Scene 6: Final Destination",
+      "at": { "x": 850, "y": 900 },
+      "size": { "width": 750, "height": 350 },
+      "style": {
+        "fill": "#E8F5E8",
+        "stroke": "#4CAF50",
+        "strokeWidth": 3,
+        "labelColor": "#4CAF50",
+        "filter": "url(#sceneShadow)"
+      },
+      "grid": { "cols": 4, "rowH": 70, "gutter": 15, "padding": 15 },
+      "policy": { "mode": "strict", "overflow": "clip", "tolerance": 2, "snap": { "grid": 4 } },
+      "children": [
+        {
+          "kind": "shape",
+          "id": "school-building-6",
+          "at": { "x": 450, "y": 40 },
+          "size": { "width": 180, "height": 100 },
+          "shape": "rect",
+          "style": { "fill": "#CD853F", "stroke": "#8B4513", "strokeWidth": 2 }
+        },
+        {
+          "kind": "shape",
+          "id": "school-roof-6",
+          "at": { "x": 440, "y": 40 },
+          "size": { "width": 200, "height": 35 },
+          "shape": "polygon",
+          "style": { "fill": "#8B0000", "stroke": "#654321", "strokeWidth": 2 }
+        },
+        {
+          "kind": "text",
+          "id": "school-sign-6",
+          "at": { "x": 540, "y": 160 },
+          "text": "ELEMENTARY SCHOOL",
+          "style": { "fill": "#333333", "fontSize": 9, "fontWeight": "bold", "textAnchor": "middle" }
+        },
+        {
+          "kind": "shape",
+          "id": "celebration-balloons-6",
+          "at": { "x": 650, "y": 120 },
+          "size": { "width": 20, "height": 30 },
+          "shape": "circle",
+          "style": { "fill": "#FF6B6B", "stroke": "none" }
+        },
+        {
+          "kind": "text",
+          "id": "scene-6-caption",
+          "at": { "x": 375, "y": 320 },
+          "text": "Destination: application state updated (delivery complete)",
+          "style": { "fill": "#4CAF50", "fontSize": 12, "fontWeight": "bold", "textAnchor": "middle" }
+        }
+      ]
+    }
+  ],
+  "ports": [
+    {
+      "id": "depot-out",
+      "nodeId": "scene-1-depot",
+      "side": "right",
+      "offset": 175
+    },
+    {
+      "id": "manifest-in",
+      "nodeId": "scene-2-manifest",
+      "side": "left",
+      "offset": 175
+    },
+    {
+      "id": "manifest-out",
+      "nodeId": "scene-2-manifest",
+      "side": "bottom",
+      "offset": 375
+    },
+    {
+      "id": "subscribers-in",
+      "nodeId": "scene-3-subscribers",
+      "side": "top",
+      "offset": 375
+    },
+    {
+      "id": "subscribers-out",
+      "nodeId": "scene-3-subscribers",
+      "side": "right",
+      "offset": 175
+    },
+    {
+      "id": "conductor-in",
+      "nodeId": "scene-4-conductor",
+      "side": "left",
+      "offset": 175
+    },
+    {
+      "id": "conductor-out",
+      "nodeId": "scene-4-conductor",
+      "side": "bottom",
+      "offset": 375
+    },
+    {
+      "id": "rules-in",
+      "nodeId": "scene-5-rules",
+      "side": "top",
+      "offset": 375
+    },
+    {
+      "id": "rules-out",
+      "nodeId": "scene-5-rules",
+      "side": "right",
+      "offset": 175
+    },
+    {
+      "id": "school-in",
+      "nodeId": "scene-6-school",
+      "side": "left",
+      "offset": 175
+    }
+  ],
+  "flows": [
+    {
+      "id": "main-journey-flow",
+      "path": "depot-out -> manifest-in -> manifest-out -> subscribers-in -> subscribers-out -> conductor-in -> conductor-out -> rules-in -> rules-out -> school-in",
+      "token": {
+        "size": 8,
+        "color": "url(#flowGradient)",
+        "trail": { "length": 150, "opacity": 0.6 },
+        "glow": "url(#flowGlow)"
+      },
+      "speed": 120,
+      "loop": true,
+      "activate": {
+        "boundaryIds": ["scene-1-depot", "scene-2-manifest", "scene-3-subscribers", "scene-4-conductor", "scene-5-rules", "scene-6-school"],
+        "className": "active-journey"
+      }
+    }
+  ]
+}

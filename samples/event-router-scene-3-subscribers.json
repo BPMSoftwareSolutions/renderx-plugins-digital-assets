@@ -1,0 +1,218 @@
+{
+  "id": "event-router-scene-3-subscribers",
+  "canvas": { "width": 800, "height": 400 },
+  "bg": "#87CEEB",
+  "defs": {
+    "filters": [
+      "<filter id=\"sceneShadow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\"><feDropShadow dx=\"0\" dy=\"4\" stdDeviation=\"8\" flood-color=\"#000\" flood-opacity=\"0.25\"/></filter>",
+      "<filter id=\"subscriberGlow\"><feGaussianBlur stdDeviation=\"2\" result=\"b\"/><feMerge><feMergeNode in=\"b\"/><feMergeNode in=\"SourceGraphic\"/></feMerge></filter>"
+    ],
+    "gradients": [
+      "<linearGradient id=\"roadGradient\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0\" stop-color=\"#404040\"/><stop offset=\"0.5\" stop-color=\"#505050\"/><stop offset=\"1\" stop-color=\"#404040\"/></linearGradient>",
+      "<linearGradient id=\"liveSubscriberGradient\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#32CD32\"/><stop offset=\"1\" stop-color=\"#228B22\"/></linearGradient>",
+      "<linearGradient id=\"lateSubscriberGradient\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#FF6347\"/><stop offset=\"1\" stop-color=\"#DC143C\"/></linearGradient>",
+      "<linearGradient id=\"cacheGradient\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#4682B4\"/><stop offset=\"1\" stop-color=\"#2F4F4F\"/></linearGradient>"
+    ]
+  },
+  "nodes": [
+    {
+      "kind": "boundary",
+      "id": "scene-3-boundary",
+      "title": "Scene 3: Subscribers & Replay Cache (First Stop)",
+      "at": { "x": 20, "y": 20 },
+      "size": { "width": 760, "height": 360 },
+      "style": { 
+        "fill": "#E8F5E8", 
+        "stroke": "#4CAF50", 
+        "strokeWidth": 2, 
+        "labelColor": "#4CAF50",
+        "filter": "url(#sceneShadow)"
+      },
+      "grid": { "cols": 4, "rowH": 80, "gutter": 20, "padding": 20 },
+      "policy": { "mode": "strict", "overflow": "clip", "tolerance": 2, "snap": { "grid": 4 } },
+      "children": [
+        {
+          "kind": "shape",
+          "id": "sky-background",
+          "at": { "x": 0, "y": 0 },
+          "size": { "width": 760, "height": 200 },
+          "shape": "rect",
+          "style": { "fill": "#87CEEB", "stroke": "none" }
+        },
+        {
+          "kind": "shape",
+          "id": "ground",
+          "at": { "x": 0, "y": 200 },
+          "size": { "width": 760, "height": 120 },
+          "shape": "rect",
+          "style": { "fill": "#4A6B3A", "stroke": "none" }
+        },
+        {
+          "kind": "shape",
+          "id": "road",
+          "at": { "x": 0, "y": 230 },
+          "size": { "width": 760, "height": 60 },
+          "shape": "rect",
+          "style": { "fill": "url(#roadGradient)", "stroke": "#606060", "strokeWidth": 2 }
+        },
+        {
+          "kind": "shape",
+          "id": "bus-stop-pole",
+          "at": { "x": 400, "y": 150 },
+          "size": { "width": 6, "height": 80 },
+          "shape": "rect",
+          "style": { "fill": "#666666", "stroke": "none" }
+        },
+        {
+          "kind": "shape",
+          "id": "bus-stop-sign",
+          "at": { "x": 380, "y": 150 },
+          "size": { "width": 50, "height": 30 },
+          "shape": "roundedRect",
+          "style": { "fill": "#FFFFFF", "stroke": "#333333", "strokeWidth": 2 }
+        },
+        {
+          "kind": "text",
+          "id": "bus-stop-text",
+          "at": { "x": 405, "y": 165 },
+          "text": "BUS STOP",
+          "style": { "fill": "#333333", "fontSize": 8, "fontWeight": "bold", "textAnchor": "middle" }
+        },
+        {
+          "kind": "shape",
+          "id": "live-subscriber-1",
+          "at": { "x": 450, "y": 270 },
+          "size": { "width": 30, "height": 40 },
+          "shape": "roundedRect",
+          "style": { "fill": "url(#liveSubscriberGradient)", "stroke": "#228B22", "strokeWidth": 2, "filter": "url(#subscriberGlow)" }
+        },
+        {
+          "kind": "text",
+          "id": "live-subscriber-1-label",
+          "at": { "x": 465, "y": 285 },
+          "text": "LIVE",
+          "style": { "fill": "#FFFFFF", "fontSize": 8, "fontWeight": "bold", "textAnchor": "middle" }
+        },
+        {
+          "kind": "shape",
+          "id": "live-subscriber-2",
+          "at": { "x": 500, "y": 270 },
+          "size": { "width": 30, "height": 40 },
+          "shape": "roundedRect",
+          "style": { "fill": "url(#liveSubscriberGradient)", "stroke": "#228B22", "strokeWidth": 2, "filter": "url(#subscriberGlow)" }
+        },
+        {
+          "kind": "text",
+          "id": "live-subscriber-2-label",
+          "at": { "x": 515, "y": 285 },
+          "text": "LIVE",
+          "style": { "fill": "#FFFFFF", "fontSize": 8, "fontWeight": "bold", "textAnchor": "middle" }
+        },
+        {
+          "kind": "shape",
+          "id": "late-subscriber",
+          "at": { "x": 600, "y": 270 },
+          "size": { "width": 30, "height": 40 },
+          "shape": "roundedRect",
+          "style": { "fill": "url(#lateSubscriberGradient)", "stroke": "#DC143C", "strokeWidth": 2 }
+        },
+        {
+          "kind": "text",
+          "id": "late-subscriber-label",
+          "at": { "x": 615, "y": 285 },
+          "text": "LATE",
+          "style": { "fill": "#FFFFFF", "fontSize": 8, "fontWeight": "bold", "textAnchor": "middle" }
+        },
+        {
+          "kind": "shape",
+          "id": "replay-cache",
+          "at": { "x": 100, "y": 80 },
+          "size": { "width": 150, "height": 100 },
+          "shape": "roundedRect",
+          "style": { "fill": "url(#cacheGradient)", "stroke": "#2F4F4F", "strokeWidth": 3 }
+        },
+        {
+          "kind": "text",
+          "id": "cache-title",
+          "at": { "x": 175, "y": 100 },
+          "text": "REPLAY CACHE",
+          "style": { "fill": "#FFFFFF", "fontSize": 12, "fontWeight": "bold", "textAnchor": "middle" }
+        },
+        {
+          "kind": "text",
+          "id": "cache-content",
+          "at": { "x": 175, "y": 130 },
+          "text": "[ event1, event2, event3 ]\nBuffer: 100ms\nRetention: 5min",
+          "style": { "fill": "#FFFFFF", "fontSize": 9, "fontFamily": "monospace", "textAnchor": "middle" }
+        },
+        {
+          "kind": "shape",
+          "id": "school-bus",
+          "at": { "x": 320, "y": 200 },
+          "size": { "width": 120, "height": 40 },
+          "shape": "roundedRect",
+          "style": { "fill": "#FFD700", "stroke": "#E6C200", "strokeWidth": 2 }
+        },
+        {
+          "kind": "text",
+          "id": "bus-label",
+          "at": { "x": 380, "y": 215 },
+          "text": "SCHOOL BUS",
+          "style": { "fill": "#000000", "fontSize": 8, "fontWeight": "bold", "textAnchor": "middle" }
+        },
+        {
+          "kind": "text",
+          "id": "sky-headline",
+          "at": { "x": 380, "y": 40 },
+          "text": "Subscribers board the bus.",
+          "style": { "fill": "#1E3A56", "fontSize": 24, "fontWeight": "bold", "textAnchor": "middle", "stroke": "#FFFFFF", "strokeWidth": 1 }
+        },
+        {
+          "kind": "text",
+          "id": "sky-description",
+          "at": { "x": 380, "y": 65 },
+          "text": "Live subscribers get events immediately. Late ones use replay cache.",
+          "style": { "fill": "#3C556E", "fontSize": 16, "textAnchor": "middle" }
+        },
+        {
+          "kind": "text",
+          "id": "scene-caption",
+          "at": { "x": 380, "y": 320 },
+          "text": "Live & late subscribers + replay cache → reliable event delivery",
+          "style": { "fill": "#4CAF50", "fontSize": 14, "fontWeight": "bold", "textAnchor": "middle" }
+        }
+      ]
+    }
+  ],
+  "ports": [
+    {
+      "id": "subscribers-in",
+      "nodeId": "scene-3-boundary",
+      "side": "left",
+      "offset": 180
+    },
+    {
+      "id": "subscribers-out",
+      "nodeId": "scene-3-boundary",
+      "side": "right",
+      "offset": 180
+    }
+  ],
+  "flows": [
+    {
+      "id": "subscriber-delivery-flow",
+      "path": "subscribers-in -> subscribers-out",
+      "token": { 
+        "size": 6, 
+        "color": "#32CD32", 
+        "trail": { "length": 100, "opacity": 0.4 } 
+      },
+      "speed": 90,
+      "loop": true,
+      "activate": { 
+        "boundaryIds": ["scene-3-boundary"], 
+        "className": "active-scene" 
+      }
+    }
+  ]
+}

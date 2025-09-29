@@ -1,0 +1,595 @@
+{
+  "scene": {
+    "id": "event-router-scene-2-manifest",
+    "canvas": {
+      "width": 800,
+      "height": 400
+    },
+    "bg": "#87CEEB",
+    "defs": {
+      "filters": [
+        "<filter id=\"sceneShadow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\"><feDropShadow dx=\"0\" dy=\"4\" stdDeviation=\"8\" flood-color=\"#000\" flood-opacity=\"0.25\"/></filter>",
+        "<filter id=\"trafficLightGlow\"><feGaussianBlur stdDeviation=\"3\" result=\"b\"/><feMerge><feMergeNode in=\"b\"/><feMergeNode in=\"SourceGraphic\"/></feMerge></filter>"
+      ],
+      "gradients": [
+        "<linearGradient id=\"roadGradient\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0\" stop-color=\"#404040\"/><stop offset=\"0.5\" stop-color=\"#505050\"/><stop offset=\"1\" stop-color=\"#404040\"/></linearGradient>",
+        "<linearGradient id=\"manifestGradient\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#00D9FF\"/><stop offset=\"1\" stop-color=\"#0099CC\"/></linearGradient>"
+      ]
+    },
+    "nodes": [
+      {
+        "kind": "boundary",
+        "id": "scene-2-boundary",
+        "title": "Scene 2: Manifest & Debounce (Rules of the Road)",
+        "at": {
+          "x": 20,
+          "y": 20
+        },
+        "size": {
+          "width": 760,
+          "height": 360
+        },
+        "style": {
+          "fill": "#FFF8E1",
+          "stroke": "#FF9800",
+          "strokeWidth": 2,
+          "labelColor": "#FF9800",
+          "filter": "url(#sceneShadow)"
+        },
+        "grid": {
+          "cols": 4,
+          "rowH": 80,
+          "gutter": 20,
+          "padding": 20
+        },
+        "policy": {
+          "mode": "strict",
+          "overflow": "clip",
+          "tolerance": 2,
+          "snap": {
+            "grid": 4
+          }
+        },
+        "children": [
+          {
+            "kind": "shape",
+            "id": "sky-background",
+            "at": {
+              "x": 0,
+              "y": 0
+            },
+            "size": {
+              "width": 760,
+              "height": 200
+            },
+            "shape": "rect",
+            "style": {
+              "fill": "#87CEEB",
+              "stroke": "none"
+            },
+            "_absRect": {
+              "x": 20,
+              "y": 20,
+              "w": 760,
+              "h": 200
+            }
+          },
+          {
+            "kind": "shape",
+            "id": "ground",
+            "at": {
+              "x": 0,
+              "y": 200
+            },
+            "size": {
+              "width": 760,
+              "height": 120
+            },
+            "shape": "rect",
+            "style": {
+              "fill": "#4A6B3A",
+              "stroke": "none"
+            },
+            "_absRect": {
+              "x": 20,
+              "y": 220,
+              "w": 760,
+              "h": 120
+            }
+          },
+          {
+            "kind": "shape",
+            "id": "road",
+            "at": {
+              "x": 0,
+              "y": 230
+            },
+            "size": {
+              "width": 760,
+              "height": 60
+            },
+            "shape": "rect",
+            "style": {
+              "fill": "url(#roadGradient)",
+              "stroke": "#606060",
+              "strokeWidth": 2
+            },
+            "_absRect": {
+              "x": 20,
+              "y": 252,
+              "w": 760,
+              "h": 60
+            }
+          },
+          {
+            "kind": "shape",
+            "id": "traffic-light-pole",
+            "at": {
+              "x": 600,
+              "y": 150
+            },
+            "size": {
+              "width": 6,
+              "height": 80
+            },
+            "shape": "rect",
+            "style": {
+              "fill": "#666666",
+              "stroke": "none"
+            },
+            "_absRect": {
+              "x": 620,
+              "y": 172,
+              "w": 6,
+              "h": 80
+            }
+          },
+          {
+            "kind": "shape",
+            "id": "traffic-light-box",
+            "at": {
+              "x": 590,
+              "y": 150
+            },
+            "size": {
+              "width": 26,
+              "height": 60
+            },
+            "shape": "roundedRect",
+            "style": {
+              "fill": "#333333",
+              "stroke": "#222222",
+              "strokeWidth": 2
+            },
+            "_absRect": {
+              "x": 612,
+              "y": 172,
+              "w": 26,
+              "h": 60
+            }
+          },
+          {
+            "kind": "shape",
+            "id": "red-light",
+            "at": {
+              "x": 603,
+              "y": 160
+            },
+            "size": {
+              "width": 10,
+              "height": 10
+            },
+            "shape": "circle",
+            "style": {
+              "fill": "#FF0000",
+              "stroke": "none",
+              "filter": "url(#trafficLightGlow)"
+            },
+            "_absRect": {
+              "x": 624,
+              "y": 180,
+              "w": 10,
+              "h": 10
+            }
+          },
+          {
+            "kind": "shape",
+            "id": "yellow-light",
+            "at": {
+              "x": 603,
+              "y": 175
+            },
+            "size": {
+              "width": 10,
+              "height": 10
+            },
+            "shape": "circle",
+            "style": {
+              "fill": "#806000",
+              "stroke": "none"
+            },
+            "_absRect": {
+              "x": 624,
+              "y": 196,
+              "w": 10,
+              "h": 10
+            }
+          },
+          {
+            "kind": "shape",
+            "id": "green-light",
+            "at": {
+              "x": 603,
+              "y": 190
+            },
+            "size": {
+              "width": 10,
+              "height": 10
+            },
+            "shape": "circle",
+            "style": {
+              "fill": "#008000",
+              "stroke": "none"
+            },
+            "_absRect": {
+              "x": 624,
+              "y": 212,
+              "w": 10,
+              "h": 10
+            }
+          },
+          {
+            "kind": "shape",
+            "id": "manifest-board",
+            "at": {
+              "x": 100,
+              "y": 80
+            },
+            "size": {
+              "width": 200,
+              "height": 120
+            },
+            "shape": "roundedRect",
+            "style": {
+              "fill": "url(#manifestGradient)",
+              "stroke": "#0099CC",
+              "strokeWidth": 3
+            },
+            "_absRect": {
+              "x": 120,
+              "y": 100,
+              "w": 200,
+              "h": 120
+            }
+          },
+          {
+            "kind": "text",
+            "id": "manifest-title",
+            "at": {
+              "x": 200,
+              "y": 100
+            },
+            "text": "EVENT MANIFEST",
+            "style": {
+              "fill": "#FFFFFF",
+              "fontSize": 14,
+              "fontWeight": "bold",
+              "textAnchor": "middle"
+            },
+            "_absRect": {
+              "x": 220,
+              "y": 120,
+              "w": 112,
+              "h": 16
+            }
+          },
+          {
+            "kind": "text",
+            "id": "manifest-content",
+            "at": {
+              "x": 200,
+              "y": 130
+            },
+            "text": "{ topic: 'student.pickup',\n  payload: { route: 'A1', stop: 3 },\n  timestamp: Date.now() }",
+            "style": {
+              "fill": "#FFFFFF",
+              "fontSize": 10,
+              "fontFamily": "monospace",
+              "textAnchor": "middle"
+            },
+            "_absRect": {
+              "x": 68,
+              "y": 152,
+              "w": 712,
+              "h": 16
+            }
+          },
+          {
+            "kind": "shape",
+            "id": "debounce-funnel",
+            "at": {
+              "x": 400,
+              "y": 240
+            },
+            "size": {
+              "width": 80,
+              "height": 30
+            },
+            "shape": "polygon",
+            "style": {
+              "fill": "#FFFF00",
+              "opacity": 0.7,
+              "stroke": "#E6E600",
+              "strokeWidth": 2
+            },
+            "_absRect": {
+              "x": 420,
+              "y": 260,
+              "w": 80,
+              "h": 30
+            }
+          },
+          {
+            "kind": "text",
+            "id": "debounce-label",
+            "at": {
+              "x": 440,
+              "y": 280
+            },
+            "text": "DEBOUNCE",
+            "style": {
+              "fill": "#E6E600",
+              "fontSize": 10,
+              "fontWeight": "bold",
+              "textAnchor": "middle"
+            },
+            "_absRect": {
+              "x": 460,
+              "y": 300,
+              "w": 64,
+              "h": 16
+            }
+          },
+          {
+            "kind": "shape",
+            "id": "school-bus",
+            "at": {
+              "x": 350,
+              "y": 200
+            },
+            "size": {
+              "width": 120,
+              "height": 40
+            },
+            "shape": "roundedRect",
+            "style": {
+              "fill": "#FFD700",
+              "stroke": "#E6C200",
+              "strokeWidth": 2
+            },
+            "_absRect": {
+              "x": 372,
+              "y": 220,
+              "w": 120,
+              "h": 40
+            }
+          },
+          {
+            "kind": "text",
+            "id": "bus-label",
+            "at": {
+              "x": 410,
+              "y": 215
+            },
+            "text": "SCHOOL BUS",
+            "style": {
+              "fill": "#000000",
+              "fontSize": 8,
+              "fontWeight": "bold",
+              "textAnchor": "middle"
+            },
+            "_absRect": {
+              "x": 432,
+              "y": 236,
+              "w": 80,
+              "h": 16
+            }
+          },
+          {
+            "kind": "text",
+            "id": "sky-headline",
+            "at": {
+              "x": 380,
+              "y": 40
+            },
+            "text": "Rules of the road apply.",
+            "style": {
+              "fill": "#1E3A56",
+              "fontSize": 24,
+              "fontWeight": "bold",
+              "textAnchor": "middle",
+              "stroke": "#FFFFFF",
+              "strokeWidth": 1
+            },
+            "_absRect": {
+              "x": 400,
+              "y": 60,
+              "w": 192,
+              "h": 16
+            }
+          },
+          {
+            "kind": "text",
+            "id": "sky-description",
+            "at": {
+              "x": 380,
+              "y": 65
+            },
+            "text": "Manifest validation and debounce controls ensure safe passage.",
+            "style": {
+              "fill": "#3C556E",
+              "fontSize": 16,
+              "textAnchor": "middle"
+            },
+            "_absRect": {
+              "x": 284,
+              "y": 84,
+              "w": 496,
+              "h": 16
+            }
+          },
+          {
+            "kind": "text",
+            "id": "scene-caption",
+            "at": {
+              "x": 380,
+              "y": 320
+            },
+            "text": "Manifest validation + debounce → controlled event flow",
+            "style": {
+              "fill": "#FF9800",
+              "fontSize": 14,
+              "fontWeight": "bold",
+              "textAnchor": "middle"
+            },
+            "_absRect": {
+              "x": 348,
+              "y": 340,
+              "w": 432,
+              "h": 16
+            }
+          }
+        ],
+        "_absRect": {
+          "x": 20,
+          "y": 20,
+          "w": 760,
+          "h": 360
+        }
+      }
+    ],
+    "ports": [
+      {
+        "id": "manifest-in",
+        "nodeId": "scene-2-boundary",
+        "side": "left",
+        "offset": 180
+      },
+      {
+        "id": "debounce-out",
+        "nodeId": "scene-2-boundary",
+        "side": "right",
+        "offset": 180
+      }
+    ],
+    "flows": [
+      {
+        "id": "manifest-validation-flow",
+        "path": "manifest-in -> debounce-out",
+        "token": {
+          "size": 6,
+          "color": "#00D9FF",
+          "trail": {
+            "length": 100,
+            "opacity": 0.4
+          }
+        },
+        "speed": 80,
+        "loop": true,
+        "activate": {
+          "boundaryIds": [
+            "scene-2-boundary"
+          ],
+          "className": "active-scene"
+        }
+      }
+    ]
+  },
+  "diagnostics": [
+    {
+      "code": "OUT_OF_BOUNDS",
+      "nodeId": "manifest-content",
+      "boundaryId": "scene-2-boundary",
+      "severity": "error",
+      "message": "Node 'manifest-content' escapes boundary 'scene-2-boundary'.",
+      "actual": {
+        "rect": {
+          "x": 220,
+          "y": 152,
+          "w": 712,
+          "h": 16
+        },
+        "boundary": {
+          "x": 20,
+          "y": 20,
+          "w": 760,
+          "h": 360
+        }
+      },
+      "suggestedFix": {
+        "at": {
+          "x": 68,
+          "y": 152
+        }
+      }
+    },
+    {
+      "code": "OUT_OF_BOUNDS",
+      "nodeId": "sky-description",
+      "boundaryId": "scene-2-boundary",
+      "severity": "error",
+      "message": "Node 'sky-description' escapes boundary 'scene-2-boundary'.",
+      "actual": {
+        "rect": {
+          "x": 400,
+          "y": 84,
+          "w": 496,
+          "h": 16
+        },
+        "boundary": {
+          "x": 20,
+          "y": 20,
+          "w": 760,
+          "h": 360
+        }
+      },
+      "suggestedFix": {
+        "at": {
+          "x": 284,
+          "y": 84
+        }
+      }
+    },
+    {
+      "code": "OUT_OF_BOUNDS",
+      "nodeId": "scene-caption",
+      "boundaryId": "scene-2-boundary",
+      "severity": "error",
+      "message": "Node 'scene-caption' escapes boundary 'scene-2-boundary'.",
+      "actual": {
+        "rect": {
+          "x": 400,
+          "y": 340,
+          "w": 432,
+          "h": 16
+        },
+        "boundary": {
+          "x": 20,
+          "y": 20,
+          "w": 760,
+          "h": 360
+        }
+      },
+      "suggestedFix": {
+        "at": {
+          "x": 348,
+          "y": 340
+        }
+      }
+    }
+  ],
+  "summary": {
+    "errors": 3,
+    "warnings": 0
+  }
+}

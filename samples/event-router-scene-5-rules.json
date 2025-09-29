@@ -1,0 +1,259 @@
+{
+  "id": "event-router-scene-5-rules",
+  "canvas": { "width": 800, "height": 400 },
+  "bg": "#87CEEB",
+  "defs": {
+    "filters": [
+      "<filter id=\"sceneShadow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\"><feDropShadow dx=\"0\" dy=\"4\" stdDeviation=\"8\" flood-color=\"#000\" flood-opacity=\"0.25\"/></filter>",
+      "<filter id=\"signGlow\"><feGaussianBlur stdDeviation=\"2\" result=\"b\"/><feMerge><feMergeNode in=\"b\"/><feMergeNode in=\"SourceGraphic\"/></feMerge></filter>"
+    ],
+    "gradients": [
+      "<linearGradient id=\"roadGradient\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0\" stop-color=\"#404040\"/><stop offset=\"0.5\" stop-color=\"#505050\"/><stop offset=\"1\" stop-color=\"#404040\"/></linearGradient>",
+      "<linearGradient id=\"warningGradient\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#FFD700\"/><stop offset=\"1\" stop-color=\"#E6C200\"/></linearGradient>",
+      "<linearGradient id=\"safetyGradient\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#228B22\"/><stop offset=\"1\" stop-color=\"#006400\"/></linearGradient>",
+      "<linearGradient id=\"controlGradient\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#4169E1\"/><stop offset=\"1\" stop-color=\"#191970\"/></linearGradient>"
+    ]
+  },
+  "nodes": [
+    {
+      "kind": "boundary",
+      "id": "scene-5-boundary",
+      "title": "Scene 5: Rules & Boundaries (Performance Controls)",
+      "at": { "x": 20, "y": 20 },
+      "size": { "width": 760, "height": 360 },
+      "style": { 
+        "fill": "#FFF3E0", 
+        "stroke": "#FF9800", 
+        "strokeWidth": 2, 
+        "labelColor": "#FF9800",
+        "filter": "url(#sceneShadow)"
+      },
+      "grid": { "cols": 4, "rowH": 80, "gutter": 20, "padding": 20 },
+      "policy": { "mode": "strict", "overflow": "clip", "tolerance": 2, "snap": { "grid": 4 } },
+      "children": [
+        {
+          "kind": "shape",
+          "id": "sky-background",
+          "at": { "x": 0, "y": 0 },
+          "size": { "width": 760, "height": 200 },
+          "shape": "rect",
+          "style": { "fill": "#87CEEB", "stroke": "none" }
+        },
+        {
+          "kind": "shape",
+          "id": "ground",
+          "at": { "x": 0, "y": 200 },
+          "size": { "width": 760, "height": 120 },
+          "shape": "rect",
+          "style": { "fill": "#4A6B3A", "stroke": "none" }
+        },
+        {
+          "kind": "shape",
+          "id": "road",
+          "at": { "x": 0, "y": 230 },
+          "size": { "width": 760, "height": 60 },
+          "shape": "rect",
+          "style": { "fill": "url(#roadGradient)", "stroke": "#606060", "strokeWidth": 2 }
+        },
+        {
+          "kind": "shape",
+          "id": "guardrail-top",
+          "at": { "x": 0, "y": 215 },
+          "size": { "width": 760, "height": 10 },
+          "shape": "rect",
+          "style": { "fill": "#E0E0E0", "stroke": "#C0C0C0", "strokeWidth": 1 }
+        },
+        {
+          "kind": "shape",
+          "id": "guardrail-bottom",
+          "at": { "x": 0, "y": 295 },
+          "size": { "width": 760, "height": 10 },
+          "shape": "rect",
+          "style": { "fill": "#E0E0E0", "stroke": "#C0C0C0", "strokeWidth": 1 }
+        },
+        {
+          "kind": "shape",
+          "id": "debounce-lane",
+          "at": { "x": 200, "y": 240 },
+          "size": { "width": 80, "height": 20 },
+          "shape": "polygon",
+          "style": { "fill": "#FFFF00", "opacity": 0.7, "stroke": "#E6E600", "strokeWidth": 2 }
+        },
+        {
+          "kind": "text",
+          "id": "debounce-label",
+          "at": { "x": 240, "y": 275 },
+          "text": "DEBOUNCE",
+          "style": { "fill": "#E6E600", "fontSize": 9, "fontWeight": "bold", "textAnchor": "middle" }
+        },
+        {
+          "kind": "shape",
+          "id": "throttle-lane",
+          "at": { "x": 500, "y": 245 },
+          "size": { "width": 60, "height": 10 },
+          "shape": "rect",
+          "style": { "fill": "#FFFF00", "opacity": 0.7, "stroke": "#E6E600", "strokeWidth": 1 }
+        },
+        {
+          "kind": "text",
+          "id": "throttle-label",
+          "at": { "x": 530, "y": 275 },
+          "text": "THROTTLE",
+          "style": { "fill": "#E6E600", "fontSize": 9, "fontWeight": "bold", "textAnchor": "middle" }
+        },
+        {
+          "kind": "shape",
+          "id": "loop-prevention-sign",
+          "at": { "x": 100, "y": 130 },
+          "size": { "width": 40, "height": 35 },
+          "shape": "polygon",
+          "style": { "fill": "url(#warningGradient)", "stroke": "#E6C200", "strokeWidth": 2, "filter": "url(#signGlow)" }
+        },
+        {
+          "kind": "text",
+          "id": "loop-prevention-text",
+          "at": { "x": 120, "y": 145 },
+          "text": "LOOP\nPREVENTION",
+          "style": { "fill": "#DC143C", "fontSize": 6, "fontWeight": "bold", "textAnchor": "middle" }
+        },
+        {
+          "kind": "shape",
+          "id": "handler-isolation-sign",
+          "at": { "x": 300, "y": 120 },
+          "size": { "width": 40, "height": 35 },
+          "shape": "rect",
+          "style": { "fill": "url(#safetyGradient)", "stroke": "#006400", "strokeWidth": 2, "filter": "url(#signGlow)" }
+        },
+        {
+          "kind": "text",
+          "id": "handler-isolation-text",
+          "at": { "x": 320, "y": 135 },
+          "text": "HANDLER\nISOLATION",
+          "style": { "fill": "#FFFFFF", "fontSize": 5, "fontWeight": "bold", "textAnchor": "middle" }
+        },
+        {
+          "kind": "shape",
+          "id": "feature-flags-sign",
+          "at": { "x": 600, "y": 125 },
+          "size": { "width": 40, "height": 30 },
+          "shape": "rect",
+          "style": { "fill": "url(#controlGradient)", "stroke": "#191970", "strokeWidth": 2, "filter": "url(#signGlow)" }
+        },
+        {
+          "kind": "text",
+          "id": "feature-flags-text",
+          "at": { "x": 620, "y": 138 },
+          "text": "FEATURE\nFLAGS",
+          "style": { "fill": "#FFFFFF", "fontSize": 5, "fontWeight": "bold", "textAnchor": "middle" }
+        },
+        {
+          "kind": "shape",
+          "id": "traffic-light-pole",
+          "at": { "x": 720, "y": 140 },
+          "size": { "width": 3, "height": 40 },
+          "shape": "rect",
+          "style": { "fill": "#666666", "stroke": "none" }
+        },
+        {
+          "kind": "shape",
+          "id": "traffic-light-box",
+          "at": { "x": 710, "y": 140 },
+          "size": { "width": 20, "height": 45 },
+          "shape": "roundedRect",
+          "style": { "fill": "#333333", "stroke": "#222222", "strokeWidth": 2 }
+        },
+        {
+          "kind": "shape",
+          "id": "red-light",
+          "at": { "x": 720, "y": 150 },
+          "size": { "width": 4, "height": 4 },
+          "shape": "circle",
+          "style": { "fill": "#FF0000", "stroke": "none" }
+        },
+        {
+          "kind": "shape",
+          "id": "yellow-light",
+          "at": { "x": 720, "y": 160 },
+          "size": { "width": 4, "height": 4 },
+          "shape": "circle",
+          "style": { "fill": "#806000", "stroke": "none" }
+        },
+        {
+          "kind": "shape",
+          "id": "green-light",
+          "at": { "x": 720, "y": 170 },
+          "size": { "width": 4, "height": 4 },
+          "shape": "circle",
+          "style": { "fill": "#008000", "stroke": "none" }
+        },
+        {
+          "kind": "shape",
+          "id": "school-bus",
+          "at": { "x": 350, "y": 200 },
+          "size": { "width": 120, "height": 40 },
+          "shape": "roundedRect",
+          "style": { "fill": "#FFD700", "stroke": "#E6C200", "strokeWidth": 2 }
+        },
+        {
+          "kind": "text",
+          "id": "bus-label",
+          "at": { "x": 410, "y": 215 },
+          "text": "SCHOOL BUS",
+          "style": { "fill": "#000000", "fontSize": 8, "fontWeight": "bold", "textAnchor": "middle" }
+        },
+        {
+          "kind": "text",
+          "id": "sky-headline",
+          "at": { "x": 380, "y": 40 },
+          "text": "Rules keep the ride safe.",
+          "style": { "fill": "#1E3A56", "fontSize": 24, "fontWeight": "bold", "textAnchor": "middle", "stroke": "#FFFFFF", "strokeWidth": 1 }
+        },
+        {
+          "kind": "text",
+          "id": "sky-description",
+          "at": { "x": 380, "y": 65 },
+          "text": "Guardrails, flags, throttle, and debounce enforce stability.",
+          "style": { "fill": "#3C556E", "fontSize": 16, "textAnchor": "middle" }
+        },
+        {
+          "kind": "text",
+          "id": "scene-caption",
+          "at": { "x": 380, "y": 320 },
+          "text": "Street rules: enforced boundaries, flags, throttle & debounce lanes",
+          "style": { "fill": "#FF9800", "fontSize": 14, "fontWeight": "bold", "textAnchor": "middle" }
+        }
+      ]
+    }
+  ],
+  "ports": [
+    {
+      "id": "rules-in",
+      "nodeId": "scene-5-boundary",
+      "side": "left",
+      "offset": 180
+    },
+    {
+      "id": "rules-out",
+      "nodeId": "scene-5-boundary",
+      "side": "right",
+      "offset": 180
+    }
+  ],
+  "flows": [
+    {
+      "id": "rules-enforcement-flow",
+      "path": "rules-in -> rules-out",
+      "token": { 
+        "size": 6, 
+        "color": "#FFD700", 
+        "trail": { "length": 100, "opacity": 0.4 } 
+      },
+      "speed": 70,
+      "loop": true,
+      "activate": { 
+        "boundaryIds": ["scene-5-boundary"], 
+        "className": "active-scene" 
+      }
+    }
+  ]
+}

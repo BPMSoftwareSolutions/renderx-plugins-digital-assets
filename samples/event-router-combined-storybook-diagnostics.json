@@ -1,0 +1,1205 @@
+{
+  "scene": {
+    "id": "event-router-combined-storybook",
+    "canvas": {
+      "width": 1600,
+      "height": 1200
+    },
+    "bg": "#F5F5F5",
+    "defs": {
+      "filters": [
+        "<filter id=\"sceneShadow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\"><feDropShadow dx=\"0\" dy=\"4\" stdDeviation=\"8\" flood-color=\"#000\" flood-opacity=\"0.25\"/></filter>",
+        "<filter id=\"busGlow\"><feGaussianBlur stdDeviation=\"2\" result=\"b\"/><feMerge><feMergeNode in=\"b\"/><feMergeNode in=\"SourceGraphic\"/></feMerge></filter>",
+        "<filter id=\"flowGlow\"><feGaussianBlur stdDeviation=\"3\" result=\"b\"/><feMerge><feMergeNode in=\"b\"/><feMergeNode in=\"SourceGraphic\"/></feMerge></filter>"
+      ],
+      "gradients": [
+        "<linearGradient id=\"roadGradient\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0\" stop-color=\"#404040\"/><stop offset=\"0.5\" stop-color=\"#505050\"/><stop offset=\"1\" stop-color=\"#404040\"/></linearGradient>",
+        "<linearGradient id=\"busGradient\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0\" stop-color=\"#FFD700\"/><stop offset=\"0.5\" stop-color=\"#FFA500\"/><stop offset=\"1\" stop-color=\"#FFD700\"/></linearGradient>",
+        "<linearGradient id=\"flowGradient\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0\" stop-color=\"#FFD700\"/><stop offset=\"0.5\" stop-color=\"#FF6B35\"/><stop offset=\"1\" stop-color=\"#4CAF50\"/></linearGradient>"
+      ]
+    },
+    "nodes": [
+      {
+        "kind": "text",
+        "id": "storybook-title",
+        "at": {
+          "x": 800,
+          "y": 30
+        },
+        "text": "EventRouter Journey: From Publisher to Application State",
+        "style": {
+          "fill": "#1E3A56",
+          "fontSize": 32,
+          "fontWeight": "bold",
+          "textAnchor": "middle"
+        },
+        "_absRect": {
+          "x": 800,
+          "y": 30,
+          "w": 448,
+          "h": 16
+        }
+      },
+      {
+        "kind": "text",
+        "id": "storybook-subtitle",
+        "at": {
+          "x": 800,
+          "y": 60
+        },
+        "text": "A School Bus Metaphor for Event-Driven Architecture",
+        "style": {
+          "fill": "#3C556E",
+          "fontSize": 18,
+          "textAnchor": "middle"
+        },
+        "_absRect": {
+          "x": 800,
+          "y": 60,
+          "w": 408,
+          "h": 16
+        }
+      },
+      {
+        "kind": "boundary",
+        "id": "scene-1-depot",
+        "title": "Scene 1: Publisher Origin",
+        "at": {
+          "x": 50,
+          "y": 100
+        },
+        "size": {
+          "width": 750,
+          "height": 350
+        },
+        "style": {
+          "fill": "#E8F4FD",
+          "stroke": "#1976D2",
+          "strokeWidth": 3,
+          "labelColor": "#1976D2",
+          "filter": "url(#sceneShadow)"
+        },
+        "grid": {
+          "cols": 4,
+          "rowH": 70,
+          "gutter": 15,
+          "padding": 15
+        },
+        "policy": {
+          "mode": "strict",
+          "overflow": "clip",
+          "tolerance": 2,
+          "snap": {
+            "grid": 4
+          }
+        },
+        "children": [
+          {
+            "kind": "shape",
+            "id": "depot-building-1",
+            "at": {
+              "x": 50,
+              "y": 80
+            },
+            "size": {
+              "width": 150,
+              "height": 100
+            },
+            "shape": "roundedRect",
+            "style": {
+              "fill": "#8B7355",
+              "stroke": "#6B5535",
+              "strokeWidth": 2
+            },
+            "_absRect": {
+              "x": 100,
+              "y": 180,
+              "w": 150,
+              "h": 100
+            }
+          },
+          {
+            "kind": "text",
+            "id": "depot-sign-1",
+            "at": {
+              "x": 125,
+              "y": 120
+            },
+            "text": "BUS DEPOT",
+            "style": {
+              "fill": "#FFFFFF",
+              "fontSize": 12,
+              "fontWeight": "bold",
+              "textAnchor": "middle"
+            },
+            "_absRect": {
+              "x": 176,
+              "y": 220,
+              "w": 72,
+              "h": 16
+            }
+          },
+          {
+            "kind": "shape",
+            "id": "school-bus-1",
+            "at": {
+              "x": 250,
+              "y": 200
+            },
+            "size": {
+              "width": 100,
+              "height": 35
+            },
+            "shape": "roundedRect",
+            "style": {
+              "fill": "url(#busGradient)",
+              "stroke": "#E6C200",
+              "strokeWidth": 2,
+              "filter": "url(#busGlow)"
+            },
+            "_absRect": {
+              "x": 300,
+              "y": 300,
+              "w": 100,
+              "h": 35
+            }
+          },
+          {
+            "kind": "text",
+            "id": "scene-1-caption",
+            "at": {
+              "x": 375,
+              "y": 320
+            },
+            "text": "Bus leaves depot → publish(topic, payload)",
+            "style": {
+              "fill": "#1976D2",
+              "fontSize": 12,
+              "fontWeight": "bold",
+              "textAnchor": "middle"
+            },
+            "_absRect": {
+              "x": 424,
+              "y": 420,
+              "w": 336,
+              "h": 16
+            }
+          }
+        ],
+        "_absRect": {
+          "x": 50,
+          "y": 100,
+          "w": 750,
+          "h": 350
+        }
+      },
+      {
+        "kind": "boundary",
+        "id": "scene-2-manifest",
+        "title": "Scene 2: Manifest & Debounce",
+        "at": {
+          "x": 850,
+          "y": 100
+        },
+        "size": {
+          "width": 750,
+          "height": 350
+        },
+        "style": {
+          "fill": "#FFF8E1",
+          "stroke": "#FF9800",
+          "strokeWidth": 3,
+          "labelColor": "#FF9800",
+          "filter": "url(#sceneShadow)"
+        },
+        "grid": {
+          "cols": 4,
+          "rowH": 70,
+          "gutter": 15,
+          "padding": 15
+        },
+        "policy": {
+          "mode": "strict",
+          "overflow": "clip",
+          "tolerance": 2,
+          "snap": {
+            "grid": 4
+          }
+        },
+        "children": [
+          {
+            "kind": "shape",
+            "id": "manifest-board-2",
+            "at": {
+              "x": 80,
+              "y": 60
+            },
+            "size": {
+              "width": 150,
+              "height": 90
+            },
+            "shape": "roundedRect",
+            "style": {
+              "fill": "#00D9FF",
+              "stroke": "#0099CC",
+              "strokeWidth": 3
+            },
+            "_absRect": {
+              "x": 932,
+              "y": 160,
+              "w": 150,
+              "h": 90
+            }
+          },
+          {
+            "kind": "text",
+            "id": "manifest-title-2",
+            "at": {
+              "x": 155,
+              "y": 90
+            },
+            "text": "MANIFEST",
+            "style": {
+              "fill": "#FFFFFF",
+              "fontSize": 12,
+              "fontWeight": "bold",
+              "textAnchor": "middle"
+            },
+            "_absRect": {
+              "x": 1004,
+              "y": 192,
+              "w": 64,
+              "h": 16
+            }
+          },
+          {
+            "kind": "shape",
+            "id": "traffic-light-2",
+            "at": {
+              "x": 600,
+              "y": 120
+            },
+            "size": {
+              "width": 20,
+              "height": 50
+            },
+            "shape": "roundedRect",
+            "style": {
+              "fill": "#333333",
+              "stroke": "#222222",
+              "strokeWidth": 2
+            },
+            "_absRect": {
+              "x": 1452,
+              "y": 220,
+              "w": 20,
+              "h": 50
+            }
+          },
+          {
+            "kind": "text",
+            "id": "scene-2-caption",
+            "at": {
+              "x": 375,
+              "y": 320
+            },
+            "text": "Manifest validation + debounce → controlled flow",
+            "style": {
+              "fill": "#FF9800",
+              "fontSize": 12,
+              "fontWeight": "bold",
+              "textAnchor": "middle"
+            },
+            "_absRect": {
+              "x": 1216,
+              "y": 420,
+              "w": 384,
+              "h": 16
+            }
+          }
+        ],
+        "_absRect": {
+          "x": 850,
+          "y": 100,
+          "w": 750,
+          "h": 350
+        }
+      },
+      {
+        "kind": "boundary",
+        "id": "scene-3-subscribers",
+        "title": "Scene 3: Subscribers & Cache",
+        "at": {
+          "x": 50,
+          "y": 500
+        },
+        "size": {
+          "width": 750,
+          "height": 350
+        },
+        "style": {
+          "fill": "#E8F5E8",
+          "stroke": "#4CAF50",
+          "strokeWidth": 3,
+          "labelColor": "#4CAF50",
+          "filter": "url(#sceneShadow)"
+        },
+        "grid": {
+          "cols": 4,
+          "rowH": 70,
+          "gutter": 15,
+          "padding": 15
+        },
+        "policy": {
+          "mode": "strict",
+          "overflow": "clip",
+          "tolerance": 2,
+          "snap": {
+            "grid": 4
+          }
+        },
+        "children": [
+          {
+            "kind": "shape",
+            "id": "bus-stop-3",
+            "at": {
+              "x": 350,
+              "y": 120
+            },
+            "size": {
+              "width": 50,
+              "height": 30
+            },
+            "shape": "roundedRect",
+            "style": {
+              "fill": "#FFFFFF",
+              "stroke": "#333333",
+              "strokeWidth": 2
+            },
+            "_absRect": {
+              "x": 400,
+              "y": 620,
+              "w": 50,
+              "h": 30
+            }
+          },
+          {
+            "kind": "text",
+            "id": "bus-stop-text-3",
+            "at": {
+              "x": 375,
+              "y": 135
+            },
+            "text": "STOP",
+            "style": {
+              "fill": "#333333",
+              "fontSize": 8,
+              "fontWeight": "bold",
+              "textAnchor": "middle"
+            },
+            "_absRect": {
+              "x": 424,
+              "y": 636,
+              "w": 32,
+              "h": 16
+            }
+          },
+          {
+            "kind": "shape",
+            "id": "live-subscriber-3",
+            "at": {
+              "x": 450,
+              "y": 250
+            },
+            "size": {
+              "width": 25,
+              "height": 35
+            },
+            "shape": "roundedRect",
+            "style": {
+              "fill": "#32CD32",
+              "stroke": "#228B22",
+              "strokeWidth": 2
+            },
+            "_absRect": {
+              "x": 500,
+              "y": 752,
+              "w": 25,
+              "h": 35
+            }
+          },
+          {
+            "kind": "shape",
+            "id": "replay-cache-3",
+            "at": {
+              "x": 80,
+              "y": 60
+            },
+            "size": {
+              "width": 120,
+              "height": 80
+            },
+            "shape": "roundedRect",
+            "style": {
+              "fill": "#4682B4",
+              "stroke": "#2F4F4F",
+              "strokeWidth": 3
+            },
+            "_absRect": {
+              "x": 132,
+              "y": 560,
+              "w": 120,
+              "h": 80
+            }
+          },
+          {
+            "kind": "text",
+            "id": "cache-title-3",
+            "at": {
+              "x": 140,
+              "y": 90
+            },
+            "text": "CACHE",
+            "style": {
+              "fill": "#FFFFFF",
+              "fontSize": 10,
+              "fontWeight": "bold",
+              "textAnchor": "middle"
+            },
+            "_absRect": {
+              "x": 192,
+              "y": 592,
+              "w": 40,
+              "h": 16
+            }
+          },
+          {
+            "kind": "text",
+            "id": "scene-3-caption",
+            "at": {
+              "x": 375,
+              "y": 320
+            },
+            "text": "Live & late subscribers + replay cache → reliable delivery",
+            "style": {
+              "fill": "#4CAF50",
+              "fontSize": 12,
+              "fontWeight": "bold",
+              "textAnchor": "middle"
+            },
+            "_absRect": {
+              "x": 336,
+              "y": 820,
+              "w": 464,
+              "h": 16
+            }
+          }
+        ],
+        "_absRect": {
+          "x": 50,
+          "y": 500,
+          "w": 750,
+          "h": 350
+        }
+      },
+      {
+        "kind": "boundary",
+        "id": "scene-4-conductor",
+        "title": "Scene 4: Conductor Hub",
+        "at": {
+          "x": 850,
+          "y": 500
+        },
+        "size": {
+          "width": 750,
+          "height": 350
+        },
+        "style": {
+          "fill": "#F3E5F5",
+          "stroke": "#9C27B0",
+          "strokeWidth": 3,
+          "labelColor": "#9C27B0",
+          "filter": "url(#sceneShadow)"
+        },
+        "grid": {
+          "cols": 4,
+          "rowH": 70,
+          "gutter": 15,
+          "padding": 15
+        },
+        "policy": {
+          "mode": "strict",
+          "overflow": "clip",
+          "tolerance": 2,
+          "snap": {
+            "grid": 4
+          }
+        },
+        "children": [
+          {
+            "kind": "shape",
+            "id": "transfer-hub-4",
+            "at": {
+              "x": 325,
+              "y": 150
+            },
+            "size": {
+              "width": 100,
+              "height": 100
+            },
+            "shape": "circle",
+            "style": {
+              "fill": "#4682B4",
+              "stroke": "#2F4F4F",
+              "strokeWidth": 3
+            },
+            "_absRect": {
+              "x": 1176,
+              "y": 652,
+              "w": 100,
+              "h": 100
+            }
+          },
+          {
+            "kind": "shape",
+            "id": "conductor-center-4",
+            "at": {
+              "x": 350,
+              "y": 175
+            },
+            "size": {
+              "width": 50,
+              "height": 50
+            },
+            "shape": "circle",
+            "style": {
+              "fill": "#6B4EFF",
+              "stroke": "#4A3ACD",
+              "strokeWidth": 2
+            },
+            "_absRect": {
+              "x": 1200,
+              "y": 676,
+              "w": 50,
+              "h": 50
+            }
+          },
+          {
+            "kind": "text",
+            "id": "conductor-label-4",
+            "at": {
+              "x": 375,
+              "y": 280
+            },
+            "text": "Conductor: play()",
+            "style": {
+              "fill": "#9C27B0",
+              "fontSize": 10,
+              "fontWeight": "bold",
+              "textAnchor": "middle"
+            },
+            "_absRect": {
+              "x": 1224,
+              "y": 780,
+              "w": 136,
+              "h": 16
+            }
+          },
+          {
+            "kind": "shape",
+            "id": "plugin-a-bus-4",
+            "at": {
+              "x": 500,
+              "y": 100
+            },
+            "size": {
+              "width": 70,
+              "height": 25
+            },
+            "shape": "roundedRect",
+            "style": {
+              "fill": "#32CD32",
+              "stroke": "#228B22",
+              "strokeWidth": 2
+            },
+            "_absRect": {
+              "x": 1352,
+              "y": 600,
+              "w": 70,
+              "h": 25
+            }
+          },
+          {
+            "kind": "shape",
+            "id": "plugin-b-bus-4",
+            "at": {
+              "x": 500,
+              "y": 280
+            },
+            "size": {
+              "width": 70,
+              "height": 25
+            },
+            "shape": "roundedRect",
+            "style": {
+              "fill": "#FF6347",
+              "stroke": "#DC143C",
+              "strokeWidth": 2
+            },
+            "_absRect": {
+              "x": 1352,
+              "y": 780,
+              "w": 70,
+              "h": 25
+            }
+          },
+          {
+            "kind": "text",
+            "id": "scene-4-caption",
+            "at": {
+              "x": 375,
+              "y": 320
+            },
+            "text": "Hub: topics route into sequences via Conductor",
+            "style": {
+              "fill": "#9C27B0",
+              "fontSize": 12,
+              "fontWeight": "bold",
+              "textAnchor": "middle"
+            },
+            "_absRect": {
+              "x": 1224,
+              "y": 820,
+              "w": 368,
+              "h": 16
+            }
+          }
+        ],
+        "_absRect": {
+          "x": 850,
+          "y": 500,
+          "w": 750,
+          "h": 350
+        }
+      },
+      {
+        "kind": "boundary",
+        "id": "scene-5-rules",
+        "title": "Scene 5: Rules & Boundaries",
+        "at": {
+          "x": 50,
+          "y": 900
+        },
+        "size": {
+          "width": 750,
+          "height": 350
+        },
+        "style": {
+          "fill": "#FFF3E0",
+          "stroke": "#FF9800",
+          "strokeWidth": 3,
+          "labelColor": "#FF9800",
+          "filter": "url(#sceneShadow)"
+        },
+        "grid": {
+          "cols": 4,
+          "rowH": 70,
+          "gutter": 15,
+          "padding": 15
+        },
+        "policy": {
+          "mode": "strict",
+          "overflow": "clip",
+          "tolerance": 2,
+          "snap": {
+            "grid": 4
+          }
+        },
+        "children": [
+          {
+            "kind": "shape",
+            "id": "loop-prevention-sign-5",
+            "at": {
+              "x": 100,
+              "y": 100
+            },
+            "size": {
+              "width": 35,
+              "height": 30
+            },
+            "shape": "polygon",
+            "style": {
+              "fill": "#FFD700",
+              "stroke": "#E6C200",
+              "strokeWidth": 2
+            },
+            "_absRect": {
+              "x": 152,
+              "y": 1000,
+              "w": 35,
+              "h": 30
+            }
+          },
+          {
+            "kind": "shape",
+            "id": "handler-isolation-sign-5",
+            "at": {
+              "x": 250,
+              "y": 90
+            },
+            "size": {
+              "width": 35,
+              "height": 30
+            },
+            "shape": "rect",
+            "style": {
+              "fill": "#228B22",
+              "stroke": "#006400",
+              "strokeWidth": 2
+            },
+            "_absRect": {
+              "x": 300,
+              "y": 992,
+              "w": 35,
+              "h": 30
+            }
+          },
+          {
+            "kind": "shape",
+            "id": "feature-flags-sign-5",
+            "at": {
+              "x": 500,
+              "y": 95
+            },
+            "size": {
+              "width": 35,
+              "height": 25
+            },
+            "shape": "rect",
+            "style": {
+              "fill": "#4169E1",
+              "stroke": "#191970",
+              "strokeWidth": 2
+            },
+            "_absRect": {
+              "x": 552,
+              "y": 996,
+              "w": 35,
+              "h": 25
+            }
+          },
+          {
+            "kind": "shape",
+            "id": "traffic-light-5",
+            "at": {
+              "x": 650,
+              "y": 110
+            },
+            "size": {
+              "width": 18,
+              "height": 40
+            },
+            "shape": "roundedRect",
+            "style": {
+              "fill": "#333333",
+              "stroke": "#222222",
+              "strokeWidth": 2
+            },
+            "_absRect": {
+              "x": 700,
+              "y": 1012,
+              "w": 18,
+              "h": 40
+            }
+          },
+          {
+            "kind": "text",
+            "id": "scene-5-caption",
+            "at": {
+              "x": 375,
+              "y": 320
+            },
+            "text": "Street rules: boundaries, flags, throttle & debounce",
+            "style": {
+              "fill": "#FF9800",
+              "fontSize": 12,
+              "fontWeight": "bold",
+              "textAnchor": "middle"
+            },
+            "_absRect": {
+              "x": 384,
+              "y": 1220,
+              "w": 416,
+              "h": 16
+            }
+          }
+        ],
+        "_absRect": {
+          "x": 50,
+          "y": 900,
+          "w": 750,
+          "h": 350
+        }
+      },
+      {
+        "kind": "boundary",
+        "id": "scene-6-school",
+        "title": "Scene 6: Final Destination",
+        "at": {
+          "x": 850,
+          "y": 900
+        },
+        "size": {
+          "width": 750,
+          "height": 350
+        },
+        "style": {
+          "fill": "#E8F5E8",
+          "stroke": "#4CAF50",
+          "strokeWidth": 3,
+          "labelColor": "#4CAF50",
+          "filter": "url(#sceneShadow)"
+        },
+        "grid": {
+          "cols": 4,
+          "rowH": 70,
+          "gutter": 15,
+          "padding": 15
+        },
+        "policy": {
+          "mode": "strict",
+          "overflow": "clip",
+          "tolerance": 2,
+          "snap": {
+            "grid": 4
+          }
+        },
+        "children": [
+          {
+            "kind": "shape",
+            "id": "school-building-6",
+            "at": {
+              "x": 450,
+              "y": 40
+            },
+            "size": {
+              "width": 180,
+              "height": 100
+            },
+            "shape": "rect",
+            "style": {
+              "fill": "#CD853F",
+              "stroke": "#8B4513",
+              "strokeWidth": 2
+            },
+            "_absRect": {
+              "x": 1300,
+              "y": 940,
+              "w": 180,
+              "h": 100
+            }
+          },
+          {
+            "kind": "shape",
+            "id": "school-roof-6",
+            "at": {
+              "x": 440,
+              "y": 40
+            },
+            "size": {
+              "width": 200,
+              "height": 35
+            },
+            "shape": "polygon",
+            "style": {
+              "fill": "#8B0000",
+              "stroke": "#654321",
+              "strokeWidth": 2
+            },
+            "_absRect": {
+              "x": 1292,
+              "y": 940,
+              "w": 200,
+              "h": 35
+            }
+          },
+          {
+            "kind": "text",
+            "id": "school-sign-6",
+            "at": {
+              "x": 540,
+              "y": 160
+            },
+            "text": "ELEMENTARY SCHOOL",
+            "style": {
+              "fill": "#333333",
+              "fontSize": 9,
+              "fontWeight": "bold",
+              "textAnchor": "middle"
+            },
+            "_absRect": {
+              "x": 1392,
+              "y": 1060,
+              "w": 136,
+              "h": 16
+            }
+          },
+          {
+            "kind": "shape",
+            "id": "celebration-balloons-6",
+            "at": {
+              "x": 650,
+              "y": 120
+            },
+            "size": {
+              "width": 20,
+              "height": 30
+            },
+            "shape": "circle",
+            "style": {
+              "fill": "#FF6B6B",
+              "stroke": "none"
+            },
+            "_absRect": {
+              "x": 1500,
+              "y": 1020,
+              "w": 20,
+              "h": 30
+            }
+          },
+          {
+            "kind": "text",
+            "id": "scene-6-caption",
+            "at": {
+              "x": 375,
+              "y": 320
+            },
+            "text": "Destination: application state updated (delivery complete)",
+            "style": {
+              "fill": "#4CAF50",
+              "fontSize": 12,
+              "fontWeight": "bold",
+              "textAnchor": "middle"
+            },
+            "_absRect": {
+              "x": 1136,
+              "y": 1220,
+              "w": 464,
+              "h": 16
+            }
+          }
+        ],
+        "_absRect": {
+          "x": 850,
+          "y": 900,
+          "w": 750,
+          "h": 350
+        }
+      }
+    ],
+    "ports": [
+      {
+        "id": "depot-out",
+        "nodeId": "scene-1-depot",
+        "side": "right",
+        "offset": 175
+      },
+      {
+        "id": "manifest-in",
+        "nodeId": "scene-2-manifest",
+        "side": "left",
+        "offset": 175
+      },
+      {
+        "id": "manifest-out",
+        "nodeId": "scene-2-manifest",
+        "side": "bottom",
+        "offset": 375
+      },
+      {
+        "id": "subscribers-in",
+        "nodeId": "scene-3-subscribers",
+        "side": "top",
+        "offset": 375
+      },
+      {
+        "id": "subscribers-out",
+        "nodeId": "scene-3-subscribers",
+        "side": "right",
+        "offset": 175
+      },
+      {
+        "id": "conductor-in",
+        "nodeId": "scene-4-conductor",
+        "side": "left",
+        "offset": 175
+      },
+      {
+        "id": "conductor-out",
+        "nodeId": "scene-4-conductor",
+        "side": "bottom",
+        "offset": 375
+      },
+      {
+        "id": "rules-in",
+        "nodeId": "scene-5-rules",
+        "side": "top",
+        "offset": 375
+      },
+      {
+        "id": "rules-out",
+        "nodeId": "scene-5-rules",
+        "side": "right",
+        "offset": 175
+      },
+      {
+        "id": "school-in",
+        "nodeId": "scene-6-school",
+        "side": "left",
+        "offset": 175
+      }
+    ],
+    "flows": [
+      {
+        "id": "main-journey-flow",
+        "path": "depot-out -> manifest-in -> manifest-out -> subscribers-in -> subscribers-out -> conductor-in -> conductor-out -> rules-in -> rules-out -> school-in",
+        "token": {
+          "size": 8,
+          "color": "url(#flowGradient)",
+          "trail": {
+            "length": 150,
+            "opacity": 0.6
+          },
+          "glow": "url(#flowGlow)"
+        },
+        "speed": 120,
+        "loop": true,
+        "activate": {
+          "boundaryIds": [
+            "scene-1-depot",
+            "scene-2-manifest",
+            "scene-3-subscribers",
+            "scene-4-conductor",
+            "scene-5-rules",
+            "scene-6-school"
+          ],
+          "className": "active-journey"
+        }
+      }
+    ]
+  },
+  "diagnostics": [
+    {
+      "code": "OUT_OF_BOUNDS",
+      "nodeId": "scene-2-caption",
+      "boundaryId": "scene-2-manifest",
+      "severity": "error",
+      "message": "Node 'scene-2-caption' escapes boundary 'scene-2-manifest'.",
+      "actual": {
+        "rect": {
+          "x": 1224,
+          "y": 420,
+          "w": 384,
+          "h": 16
+        },
+        "boundary": {
+          "x": 850,
+          "y": 100,
+          "w": 750,
+          "h": 350
+        }
+      },
+      "suggestedFix": {
+        "at": {
+          "x": 1216,
+          "y": 420
+        }
+      }
+    },
+    {
+      "code": "OUT_OF_BOUNDS",
+      "nodeId": "scene-3-caption",
+      "boundaryId": "scene-3-subscribers",
+      "severity": "error",
+      "message": "Node 'scene-3-caption' escapes boundary 'scene-3-subscribers'.",
+      "actual": {
+        "rect": {
+          "x": 424,
+          "y": 820,
+          "w": 464,
+          "h": 16
+        },
+        "boundary": {
+          "x": 50,
+          "y": 500,
+          "w": 750,
+          "h": 350
+        }
+      },
+      "suggestedFix": {
+        "at": {
+          "x": 336,
+          "y": 820
+        }
+      }
+    },
+    {
+      "code": "OUT_OF_BOUNDS",
+      "nodeId": "scene-5-caption",
+      "boundaryId": "scene-5-rules",
+      "severity": "error",
+      "message": "Node 'scene-5-caption' escapes boundary 'scene-5-rules'.",
+      "actual": {
+        "rect": {
+          "x": 424,
+          "y": 1220,
+          "w": 416,
+          "h": 16
+        },
+        "boundary": {
+          "x": 50,
+          "y": 900,
+          "w": 750,
+          "h": 350
+        }
+      },
+      "suggestedFix": {
+        "at": {
+          "x": 384,
+          "y": 1220
+        }
+      }
+    },
+    {
+      "code": "OUT_OF_BOUNDS",
+      "nodeId": "scene-6-caption",
+      "boundaryId": "scene-6-school",
+      "severity": "error",
+      "message": "Node 'scene-6-caption' escapes boundary 'scene-6-school'.",
+      "actual": {
+        "rect": {
+          "x": 1224,
+          "y": 1220,
+          "w": 464,
+          "h": 16
+        },
+        "boundary": {
+          "x": 850,
+          "y": 900,
+          "w": 750,
+          "h": 350
+        }
+      },
+      "suggestedFix": {
+        "at": {
+          "x": 1136,
+          "y": 1220
+        }
+      }
+    }
+  ],
+  "summary": {
+    "errors": 4,
+    "warnings": 0
+  }
+}

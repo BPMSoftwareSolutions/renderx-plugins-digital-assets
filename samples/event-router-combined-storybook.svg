@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600" height="1200" viewBox="0 0 1600 1200"
+     xmlns="http://www.w3.org/2000/svg" role="img" aria-label="event-router-combined-storybook">
+  <defs><linearGradient id="roadGradient" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#404040"/><stop offset="0.5" stop-color="#505050"/><stop offset="1" stop-color="#404040"/></linearGradient><linearGradient id="busGradient" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFD700"/><stop offset="0.5" stop-color="#FFA500"/><stop offset="1" stop-color="#FFD700"/></linearGradient><linearGradient id="flowGradient" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFD700"/><stop offset="0.5" stop-color="#FF6B35"/><stop offset="1" stop-color="#4CAF50"/></linearGradient><filter id="sceneShadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.25"/></filter><filter id="busGlow"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter><filter id="flowGlow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter><clipPath id="clip-scene-1-depot">
+      <rect x="50" y="100" width="750" height="350" 
+            rx="8" ry="8"/>
+    </clipPath>
+<clipPath id="clip-scene-2-manifest">
+      <rect x="850" y="100" width="750" height="350" 
+            rx="8" ry="8"/>
+    </clipPath>
+<clipPath id="clip-scene-3-subscribers">
+      <rect x="50" y="500" width="750" height="350" 
+            rx="8" ry="8"/>
+    </clipPath>
+<clipPath id="clip-scene-4-conductor">
+      <rect x="850" y="500" width="750" height="350" 
+            rx="8" ry="8"/>
+    </clipPath>
+<clipPath id="clip-scene-5-rules">
+      <rect x="50" y="900" width="750" height="350" 
+            rx="8" ry="8"/>
+    </clipPath>
+<clipPath id="clip-scene-6-school">
+      <rect x="850" y="900" width="750" height="350" 
+            rx="8" ry="8"/>
+    </clipPath>
+</defs>
+  
+    <style>
+      .active-glow rect { filter: url(#glow); stroke: #8b5cf6; }
+      .connector { stroke-linecap: round; stroke-linejoin: round; }
+      .boundary-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: 600; }
+      .flow-token { animation-fill-mode: forwards; }
+      .boundary-contained { overflow: hidden; }
+    </style>
+  
+  <rect x="0" y="0" width="100%" height="100%" fill="#F5F5F5"/>
+  
+  <text id="storybook-title" x="800" y="30" style="fill:#1E3A56;font-size:32;font-weight:bold;text-anchor:middle">EventRouter Journey: From Publisher to Application State</text><text id="storybook-subtitle" x="800" y="60" style="fill:#3C556E;font-size:18;text-anchor:middle">A School Bus Metaphor for Event-Driven Architecture</text><g id="scene-1-depot" class="boundary boundary-contained" clip-path="url(#clip-scene-1-depot)">
+      <rect x="50" y="100" width="750" height="350" rx="8" style="fill:#E8F4FD;stroke:#1976D2;stroke-width:3;label-color:#1976D2;filter:url(#sceneShadow)" filter="url(#sceneShadow)"/>
+      <text x="62" y="92" class="boundary-title" fill="#1976D2" font-size="14">Scene 1: Publisher Origin</text>
+    </g><rect id="depot-building-1" x="100" y="180" width="150" height="100" rx="8" style="fill:#8B7355;stroke:#6B5535;stroke-width:2"></rect><text id="depot-sign-1" x="176" y="220" style="fill:#FFFFFF;font-size:12;font-weight:bold;text-anchor:middle">BUS DEPOT</text><rect id="school-bus-1" x="300" y="300" width="100" height="35" rx="8" style="fill:url(#busGradient);stroke:#E6C200;stroke-width:2;filter:url(#busGlow)"></rect><text id="scene-1-caption" x="424" y="420" style="fill:#1976D2;font-size:12;font-weight:bold;text-anchor:middle">Bus leaves depot → publish(topic, payload)</text><g id="scene-2-manifest" class="boundary boundary-contained" clip-path="url(#clip-scene-2-manifest)">
+      <rect x="850" y="100" width="750" height="350" rx="8" style="fill:#FFF8E1;stroke:#FF9800;stroke-width:3;label-color:#FF9800;filter:url(#sceneShadow)" filter="url(#sceneShadow)"/>
+      <text x="862" y="92" class="boundary-title" fill="#FF9800" font-size="14">Scene 2: Manifest &amp; Debounce</text>
+    </g><rect id="manifest-board-2" x="932" y="160" width="150" height="90" rx="8" style="fill:#00D9FF;stroke:#0099CC;stroke-width:3"></rect><text id="manifest-title-2" x="1004" y="192" style="fill:#FFFFFF;font-size:12;font-weight:bold;text-anchor:middle">MANIFEST</text><rect id="traffic-light-2" x="1452" y="220" width="20" height="50" rx="8" style="fill:#333333;stroke:#222222;stroke-width:2"></rect><text id="scene-2-caption" x="1216" y="420" style="fill:#FF9800;font-size:12;font-weight:bold;text-anchor:middle">Manifest validation + debounce → controlled flow</text><g id="scene-3-subscribers" class="boundary boundary-contained" clip-path="url(#clip-scene-3-subscribers)">
+      <rect x="50" y="500" width="750" height="350" rx="8" style="fill:#E8F5E8;stroke:#4CAF50;stroke-width:3;label-color:#4CAF50;filter:url(#sceneShadow)" filter="url(#sceneShadow)"/>
+      <text x="62" y="492" class="boundary-title" fill="#4CAF50" font-size="14">Scene 3: Subscribers &amp; Cache</text>
+    </g><rect id="bus-stop-3" x="400" y="620" width="50" height="30" rx="8" style="fill:#FFFFFF;stroke:#333333;stroke-width:2"></rect><text id="bus-stop-text-3" x="424" y="636" style="fill:#333333;font-size:8;font-weight:bold;text-anchor:middle">STOP</text><rect id="live-subscriber-3" x="500" y="752" width="25" height="35" rx="8" style="fill:#32CD32;stroke:#228B22;stroke-width:2"></rect><rect id="replay-cache-3" x="132" y="560" width="120" height="80" rx="8" style="fill:#4682B4;stroke:#2F4F4F;stroke-width:3"></rect><text id="cache-title-3" x="192" y="592" style="fill:#FFFFFF;font-size:10;font-weight:bold;text-anchor:middle">CACHE</text><text id="scene-3-caption" x="336" y="820" style="fill:#4CAF50;font-size:12;font-weight:bold;text-anchor:middle">Live &amp; late subscribers + replay cache → reliable delivery</text><g id="scene-4-conductor" class="boundary boundary-contained" clip-path="url(#clip-scene-4-conductor)">
+      <rect x="850" y="500" width="750" height="350" rx="8" style="fill:#F3E5F5;stroke:#9C27B0;stroke-width:3;label-color:#9C27B0;filter:url(#sceneShadow)" filter="url(#sceneShadow)"/>
+      <text x="862" y="492" class="boundary-title" fill="#9C27B0" font-size="14">Scene 4: Conductor Hub</text>
+    </g><circle id="transfer-hub-4" cx="1176" cy="652" r="50" style="fill:#4682B4;stroke:#2F4F4F;stroke-width:3"></circle><circle id="conductor-center-4" cx="1200" cy="676" r="25" style="fill:#6B4EFF;stroke:#4A3ACD;stroke-width:2"></circle><text id="conductor-label-4" x="1224" y="780" style="fill:#9C27B0;font-size:10;font-weight:bold;text-anchor:middle">Conductor: play()</text><rect id="plugin-a-bus-4" x="1352" y="600" width="70" height="25" rx="8" style="fill:#32CD32;stroke:#228B22;stroke-width:2"></rect><rect id="plugin-b-bus-4" x="1352" y="780" width="70" height="25" rx="8" style="fill:#FF6347;stroke:#DC143C;stroke-width:2"></rect><text id="scene-4-caption" x="1224" y="820" style="fill:#9C27B0;font-size:12;font-weight:bold;text-anchor:middle">Hub: topics route into sequences via Conductor</text><g id="scene-5-rules" class="boundary boundary-contained" clip-path="url(#clip-scene-5-rules)">
+      <rect x="50" y="900" width="750" height="350" rx="8" style="fill:#FFF3E0;stroke:#FF9800;stroke-width:3;label-color:#FF9800;filter:url(#sceneShadow)" filter="url(#sceneShadow)"/>
+      <text x="62" y="892" class="boundary-title" fill="#FF9800" font-size="14">Scene 5: Rules &amp; Boundaries</text>
+    </g><rect id="handler-isolation-sign-5" x="300" y="992" width="35" height="30" rx="0" style="fill:#228B22;stroke:#006400;stroke-width:2"></rect><rect id="feature-flags-sign-5" x="552" y="996" width="35" height="25" rx="0" style="fill:#4169E1;stroke:#191970;stroke-width:2"></rect><rect id="traffic-light-5" x="700" y="1012" width="18" height="40" rx="8" style="fill:#333333;stroke:#222222;stroke-width:2"></rect><text id="scene-5-caption" x="384" y="1220" style="fill:#FF9800;font-size:12;font-weight:bold;text-anchor:middle">Street rules: boundaries, flags, throttle &amp; debounce</text><g id="scene-6-school" class="boundary boundary-contained" clip-path="url(#clip-scene-6-school)">
+      <rect x="850" y="900" width="750" height="350" rx="8" style="fill:#E8F5E8;stroke:#4CAF50;stroke-width:3;label-color:#4CAF50;filter:url(#sceneShadow)" filter="url(#sceneShadow)"/>
+      <text x="862" y="892" class="boundary-title" fill="#4CAF50" font-size="14">Scene 6: Final Destination</text>
+    </g><rect id="school-building-6" x="1300" y="940" width="180" height="100" rx="0" style="fill:#CD853F;stroke:#8B4513;stroke-width:2"></rect><text id="school-sign-6" x="1392" y="1060" style="fill:#333333;font-size:9;font-weight:bold;text-anchor:middle">ELEMENTARY SCHOOL</text><circle id="celebration-balloons-6" cx="1500" cy="1020" r="10" style="fill:#FF6B6B;stroke:none"></circle><text id="scene-6-caption" x="1136" y="1220" style="fill:#4CAF50;font-size:12;font-weight:bold;text-anchor:middle">Destination: application state updated (delivery complete)</text>
+  
+</svg>

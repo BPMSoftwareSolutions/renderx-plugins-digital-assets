@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="400" viewBox="0 0 800 400"
+     xmlns="http://www.w3.org/2000/svg" role="img" aria-label="event-router-scene-5-rules">
+  <defs><linearGradient id="roadGradient" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#404040"/><stop offset="0.5" stop-color="#505050"/><stop offset="1" stop-color="#404040"/></linearGradient><linearGradient id="warningGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFD700"/><stop offset="1" stop-color="#E6C200"/></linearGradient><linearGradient id="safetyGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#228B22"/><stop offset="1" stop-color="#006400"/></linearGradient><linearGradient id="controlGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4169E1"/><stop offset="1" stop-color="#191970"/></linearGradient><filter id="sceneShadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.25"/></filter><filter id="signGlow"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter><clipPath id="clip-scene-5-boundary">
+      <rect x="20" y="20" width="760" height="360" 
+            rx="8" ry="8"/>
+    </clipPath>
+</defs>
+  
+    <style>
+      .active-glow rect { filter: url(#glow); stroke: #8b5cf6; }
+      .connector { stroke-linecap: round; stroke-linejoin: round; }
+      .boundary-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: 600; }
+      .flow-token { animation-fill-mode: forwards; }
+      .boundary-contained { overflow: hidden; }
+    </style>
+  
+  <rect x="0" y="0" width="100%" height="100%" fill="#87CEEB"/>
+  
+  <g id="scene-5-boundary" class="boundary boundary-contained" clip-path="url(#clip-scene-5-boundary)">
+      <rect x="20" y="20" width="760" height="360" rx="8" style="fill:#FFF3E0;stroke:#FF9800;stroke-width:2;label-color:#FF9800;filter:url(#sceneShadow)" filter="url(#sceneShadow)"/>
+      <text x="32" y="12" class="boundary-title" fill="#FF9800" font-size="14">Scene 5: Rules &amp; Boundaries (Performance Controls)</text>
+    </g><rect id="sky-background" x="20" y="20" width="760" height="200" rx="0" style="fill:#87CEEB;stroke:none"></rect><rect id="ground" x="20" y="220" width="760" height="120" rx="0" style="fill:#4A6B3A;stroke:none"></rect><rect id="road" x="20" y="252" width="760" height="60" rx="0" style="fill:url(#roadGradient);stroke:#606060;stroke-width:2"></rect><rect id="guardrail-top" x="20" y="236" width="760" height="10" rx="0" style="fill:#E0E0E0;stroke:#C0C0C0;stroke-width:1"></rect><rect id="guardrail-bottom" x="20" y="316" width="760" height="10" rx="0" style="fill:#E0E0E0;stroke:#C0C0C0;stroke-width:1"></rect><text id="debounce-label" x="260" y="296" style="fill:#E6E600;font-size:9;font-weight:bold;text-anchor:middle">DEBOUNCE</text><rect id="throttle-lane" x="520" y="264" width="60" height="10" rx="0" style="fill:#FFFF00;opacity:0.7;stroke:#E6E600;stroke-width:1"></rect><text id="throttle-label" x="552" y="296" style="fill:#E6E600;font-size:9;font-weight:bold;text-anchor:middle">THROTTLE</text><text id="loop-prevention-text" x="140" y="164" style="fill:#DC143C;font-size:6;font-weight:bold;text-anchor:middle">LOOP
+PREVENTION</text><rect id="handler-isolation-sign" x="320" y="140" width="40" height="35" rx="0" style="fill:url(#safetyGradient);stroke:#006400;stroke-width:2;filter:url(#signGlow)"></rect><text id="handler-isolation-text" x="340" y="156" style="fill:#FFFFFF;font-size:5;font-weight:bold;text-anchor:middle">HANDLER
+ISOLATION</text><rect id="feature-flags-sign" x="620" y="144" width="40" height="30" rx="0" style="fill:url(#controlGradient);stroke:#191970;stroke-width:2;filter:url(#signGlow)"></rect><text id="feature-flags-text" x="640" y="160" style="fill:#FFFFFF;font-size:5;font-weight:bold;text-anchor:middle">FEATURE
+FLAGS</text><rect id="traffic-light-pole" x="740" y="160" width="3" height="40" rx="0" style="fill:#666666;stroke:none"></rect><rect id="traffic-light-box" x="732" y="160" width="20" height="45" rx="8" style="fill:#333333;stroke:#222222;stroke-width:2"></rect><circle id="red-light" cx="740" cy="172" r="2" style="fill:#FF0000;stroke:none"></circle><circle id="yellow-light" cx="740" cy="180" r="2" style="fill:#806000;stroke:none"></circle><circle id="green-light" cx="740" cy="192" r="2" style="fill:#008000;stroke:none"></circle><rect id="school-bus" x="372" y="220" width="120" height="40" rx="8" style="fill:#FFD700;stroke:#E6C200;stroke-width:2"></rect><text id="bus-label" x="432" y="236" style="fill:#000000;font-size:8;font-weight:bold;text-anchor:middle">SCHOOL BUS</text><text id="sky-headline" x="400" y="60" style="fill:#1E3A56;font-size:24;font-weight:bold;text-anchor:middle;stroke:#FFFFFF;stroke-width:1">Rules keep the ride safe.</text><text id="sky-description" x="300" y="84" style="fill:#3C556E;font-size:16;text-anchor:middle">Guardrails, flags, throttle, and debounce enforce stability.</text><text id="scene-caption" x="244" y="340" style="fill:#FF9800;font-size:14;font-weight:bold;text-anchor:middle">Street rules: enforced boundaries, flags, throttle &amp; debounce lanes</text>
+  
+</svg>
