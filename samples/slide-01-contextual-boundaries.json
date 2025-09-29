@@ -1,0 +1,152 @@
+{
+  "id": "slide-01-contextual-boundaries",
+  "canvas": { "width": 1200, "height": 680 },
+  "bg": "#0f1116",
+  "defs": {
+    "filters": [
+      "<filter id=\"laneShadow\" x=\"-20%\" y=\"-20%\" width=\"140%\" height=\"140%\"><feDropShadow dx=\"0\" dy=\"4\" stdDeviation=\"8\" flood-color=\"#000\" flood-opacity=\"0.35\"/></filter>",
+      "<filter id=\"glow\"><feGaussianBlur stdDeviation=\"3\" result=\"b\"/><feMerge><feMergeNode in=\"b\"/><feMergeNode in=\"SourceGraphic\"/></feMerge></filter>"
+    ],
+    "gradients": [
+      "<linearGradient id=\"rail\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0\" stop-color=\"#7c3aed\"/><stop offset=\"1\" stop-color=\"#a78bfa\"/></linearGradient>",
+      "<linearGradient id=\"buildFlow\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0\" stop-color=\"#f59e0b\"/><stop offset=\"1\" stop-color=\"#fbbf24\"/></linearGradient>"
+    ]
+  },
+
+  "nodes": [
+    {
+      "kind": "boundary",
+      "id": "lane.plugin",
+      "title": "Plugin Context",
+      "at": { "x": 48, "y": 72 },
+      "size": { "width": 480, "height": 480 },
+      "style": { "fill": "#141a24", "stroke": "#253146", "strokeWidth": 1.5, "labelColor": "#e6edf3" },
+      "grid": { "cols": 2, "rowH": 200, "gutter": 20, "padding": 24 },
+      "children": [
+        { "kind": "shape", "id": "pkg.tile", "shape": "roundedRect",
+          "at": { "x": 24, "y": 24 }, "size": { "width": 200, "height": 160 },
+          "style": { "fill": "#2d3748", "stroke": "#4a5568", "strokeWidth": 2 } },
+        { "kind": "text", "id": "pkg.title", "at": { "x": 34, "y": 48 }, "text": "Plugin Package",
+          "style": { "fill": "#e6edf3", "fontSize": 16, "fontWeight": 700 } },
+        { "kind": "shape", "id": "pkg.npm", "shape": "roundedRect",
+          "at": { "x": 144, "y": 64 }, "size": { "width": 60, "height": 20 },
+          "style": { "fill": "#cb3837", "stroke": "none" } },
+        { "kind": "text", "id": "pkg.npm.text", "at": { "x": 174, "y": 76 }, "text": "npm",
+          "style": { "fill": "#ffffff", "fontSize": 10, "fontWeight": 700, "textAnchor": "middle" } },
+
+        { "kind": "shape", "id": "manifest.tile", "shape": "roundedRect",
+          "at": { "x": 264, "y": 24 }, "size": { "width": 200, "height": 160 },
+          "style": { "fill": "#1a202c", "stroke": "#00d9ff", "strokeWidth": 2 } },
+        { "kind": "text", "id": "manifest.title", "at": { "x": 274, "y": 48 }, "text": "Plugin Manifest",
+          "style": { "fill": "#e6edf3", "fontSize": 16, "fontWeight": 700 } },
+        { "kind": "text", "id": "manifest.brace1", "at": { "x": 274, "y": 88 }, "text": "{",
+          "style": { "fill": "#00d9ff", "fontSize": 24, "fontWeight": 700 } },
+        { "kind": "text", "id": "manifest.content", "at": { "x": 284, "y": 108 }, "text": "\"handlers\": [...]",
+          "style": { "fill": "#e2e8f0", "fontSize": 12 } },
+        { "kind": "text", "id": "manifest.brace2", "at": { "x": 444, "y": 168 }, "text": "}",
+          "style": { "fill": "#00d9ff", "fontSize": 24, "fontWeight": 700 } },
+
+        { "kind": "shape", "id": "build.tile", "shape": "roundedRect",
+          "at": { "x": 24, "y": 244 }, "size": { "width": 200, "height": 160 },
+          "style": { "fill": "#2d3748", "stroke": "#4a5568", "strokeWidth": 2 } },
+        { "kind": "text", "id": "build.title", "at": { "x": 34, "y": 268 }, "text": "Build & Publish",
+          "style": { "fill": "#e6edf3", "fontSize": 16, "fontWeight": 700 } },
+        { "kind": "shape", "id": "build.conveyor", "shape": "rect",
+          "at": { "x": 34, "y": 340 }, "size": { "width": 180, "height": 12 },
+          "style": { "fill": "#4a5568", "stroke": "none" } },
+        { "kind": "shape", "id": "build.stage", "shape": "roundedRect",
+          "at": { "x": 164, "y": 320 }, "size": { "width": 40, "height": 40 },
+          "style": { "fill": "#f59e0b", "stroke": "#d97706", "strokeWidth": 1 } },
+        { "kind": "text", "id": "build.stage.text", "at": { "x": 184, "y": 342 }, "text": "v1.0",
+          "style": { "fill": "#ffffff", "fontSize": 10, "fontWeight": 700, "textAnchor": "middle" } }
+      ]
+    },
+
+    {
+      "kind": "boundary",
+      "id": "lane.host",
+      "title": "Host Context",
+      "at": { "x": 672, "y": 72 },
+      "size": { "width": 480, "height": 480 },
+      "style": { "fill": "#141a24", "stroke": "#253146", "strokeWidth": 1.5, "labelColor": "#e6edf3" },
+      "grid": { "cols": 2, "rowH": 200, "gutter": 20, "padding": 24 },
+      "children": [
+        { "kind": "shape", "id": "handlers.tile", "shape": "roundedRect",
+          "at": { "x": 24, "y": 24 }, "size": { "width": 200, "height": 160 },
+          "style": { "fill": "#151922", "stroke": "#2b3645", "strokeWidth": 1.5 } },
+        { "kind": "text", "id": "handlers.title", "at": { "x": 34, "y": 48 }, "text": "Handlers Export",
+          "style": { "fill": "#e6edf3", "fontSize": 16, "fontWeight": 700 } },
+        { "kind": "shape", "id": "handlers.port1", "shape": "roundedRect",
+          "at": { "x": 34, "y": 80 }, "size": { "width": 100, "height": 20 },
+          "style": { "fill": "#553c9a", "stroke": "#7c3aed", "strokeWidth": 1 } },
+        { "kind": "text", "id": "handlers.port1.text", "at": { "x": 84, "y": 92 }, "text": "onDragStart",
+          "style": { "fill": "#ffffff", "fontSize": 10, "fontWeight": 500, "textAnchor": "middle" } },
+        { "kind": "shape", "id": "handlers.port2", "shape": "roundedRect",
+          "at": { "x": 34, "y": 110 }, "size": { "width": 100, "height": 20 },
+          "style": { "fill": "#553c9a", "stroke": "#7c3aed", "strokeWidth": 1 } },
+        { "kind": "text", "id": "handlers.port2.text", "at": { "x": 84, "y": 122 }, "text": "publishCreate",
+          "style": { "fill": "#ffffff", "fontSize": 10, "fontWeight": 500, "textAnchor": "middle" } },
+
+        { "kind": "shape", "id": "sdk.tile", "shape": "roundedRect",
+          "at": { "x": 264, "y": 24 }, "size": { "width": 200, "height": 160 },
+          "style": { "fill": "#2d3748", "stroke": "#4a5568", "strokeWidth": 2 } },
+        { "kind": "text", "id": "sdk.title", "at": { "x": 274, "y": 48 }, "text": "Host SDK",
+          "style": { "fill": "#e6edf3", "fontSize": 16, "fontWeight": 700 } },
+        { "kind": "shape", "id": "sdk.rail1", "shape": "rect",
+          "at": { "x": 274, "y": 80 }, "size": { "width": 180, "height": 2 },
+          "style": { "fill": "#718096", "stroke": "none" } },
+        { "kind": "shape", "id": "sdk.rail2", "shape": "rect",
+          "at": { "x": 274, "y": 140 }, "size": { "width": 180, "height": 2 },
+          "style": { "fill": "#718096", "stroke": "none" } },
+        { "kind": "shape", "id": "sdk.module1", "shape": "roundedRect",
+          "at": { "x": 284, "y": 90 }, "size": { "width": 80, "height": 20 },
+          "style": { "fill": "#553c9a", "stroke": "none" } },
+        { "kind": "text", "id": "sdk.module1.text", "at": { "x": 324, "y": 102 }, "text": "Conductor",
+          "style": { "fill": "#ffffff", "fontSize": 9, "textAnchor": "middle" } },
+        { "kind": "shape", "id": "sdk.module2", "shape": "roundedRect",
+          "at": { "x": 284, "y": 120 }, "size": { "width": 80, "height": 20 },
+          "style": { "fill": "#553c9a", "stroke": "none" } },
+        { "kind": "text", "id": "sdk.module2.text", "at": { "x": 324, "y": 132 }, "text": "EventRouter",
+          "style": { "fill": "#ffffff", "fontSize": 9, "textAnchor": "middle" } }
+      ]
+    }
+  ],
+
+  "ports": [
+    { "id": "p.pkg.out", "nodeId": "pkg.tile", "side": "right", "offset": 80 },
+    { "id": "p.manifest.out", "nodeId": "manifest.tile", "side": "right", "offset": 80 },
+    { "id": "p.build.up", "nodeId": "build.tile", "side": "top", "offset": 100 },
+
+    { "id": "p.handlers.in", "nodeId": "handlers.tile", "side": "left", "offset": 80 },
+    { "id": "p.sdk.in", "nodeId": "sdk.tile", "side": "left", "offset": 80 }
+  ],
+
+  "connectors": [
+    { "id": "c.pkg_to_build",
+      "from": { "port": "p.pkg.out" }, "to": { "port": "p.build.up" },
+      "route": "orthogonal",
+      "style": { "stroke": "url(#buildFlow)", "strokeWidth": 2 } },
+
+    { "id": "c.manifest_to_handlers",
+      "from": { "port": "p.manifest.out" }, "to": { "port": "p.handlers.in" },
+      "route": "orthogonal",
+      "style": { "stroke": "url(#rail)", "strokeWidth": 2 },
+      "label": "register()" },
+
+    { "id": "c.manifest_to_sdk",
+      "from": { "port": "p.manifest.out" }, "to": { "port": "p.sdk.in" },
+      "route": "orthogonal",
+      "style": { "stroke": "#8b5cf6", "strokeWidth": 2, "dashed": true } }
+  ],
+
+  "flows": [
+    {
+      "id": "flow.manifest_registration",
+      "path": "c.manifest_to_handlers>c.manifest_to_sdk",
+      "token": { "size": 4, "color": "#d6bcfa", "trail": { "length": 120, "opacity": 0.3 } },
+      "speed": 160,
+      "loop": true,
+      "activate": { "boundaryIds": ["lane.plugin", "lane.host"], "className": "active-glow" }
+    }
+  ]
+}
