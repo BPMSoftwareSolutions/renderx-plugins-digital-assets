@@ -5,13 +5,15 @@ import { createMonoGraph, saveMonoGraph } from './mono-graph-generator';
  * Script to create the EventRouter mono journey configuration
  */
 
+// Use the same graph scene files that generate the combined storybook
+// This ensures visual consistency with graph-generated-combined-storybook.svg
 const EVENTROUTER_SCENES = [
-  'event-router-scene-1-depot.json',
-  'event-router-scene-2-manifest.json', 
-  'event-router-scene-3-subscribers.json',
-  'event-router-scene-4-conductor.json',
-  'event-router-scene-5-rules.json',
-  'event-router-scene-6-school.json'
+  'graph-scene-1-rx-node-73eke9.json',
+  'graph-scene-2-rx-node-s1wplc.json',
+  'graph-scene-3-rx-node-scene3.json',
+  'graph-scene-4-rx-node-scene4.json',
+  'graph-scene-5-rx-node-scene5.json',
+  'graph-scene-6-rx-node-scene6.json'
 ];
 
 function main() {
