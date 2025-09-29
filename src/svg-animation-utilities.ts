@@ -106,9 +106,12 @@ export function makeElementAppear(
       return match;
     }
 
-    // Set initial opacity to 0 if not already set
+    // Set initial opacity to 0 on the OPENING TAG only if not already present there
     let modifiedMatch = match;
-    if (!match.includes('opacity=')) {
+    const openingTagMatch = match.match(/^<[^>]+>/);
+    const openingTag = openingTagMatch ? openingTagMatch[0] : '';
+    const hasOpacityOnOpening = /\sopacity\s*=/.test(openingTag);
+    if (!hasOpacityOnOpening) {
       if (match.endsWith('/>')) {
         modifiedMatch = match.replace('/>', ' opacity="0"/>');
       } else {
@@ -127,12 +130,12 @@ export function makeElementAppear(
       }
     }
 
-    // Handle regular elements - insert animation before the last closing tag
-    const lastClosingTagIndex = modifiedMatch.lastIndexOf('</');
-    if (lastClosingTagIndex !== -1) {
-      const beforeClosing = modifiedMatch.substring(0, lastClosingTagIndex);
-      const closingTag = modifiedMatch.substring(lastClosingTagIndex);
-      return `${beforeClosing}${appearAnimation}${closingTag}`;
+    // Handle regular elements - insert animation right after the opening tag (applies to the group)
+    const openingTagOnlyMatch = modifiedMatch.match(/^(<[^>]+>)/);
+    if (openingTagOnlyMatch) {
+      const open = openingTagOnlyMatch[1];
+      const rest = modifiedMatch.substring(open.length);
+      return `${open}${appearAnimation}${rest}`;
     }
 
     return modifiedMatch;

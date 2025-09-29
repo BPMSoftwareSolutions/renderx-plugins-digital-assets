@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs';
 import { join } from 'path';
-import { ElementSelector, TriggerCondition, makeElementDisappear, startElementAnimation, stopElementAnimation } from './svg-animation-utilities';
+import { ElementSelector, TriggerCondition, makeElementDisappear, makeElementAppear, startElementAnimation, stopElementAnimation } from './svg-animation-utilities';
 
 export interface SceneElementConfig {
   selector: ElementSelector;
@@ -19,6 +19,8 @@ export interface TrafficLightConfig {
 export interface SceneConfigEntry {
   startDelay?: number; // absolute begin time for the bus movement in seconds
   exitTime?: number;   // absolute time to fade-out the bus group
+  initiallyHidden?: boolean;
+  appearDuration?: number; // seconds
   movement?: { dur: number; arriveAt: number; departAt: number; }; // seconds within cycle
   elements: {
     bus: SceneElementConfig;
@@ -53,6 +55,12 @@ export function applySceneAnimationFromConfig(svgContent: string, sceneNumber: n
     if (stopX != null) {
       out = alignBusTranslatePath(out, busSelector, stopX);
     }
+  }
+
+  // If initiallyHidden, fade-in at startDelay (default 0.3s)
+  if (entry.initiallyHidden) {
+    const beginAt = typeof entry.startDelay === 'number' ? entry.startDelay : 0;
+    out = makeElementAppear(out, busSelector, { type: 'time', value: beginAt, duration: entry.appearDuration ?? 0.3 });
   }
 
   // Begin bus-related animations at startDelay (if provided)
@@ -96,21 +104,20 @@ export function applySceneAnimationFromConfig(svgContent: string, sceneNumber: n
 // --- Helpers: movement normalization ---
 function normalizeBusMovementWithKeyTimes(svg: string, busSelector: ElementSelector, opts: { dur: number; keyTimes: number[]; begin?: string; }): string {
   const pattern = createElementRegex(busSelector);
+  // Precompute replacement tag
+  const fmt = (v: number) => (v === 0 || v === 1 ? String(v) : (Math.round(v * 1000) / 1000).toFixed(3));
+  const keyTimesStr = opts.keyTimes.map(fmt).join('; ');
+  const beginAttr = opts.begin ? ` begin="${opts.begin}"` : '';
+  const replacement = `<animateTransform attributeName="transform" type="translate" values="50,250; 350,250; 350,250; 900,250" keyTimes="${keyTimesStr}" dur="${opts.dur}s" repeatCount="indefinite"${beginAttr}/>`;
+
   return svg.replace(pattern, (busMatch) => {
-    // replace translate animateTransform block: set keyTimes, dur, repeatCount, remove begin/end
-    let result = busMatch.replace(/<animateTransform([^>]*type="translate"[^>]*)\/>/gis, (_unused, attrs) => {
-      let a = attrs
-        .replace(/\sbegin="[^"]*"/i, '')
-        .replace(/\send="[^"]*"/i, '')
-        .replace(/\skeyTimes="[^"]*"/i, '')
-        .replace(/\sdur="[^"]*"/i, '')
-        .replace(/\srepeatCount="[^"]*"/i, '');
-      a += ` keyTimes="${opts.keyTimes.join('; ')}"`;
-      a += ` dur="${opts.dur}s"`;
-      a += ` repeatCount="indefinite"`;
-      if (opts.begin) a += ` begin="${opts.begin}"`;
-      return `<animateTransform${a}/>`;
-    });
+    // replace any translate animateTransform (self-closing or paired) with our canonical replacement
+    const translateRegex = /<animateTransform[^>]*type="translate"[^>]*\/>|<animateTransform[^>]*type="translate"[^>]*>[\s\S]*?<\/animateTransform>/gi;
+    let result = busMatch.replace(translateRegex, replacement);
+    // If none existed, insert at top of the bus group
+    if (result === busMatch) {
+      result = busMatch.replace(/(<[^>]+>)/, `$1${replacement}`);
+    }
     return result;
   });
 }

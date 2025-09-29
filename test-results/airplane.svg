@@ -1,0 +1,163 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Filters -->
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Gradients -->
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#0b1220"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1f2937"/>
+      <stop offset="1" stop-color="#334155"/>
+    </linearGradient>
+    <linearGradient id="neon" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7c3aed"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+    
+    <!-- Clip paths for compartment boundaries -->
+    <clipPath id="clip-fuselage">
+      <rect x="330" y="210" width="540" height="240" rx="60" ry="60"/>
+    </clipPath>
+    <clipPath id="clip-cockpit">
+      <rect x="300" y="240" width="120" height="100" rx="24" ry="24"/>
+    </clipPath>
+    <clipPath id="clip-leftWing">
+      <polygon points="330,320 120,420 330,470"/>
+    </clipPath>
+    <clipPath id="clip-rightWing">
+      <polygon points="870,320 1080,420 870,470"/>
+    </clipPath>
+    <clipPath id="clip-tail">
+      <polygon points="840,210 900,170 900,235"/>
+    </clipPath>
+  </defs>
+  
+  <!-- Background -->
+  <rect x="0" y="0" width="1200" height="700" fill="url(#sky)"/>
+  
+  <!-- Airframe (decorative structure under compartments) -->
+  <g filter="url(#softShadow)">
+    <!-- Left wing -->
+    <polygon points="330,320 120,420 330,470" fill="url(#metal)" stroke="#475569" stroke-width="2"/>
+    <!-- Right wing -->
+    <polygon points="870,320 1080,420 870,470" fill="url(#metal)" stroke="#475569" stroke-width="2"/>
+    <!-- Tail -->
+    <polygon points="840,210 900,170 900,235" fill="url(#metal)" stroke="#475569" stroke-width="2"/>
+    <!-- Fuselage body -->
+    <rect x="330" y="210" width="540" height="240" rx="60" ry="60" fill="url(#metal)" stroke="#6b7280" stroke-width="2"/>
+    <!-- Cockpit nose -->
+    <ellipse cx="330" cy="330" rx="70" ry="80" fill="url(#metal)" stroke="#6b7280" stroke-width="2"/>
+  </g>
+  
+  <!-- Compartment boundaries with clip paths -->
+  
+  <!-- Fuselage = Pipeline / Runtime -->
+  <g id="boundary-fuselage" data-boundary="fuselage" clip-path="url(#clip-fuselage)">
+    <rect x="330" y="210" width="540" height="240" rx="60" ry="60" 
+          fill="rgba(96,165,250,0.12)" stroke="#64748b" stroke-width="1.5"/>
+    <text x="360" y="236" fill="#e5e7eb" 
+          font-family="ui-sans-serif,system-ui,sans-serif" 
+          font-size="16" font-weight="700">
+      Fuselage = Pipeline / Runtime
+    </text>
+  </g>
+  
+  <!-- Cockpit = Control Panel -->
+  <g id="boundary-cockpit" data-boundary="cockpit" clip-path="url(#clip-cockpit)">
+    <rect x="300" y="240" width="120" height="100" rx="24" ry="24" 
+          fill="#111827" opacity="0.9" stroke="#7dd3fc" stroke-width="2"/>
+    <text x="306" y="258" fill="#e5e7eb" 
+          font-family="ui-sans-serif,system-ui,sans-serif" 
+          font-size="12" font-weight="700">
+      Cockpit = Control Panel
+    </text>
+  </g>
+  
+  <!-- Left Wing = Plugins (UX) -->
+  <g id="boundary-leftWing" data-boundary="leftWing" clip-path="url(#clip-leftWing)">
+    <polygon points="330,320 120,420 330,470" 
+             fill="rgba(52,211,153,0.12)" stroke="#475569" stroke-width="1.5"/>
+    <text x="160" y="410" fill="#e5e7eb" 
+          font-family="ui-sans-serif,system-ui,sans-serif" 
+          font-size="16" font-weight="700">
+      Left Wing = Plugins (UX)
+    </text>
+  </g>
+  
+  <!-- Right Wing = Plugins (Data) -->
+  <g id="boundary-rightWing" data-boundary="rightWing" clip-path="url(#clip-rightWing)">
+    <polygon points="870,320 1080,420 870,470" 
+             fill="rgba(52,211,153,0.12)" stroke="#475569" stroke-width="1.5"/>
+    <text x="900" y="410" fill="#e5e7eb" 
+          font-family="ui-sans-serif,system-ui,sans-serif" 
+          font-size="16" font-weight="700">
+      Right Wing = Plugins (Data)
+    </text>
+  </g>
+  
+  <!-- Tail = Observability -->
+  <g id="boundary-tail" data-boundary="tail" clip-path="url(#clip-tail)">
+    <polygon points="840,210 900,170 900,235" 
+             fill="rgba(96,165,250,0.12)" stroke="#475569" stroke-width="1.5"/>
+    <text x="845" y="165" fill="#e5e7eb" 
+          font-family="ui-sans-serif,system-ui,sans-serif" 
+          font-size="16" font-weight="700">
+      Tail = Observability
+    </text>
+  </g>
+  
+  <!-- Engines (AI Agents) -->
+  <g id="boundary-enginesL" data-boundary="enginesL">
+    <ellipse cx="260" cy="455" rx="28" ry="20" fill="#1f2937" stroke="#6b7280" stroke-width="2"/>
+    <text x="230" y="490" fill="#94a3b8" 
+          font-family="ui-sans-serif,system-ui,sans-serif" 
+          font-size="12">
+      Engine (AI Agent)
+    </text>
+  </g>
+  
+  <g id="boundary-enginesR" data-boundary="enginesR">
+    <ellipse cx="940" cy="455" rx="28" ry="20" fill="#1f2937" stroke="#6b7280" stroke-width="2"/>
+    <text x="910" y="490" fill="#94a3b8" 
+          font-family="ui-sans-serif,system-ui,sans-serif" 
+          font-size="12">
+      Engine (AI Agent)
+    </text>
+  </g>
+  
+  <!-- Connection ports -->
+  <g id="ports" fill="#a78bfa">
+    <circle cx="420" cy="330" r="5" data-port="fuselage.midL"/>
+    <circle cx="780" cy="330" r="5" data-port="fuselage.midR"/>
+    <circle cx="300" cy="290" r="5" data-port="cockpit.right"/>
+    <circle cx="330" cy="420" r="5" data-port="leftWing.root"/>
+    <circle cx="870" cy="420" r="5" data-port="rightWing.root"/>
+  </g>
+  
+  <!-- Example data flow connector -->
+  <g id="example-flow">
+    <!-- Glowing neon path -->
+    <path d="M 300 290 L 420 290 L 420 330 L 780 330 L 870 420" 
+          stroke="url(#neon)" stroke-width="6" fill="none" 
+          filter="url(#glow)" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Animated dashed overlay -->
+    <path d="M 300 290 L 420 290 L 420 330 L 780 330 L 870 420" 
+          stroke="#e9d5ff" stroke-width="2" fill="none" 
+          stroke-dasharray="10 10" stroke-linecap="round" stroke-linejoin="round">
+      <animate attributeName="stroke-dashoffset" 
+               from="0" to="-1000" dur="6s" repeatCount="indefinite"/>
+    </path>
+  </g>
+</svg>

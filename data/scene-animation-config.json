@@ -10,6 +10,8 @@
     "2": {
       "startDelay": 6,
       "exitTime": 16,
+      "initiallyHidden": true,
+      "appearDuration": 0.3,
       "movement": { "dur": 12, "arriveAt": 3, "departAt": 8 },
       "elements": {
         "bus": { "selector": { "type": "id", "value": "school-bus" } },
@@ -20,6 +22,8 @@
     "3": {
       "startDelay": 16,
       "exitTime": 28,
+      "initiallyHidden": true,
+      "appearDuration": 0.3,
       "elements": {
         "bus": { "selector": { "type": "id", "value": "school-bus" } }
       }
@@ -27,6 +31,8 @@
     "4": {
       "startDelay": 28,
       "exitTime": 42,
+      "initiallyHidden": true,
+      "appearDuration": 0.3,
       "elements": {
         "bus": { "selector": { "type": "id", "value": "school-bus" } }
       }
@@ -34,6 +40,8 @@
     "5": {
       "startDelay": 42,
       "exitTime": 56,
+      "initiallyHidden": true,
+      "appearDuration": 0.3,
       "elements": {
         "bus": { "selector": { "type": "id", "value": "school-bus" } }
       }
