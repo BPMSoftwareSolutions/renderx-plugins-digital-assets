@@ -1,0 +1,28 @@
+{
+  "id": "host-app",
+  "label": "Host App (Thin)",
+  "svg": "slide-02-discovery/host-app.svg",
+  "description": "A minimalist app window with clean chrome floats above a neutral backdrop. Its toolbar is spare—only what's essential to boot the system. A thin conductor line traces through the header, implying orchestration without clutter. The composition whispers 'thin host': poised to discover, not dominate.",
+  "sub_elements": [
+    {
+      "id": "app-window",
+      "svg": "slide-02-discovery/host-app/app-window.svg",
+      "description": "Minimalist app window with clean chrome and neutral backdrop"
+    },
+    {
+      "id": "toolbar",
+      "svg": "slide-02-discovery/host-app/toolbar.svg", 
+      "description": "Spare toolbar with only essential boot system controls"
+    },
+    {
+      "id": "conductor-line",
+      "svg": "slide-02-discovery/host-app/conductor-line.svg",
+      "description": "Thin conductor line tracing through header implying orchestration"
+    },
+    {
+      "id": "backdrop",
+      "svg": "slide-02-discovery/host-app/backdrop.svg",
+      "description": "Neutral backdrop that emphasizes the thin host concept"
+    }
+  ]
+}

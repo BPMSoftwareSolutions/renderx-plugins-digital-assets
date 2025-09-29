@@ -1,8 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
   <title>Plugin Manifest - Generated Stamp</title>
-  <g id="generated-stamp">
-    <circle cx="80" cy="80" r="60" fill="#F3F9FF" stroke="#4AD1FF"/>
-    <text x="80" y="87" text-anchor="middle" font-family="Arial" font-size="14" fill="#4AD1FF">generated</text>
+  <g id="generated-stamp" font-family="Arial, sans-serif">
+    <!-- Subtle 'generated' stamp in the corner -->
+    <g transform="translate(320, 40)">
+      <!-- Stamp background -->
+      <rect x="0" y="0" width="60" height="20" fill="#F0F9FF" stroke="#0891B2"
+            stroke-width="1" rx="3" opacity="0.8"/>
+      <!-- Stamp text -->
+      <text x="30" y="13" text-anchor="middle" font-size="9" fill="#0891B2"
+            font-weight="500" opacity="0.7">GENERATED</text>
+      <!-- Corner fold effect -->
+      <path d="M55 0 L60 0 L60 5 Z" fill="#E0F2FE" stroke="#0891B2" stroke-width="0.5"/>
+    </g>
   </g>
 </svg>
 

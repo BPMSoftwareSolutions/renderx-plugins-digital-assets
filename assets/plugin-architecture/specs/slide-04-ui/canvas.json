@@ -1,0 +1,28 @@
+{
+  "id": "canvas",
+  "label": "Canvas",
+  "svg": "slide-04-ui/canvas.svg",
+  "description": "An infinite plane with a soft grid recedes into the distance. Snap points twinkle faintly as a component ghost follows the cursor, ready to drop. Edges glow when alignment is achieved. The canvas promises control and play in equal measure—precise, but never stiff.",
+  "sub_elements": [
+    {
+      "id": "infinite-plane",
+      "svg": "slide-04-ui/canvas/infinite-plane.svg",
+      "description": "Infinite plane with soft grid receding into distance"
+    },
+    {
+      "id": "snap-points",
+      "svg": "slide-04-ui/canvas/snap-points.svg",
+      "description": "Snap points that twinkle faintly for component alignment"
+    },
+    {
+      "id": "component-ghost",
+      "svg": "slide-04-ui/canvas/component-ghost.svg",
+      "description": "Component ghost following cursor, ready to drop"
+    },
+    {
+      "id": "alignment-glow",
+      "svg": "slide-04-ui/canvas/alignment-glow.svg",
+      "description": "Edge glow when alignment is achieved"
+    }
+  ]
+}

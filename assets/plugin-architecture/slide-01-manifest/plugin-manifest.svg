@@ -1,109 +1,126 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="420" height="140" viewBox="0 0 420 140">
-  <text x="210" y="116" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#0E7490">Plugin Manifest</text>
-  <!-- Composed from sub-elements -->
-  <g id="sub-elements">
-  <g data-sub-id="document-card" data-src="plugin-manifest/document-card.svg" transform="translate(21.11,18) scale(1.89,0.40)">
-  <g fill="#FFFFFF" stroke="#4AD1FF">
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="140" viewBox="0 0 420 140">
+  <!-- Sleek document card with cyan trim -->
+  <defs>
+    <linearGradient id="document-card-cardGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FAFAFA;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#F0F0F0;stop-opacity:1"/>
+    </linearGradient>
+    <filter id="document-card-cardShadow">
+      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#000" flood-opacity="0.1"/>
+    </filter>
+  </defs>
 
-    <rect x="10" y="10" width="180" height="240" rx="8"/>
-  
-  </g>
-  </g>
-  <g data-sub-id="json-braces" data-src="plugin-manifest/json-braces.svg" transform="translate(-35,1) scale(2.50,0.60)">
-  <g font-family="Courier New, monospace" font-size="72" fill="#4AD1FF">
+  <!-- Main card body -->
+  <rect x="20" y="20" width="360" height="260" fill="url(#document-card-cardGradient)"
+        stroke="#E0E0E0" stroke-width="1" rx="8" filter="url(#document-card-cardShadow)"/>
 
-    <text x="40" y="85">{</text>
-    <text x="140" y="85">}</text>
-  
-  </g>
-  </g>
-  <g data-sub-id="key-value-rows" data-src="plugin-manifest/key-value-rows.svg" transform="translate(66,0) scale(1.20,1.40)">
-  <g stroke="#777" fill="none">
+  <!-- Cyan trim -->
+  <rect x="20" y="20" width="360" height="4" fill="#0891B2" rx="8"/>
+  <rect x="20" y="20" width="4" height="260" fill="#0891B2" rx="8"/>
 
-    <line x1="20" y1="30" x2="220" y2="30"/>
-    <line x1="20" y1="60" x2="220" y2="60"/>
-    <line x1="20" y1="90" x2="220" y2="90"/>
-    <line x1="20" y1="120" x2="220" y2="120"/>
-  
-  </g>
-  </g>
-  <g data-sub-id="generated-stamp" data-src="plugin-manifest/generated-stamp.svg" transform="translate(320,6) scale(0.25,0.25)">
+  <!-- Subtle inner border -->
+  <rect x="25" y="30" width="350" height="245" fill="none"
+        stroke="#F0F0F0" stroke-width="1" rx="4"/>
+  <!-- Stylized JSON braces that frame the content -->
+  <defs>
+    <linearGradient id="json-braces-braceGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0891B2;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#06B6D4;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
 
-    <circle cx="80" cy="80" r="60" fill="#F3F9FF" stroke="#4AD1FF"/>
-    <text x="80" y="87" text-anchor="middle" font-family="Arial" font-size="14" fill="#4AD1FF">generated</text>
-  
+  <!-- Opening brace -->
+  <g fill="url(#json-braces-braceGradient)" font-family="'Fira Code', 'Monaco', monospace" font-size="32" font-weight="300">
+    <text x="40" y="60">{</text>
   </g>
-  <g data-sub-id="tabs" data-src="plugin-manifest/tabs.svg" transform="translate(48.33,18) scale(1.17,0.40)">
-  <g fill="#E8F7FF" stroke="#4AD1FF">
 
-    <rect x="10" y="20" width="60" height="40" rx="6"/>
-    <rect x="80" y="20" width="60" height="40" rx="6"/>
-    <rect x="150" y="20" width="60" height="40" rx="6"/>
-  
+  <!-- Closing brace -->
+  <g fill="url(#json-braces-braceGradient)" font-family="'Fira Code', 'Monaco', monospace" font-size="32" font-weight="300">
+    <text x="40" y="260">}</text>
   </g>
-  </g>
-</g>
-  </g>
-  <g data-sub-id="json-braces" data-src="plugin-manifest/json-braces.svg" transform="translate(-35,1) scale(2.50,0.60)">
-  <g font-family="Courier New, monospace" font-size="72" fill="#4AD1FF">
 
-    <text x="40" y="85">{</text>
-    <text x="140" y="85">}</text>
-  
-  </g>
-  </g>
-  <g data-sub-id="key-value-rows" data-src="plugin-manifest/key-value-rows.svg" transform="translate(66,0) scale(1.20,1.40)">
-  <g stroke="#777" fill="none">
+  <!-- Subtle connecting lines -->
+  <path d="M45 70 L45 250" stroke="#0891B2" stroke-width="1" opacity="0.3"/>
+  <!-- Neatly aligned key-value rows representing structured data -->
 
-    <line x1="20" y1="30" x2="220" y2="30"/>
-    <line x1="20" y1="60" x2="220" y2="60"/>
-    <line x1="20" y1="90" x2="220" y2="90"/>
-    <line x1="20" y1="120" x2="220" y2="120"/>
-  
+  <!-- Row 1: name -->
+  <g transform="translate(80, 80)">
+    <text x="0" y="0" font-size="14" fill="#666" font-weight="500">"name":</text>
+    <text x="80" y="0" font-size="14" fill="#0891B2">"my-plugin"</text>
+    <text x="180" y="0" font-size="14" fill="#666">,</text>
   </g>
-  </g>
-  <g data-sub-id="generated-stamp" data-src="plugin-manifest/generated-stamp.svg" transform="translate(320,6) scale(0.25,0.25)">
 
-    <circle cx="80" cy="80" r="60" fill="#F3F9FF" stroke="#4AD1FF"/>
-    <text x="80" y="87" text-anchor="middle" font-family="Arial" font-size="14" fill="#4AD1FF">generated</text>
-  
+  <!-- Row 2: version -->
+  <g transform="translate(80, 110)">
+    <text x="0" y="0" font-size="14" fill="#666" font-weight="500">"version":</text>
+    <text x="80" y="0" font-size="14" fill="#0891B2">"1.0.0"</text>
+    <text x="140" y="0" font-size="14" fill="#666">,</text>
   </g>
-  <g data-sub-id="tabs" data-src="plugin-manifest/tabs.svg" transform="translate(48.33,18) scale(1.17,0.40)">
-  <g fill="#E8F7FF" stroke="#4AD1FF">
 
-    <rect x="10" y="20" width="60" height="40" rx="6"/>
-    <rect x="80" y="20" width="60" height="40" rx="6"/>
-    <rect x="150" y="20" width="60" height="40" rx="6"/>
-  
+  <!-- Row 3: handlersPath -->
+  <g transform="translate(80, 140)">
+    <text x="0" y="0" font-size="14" fill="#666" font-weight="500">"handlersPath":</text>
+    <text x="140" y="0" font-size="14" fill="#0891B2">"./handlers"</text>
+    <text x="240" y="0" font-size="14" fill="#666">,</text>
   </g>
-  </g>
-</g>
-  <g data-sub-id="json-braces" data-src="plugin-manifest/json-braces.svg" transform="translate(-35,1) scale(2.50,0.60)">
 
-    <text x="40" y="85">{</text>
-    <text x="140" y="85">}</text>
-  
+  <!-- Row 4: routes -->
+  <g transform="translate(80, 170)">
+    <text x="0" y="0" font-size="14" fill="#666" font-weight="500">"routes":</text>
+    <text x="80" y="0" font-size="14" fill="#E97E00">[</text>
+    <text x="90" y="0" font-size="14" fill="#666">...</text>
+    <text x="110" y="0" font-size="14" fill="#E97E00">]</text>
+    <text x="120" y="0" font-size="14" fill="#666">,</text>
   </g>
-  <g data-sub-id="key-value-rows" data-src="plugin-manifest/key-value-rows.svg" transform="translate(66,0) scale(1.20,1.40)">
 
-    <line x1="20" y1="30" x2="220" y2="30"/>
-    <line x1="20" y1="60" x2="220" y2="60"/>
-    <line x1="20" y1="90" x2="220" y2="90"/>
-    <line x1="20" y1="120" x2="220" y2="120"/>
-  
+  <!-- Row 5: topics -->
+  <g transform="translate(80, 200)">
+    <text x="0" y="0" font-size="14" fill="#666" font-weight="500">"topics":</text>
+    <text x="80" y="0" font-size="14" fill="#E97E00">[</text>
+    <text x="90" y="0" font-size="14" fill="#666">...</text>
+    <text x="110" y="0" font-size="14" fill="#E97E00">]</text>
   </g>
-  <g data-sub-id="generated-stamp" data-src="plugin-manifest/generated-stamp.svg" transform="translate(320,6) scale(0.25,0.25)">
 
-    <circle cx="80" cy="80" r="60" fill="#F3F9FF" stroke="#4AD1FF"/>
-    <text x="80" y="87" text-anchor="middle" font-family="Arial" font-size="14" fill="#4AD1FF">generated</text>
-  
+  <!-- Alignment guides (subtle) -->
+  <line x1="160" y1="75" x2="160" y2="205" stroke="#F0F0F0" stroke-width="1" opacity="0.3"/>
+  <!-- Subtle 'generated' stamp in the corner -->
+  <g transform="translate(320, 40)">
+    <!-- Stamp background -->
+    <rect x="0" y="0" width="60" height="20" fill="#F0F9FF" stroke="#0891B2"
+          stroke-width="1" rx="3" opacity="0.8"/>
+    <!-- Stamp text -->
+    <text x="30" y="13" text-anchor="middle" font-size="9" fill="#0891B2"
+          font-weight="500" opacity="0.7">GENERATED</text>
+    <!-- Corner fold effect -->
+    <path d="M55 0 L60 0 L60 5 Z" fill="#E0F2FE" stroke="#0891B2" stroke-width="0.5"/>
   </g>
-  <g data-sub-id="tabs" data-src="plugin-manifest/tabs.svg" transform="translate(48.33,18) scale(1.17,0.40)">
+  <!-- Tabs along the edge suggesting navigable sections -->
 
-    <rect x="10" y="20" width="60" height="40" rx="6"/>
-    <rect x="80" y="20" width="60" height="40" rx="6"/>
-    <rect x="150" y="20" width="60" height="40" rx="6"/>
-  
+  <!-- Routes tab -->
+  <g transform="translate(30, 30)">
+    <rect x="0" y="0" width="60" height="25" fill="#F8FAFC" stroke="#E2E8F0"
+          stroke-width="1" rx="4"/>
+    <text x="30" y="16" text-anchor="middle" font-size="10" fill="#64748B"
+          font-weight="500">routes</text>
   </g>
-</g>
+
+  <!-- Topics tab -->
+  <g transform="translate(100, 30)">
+    <rect x="0" y="0" width="60" height="25" fill="#F0F9FF" stroke="#0891B2"
+          stroke-width="1" rx="4"/>
+    <text x="30" y="16" text-anchor="middle" font-size="10" fill="#0891B2"
+          font-weight="500">topics</text>
+  </g>
+
+  <!-- Handlers tab -->
+  <g transform="translate(170, 30)">
+    <rect x="0" y="0" width="70" height="25" fill="#F8FAFC" stroke="#E2E8F0"
+          stroke-width="1" rx="4"/>
+    <text x="35" y="16" text-anchor="middle" font-size="10" fill="#64748B"
+          font-weight="500">handlers</text>
+  </g>
+
+  <!-- Tab connector line -->
+  <line x1="30" y1="55" x2="240" y2="55" stroke="#E2E8F0" stroke-width="1"/>
 </svg>
+

@@ -1,8 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
   <title>Plugin Manifest - JSON Braces</title>
-  <g id="json-braces" font-family="Courier New, monospace" font-size="72" fill="#4AD1FF">
-    <text x="40" y="85">{</text>
-    <text x="140" y="85">}</text>
+  <g id="json-braces">
+    <!-- Stylized JSON braces that frame the content -->
+    <defs>
+      <linearGradient id="braceGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#0891B2;stop-opacity:1"/>
+        <stop offset="100%" style="stop-color:#06B6D4;stop-opacity:1"/>
+      </linearGradient>
+    </defs>
+
+    <!-- Opening brace -->
+    <g fill="url(#braceGradient)" font-family="'Fira Code', 'Monaco', monospace" font-size="32" font-weight="300">
+      <text x="40" y="60">{</text>
+    </g>
+
+    <!-- Closing brace -->
+    <g fill="url(#braceGradient)" font-family="'Fira Code', 'Monaco', monospace" font-size="32" font-weight="300">
+      <text x="40" y="260">}</text>
+    </g>
+
+    <!-- Subtle connecting lines -->
+    <path d="M45 70 L45 250" stroke="#0891B2" stroke-width="1" opacity="0.3"/>
   </g>
 </svg>
 

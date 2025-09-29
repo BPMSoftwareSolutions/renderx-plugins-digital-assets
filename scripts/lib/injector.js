@@ -97,13 +97,47 @@ function buildTransform(compose) {
 
 function extractAnchor(svgContent, id) {
   // Find <g ... id="id" ...>inner</g>; return { attrs, inner }
-  const re = new RegExp(`<g\\s+([^>]*?)id=["']${id}["']([^>]*)>([\\s\\S]*?)<\\/g>`, 'i');
-  const m = svgContent.match(re);
-  if (!m) return { attrs: '', inner: '' };
-  let attrs = (m[1] + ' ' + m[2]).trim();
+  // Use a more robust approach that handles nested groups correctly
+  const startRe = new RegExp(`<g\\s+([^>]*?)id=["']${id}["']([^>]*)>`, 'i');
+  const startMatch = svgContent.match(startRe);
+  if (!startMatch) return { attrs: '', inner: '' };
+
+  const startIndex = startMatch.index + startMatch[0].length;
+  let depth = 1;
+  let endIndex = startIndex;
+
+  // Find the matching closing </g> by counting nested groups
+  while (depth > 0 && endIndex < svgContent.length) {
+    const nextOpen = svgContent.indexOf('<g', endIndex);
+    const nextClose = svgContent.indexOf('</g>', endIndex);
+
+    if (nextClose === -1) break; // No more closing tags
+
+    if (nextOpen !== -1 && nextOpen < nextClose) {
+      // Found opening tag before closing tag
+      depth++;
+      endIndex = nextOpen + 2;
+    } else {
+      // Found closing tag
+      depth--;
+      if (depth === 0) {
+        endIndex = nextClose;
+        break;
+      }
+      endIndex = nextClose + 4;
+    }
+  }
+
+  if (depth !== 0) {
+    console.warn(`Warning: Unbalanced group tags for id="${id}"`);
+    return { attrs: '', inner: '' };
+  }
+
+  let attrs = (startMatch[1] + ' ' + startMatch[2]).trim();
   // Remove any id attribute remnants just in case
   attrs = attrs.replace(/\s*id=["'][^"']+["']/ig, '').trim();
-  return { attrs, inner: m[3] };
+  const inner = svgContent.substring(startIndex, endIndex);
+  return { attrs, inner };
 }
 
 function generateForElementInline(parentSvgContent, element, options = {}) {
@@ -127,29 +161,57 @@ function generateForElementTemplateExact(parentSvgContent, element, options = {}
   // Extract content from each sub-element and flatten into direct SVG children
   const parts = (element.sub_elements || []).filter(se => se && se.id && se.svg).map(se => {
     const svgStr = options.loadSvg(se.svg);
-    const { inner } = extractAnchor(svgStr, se.id);
-    // Normalize indentation to 2 spaces to match template
-    const lines = inner.trim().split('\n');
-    const normalized = lines.map(line => {
-      // Convert 4-space indentation to 2-space
-      return line.replace(/^    /, '  ');
-    }).join('\n');
-    return normalized;
-  }).filter(part => part.length > 0);
 
-  // Extract any existing title/text elements from parent to preserve at end
-  const titleMatch = parentSvgContent.match(/<text[^>]*>.*?<\/text>/g);
-  const titleElements = titleMatch ? titleMatch.map(t => t.trim()) : [];
+    // For template-exact mode, use extractAnchor to get both attributes and inner content
+    // to preserve styling information from the group element
+    const { attrs, inner } = extractAnchor(svgStr, se.id);
+    if (inner.trim()) {
+      let processedInner = inner;
+
+      // If the group has attributes (like fill, stroke), we need to preserve them
+      // by wrapping the inner content in a group with those attributes
+      if (attrs.trim()) {
+        processedInner = `<g ${attrs}>\n${processedInner}\n</g>`;
+      }
+
+      // Handle defs sections specially - they need unique IDs
+      const idMatches = processedInner.match(/id=["']([^"']+)["']/g);
+      if (idMatches) {
+        idMatches.forEach(idMatch => {
+          const idValue = idMatch.match(/id=["']([^"']+)["']/)[1];
+          const uniqueId = `${se.id}-${idValue}`;
+          // Update the ID definition
+          processedInner = processedInner.replace(
+            new RegExp(`id=["']${idValue}["']`, 'g'),
+            `id="${uniqueId}"`
+          );
+          // Update references to this ID
+          processedInner = processedInner.replace(
+            new RegExp(`url\\(#${idValue}\\)`, 'g'),
+            `url(#${uniqueId})`
+          );
+        });
+      }
+
+      // Normalize indentation
+      const lines = processedInner.trim().split('\n');
+      const normalized = lines.map(line => {
+        return line.replace(/^    /, '  ');
+      }).join('\n');
+      return normalized;
+    }
+
+    console.warn(`Warning: Could not find group element ${se.id} in ${se.svg}`);
+    return '';
+  }).filter(part => part.length > 0);
 
   // Start with clean SVG wrapper (no xmlns:xlink)
   const svgMatch = parentSvgContent.match(/<svg[^>]*>/);
   const svgTag = svgMatch ? svgMatch[0].replace(/\s*xmlns:xlink="[^"]*"/g, '') : '<svg xmlns="http://www.w3.org/2000/svg" width="420" height="140" viewBox="0 0 420 140">';
 
-  // Build content: sub-elements first, then title at end (template order)
-  const allContent = [...parts, ...titleElements];
-
-  if (allContent.length > 0) {
-    return `${svgTag}\n  ${allContent.join('\n  ')}\n</svg>\n\n`;
+  // For template-exact mode, only include the extracted sub-elements (no parent template content)
+  if (parts.length > 0) {
+    return `${svgTag}\n  ${parts.join('\n  ')}\n</svg>\n\n`;
   } else {
     return `${svgTag}\n</svg>\n\n`;
   }

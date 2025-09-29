@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Element Rendering Test</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+        }
+        
+        .slide-section {
+            margin-bottom: 50px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 25px;
+            background: #fafafa;
+        }
+        
+        .slide-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #0891B2;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #0891B2;
+            padding-bottom: 10px;
+        }
+        
+        .elements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .element-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .element-card:hover {
+            border-color: #0891B2;
+            box-shadow: 0 2px 8px rgba(8, 145, 178, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .element-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .click-hint {
+            font-size: 12px;
+            color: #666;
+            font-weight: normal;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .element-card:hover .click-hint {
+            opacity: 1;
+        }
+        
+        .element-description {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        
+        .svg-container {
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            padding: 15px;
+            background: white;
+            text-align: center;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .svg-container svg {
+            max-width: 100%;
+            max-height: 180px;
+            border: 1px dashed #ccc;
+        }
+        
+        .error {
+            color: #dc3545;
+            font-style: italic;
+            padding: 20px;
+        }
+        
+        .loading {
+            color: #6c757d;
+            font-style: italic;
+        }
+        
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        
+        .status-success { background-color: #28a745; }
+        .status-error { background-color: #dc3545; }
+        .status-loading { background-color: #ffc107; }
+        
+        .test-summary {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            min-width: 200px;
+        }
+        
+        .test-summary h3 {
+            margin: 0 0 10px 0;
+            font-size: 16px;
+        }
+        
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 5px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SVG Element Rendering Test</h1>
+        <p class="subtitle">Testing contextual element SVGs across all plugin architecture slides<br>
+        <small style="color: #0891B2; font-weight: 500;">💡 Click any element to view its SVG file in a new tab</small></p>
+        
+        <div class="test-summary">
+            <h3>Test Summary</h3>
+            <div class="summary-item">
+                <span>Total Elements:</span>
+                <span id="total-count">0</span>
+            </div>
+            <div class="summary-item">
+                <span>Loaded:</span>
+                <span id="success-count">0</span>
+            </div>
+            <div class="summary-item">
+                <span>Failed:</span>
+                <span id="error-count">0</span>
+            </div>
+            <div class="summary-item">
+                <span>Loading:</span>
+                <span id="loading-count">0</span>
+            </div>
+        </div>
+        
+        <div id="slides-container" data-testid="svg-test-container">
+            <!-- Slides will be populated by JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        // Element definitions from plugin-integration-slides.json
+        const slides = [
+            {
+                id: "slide-01-manifest",
+                name: "Phase 1: Plugin Manifest Creation",
+                elements: [
+                    {
+                        id: "plugin-package",
+                        label: "Plugin Package",
+                        svg: "slide-01-manifest/plugin-package.svg",
+                        description: "A crisp, isometric package box with shadow, clean label, capability glyphs, and gleaming npm badge"
+                    },
+                    {
+                        id: "plugin-manifest", 
+                        label: "Plugin Manifest",
+                        svg: "slide-01-manifest/plugin-manifest.svg",
+                        description: "A sleek document card with cyan trim, stylized JSON braces, aligned key-value rows, generated stamp, and navigation tabs"
+                    },
+                    {
+                        id: "handlers-export",
+                        label: "Handlers Export", 
+                        svg: "slide-01-manifest/handlers-export.svg",
+                        description: "Elegant connectors from plugin core, matching ports (onDragStart, publishCreateRequested), violet gradient arc, and circuit traces"
+                    },
+                    {
+                        id: "build-publish",
+                        label: "Build & Publish",
+                        svg: "slide-01-manifest/build-publish.svg", 
+                        description: "A streamlined conveyor system with staging pad, uplink arrow, and version tags showing the build and publish process"
+                    },
+                    {
+                        id: "host-sdk",
+                        label: "Host SDK",
+                        svg: "slide-01-manifest/host-sdk.svg",
+                        description: "A low-profile matte gray console with slender rails, labeled ports, and Conductor/EventRouter modules"
+                    }
+                ]
+            }
+        ];
+
+        let totalCount = 0;
+        let successCount = 0;
+        let errorCount = 0;
+        let loadingCount = 0;
+
+        function updateSummary() {
+            document.getElementById('total-count').textContent = totalCount;
+            document.getElementById('success-count').textContent = successCount;
+            document.getElementById('error-count').textContent = errorCount;
+            document.getElementById('loading-count').textContent = loadingCount;
+        }
+
+        function loadSVG(element, container) {
+            loadingCount++;
+            updateSummary();
+            
+            const svgPath = `../assets/plugin-architecture/${element.svg}`;
+            
+            fetch(svgPath)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                    }
+                    return response.text();
+                })
+                .then(svgContent => {
+                    container.innerHTML = svgContent;
+                    
+                    // Update status
+                    const statusIndicator = container.parentElement.querySelector('.status-indicator');
+                    statusIndicator.className = 'status-indicator status-success';
+                    
+                    loadingCount--;
+                    successCount++;
+                    updateSummary();
+                })
+                .catch(error => {
+                    container.innerHTML = `<div class="error">Failed to load SVG: ${error.message}</div>`;
+                    
+                    // Update status  
+                    const statusIndicator = container.parentElement.querySelector('.status-indicator');
+                    statusIndicator.className = 'status-indicator status-error';
+                    
+                    loadingCount--;
+                    errorCount++;
+                    updateSummary();
+                });
+        }
+
+        function createElementCard(element) {
+            totalCount++;
+
+            const card = document.createElement('div');
+            card.className = 'element-card';
+            card.setAttribute('data-testid', `element-${element.id}`);
+
+            card.innerHTML = `
+                <div class="element-title">
+                    <div>
+                        <span class="status-indicator status-loading"></span>
+                        ${element.label}
+                    </div>
+                    <span class="click-hint">Click to view SVG →</span>
+                </div>
+                <div class="element-description">${element.description}</div>
+                <div class="svg-container">
+                    <div class="loading">Loading SVG...</div>
+                </div>
+            `;
+
+            // Add click handler to navigate to SVG file
+            card.addEventListener('click', () => {
+                const svgUrl = `../assets/plugin-architecture/${element.svg}`;
+                window.open(svgUrl, '_blank');
+            });
+
+            const svgContainer = card.querySelector('.svg-container');
+            loadSVG(element, svgContainer);
+
+            return card;
+        }
+
+        function createSlideSection(slide) {
+            const section = document.createElement('div');
+            section.className = 'slide-section';
+            section.setAttribute('data-testid', `slide-${slide.id}`);
+
+            const title = document.createElement('div');
+            title.className = 'slide-title';
+            title.textContent = slide.name;
+            section.appendChild(title);
+
+            const grid = document.createElement('div');
+            grid.className = 'elements-grid';
+
+            slide.elements.forEach(element => {
+                const card = createElementCard(element);
+                grid.appendChild(card);
+            });
+
+            section.appendChild(grid);
+            return section;
+        }
+
+        // Initialize the test
+        function initializeTest() {
+            const container = document.getElementById('slides-container');
+            
+            slides.forEach(slide => {
+                const section = createSlideSection(slide);
+                container.appendChild(section);
+            });
+            
+            updateSummary();
+        }
+
+        // Start the test when page loads
+        document.addEventListener('DOMContentLoaded', initializeTest);
+    </script>
+</body>
+</html>
