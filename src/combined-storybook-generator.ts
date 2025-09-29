@@ -13,6 +13,8 @@ import {
   generateSceneTransitionCSS
 } from './animation-coordinator';
 
+import { applySceneAnimationFromConfig, loadAnimationConfig } from './animation-orchestrator';
+
 /**
  * Enhanced Combined Storybook Generator with Scene-by-Scene Animation Triggers
  *
@@ -100,33 +102,13 @@ function createDefaultConfig(): CombinedStorybookConfig {
 
 
 /**
- * Apply bus animation coordination to create illusion of single bus traveling between scenes
+ * Apply enhanced bus animation coordination using SVG animation utilities
+ * Creates illusion of single bus traveling between scenes with proper visibility control
  */
-function applyBusCoordination(svgContent: string, sceneNumber: number): string {
-  // Calculate cumulative delays based on bus exit timing from each scene
-  const sceneDelays = [
-    0,    // Scene 1: starts immediately
-    6,    // Scene 2: starts when Scene 1 bus exits (8s * 0.75)
-    16,   // Scene 3: starts when Scene 2 bus exits (6 + 12s * 0.83)
-    28,   // Scene 4: starts when Scene 3 bus exits (16 + 15s * 0.8)
-    42,   // Scene 5: starts when Scene 4 bus exits (28 + 18s * 0.78)
-    56    // Scene 6: starts when Scene 5 bus exits (42 + 16s * 0.875)
-  ];
+const ANIMATION_CONFIG = loadAnimationConfig();
 
-  const delay = sceneDelays[sceneNumber - 1] || 0;
-
-  if (delay === 0) {
-    // Scene 1 starts immediately - no modification needed
-    return svgContent;
-  }
-
-  // Modify the bus animateTransform to include begin delay
-  const busAnimationRegex = /(<animateTransform[^>]*attributeName="transform"[^>]*type="translate"[^>]*)(dur="[^"]*"[^>]*)(repeatCount="[^"]*"[^>]*>)/g;
-
-  return svgContent.replace(busAnimationRegex, (match, prefix, durPart, suffix) => {
-    // Add begin attribute to delay the animation
-    return `${prefix}begin="${delay}s" ${durPart}${suffix}`;
-  });
+function applyEnhancedBusCoordination(svgContent: string, sceneNumber: number): string {
+  return applySceneAnimationFromConfig(svgContent, sceneNumber, ANIMATION_CONFIG);
 }
 
 /**
@@ -206,7 +188,7 @@ function createEnhancedCombinedStorybook(scenes: SceneInfo[]): void {
  * Generate the complete enhanced SVG with coordinated animations
  */
 function generateEnhancedSVG(config: CombinedStorybookConfig, timeline: CombinedStorybookTimeline): string {
-  const { canvas, layout, timing, bus } = config;
+  const { canvas, layout, timing } = config;
 
   // Start building enhanced SVG
   let svg = `<?xml version="1.0" encoding="UTF-8"?>
@@ -286,7 +268,7 @@ function generateEnhancedSVG(config: CombinedStorybookConfig, timeline: Combined
   }
 
   // Add each scene with enhanced features
-  config.scenes.forEach((sceneInfo, index) => {
+  config.scenes.forEach((sceneInfo) => {
     const { position, timing } = sceneInfo;
 
     console.log(`   📍 Scene ${sceneInfo.sceneNumber}: ${sceneInfo.title} at (${position.x}, ${position.y})`);
@@ -302,8 +284,8 @@ function generateEnhancedSVG(config: CombinedStorybookConfig, timeline: Combined
 
       // Keep original graph content intact - graph is the single source of truth
 
-      // Apply bus animation coordination to create illusion of single bus
-      innerContent = applyBusCoordination(innerContent, sceneInfo.sceneNumber);
+      // Apply enhanced bus animation coordination to create illusion of single bus
+      innerContent = applyEnhancedBusCoordination(innerContent, sceneInfo.sceneNumber);
 
       // Add scene as a group with enhanced features
       svg += `  <!-- Scene ${sceneInfo.sceneNumber}: ${sceneInfo.title} -->

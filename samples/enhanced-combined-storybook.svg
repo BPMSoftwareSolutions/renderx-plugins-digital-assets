@@ -296,9 +296,9 @@
 <text x="150" y="173" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">SCHOOL BUS DEPOT</text>
 </g>
 <!-- School bus with movement animation -->
-<g id="school-bus" transform="translate(300, 250)">
+<g id="school-bus" transform="translate(300, 250)"><animate id="disappear-bczm4krr5" attributeName="opacity" from="1" to="0" begin="6s" dur="0.5s" fill="freeze"/>
 <!-- Bus movement animation from left to right -->
-<animateTransform attributeName="transform" type="translate" values="300,250; 900,250" dur="8s" repeatCount="indefinite"/>
+<animateTransform attributeName="transform" type="translate" values="300,250; 900,250" dur="8s" repeatCount="indefinite" end="6s"/>
 <!-- Bus body -->
 <rect x="0" y="0" width="120" height="40" rx="4" ry="4" fill="#FFD700" stroke="#E6C200" stroke-width="2"></rect>
 <!-- Bus front -->
@@ -344,7 +344,7 @@
 <g transform-origin="25 42">
 <line x1="25" y1="36" x2="25" y2="48" stroke="#AAA" stroke-width="1"></line>
 <line x1="19" y1="42" x2="31" y2="42" stroke="#AAA" stroke-width="1"></line>
-<animateTransform attributeName="transform" type="rotate" values="0;360" dur="1s" repeatCount="indefinite"/>
+<animateTransform attributeName="transform" type="rotate" values="0;360" dur="1s" repeatCount="indefinite" end="6s"/>
 </g>
 </g>
 <!-- Rear wheel with spinning spokes -->
@@ -474,12 +474,9 @@
 <rect x="680" y="308" width="40" height="4"></rect>
 </g>
 <!-- School bus with stop-and-go animation -->
-<g id="school-bus" transform="translate(200, 250)">
+<g id="school-bus" transform="translate(200, 250)"><animate id="disappear-pgkhtp5wk" attributeName="opacity" from="1" to="0" begin="16s" dur="0.5s" fill="freeze"/>
 <!-- Bus movement: approach, stop at red light, continue on green -->
-<animateTransform attributeName="transform" type="translate"
-values="50,250; 350,250; 350,250; 900,250"
-begin="6s" dur="12s"
-repeatCount="indefinite"/>
+<animateTransform attributeName="transform" type="translate" values="50,250; 350,250; 350,250; 900,250" dur="12s" repeatCount="indefinite" begin="14s" end="10s"/>
 <rect x="0" y="0" width="100" height="35" rx="4" ry="4" fill="#FFD700" stroke="#E6C200" stroke-width="2"></rect>
 <rect x="95" y="3" width="10" height="29" rx="5" ry="5" fill="#FFD700" stroke="#E6C200" stroke-width="2"></rect>
 <rect x="-2" y="-3" width="104" height="5" rx="2.5" ry="2.5" fill="#FFA500"></rect>
@@ -513,7 +510,7 @@ repeatCount="indefinite"/>
 <g transform-origin="20 37">
 <line x1="20" y1="32" x2="20" y2="42" stroke="#AAA" stroke-width="1"></line>
 <line x1="15" y1="37" x2="25" y2="37" stroke="#AAA" stroke-width="1"></line>
-<animateTransform attributeName="transform" type="rotate" values="0;360" dur="1s" repeatCount="indefinite"/>
+<animateTransform attributeName="transform" type="rotate" values="0;360" dur="1s" repeatCount="indefinite" begin="14s" end="10s"/>
 </g>
 </g>
 <g id="rear-wheel">
@@ -676,12 +673,9 @@ repeatCount="indefinite"/>
 <rect x="680" y="308" width="40" height="4"/>
 </g>
 <!-- School bus with pickup animation -->
-<g id="school-bus" transform="translate(350, 250)">
+<g id="school-bus" transform="translate(350, 250)"><animate id="disappear-nmuvl0g32" attributeName="opacity" from="1" to="0" begin="28s" dur="0.5s" fill="freeze"/>
 <!-- Bus movement: approach stop, pause for pickup, continue -->
-<animateTransform attributeName="transform" type="translate"
-values="100,250; 450,250; 450,250; 900,250"
-begin="16s" dur="15s"
-repeatCount="indefinite"/>
+<animateTransform attributeName="transform" type="translate" values="100,250; 450,250; 450,250; 900,250" dur="15s" repeatCount="indefinite" begin="16s" end="28s"/>
 <rect x="0" y="0" width="100" height="35" rx="4" ry="4" fill="#FFD700" stroke="#E6C200" stroke-width="2"/>
 <rect x="95" y="3" width="10" height="29" rx="5" ry="5" fill="#FFD700" stroke="#E6C200" stroke-width="2"/>
 <rect x="-2" y="-3" width="104" height="5" rx="2.5" ry="2.5" fill="#FFA500"/>
@@ -714,7 +708,7 @@ repeatCount="indefinite"/>
 <g transform-origin="20 37">
 <line x1="20" y1="32" x2="20" y2="42" stroke="#AAA" stroke-width="1"/>
 <line x1="15" y1="37" x2="25" y2="37" stroke="#AAA" stroke-width="1"/>
-<animateTransform attributeName="transform" type="rotate" values="0;360" dur="1s" repeatCount="indefinite"/>
+<animateTransform attributeName="transform" type="rotate" values="0;360" dur="1s" repeatCount="indefinite" begin="16s" end="28s"/>
 </g>
 </g>
 <g id="rear-wheel">
@@ -756,7 +750,7 @@ repeatCount="indefinite"/>
 <!-- Animation: subscriber moves toward bus during pickup -->
 <animateTransform attributeName="transform" type="translate"
 values="25,25; 25,25; -100,50; -100,50"
-begin="16s" dur="15s"
+dur="15s"
 repeatCount="indefinite"/>
 <!-- Opacity animation: subscriber disappears when boarding bus -->
 <animate attributeName="opacity"
@@ -799,7 +793,7 @@ repeatCount="indefinite"/>
 <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/>
 <animateTransform attributeName="transform" type="translate"
 values="0,0; -50,-20; -100,-40"
-begin="16s" dur="3s"
+dur="3s"
 repeatCount="indefinite"/>
 </circle>
 </g>
@@ -978,18 +972,12 @@ fill="none" stroke="#E0E0E0" stroke-width="4" stroke-linecap="round"/>
 <text x="0" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#1E3A8A">Conductor: play()</text>
 </g>
 <!-- School bus with ramp flying animation -->
-<g id="school-bus" transform="translate(300, 250)">
+<g id="school-bus" transform="translate(300, 250)"><animate id="disappear-5axyjut41" attributeName="opacity" from="1" to="0" begin="42s" dur="0.5s" fill="freeze"/>
 <!-- Bus movement: approach ramp, drive up ramp, fly off into sky -->
-<animateTransform attributeName="transform" type="translate"
-values="100,250; 350,310; 450,260; 550,220; 650,180; 750,140; 900,100"
-begin="28s" dur="18s"
-repeatCount="indefinite"/>
+<animateTransform attributeName="transform" type="translate" values="100,250; 350,310; 450,260; 550,220; 650,180; 750,140; 900,100" dur="18s" repeatCount="indefinite" begin="28s" end="42s"/>
 <!-- Bus rotation during ramp ascent -->
 <g transform-origin="50 17.5">
-<animateTransform attributeName="transform" type="rotate"
-values="0; 0; -10; -20; -30; -40; -45"
-dur="18s"
-repeatCount="indefinite"/>
+<animateTransform attributeName="transform" type="rotate" values="0; 0; -10; -20; -30; -40; -45" dur="18s" repeatCount="indefinite" begin="28s" end="42s"/>
 <rect x="0" y="0" width="100" height="35" rx="4" ry="4" fill="#FFD700" stroke="#E6C200" stroke-width="2"/>
 <rect x="95" y="3" width="10" height="29" rx="5" ry="5" fill="#FFD700" stroke="#E6C200" stroke-width="2"/>
 <rect x="-2" y="-3" width="104" height="5" rx="2.5" ry="2.5" fill="#FFA500"/>
@@ -1019,7 +1007,7 @@ repeatCount="indefinite"/>
 <g transform-origin="20 37">
 <line x1="20" y1="32" x2="20" y2="42" stroke="#AAA" stroke-width="1"/>
 <line x1="15" y1="37" x2="25" y2="37" stroke="#AAA" stroke-width="1"/>
-<animateTransform attributeName="transform" type="rotate" values="0;360" dur="1s" repeatCount="indefinite"/>
+<animateTransform attributeName="transform" type="rotate" values="0;360" dur="1s" repeatCount="indefinite" begin="28s" end="42s"/>
 </g>
 </g>
 <g id="rear-wheel">
@@ -1039,7 +1027,7 @@ repeatCount="indefinite"/>
 <!-- Green bus animation: drives off ramp and off the page -->
 <animateTransform attributeName="transform" type="translate"
 values="520,180; 600,160; 700,140; 850,120; 950,100"
-begin="28s" dur="20s"
+dur="20s"
 repeatCount="indefinite"/>
 <rect x="0" y="0" width="60" height="25" rx="3" ry="3" fill="#32CD32" stroke="#228B22" stroke-width="1"/>
 <rect x="55" y="2" width="8" height="21" rx="4" ry="4" fill="#32CD32" stroke="#228B22" stroke-width="1"/>
@@ -1227,12 +1215,9 @@ repeatCount="indefinite"/>
 <rect x="750" y="308" width="30" height="4"/>
 </g>
 <!-- School bus with traffic light stop-and-go animation -->
-<g id="school-bus" transform="translate(350, 250)">
+<g id="school-bus" transform="translate(350, 250)"><animate id="disappear-f5pqo0nax" attributeName="opacity" from="1" to="0" begin="56s" dur="0.5s" fill="freeze"/>
 <!-- Bus movement: approach traffic light, stop at red, proceed on green -->
-<animateTransform attributeName="transform" type="translate"
-values="100,250; 600,250; 600,250; 900,250"
-begin="42s" dur="16s"
-repeatCount="indefinite"/>
+<animateTransform attributeName="transform" type="translate" values="100,250; 600,250; 600,250; 900,250" dur="16s" repeatCount="indefinite" begin="42s" end="56s"/>
 <rect x="0" y="0" width="100" height="35" rx="4" ry="4" fill="#FFD700" stroke="#E6C200" stroke-width="2"/>
 <rect x="95" y="3" width="10" height="29" rx="5" ry="5" fill="#FFD700" stroke="#E6C200" stroke-width="2"/>
 <rect x="-2" y="-3" width="104" height="5" rx="2.5" ry="2.5" fill="#FFA500"/>
@@ -1262,7 +1247,7 @@ repeatCount="indefinite"/>
 <g transform-origin="20 37">
 <line x1="20" y1="32" x2="20" y2="42" stroke="#AAA" stroke-width="1"/>
 <line x1="15" y1="37" x2="25" y2="37" stroke="#AAA" stroke-width="1"/>
-<animateTransform attributeName="transform" type="rotate" values="0;360" dur="1s" repeatCount="indefinite"/>
+<animateTransform attributeName="transform" type="rotate" values="0;360" dur="1s" repeatCount="indefinite" begin="42s" end="56s"/>
 </g>
 </g>
 <g id="rear-wheel">
@@ -1481,12 +1466,9 @@ repeatCount="indefinite"/>
 <text x="100" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#333">ELEMENTARY SCHOOL</text>
 </g>
 <!-- School bus with arrival animation -->
-<g id="school-bus" transform="translate(250, 250)">
+<g id="school-bus" transform="translate(250, 250)"><animate id="disappear-c6vej4u8o" attributeName="opacity" from="1" to="0" begin="68s" dur="0.5s" fill="freeze"/>
 <!-- Bus movement: approach school stop and park -->
-<animateTransform attributeName="transform" type="translate"
-values="100,250; 250,250; 250,250"
-begin="56s" dur="12s"
-repeatCount="indefinite"/>
+<animateTransform attributeName="transform" type="translate" values="100,250; 250,250; 250,250" dur="12s" repeatCount="indefinite" begin="56s" end="68s"/>
 <rect x="0" y="0" width="120" height="35" rx="4" ry="4" fill="#FFD700" stroke="#E6C200" stroke-width="2"/>
 <rect x="115" y="3" width="12" height="29" rx="6" ry="6" fill="#FFD700" stroke="#E6C200" stroke-width="2"/>
 <rect x="-2" y="-3" width="124" height="5" rx="2.5" ry="2.5" fill="#FFA500"/>
@@ -1518,7 +1500,7 @@ repeatCount="indefinite"/>
 <g transform-origin="25 37">
 <line x1="25" y1="32" x2="25" y2="42" stroke="#AAA" stroke-width="1"/>
 <line x1="20" y1="37" x2="30" y2="37" stroke="#AAA" stroke-width="1"/>
-<animateTransform attributeName="transform" type="rotate" values="0;360" dur="1s" repeatCount="indefinite"/>
+<animateTransform attributeName="transform" type="rotate" values="0;360" dur="1s" repeatCount="indefinite" begin="56s" end="68s"/>
 </g>
 </g>
 <g id="rear-wheel">
@@ -1536,7 +1518,7 @@ repeatCount="indefinite"/>
 <rect x="107" y="22" width="8" height="9" fill="#E6C200" stroke="#D4AF37" stroke-width="1">
 <animateTransform attributeName="transform" type="translate"
 values="0,0; 0,0; 15,0"
-begin="56s" dur="12s"
+dur="12s"
 repeatCount="indefinite"/>
 </rect>
 </g>
@@ -1547,7 +1529,7 @@ repeatCount="indefinite"/>
 <g transform="translate(380, 270)">
 <animateTransform attributeName="transform" type="translate"
 values="380,270; 380,270; 380,265; 380,270; 420,275"
-begin="56s" dur="12s"
+dur="12s"
 repeatCount="indefinite"/>
 <circle cx="0" cy="0" r="3" fill="#FBBF24"/>
 <rect x="-2" y="3" width="4" height="8" fill="#3B82F6" rx="1"/>
@@ -1560,7 +1542,7 @@ repeatCount="indefinite"/>
 <g transform="translate(420, 275)">
 <animateTransform attributeName="transform" type="translate"
 values="420,275; 420,275; 420,270; 420,275; 480,280"
-begin="56s" dur="12s"
+dur="12s"
 repeatCount="indefinite"/>
 <circle cx="0" cy="0" r="3" fill="#F87171"/>
 <rect x="-2" y="3" width="4" height="8" fill="#10B981" rx="1"/>
@@ -1573,7 +1555,7 @@ repeatCount="indefinite"/>
 <g transform="translate(480, 280)">
 <animateTransform attributeName="transform" type="translate"
 values="480,280; 480,280; 480,275; 480,280; 580,285"
-begin="56s" dur="12s"
+dur="12s"
 repeatCount="indefinite"/>
 <circle cx="0" cy="0" r="3" fill="#34D399"/>
 <rect x="-2" y="3" width="4" height="8" fill="#EF4444" rx="1"/>
@@ -1586,7 +1568,7 @@ repeatCount="indefinite"/>
 <g transform="translate(580, 285)">
 <animateTransform attributeName="transform" type="translate"
 values="580,285; 580,285; 580,280; 580,285; 580,285"
-begin="56s" dur="12s"
+dur="12s"
 repeatCount="indefinite"/>
 <circle cx="0" cy="0" r="3" fill="#A78BFA"/>
 <rect x="-2" y="3" width="4" height="8" fill="#FBBF24" rx="1"/>
