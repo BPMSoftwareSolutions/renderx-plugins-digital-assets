@@ -1,9 +1,9 @@
 {
   "id": "event-router-mono-journey",
-  "title": "EventRouter Journey: Seamless Bus Travel Through All Scenes",
+  "title": "EventRouter Journey: Graph-Generated Storybook Layout",
   "canvas": {
-    "width": 5400,
-    "height": 600
+    "width": 1750,
+    "height": 1500
   },
   "bg": "#87CEEB",
   "scenes": [
@@ -185,17 +185,17 @@
         }
       ],
       "position": {
-        "x": 100,
-        "y": 100
+        "x": 50,
+        "y": 150
       },
       "busTravel": {
         "entryPoint": {
-          "x": 100,
-          "y": 300
+          "x": 50,
+          "y": 350
         },
         "exitPoint": {
-          "x": 900,
-          "y": 300
+          "x": 850,
+          "y": 350
         },
         "duration": 3
       },
@@ -416,17 +416,17 @@
         }
       ],
       "position": {
-        "x": 1000,
-        "y": 100
+        "x": 900,
+        "y": 150
       },
       "busTravel": {
         "entryPoint": {
-          "x": 1000,
-          "y": 300
+          "x": 900,
+          "y": 350
         },
         "exitPoint": {
-          "x": 1800,
-          "y": 300
+          "x": 1700,
+          "y": 350
         },
         "duration": 3
       },
@@ -663,17 +663,17 @@
         }
       ],
       "position": {
-        "x": 1900,
-        "y": 100
+        "x": 50,
+        "y": 600
       },
       "busTravel": {
         "entryPoint": {
-          "x": 1900,
-          "y": 300
+          "x": 50,
+          "y": 800
         },
         "exitPoint": {
-          "x": 2700,
-          "y": 300
+          "x": 850,
+          "y": 800
         },
         "duration": 3
       },
@@ -953,17 +953,17 @@
         }
       ],
       "position": {
-        "x": 2800,
-        "y": 100
+        "x": 900,
+        "y": 600
       },
       "busTravel": {
         "entryPoint": {
-          "x": 2800,
-          "y": 300
+          "x": 900,
+          "y": 800
         },
         "exitPoint": {
-          "x": 3600,
-          "y": 300
+          "x": 1700,
+          "y": 800
         },
         "duration": 3
       },
@@ -1199,17 +1199,17 @@
         }
       ],
       "position": {
-        "x": 3700,
-        "y": 100
+        "x": 50,
+        "y": 1050
       },
       "busTravel": {
         "entryPoint": {
-          "x": 3700,
-          "y": 300
+          "x": 50,
+          "y": 1250
         },
         "exitPoint": {
-          "x": 4500,
-          "y": 300
+          "x": 850,
+          "y": 1250
         },
         "duration": 3
       },
@@ -1495,17 +1495,17 @@
         }
       ],
       "position": {
-        "x": 4600,
-        "y": 100
+        "x": 900,
+        "y": 1050
       },
       "busTravel": {
         "entryPoint": {
-          "x": 4600,
-          "y": 300
+          "x": 900,
+          "y": 1250
         },
         "exitPoint": {
-          "x": 5400,
-          "y": 300
+          "x": 1700,
+          "y": 1250
         },
         "duration": 3
       },
@@ -1525,42 +1525,43 @@
     "size": {
       "width": 120,
       "height": 40
-    }
+    },
+    "enabled": false
   },
   "connections": [
     {
       "id": "connection-1-to-2",
       "fromScene": "event-router-scene-1-rx-node-73eke9",
       "toScene": "event-router-scene-2-rx-node-s1wplc",
-      "path": "M 900,300 Q 950,300 1000,300",
+      "path": "M 850,350 Q 875,350 900,350",
       "duration": 1
     },
     {
       "id": "connection-2-to-3",
       "fromScene": "event-router-scene-2-rx-node-s1wplc",
       "toScene": "event-router-scene-3-rx-node-scene3",
-      "path": "M 1800,300 Q 1850,300 1900,300",
+      "path": "M 1700,350 Q 875,575 50,800",
       "duration": 1
     },
     {
       "id": "connection-3-to-4",
       "fromScene": "event-router-scene-3-rx-node-scene3",
       "toScene": "event-router-scene-4-rx-node-scene4",
-      "path": "M 2700,300 Q 2750,300 2800,300",
+      "path": "M 850,800 Q 875,800 900,800",
       "duration": 1
     },
     {
       "id": "connection-4-to-5",
       "fromScene": "event-router-scene-4-rx-node-scene4",
       "toScene": "event-router-scene-5-rx-node-scene5",
-      "path": "M 3600,300 Q 3650,300 3700,300",
+      "path": "M 1700,800 Q 875,1025 50,1250",
       "duration": 1
     },
     {
       "id": "connection-5-to-6",
       "fromScene": "event-router-scene-5-rx-node-scene5",
       "toScene": "event-router-scene-6-rx-node-scene6",
-      "path": "M 4500,300 Q 4550,300 4600,300",
+      "path": "M 850,1250 Q 875,1250 900,1250",
       "duration": 1
     }
   ],

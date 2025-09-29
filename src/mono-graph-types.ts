@@ -58,6 +58,7 @@ export interface MonoGraph {
     totalJourneyDuration: number; // total animation duration
     speed: number; // pixels per second
     size: { width: number; height: number };
+    enabled: boolean; // whether to show the unified bus
   };
   
   // Connection paths between scenes

@@ -286,9 +286,10 @@ describe('Integration Tests', () => {
   test('should generate valid SVG file that exists', () => {
     const svgPath = join(SAMPLES_DIR, 'event-router-mono-journey.svg');
     expect(existsSync(svgPath)).toBe(true);
-    
+
     const svgContent = readFileSync(svgPath, 'utf-8');
     expect(svgContent).toContain('<?xml version="1.0" encoding="UTF-8"?>');
-    expect(svgContent).toContain('unified-school-bus');
+    expect(svgContent).toContain('1750'); // Check for correct canvas width
+    expect(svgContent).toContain('1500'); // Check for correct canvas height
   });
 });

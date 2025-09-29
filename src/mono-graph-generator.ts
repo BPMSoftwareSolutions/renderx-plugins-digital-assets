@@ -72,13 +72,15 @@ function getSceneContent(scene: Scene): string {
  */
 function calculateScenePositions(sceneCount: number, layout: SceneLayout, canvas: { width: number; height: number }): Array<{ x: number; y: number }> {
   const positions: Array<{ x: number; y: number }> = [];
-  
+
+  // Common scene dimensions
+  const sceneWidth = 800;
+  const sceneHeight = 400;
+
   switch (layout.type) {
     case 'linear':
       const isHorizontal = layout.direction === 'horizontal';
       const spacing = layout.spacing || 50;
-      const sceneWidth = 800;
-      const sceneHeight = 400;
       
       for (let i = 0; i < sceneCount; i++) {
         if (isHorizontal) {
@@ -96,20 +98,18 @@ function calculateScenePositions(sceneCount: number, layout: SceneLayout, canvas
       break;
       
     case 'grid':
-      const cols = layout.cols || 3;
-      const rows = layout.rows || 2;
-      const gutterX = layout.gutterX || 50;
-      const gutterY = layout.gutterY || 50;
-      const gridSceneWidth = (canvas.width - (cols + 1) * gutterX) / cols;
-      const gridSceneHeight = (canvas.height - (rows + 1) * gutterY) / rows;
-      
+      const cols = layout.cols || 2;
+      const rows = layout.rows || Math.ceil(sceneCount / cols);
+      const gridSpacing = layout.spacing || 50;
+      const headerHeight = 100; // Space for title like combined storybook
+
       for (let i = 0; i < sceneCount; i++) {
         const col = i % cols;
         const row = Math.floor(i / cols);
-        positions.push({
-          x: gutterX + col * (gridSceneWidth + gutterX),
-          y: gutterY + row * (gridSceneHeight + gutterY)
-        });
+        const x = gridSpacing + (col * (sceneWidth + gridSpacing));
+        const y = headerHeight + gridSpacing + (row * (sceneHeight + gridSpacing));
+
+        positions.push({ x, y });
       }
       break;
       
@@ -266,6 +266,7 @@ export function createMonoGraph(
     canvas?: { width: number; height: number };
     totalDuration?: number;
     loop?: boolean;
+    unifiedBus?: boolean;
   }
 ): MonoGraph {
   const canvas = options.canvas || { width: 2400, height: 1200 };
@@ -287,7 +288,8 @@ export function createMonoGraph(
       sprite: '', // Will be populated with bus SVG
       totalJourneyDuration: totalDuration,
       speed: 100, // pixels per second
-      size: { width: 120, height: 40 }
+      size: { width: 120, height: 40 },
+      enabled: options.unifiedBus !== false // Default to true unless explicitly disabled
     },
     connections,
     timeline: {
@@ -428,8 +430,8 @@ export function renderMonoGraph(monoGraph: MonoGraph): string {
     ...Array.from(allSymbols)
   ].join('\n');
 
-  // Create unified bus sprite
-  const unifiedBus = createUnifiedBusSprite(monoGraph);
+  // Create unified bus sprite (conditional)
+  const unifiedBus = monoGraph.bus.enabled ? createUnifiedBusSprite(monoGraph) : '';
 
   // Create clipping path definitions for each scene
   const clippingPaths = scenes.map((scene, index) => {
@@ -530,7 +532,7 @@ export function renderMonoGraph(monoGraph: MonoGraph): string {
   <!-- Scene boundaries and content -->
   ${scenesSvg}
 
-  <!-- Unified traveling bus -->
+  <!-- Unified traveling bus (conditional) -->
   ${unifiedBus}
 
   <!-- Progress indicator -->

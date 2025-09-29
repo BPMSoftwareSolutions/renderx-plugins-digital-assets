@@ -19,21 +19,23 @@ const EVENTROUTER_SCENES = [
 function main() {
   console.log('🚌 Creating EventRouter Mono Journey...\n');
   
-  // Create the mono graph with linear horizontal layout for seamless bus travel
+  // Create the mono graph with 2x3 grid layout to match combined storybook
   const monoGraph = createMonoGraph(EVENTROUTER_SCENES, {
     id: 'event-router-mono-journey',
-    title: 'EventRouter Journey: Seamless Bus Travel Through All Scenes',
+    title: 'EventRouter Journey: Graph-Generated Storybook Layout',
     layout: {
-      type: 'linear',
-      direction: 'horizontal',
-      spacing: 100 // 100px between scenes for smooth transitions
+      type: 'grid',
+      cols: 2,
+      rows: 3,
+      spacing: 50 // 50px padding between scenes
     },
     canvas: {
-      width: 5400, // 6 scenes * 800px + 5 gaps * 100px + margins
-      height: 600   // 400px scene height + margins
+      width: 1750,  // (2 * 800) + (3 * 50) = 1750
+      height: 1500  // 100 + (3 * 400) + (4 * 50) = 1500
     },
     totalDuration: 30, // 5 seconds per scene
-    loop: true
+    loop: true,
+    unifiedBus: false // Remove the flying bus - use individual scene buses only
   });
   
   console.log(`📊 Mono Graph Created:`);
