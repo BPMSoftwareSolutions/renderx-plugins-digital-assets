@@ -73,5 +73,17 @@ describe('Animation Orchestrator (data-driven)', () => {
       expect(out).toMatch(re);
     });
   });
+
+  test('Scene 6: bus initially hidden and appears at scene startDelay', () => {
+    const cfg = loadConfig();
+    const svg = readSampleSvg('graph-scene-6-rx-node-scene6.svg');
+    const innerMatch = svg.match(/<svg[^>]*>([\s\S]*)<\/svg>/);
+    const inner = innerMatch ? innerMatch[1] : svg;
+
+    const out = applySceneAnimationFromConfig(inner, 6, cfg);
+
+    expect(out).toMatch(/<g[^>]*id="school-bus"[^>]*opacity="0"/);
+    expect(out).toMatch(/<g[^>]*id="school-bus"[\s\S]*?<animate[^>]*attributeName="opacity"[^>]*from="0"[^>]*to="1"[^>]*begin="56s"/);
+  });
 });
 

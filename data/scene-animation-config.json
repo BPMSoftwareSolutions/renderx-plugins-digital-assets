@@ -49,6 +49,8 @@
     "6": {
       "startDelay": 56,
       "exitTime": 68,
+      "initiallyHidden": true,
+      "appearDuration": 0.3,
       "elements": {
         "bus": { "selector": { "type": "id", "value": "school-bus" } }
       }
