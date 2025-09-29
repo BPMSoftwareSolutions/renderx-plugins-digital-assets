@@ -12,7 +12,8 @@
       "exitTime": 16,
       "elements": {
         "bus": { "selector": { "type": "id", "value": "school-bus" } },
-        "trafficLight": { "redAt": 10, "greenAt": 14 }
+        "trafficLight": { "redAt": 10, "greenAt": 14 },
+        "stopAt": { "selector": { "type": "id", "value": "traffic-light" }, "offset": 110 }
       }
     },
     "3": {
