@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600"
+     xmlns="http://www.w3.org/2000/svg" role="img" aria-label="boundary-violation-test">
+  <defs><clipPath id="clip-test-boundary">
+      <rect x="100" y="100" width="300" height="200" 
+            rx="8" ry="8"/>
+    </clipPath>
+</defs>
+  
+    <style>
+      .active-glow rect { filter: url(#glow); stroke: #8b5cf6; }
+      .connector { stroke-linecap: round; stroke-linejoin: round; }
+      .boundary-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: 600; }
+      .flow-token { animation-fill-mode: forwards; }
+      .boundary-contained { overflow: hidden; }
+    </style>
+  
+  <rect x="0" y="0" width="100%" height="100%" fill="#0f1116"/>
+  
+  <g id="test-boundary" class="boundary boundary-contained" clip-path="url(#clip-test-boundary)">
+      <rect x="100" y="100" width="300" height="200" rx="8" style="fill:#1a202c;stroke:#4a5568;stroke-width:2" filter="url(#laneShadow)"/>
+      <text x="112" y="92" class="boundary-title" fill="#e6edf3" font-size="14">Test Boundary</text>
+    </g><rect id="good-node" x="120" y="120" width="100" height="50" rx="8" style="fill:#2d3748;stroke:#4a5568"></rect><rect id="bad-node" x="300" y="220" width="100" height="80" rx="8" style="fill:#e53e3e;stroke:#c53030"></rect><text id="overflow-text" x="136" y="280" style="fill:#ffffff;font-size:14">This text overflows the boundary!</text>
+  
+</svg>

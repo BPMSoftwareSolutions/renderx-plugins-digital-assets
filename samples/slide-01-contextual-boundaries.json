@@ -22,6 +22,7 @@
       "size": { "width": 480, "height": 480 },
       "style": { "fill": "#141a24", "stroke": "#253146", "strokeWidth": 1.5, "labelColor": "#e6edf3" },
       "grid": { "cols": 2, "rowH": 200, "gutter": 20, "padding": 24 },
+      "policy": { "mode": "strict", "overflow": "clip", "tolerance": 1, "snap": { "grid": 2 } },
       "children": [
         { "kind": "shape", "id": "pkg.tile", "shape": "roundedRect",
           "at": { "x": 24, "y": 24 }, "size": { "width": 200, "height": 160 },
@@ -70,6 +71,7 @@
       "size": { "width": 480, "height": 480 },
       "style": { "fill": "#141a24", "stroke": "#253146", "strokeWidth": 1.5, "labelColor": "#e6edf3" },
       "grid": { "cols": 2, "rowH": 200, "gutter": 20, "padding": 24 },
+      "policy": { "mode": "strict", "overflow": "clip", "tolerance": 1, "snap": { "grid": 2 } },
       "children": [
         { "kind": "shape", "id": "handlers.tile", "shape": "roundedRect",
           "at": { "x": 24, "y": 24 }, "size": { "width": 200, "height": 160 },
